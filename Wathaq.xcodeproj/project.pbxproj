@@ -1,0 +1,613 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2132D6F17AD8E0C73A1C3143 /* Pods_Wathaq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB92683FFED97ABD1A09A345 /* Pods_Wathaq.framework */; };
+		9870B9F81FB8CA2B008E678B /* MyOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870B9F71FB8CA2B008E678B /* MyOrdersViewController.swift */; };
+		9870B9FA1FB8CA38008E678B /* WatheqViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870B9F91FB8CA38008E678B /* WatheqViewController.swift */; };
+		9870B9FC1FB8CA51008E678B /* NotficationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870B9FB1FB8CA51008E678B /* NotficationsViewController.swift */; };
+		9870B9FE1FB8CA5D008E678B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870B9FD1FB8CA5D008E678B /* ProfileViewController.swift */; };
+		9870BA051FB8CEB3008E678B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870BA041FB8CEB3008E678B /* SettingsViewController.swift */; };
+		9870BA121FB8D489008E678B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9870BA111FB8D489008E678B /* Assets.xcassets */; };
+		989B45FB1FB8D6D300618519 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 989B45FA1FB8D6D300618519 /* Info.plist */; };
+		989B46011FB8D9E200618519 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 989B46031FB8D9E200618519 /* Localizable.strings */; };
+		989B46081FB8DB8800618519 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989B45FD1FB8D9B400618519 /* Language.swift */; };
+		989B46091FB8DB8C00618519 /* Localizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989B45FE1FB8D9B400618519 /* Localizer.swift */; };
+		989B460A1FB8DB9000618519 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989B46061FB8DA2600618519 /* Constants.swift */; };
+		989B460B1FB8DB9B00618519 /* RefreshAppProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989B46071FB8DA8D00618519 /* RefreshAppProtocol.swift */; };
+		989B460D1FB8E48800618519 /* TabBarAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 989B460C1FB8E48800618519 /* TabBarAssets.xcassets */; };
+		98DDA1491FB797E500B8F42F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98DDA1481FB797E500B8F42F /* AppDelegate.swift */; };
+		98DDA1501FB797E500B8F42F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98DDA14E1FB797E500B8F42F /* Main.storyboard */; };
+		98DDA1551FB797E500B8F42F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98DDA1531FB797E500B8F42F /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9870B9F51FB8C7CB008E678B /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		9870B9F61FB8C7CB008E678B /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		9870B9F71FB8CA2B008E678B /* MyOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersViewController.swift; sourceTree = "<group>"; };
+		9870B9F91FB8CA38008E678B /* WatheqViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatheqViewController.swift; sourceTree = "<group>"; };
+		9870B9FB1FB8CA51008E678B /* NotficationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotficationsViewController.swift; sourceTree = "<group>"; };
+		9870B9FD1FB8CA5D008E678B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		9870BA041FB8CEB3008E678B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		9870BA111FB8D489008E678B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		989B45FA1FB8D6D300618519 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		989B45FD1FB8D9B400618519 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		989B45FE1FB8D9B400618519 /* Localizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizer.swift; sourceTree = "<group>"; };
+		989B46021FB8D9E200618519 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		989B46041FB8D9E400618519 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		989B46061FB8DA2600618519 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		989B46071FB8DA8D00618519 /* RefreshAppProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshAppProtocol.swift; sourceTree = "<group>"; };
+		989B460C1FB8E48800618519 /* TabBarAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TabBarAssets.xcassets; sourceTree = "<group>"; };
+		98DDA1451FB797E500B8F42F /* Wathaq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wathaq.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		98DDA1481FB797E500B8F42F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		98DDA14F1FB797E500B8F42F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		98DDA1541FB797E500B8F42F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D0B5F7766D05DE86D3BE7140 /* Pods-Wathaq.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wathaq.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wathaq/Pods-Wathaq.release.xcconfig"; sourceTree = "<group>"; };
+		F63EA2BCA8CDE8EAE92B989D /* Pods-Wathaq.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wathaq.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wathaq/Pods-Wathaq.debug.xcconfig"; sourceTree = "<group>"; };
+		FB92683FFED97ABD1A09A345 /* Pods_Wathaq.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wathaq.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		98DDA1421FB797E500B8F42F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2132D6F17AD8E0C73A1C3143 /* Pods_Wathaq.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14E193804513A5321D258CF1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F63EA2BCA8CDE8EAE92B989D /* Pods-Wathaq.debug.xcconfig */,
+				D0B5F7766D05DE86D3BE7140 /* Pods-Wathaq.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3923759A425BAC3D12F811E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB92683FFED97ABD1A09A345 /* Pods_Wathaq.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9870B9FF1FB8CDE5008E678B /* MyOrders */ = {
+			isa = PBXGroup;
+			children = (
+				9870B9F71FB8CA2B008E678B /* MyOrdersViewController.swift */,
+			);
+			path = MyOrders;
+			sourceTree = "<group>";
+		};
+		9870BA001FB8CDF6008E678B /* Watheq */ = {
+			isa = PBXGroup;
+			children = (
+				9870B9F91FB8CA38008E678B /* WatheqViewController.swift */,
+			);
+			path = Watheq;
+			sourceTree = "<group>";
+		};
+		9870BA011FB8CE07008E678B /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				9870B9FB1FB8CA51008E678B /* NotficationsViewController.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		9870BA021FB8CE1F008E678B /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				9870B9FD1FB8CA5D008E678B /* ProfileViewController.swift */,
+				9870BA031FB8CE9B008E678B /* Settings */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		9870BA031FB8CE9B008E678B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				9870BA041FB8CEB3008E678B /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		9870BA061FB8D08E008E678B /* Service Handler */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Service Handler";
+			sourceTree = "<group>";
+		};
+		9870BA071FB8D0A8008E678B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9870BA081FB8D0C6008E678B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				98DDA1531FB797E500B8F42F /* LaunchScreen.storyboard */,
+				98DDA14E1FB797E500B8F42F /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9870BA091FB8D0D5008E678B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9870B9FF1FB8CDE5008E678B /* MyOrders */,
+				9870BA001FB8CDF6008E678B /* Watheq */,
+				9870BA011FB8CE07008E678B /* Notification */,
+				9870BA021FB8CE1F008E678B /* Profile */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		9870BA0A1FB8D0E0008E678B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		9870BA0B1FB8D0E8008E678B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				989B46071FB8DA8D00618519 /* RefreshAppProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		9870BA0C1FB8D11C008E678B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9870BA0D1FB8D139008E678B /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				989B46051FB8DA1400618519 /* Constants */,
+				989B45FC1FB8D9A300618519 /* MOLocalization */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		9870BA0E1FB8D14F008E678B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				989B45FA1FB8D6D300618519 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9870BA0F1FB8D15F008E678B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				9870BA111FB8D489008E678B /* Assets.xcassets */,
+				989B460C1FB8E48800618519 /* TabBarAssets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		989B45FC1FB8D9A300618519 /* MOLocalization */ = {
+			isa = PBXGroup;
+			children = (
+				989B45FD1FB8D9B400618519 /* Language.swift */,
+				989B45FE1FB8D9B400618519 /* Localizer.swift */,
+				989B46031FB8D9E200618519 /* Localizable.strings */,
+			);
+			path = MOLocalization;
+			sourceTree = "<group>";
+		};
+		989B46051FB8DA1400618519 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				989B46061FB8DA2600618519 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		98DDA13C1FB797E500B8F42F = {
+			isa = PBXGroup;
+			children = (
+				98DDA1471FB797E500B8F42F /* Wathaq */,
+				98DDA1461FB797E500B8F42F /* Products */,
+				14E193804513A5321D258CF1 /* Pods */,
+				3923759A425BAC3D12F811E1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		98DDA1461FB797E500B8F42F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				98DDA1451FB797E500B8F42F /* Wathaq.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		98DDA1471FB797E500B8F42F /* Wathaq */ = {
+			isa = PBXGroup;
+			children = (
+				98DDA1481FB797E500B8F42F /* AppDelegate.swift */,
+				9870BA061FB8D08E008E678B /* Service Handler */,
+				9870BA071FB8D0A8008E678B /* Model */,
+				9870BA081FB8D0C6008E678B /* View */,
+				9870BA091FB8D0D5008E678B /* ViewControllers */,
+				9870BA0F1FB8D15F008E678B /* Assets */,
+				9870BA0E1FB8D14F008E678B /* Resources */,
+				9870BA0D1FB8D139008E678B /* Helper */,
+				9870BA0C1FB8D11C008E678B /* Extensions */,
+				9870BA0B1FB8D0E8008E678B /* Protocols */,
+				9870BA0A1FB8D0E0008E678B /* ViewModel */,
+			);
+			path = Wathaq;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		98DDA1441FB797E500B8F42F /* Wathaq */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 98DDA1591FB797E600B8F42F /* Build configuration list for PBXNativeTarget "Wathaq" */;
+			buildPhases = (
+				9BDBE8E1D39F1B2E97D7E5B4 /* [CP] Check Pods Manifest.lock */,
+				98DDA1411FB797E500B8F42F /* Sources */,
+				98DDA1421FB797E500B8F42F /* Frameworks */,
+				98DDA1431FB797E500B8F42F /* Resources */,
+				F84C04D78E294BBFA104D51B /* [CP] Embed Pods Frameworks */,
+				708053AC64892D843BACC6D4 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Wathaq;
+			productName = Wathaq;
+			productReference = 98DDA1451FB797E500B8F42F /* Wathaq.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		98DDA13D1FB797E500B8F42F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Ahmed Zaky";
+				TargetAttributes = {
+					98DDA1441FB797E500B8F42F = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 98DDA1401FB797E500B8F42F /* Build configuration list for PBXProject "Wathaq" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				ar,
+			);
+			mainGroup = 98DDA13C1FB797E500B8F42F;
+			productRefGroup = 98DDA1461FB797E500B8F42F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				98DDA1441FB797E500B8F42F /* Wathaq */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		98DDA1431FB797E500B8F42F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				989B460D1FB8E48800618519 /* TabBarAssets.xcassets in Resources */,
+				989B46011FB8D9E200618519 /* Localizable.strings in Resources */,
+				989B45FB1FB8D6D300618519 /* Info.plist in Resources */,
+				98DDA1551FB797E500B8F42F /* LaunchScreen.storyboard in Resources */,
+				9870BA121FB8D489008E678B /* Assets.xcassets in Resources */,
+				98DDA1501FB797E500B8F42F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		708053AC64892D843BACC6D4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wathaq/Pods-Wathaq-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9BDBE8E1D39F1B2E97D7E5B4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Wathaq-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F84C04D78E294BBFA104D51B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Wathaq/Pods-Wathaq-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Wathaq/Pods-Wathaq-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		98DDA1411FB797E500B8F42F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98DDA1491FB797E500B8F42F /* AppDelegate.swift in Sources */,
+				9870B9F81FB8CA2B008E678B /* MyOrdersViewController.swift in Sources */,
+				9870B9FE1FB8CA5D008E678B /* ProfileViewController.swift in Sources */,
+				989B460B1FB8DB9B00618519 /* RefreshAppProtocol.swift in Sources */,
+				989B46081FB8DB8800618519 /* Language.swift in Sources */,
+				9870B9FC1FB8CA51008E678B /* NotficationsViewController.swift in Sources */,
+				9870B9FA1FB8CA38008E678B /* WatheqViewController.swift in Sources */,
+				9870BA051FB8CEB3008E678B /* SettingsViewController.swift in Sources */,
+				989B46091FB8DB8C00618519 /* Localizer.swift in Sources */,
+				989B460A1FB8DB9000618519 /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		989B46031FB8D9E200618519 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				989B46021FB8D9E200618519 /* en */,
+				989B46041FB8D9E400618519 /* ar */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		98DDA14E1FB797E500B8F42F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				98DDA14F1FB797E500B8F42F /* Base */,
+				9870B9F51FB8C7CB008E678B /* ar */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		98DDA1531FB797E500B8F42F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				98DDA1541FB797E500B8F42F /* Base */,
+				9870B9F61FB8C7CB008E678B /* ar */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		98DDA1571FB797E600B8F42F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		98DDA1581FB797E600B8F42F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		98DDA15A1FB797E600B8F42F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F63EA2BCA8CDE8EAE92B989D /* Pods-Wathaq.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/Wathaq/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Com.cloudz.Watheq;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		98DDA15B1FB797E600B8F42F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0B5F7766D05DE86D3BE7140 /* Pods-Wathaq.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/Wathaq/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Com.cloudz.Watheq;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		98DDA1401FB797E500B8F42F /* Build configuration list for PBXProject "Wathaq" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98DDA1571FB797E600B8F42F /* Debug */,
+				98DDA1581FB797E600B8F42F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		98DDA1591FB797E600B8F42F /* Build configuration list for PBXNativeTarget "Wathaq" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				98DDA15A1FB797E600B8F42F /* Debug */,
+				98DDA15B1FB797E600B8F42F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 98DDA13D1FB797E500B8F42F /* Project object */;
+}
