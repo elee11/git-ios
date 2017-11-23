@@ -12,8 +12,19 @@ class ProfileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.title = NSLocalizedString("profile", comment: "")
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+            let attributes = [
+                NSAttributedStringKey.foregroundColor : UIColor.red,
+                ]
+            
+            navigationController?.navigationBar.largeTitleTextAttributes = attributes
+        }
+    }
+    
+    override  func viewDidLayoutSubviews() {
+        
     }
 
     override func didReceiveMemoryWarning() {

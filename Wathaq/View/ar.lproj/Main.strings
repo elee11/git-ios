@@ -1,18 +1,42 @@
 
-/* Class = "UILabel"; text = "Loaded by FirstViewController"; ObjectID = "A5M-7J-77L"; */
-"A5M-7J-77L.text" = "Loaded by FirstViewController";
+/* Class = "UILabel"; text = "Wathaeq View"; ObjectID = "2N3-hs-gXa"; */
+"2N3-hs-gXa.text" = "Wathaeq View";
 
-/* Class = "UILabel"; text = "First View"; ObjectID = "KQZ-1w-vlD"; */
-"KQZ-1w-vlD.text" = "First View";
+/* Class = "UITabBarItem"; title = "Notifcations"; ObjectID = "3Uh-0n-t5g"; */
+"3Uh-0n-t5g.title" = "التنبيهات";
 
-/* Class = "UILabel"; text = "Loaded by SecondViewController"; ObjectID = "NDk-cv-Gan"; */
-"NDk-cv-Gan.text" = "Loaded by SecondViewController";
+/* Class = "UILabel"; text = "Loaded by FirstViewController"; ObjectID = "H2y-CM-8S7"; */
+"H2y-CM-8S7.text" = "Loaded by FirstViewController";
 
-/* Class = "UITabBarItem"; title = "First"; ObjectID = "acW-dT-cKf"; */
-"acW-dT-cKf.title" = "First";
+/* Class = "UILabel"; text = "Loaded by SecondViewController"; ObjectID = "RqY-4Q-TJU"; */
+"RqY-4Q-TJU.text" = "Loaded by SecondViewController";
 
-/* Class = "UITabBarItem"; title = "Second"; ObjectID = "cPa-gy-q4n"; */
-"cPa-gy-q4n.title" = "Second";
+/* Class = "UIBarButtonItem"; title = "Settings"; ObjectID = "VV6-C6-kR8"; */
+"VV6-C6-kR8.title" = "Settings";
 
-/* Class = "UILabel"; text = "Second View"; ObjectID = "zEq-FU-wV5"; */
-"zEq-FU-wV5.text" = "Second View";
+/* Class = "UITabBarItem"; title = "Watheq"; ObjectID = "Wpm-HJ-v8v"; */
+"Wpm-HJ-v8v.title" = "وثق";
+
+/* Class = "UILabel"; text = "Profile View"; ObjectID = "bVj-o5-XPL"; */
+"bVj-o5-XPL.text" = "Profile View";
+
+/* Class = "UILabel"; text = "Loaded by SecondViewController"; ObjectID = "hra-h9-Uw2"; */
+"hra-h9-Uw2.text" = "Loaded by SecondViewController";
+
+/* Class = "UILabel"; text = "Notfications View"; ObjectID = "ice-QZ-UVw"; */
+"ice-QZ-UVw.text" = "Notfications View";
+
+/* Class = "UITabBarItem"; title = "My Orders"; ObjectID = "jy8-gR-pEg"; */
+"jy8-gR-pEg.title" = "طلباتي";
+
+/* Class = "UILabel"; text = "Loaded by SecondViewController"; ObjectID = "mAJ-2e-vHt"; */
+"mAJ-2e-vHt.text" = "Loaded by SecondViewController";
+
+/* Class = "UITabBarItem"; title = "Profile"; ObjectID = "mv5-61-T1Y"; */
+"mv5-61-T1Y.title" = "ملفي الشخصي";
+
+/* Class = "UILabel"; text = "My Orders View"; ObjectID = "qke-u9-yuq"; */
+"qke-u9-yuq.text" = "My Orders View";
+
+/* Class = "UIButton"; normalTitle = "Change langauage"; ObjectID = "wVM-LZ-jYP"; */
+"wVM-LZ-jYP.normalTitle" = "Change langauage";

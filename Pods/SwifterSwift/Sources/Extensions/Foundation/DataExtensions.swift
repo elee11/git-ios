@@ -3,14 +3,10 @@
 //  SwifterSwift
 //
 //  Created by Omar Albeik on 07/12/2016.
-//  Copyright © 2016 Omar Albeik. All rights reserved.
+//  Copyright © 2016 SwifterSwift
 //
 
-#if os(macOS)
-	import Cocoa
-#else
-	import UIKit
-#endif
+import Foundation
 
 // MARK: - Properties
 public extension Data {
@@ -32,5 +28,4 @@ public extension Data {
 	public func string(encoding: String.Encoding) -> String? {
 		return String(data: self, encoding: encoding)
 	}
-	
 }

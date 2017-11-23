@@ -3,11 +3,10 @@
 //  SwifterSwift
 //
 //  Created by Omar Albeik on 8/15/17.
-//
+//  Copyright © 2017 SwifterSwift
 //
 
-import Foundation
-
+// MARK: - Properties
 public extension SignedNumeric {
 	
 	/// SwifterSwift: String.

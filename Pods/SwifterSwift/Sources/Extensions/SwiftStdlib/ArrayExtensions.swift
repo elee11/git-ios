@@ -3,22 +3,22 @@
 //  SwifterSwift
 //
 //  Created by Omar Albeik on 8/5/16.
-//  Copyright © 2016 Omar Albeik. All rights reserved.
+//  Copyright © 2016 SwifterSwift
 //
-
-import Foundation
 
 // MARK: - Methods (Integer)
 public extension Array where Element: Numeric {
 	
 	/// SwifterSwift: Sum of all elements in array.
 	///
-	///		[1, 2, 3, 4, 5].sum -> 15
+	///		[1, 2, 3, 4, 5].sum() -> 15
 	///
 	/// - Returns: sum of the array's elements.
 	public func sum() -> Element {
         var total: Element = 0
-        forEach { total += $0 }
+        for i in 0..<count {
+            total += self[i]
+        }
         return total
 	}
 	
@@ -29,13 +29,15 @@ public extension Array where Element: FloatingPoint {
 	
 	/// SwifterSwift: Average of all elements in array.
 	///
-	///		[1.2, 2.3, 4.5, 3.4, 4.5].average = 3.18
+	///		[1.2, 2.3, 4.5, 3.4, 4.5].average() = 3.18
 	///
 	/// - Returns: average of the array's elements.
 	public func average() -> Element {
         guard !isEmpty else { return 0 }
         var total: Element = 0
-        forEach { total += $0 }
+        for i in 0..<count {
+            total += self[i]
+        }
         return total / Element(count)
 	}
 
@@ -494,25 +496,34 @@ public extension Array where Element: Equatable {
 	///
 	public mutating func removeDuplicates() {
 		// Thanks to https://github.com/sairamkotha for improving the method
-		self = reduce([]) { $0.contains($1) ? $0 : $0 + [$1] }
+        self = reduce(into: [Element]()) {
+            if !$0.contains($1) {
+                $0.append($1)
+            }
+        }
 	}
 	
 	/// SwifterSwift: Return array with all duplicate elements removed.
 	///
-	///		[1, 2, 2, 3, 4, 5, 5].duplicatesRemoved() -> [ 2, 5]
-	///		["h", "e", "l", "l", "o"]. duplicatesRemoved() -> ["l"]
-	///
+    ///     [1, 1, 2, 2, 3, 3, 3, 4, 5].duplicatesRemoved() -> [1, 2, 3, 4, 5])
+    ///     ["h", "e", "l", "l", "o"].duplicatesRemoved() -> ["h", "e", "l", "o"])
+    ///
 	/// - Returns: an array of unique elements.
+    ///
 	public func duplicatesRemoved() -> [Element] {
 		// Thanks to https://github.com/sairamkotha for improving the property
-		return reduce([]) { ($0 as [Element]).contains($1) ? $0 : $0 + [$1] }
+        return reduce(into: [Element]()) {
+            if !$0.contains($1) {
+                $0.append($1)
+            }
+        }
 	}
 	
 	/// SwifterSwift: First index of a given item in an array.
 	///
-	///		[1, 2, 2, 3, 4, 2, 5].firstIndex(of 2) -> 1
-	///		[1.2, 2.3, 4.5, 3.4, 4.5].firstIndex(of 6.5) -> nil
-	///		["h", "e", "l", "l", "o"].firstIndex(of "l") -> 2
+	///		[1, 2, 2, 3, 4, 2, 5].firstIndex(of: 2) -> 1
+	///		[1.2, 2.3, 4.5, 3.4, 4.5].firstIndex(of: 6.5) -> nil
+	///		["h", "e", "l", "l", "o"].firstIndex(of: "l") -> 2
 	///
 	/// - Parameter item: item to check.
 	/// - Returns: first index of item in array (if exists).
@@ -525,9 +536,9 @@ public extension Array where Element: Equatable {
 	
 	/// SwifterSwift: Last index of element in array.
 	///
-	///		[1, 2, 2, 3, 4, 2, 5].lastIndex(of 2) -> 5
-	///		[1.2, 2.3, 4.5, 3.4, 4.5].lastIndex(of 6.5) -> nil
-	///		["h", "e", "l", "l", "o"].lastIndex(of "l") -> 3
+	///		[1, 2, 2, 3, 4, 2, 5].lastIndex(of: 2) -> 5
+	///		[1.2, 2.3, 4.5, 3.4, 4.5].lastIndex(of: 6.5) -> nil
+	///		["h", "e", "l", "l", "o"].lastIndex(of: "l") -> 3
 	///
 	/// - Parameter item: item to check.
 	/// - Returns: last index of item in array (if exists).

@@ -3,10 +3,8 @@
 //  SwifterSwift
 //
 //  Created by Omar Albeik on 7/23/17.
+//  Copyright © 2017 SwifterSwift
 //
-//
-
-import Foundation
 
 // MARK: - Properties
 public extension FloatingPoint {

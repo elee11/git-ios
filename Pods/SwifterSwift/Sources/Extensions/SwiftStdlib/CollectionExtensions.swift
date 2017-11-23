@@ -3,10 +3,8 @@
 //  SwifterSwift
 //
 //  Created by Sergey Fedortsov on 19.12.16.
-//  Copyright © 2016 Omar Albeik. All rights reserved.
+//  Copyright © 2016 SwifterSwift
 //
-
-import Foundation
 
 // MARK: - Methods
 public extension Collection {

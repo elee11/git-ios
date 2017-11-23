@@ -49,5 +49,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>DinNextMedium.ttf</string>
+		<string>DinNextRegular.ttf</string>
+	</array>
 </dict>
 </plist>

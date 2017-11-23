@@ -8,13 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		2132D6F17AD8E0C73A1C3143 /* Pods_Wathaq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB92683FFED97ABD1A09A345 /* Pods_Wathaq.framework */; };
+		982416C81FC4D15900080DE9 /* EmptyDataAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 982416C71FC4D15900080DE9 /* EmptyDataAssets.xcassets */; };
+		982416CD1FC4D93100080DE9 /* AbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982416CC1FC4D93100080DE9 /* AbstractViewController.swift */; };
+		985587E91FC6D882001AD5E5 /* plistReaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985587E81FC6D882001AD5E5 /* plistReaderProtocol.swift */; };
+		985587ED1FC6D8EA001AD5E5 /* ToastAlertProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985587EC1FC6D8EA001AD5E5 /* ToastAlertProtocol.swift */; };
+		985587EF1FC6D964001AD5E5 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985587EE1FC6D964001AD5E5 /* UIColorExtension.swift */; };
+		985587F11FC6DD19001AD5E5 /* LblWithTitleGenralCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985587F01FC6DD19001AD5E5 /* LblWithTitleGenralCellProtocol.swift */; };
+		985587F81FC6F24B001AD5E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 985587F41FC6F24B001AD5E5 /* GoogleService-Info.plist */; };
+		985587FA1FC6F24B001AD5E5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 985587F61FC6F24B001AD5E5 /* Info.plist */; };
+		986516571FBA4E2B00551208 /* SettingsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986516561FBA4E2B00551208 /* SettingsTableCell.swift */; };
 		9870B9F81FB8CA2B008E678B /* MyOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870B9F71FB8CA2B008E678B /* MyOrdersViewController.swift */; };
 		9870B9FA1FB8CA38008E678B /* WatheqViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870B9F91FB8CA38008E678B /* WatheqViewController.swift */; };
 		9870B9FC1FB8CA51008E678B /* NotficationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870B9FB1FB8CA51008E678B /* NotficationsViewController.swift */; };
 		9870B9FE1FB8CA5D008E678B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870B9FD1FB8CA5D008E678B /* ProfileViewController.swift */; };
 		9870BA051FB8CEB3008E678B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870BA041FB8CEB3008E678B /* SettingsViewController.swift */; };
 		9870BA121FB8D489008E678B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9870BA111FB8D489008E678B /* Assets.xcassets */; };
-		989B45FB1FB8D6D300618519 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 989B45FA1FB8D6D300618519 /* Info.plist */; };
+		988942D61FC72074001B4F75 /* SettingsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 988942D81FC72074001B4F75 /* SettingsList.plist */; };
+		988942DC1FC7230D001B4F75 /* DinNextMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 988942DA1FC7230B001B4F75 /* DinNextMedium.ttf */; };
+		988942DD1FC7230D001B4F75 /* DinNextRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 988942DB1FC7230C001B4F75 /* DinNextRegular.ttf */; };
 		989B46011FB8D9E200618519 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 989B46031FB8D9E200618519 /* Localizable.strings */; };
 		989B46081FB8DB8800618519 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989B45FD1FB8D9B400618519 /* Language.swift */; };
 		989B46091FB8DB8C00618519 /* Localizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989B45FE1FB8D9B400618519 /* Localizer.swift */; };
@@ -27,7 +38,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		9870B9F51FB8C7CB008E678B /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		982416C71FC4D15900080DE9 /* EmptyDataAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = EmptyDataAssets.xcassets; sourceTree = "<group>"; };
+		982416CC1FC4D93100080DE9 /* AbstractViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractViewController.swift; sourceTree = "<group>"; };
+		985587E81FC6D882001AD5E5 /* plistReaderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = plistReaderProtocol.swift; sourceTree = "<group>"; };
+		985587EC1FC6D8EA001AD5E5 /* ToastAlertProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastAlertProtocol.swift; sourceTree = "<group>"; };
+		985587EE1FC6D964001AD5E5 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		985587F01FC6DD19001AD5E5 /* LblWithTitleGenralCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LblWithTitleGenralCellProtocol.swift; sourceTree = "<group>"; };
+		985587F41FC6F24B001AD5E5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		985587F61FC6F24B001AD5E5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		986516551FBA471800551208 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		986516561FBA4E2B00551208 /* SettingsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableCell.swift; sourceTree = "<group>"; };
 		9870B9F61FB8C7CB008E678B /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		9870B9F71FB8CA2B008E678B /* MyOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersViewController.swift; sourceTree = "<group>"; };
 		9870B9F91FB8CA38008E678B /* WatheqViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatheqViewController.swift; sourceTree = "<group>"; };
@@ -35,7 +55,9 @@
 		9870B9FD1FB8CA5D008E678B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9870BA041FB8CEB3008E678B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9870BA111FB8D489008E678B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		989B45FA1FB8D6D300618519 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		988942D71FC72074001B4F75 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/SettingsList.plist; sourceTree = "<group>"; };
+		988942DA1FC7230B001B4F75 /* DinNextMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DinNextMedium.ttf; sourceTree = "<group>"; };
+		988942DB1FC7230C001B4F75 /* DinNextRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DinNextRegular.ttf; sourceTree = "<group>"; };
 		989B45FD1FB8D9B400618519 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		989B45FE1FB8D9B400618519 /* Localizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizer.swift; sourceTree = "<group>"; };
 		989B46021FB8D9E200618519 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -81,6 +103,39 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		982416C91FC4D7FD00080DE9 /* BaseClass */ = {
+			isa = PBXGroup;
+			children = (
+				982416CC1FC4D93100080DE9 /* AbstractViewController.swift */,
+			);
+			path = BaseClass;
+			sourceTree = "<group>";
+		};
+		985587DE1FC6C2C4001AD5E5 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		985587E71FC6D816001AD5E5 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		985587F21FC6F21B001AD5E5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				985587F41FC6F24B001AD5E5 /* GoogleService-Info.plist */,
+				985587F61FC6F24B001AD5E5 /* Info.plist */,
+				988942D81FC72074001B4F75 /* SettingsList.plist */,
+				988942DE1FC72312001B4F75 /* Fonts */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
 		9870B9FF1FB8CDE5008E678B /* MyOrders */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				9870BA041FB8CEB3008E678B /* SettingsViewController.swift */,
+				986516561FBA4E2B00551208 /* SettingsTableCell.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -139,8 +195,8 @@
 		9870BA081FB8D0C6008E678B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				98DDA1531FB797E500B8F42F /* LaunchScreen.storyboard */,
 				98DDA14E1FB797E500B8F42F /* Main.storyboard */,
+				98DDA1531FB797E500B8F42F /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -148,6 +204,7 @@
 		9870BA091FB8D0D5008E678B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				985587DE1FC6C2C4001AD5E5 /* New Group */,
 				9870B9FF1FB8CDE5008E678B /* MyOrders */,
 				9870BA001FB8CDF6008E678B /* Watheq */,
 				9870BA011FB8CE07008E678B /* Notification */,
@@ -159,6 +216,7 @@
 		9870BA0A1FB8D0E0008E678B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				985587E71FC6D816001AD5E5 /* Settings */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -166,7 +224,10 @@
 		9870BA0B1FB8D0E8008E678B /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				985587F01FC6DD19001AD5E5 /* LblWithTitleGenralCellProtocol.swift */,
+				985587E81FC6D882001AD5E5 /* plistReaderProtocol.swift */,
 				989B46071FB8DA8D00618519 /* RefreshAppProtocol.swift */,
+				985587EC1FC6D8EA001AD5E5 /* ToastAlertProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -174,6 +235,7 @@
 		9870BA0C1FB8D11C008E678B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				985587EE1FC6D964001AD5E5 /* UIColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -181,18 +243,11 @@
 		9870BA0D1FB8D139008E678B /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				982416C91FC4D7FD00080DE9 /* BaseClass */,
 				989B46051FB8DA1400618519 /* Constants */,
 				989B45FC1FB8D9A300618519 /* MOLocalization */,
 			);
 			path = Helper;
-			sourceTree = "<group>";
-		};
-		9870BA0E1FB8D14F008E678B /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				989B45FA1FB8D6D300618519 /* Info.plist */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		9870BA0F1FB8D15F008E678B /* Assets */ = {
@@ -200,8 +255,18 @@
 			children = (
 				9870BA111FB8D489008E678B /* Assets.xcassets */,
 				989B460C1FB8E48800618519 /* TabBarAssets.xcassets */,
+				982416C71FC4D15900080DE9 /* EmptyDataAssets.xcassets */,
 			);
 			path = Assets;
+			sourceTree = "<group>";
+		};
+		988942DE1FC72312001B4F75 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				988942DA1FC7230B001B4F75 /* DinNextMedium.ttf */,
+				988942DB1FC7230C001B4F75 /* DinNextRegular.ttf */,
+			);
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		989B45FC1FB8D9A300618519 /* MOLocalization */ = {
@@ -245,15 +310,15 @@
 			children = (
 				98DDA1481FB797E500B8F42F /* AppDelegate.swift */,
 				9870BA061FB8D08E008E678B /* Service Handler */,
+				9870BA0A1FB8D0E0008E678B /* ViewModel */,
 				9870BA071FB8D0A8008E678B /* Model */,
 				9870BA081FB8D0C6008E678B /* View */,
 				9870BA091FB8D0D5008E678B /* ViewControllers */,
 				9870BA0F1FB8D15F008E678B /* Assets */,
-				9870BA0E1FB8D14F008E678B /* Resources */,
+				985587F21FC6F21B001AD5E5 /* Resources */,
 				9870BA0D1FB8D139008E678B /* Helper */,
 				9870BA0C1FB8D11C008E678B /* Extensions */,
 				9870BA0B1FB8D0E8008E678B /* Protocols */,
-				9870BA0A1FB8D0E0008E678B /* ViewModel */,
 			);
 			path = Wathaq;
 			sourceTree = "<group>";
@@ -321,11 +386,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				988942DC1FC7230D001B4F75 /* DinNextMedium.ttf in Resources */,
 				989B460D1FB8E48800618519 /* TabBarAssets.xcassets in Resources */,
+				985587F81FC6F24B001AD5E5 /* GoogleService-Info.plist in Resources */,
 				989B46011FB8D9E200618519 /* Localizable.strings in Resources */,
-				989B45FB1FB8D6D300618519 /* Info.plist in Resources */,
 				98DDA1551FB797E500B8F42F /* LaunchScreen.storyboard in Resources */,
+				988942DD1FC7230D001B4F75 /* DinNextRegular.ttf in Resources */,
 				9870BA121FB8D489008E678B /* Assets.xcassets in Resources */,
+				982416C81FC4D15900080DE9 /* EmptyDataAssets.xcassets in Resources */,
+				985587FA1FC6F24B001AD5E5 /* Info.plist in Resources */,
+				988942D61FC72074001B4F75 /* SettingsList.plist in Resources */,
 				98DDA1501FB797E500B8F42F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,17 +445,31 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Wathaq/Pods-Wathaq-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -405,16 +489,30 @@
 				989B460B1FB8DB9B00618519 /* RefreshAppProtocol.swift in Sources */,
 				989B46081FB8DB8800618519 /* Language.swift in Sources */,
 				9870B9FC1FB8CA51008E678B /* NotficationsViewController.swift in Sources */,
+				986516571FBA4E2B00551208 /* SettingsTableCell.swift in Sources */,
+				985587E91FC6D882001AD5E5 /* plistReaderProtocol.swift in Sources */,
 				9870B9FA1FB8CA38008E678B /* WatheqViewController.swift in Sources */,
 				9870BA051FB8CEB3008E678B /* SettingsViewController.swift in Sources */,
 				989B46091FB8DB8C00618519 /* Localizer.swift in Sources */,
+				985587EF1FC6D964001AD5E5 /* UIColorExtension.swift in Sources */,
+				985587ED1FC6D8EA001AD5E5 /* ToastAlertProtocol.swift in Sources */,
+				982416CD1FC4D93100080DE9 /* AbstractViewController.swift in Sources */,
 				989B460A1FB8DB9000618519 /* Constants.swift in Sources */,
+				985587F11FC6DD19001AD5E5 /* LblWithTitleGenralCellProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		988942D81FC72074001B4F75 /* SettingsList.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				988942D71FC72074001B4F75 /* en */,
+			);
+			name = SettingsList.plist;
+			sourceTree = "<group>";
+		};
 		989B46031FB8D9E200618519 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -428,7 +526,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				98DDA14F1FB797E500B8F42F /* Base */,
-				9870B9F51FB8C7CB008E678B /* ar */,
+				986516551FBA471800551208 /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -560,10 +658,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "$(SRCROOT)/Wathaq/Resources/Info.plist";
+				DEVELOPMENT_TEAM = 337P66ND9P;
+				INFOPLIST_FILE = "$(SRCROOT)/Wathaq/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Com.cloudz.Watheq;
+				PRODUCT_BUNDLE_IDENTIFIER = com.themar.watheq;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -576,10 +675,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = "$(SRCROOT)/Wathaq/Resources/Info.plist";
+				DEVELOPMENT_TEAM = 337P66ND9P;
+				INFOPLIST_FILE = "$(SRCROOT)/Wathaq/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Com.cloudz.Watheq;
+				PRODUCT_BUNDLE_IDENTIFIER = com.themar.watheq;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;

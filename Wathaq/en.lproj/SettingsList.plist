@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>تغيير اللغة</string>
+			<key>Name_EN</key>
+			<string>Change Language</string>
+			<key>isForLoginedUser</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>الائتمان</string>
+			<key>Name_EN</key>
+			<string>Credit Card</string>
+			<key>isForLoginedUser</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>عملياتك</string>
+			<key>Name_EN</key>
+			<string>Your Orders</string>
+			<key>isForLoginedUser</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>بلغ عن مشكلة</string>
+			<key>Name_EN</key>
+			<string>Report Problem</string>
+			<key>isForLoginedUser</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>تسجيل دخول</string>
+			<key>Name_EN</key>
+			<string>Login</string>
+			<key>isForLoginedUser</key>
+			<false/>
+		</dict>
+	</array>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>الشروط والأحكام</string>
+			<key>Name_EN</key>
+			<string>Terms and Conditions</string>
+			<key>isForLoginedUser</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>المساعدة</string>
+			<key>Name_EN</key>
+			<string>Help</string>
+			<key>isForLoginedUser</key>
+			<false/>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>سياسة الخصوصية</string>
+			<key>Name_EN</key>
+			<string>Privacy Policy</string>
+			<key>isForLoginedUser</key>
+			<false/>
+		</dict>
+	</array>
+</array>
+</plist>

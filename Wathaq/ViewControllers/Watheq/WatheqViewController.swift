@@ -8,14 +8,22 @@
 
 import UIKit
 
-class WatheqViewController: UIViewController {
+class WatheqViewController: AbstractViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = NSLocalizedString("watheq", comment: "")
+
+       // AbstractViewController.showMessage(title: "No Internet Connection", body: "", isWindowNeeded: false, BackgroundColor: UIColor.black, foregroundColor: UIColor.white)
 
         // Do any additional setup after loading the view.
     }
-
+    override  func viewDidLayoutSubviews() {
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+            self.navigationController?.navigationItem.largeTitleDisplayMode = .never
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

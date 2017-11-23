@@ -3,15 +3,10 @@
 //  SwifterSwift
 //
 //  Created by Omar Albeik on 8/6/16.
-//  Copyright © 2016 Omar Albeik. All rights reserved.
+//  Copyright © 2016 SwifterSwift
 //
 
-import Foundation
-#if os(macOS)
-	import Cocoa
-#else
-	import UIKit
-#endif
+import CoreGraphics
 
 // MARK: - Properties
 public extension Int {
@@ -56,7 +51,7 @@ public extension Int {
 		var sign: String {
 			return self >= 0 ? "" : "-"
 		}
-		let abs = self.abs
+		let abs = Swift.abs(self)
 		if abs == 0 {
 			return "0k"
 		} else if abs >= 0 && abs < 1000 {

@@ -1,36 +1,96 @@
 PODS:
   - Alamofire (4.5.1)
   - DZNEmptyDataSet (1.8.1)
-  - Kingfisher (4.2.0)
+  - Firebase/Auth (4.6.0):
+    - Firebase/Core
+    - FirebaseAuth (= 4.3.2)
+  - Firebase/Core (4.6.0):
+    - FirebaseAnalytics (= 4.0.5)
+    - FirebaseCore (= 4.0.11)
+  - FirebaseAnalytics (4.0.5):
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+    - nanopb (~> 0.3)
+  - FirebaseAuth (4.3.2):
+    - FirebaseAnalytics (~> 4.0)
+    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - FirebaseCore (4.0.11):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseInstanceID (2.0.6)
+  - GoogleToolboxForMac/DebugUtils (2.1.3):
+    - GoogleToolboxForMac/Defines (= 2.1.3)
+  - GoogleToolboxForMac/Defines (2.1.3)
+  - GoogleToolboxForMac/NSData+zlib (2.1.3):
+    - GoogleToolboxForMac/Defines (= 2.1.3)
+  - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.3):
+    - GoogleToolboxForMac/DebugUtils (= 2.1.3)
+    - GoogleToolboxForMac/Defines (= 2.1.3)
+    - GoogleToolboxForMac/NSString+URLArguments (= 2.1.3)
+  - GoogleToolboxForMac/NSString+URLArguments (2.1.3)
+  - GTMSessionFetcher/Core (1.1.12)
+  - Kingfisher (4.3.1)
+  - nanopb (0.3.8):
+    - nanopb/decode (= 0.3.8)
+    - nanopb/encode (= 0.3.8)
+  - nanopb/decode (0.3.8)
+  - nanopb/encode (0.3.8)
+  - NVActivityIndicatorView (4.0.0):
+    - NVActivityIndicatorView/Presenter (= 4.0.0)
+  - NVActivityIndicatorView/Presenter (4.0.0)
   - ObjectMapper (3.1.0)
-  - SwifterSwift (4.0.1):
-    - SwifterSwift/AppKit (= 4.0.1)
-    - SwifterSwift/CoreGraphics (= 4.0.1)
-    - SwifterSwift/CoreLocation (= 4.0.1)
-    - SwifterSwift/Foundation (= 4.0.1)
-    - SwifterSwift/SwiftStdlib (= 4.0.1)
-    - SwifterSwift/UIKit (= 4.0.1)
-  - SwifterSwift/AppKit (4.0.1)
-  - SwifterSwift/CoreGraphics (4.0.1)
-  - SwifterSwift/CoreLocation (4.0.1)
-  - SwifterSwift/Foundation (4.0.1)
-  - SwifterSwift/SwiftStdlib (4.0.1)
-  - SwifterSwift/UIKit (4.0.1)
+  - Realm (3.0.2):
+    - Realm/Headers (= 3.0.2)
+  - Realm/Headers (3.0.2)
+  - RealmSwift (3.0.2):
+    - Realm (= 3.0.2)
+  - SwifterSwift (4.1.0):
+    - SwifterSwift/AppKit (= 4.1.0)
+    - SwifterSwift/CoreGraphics (= 4.1.0)
+    - SwifterSwift/CoreLocation (= 4.1.0)
+    - SwifterSwift/Foundation (= 4.1.0)
+    - SwifterSwift/SwiftStdlib (= 4.1.0)
+    - SwifterSwift/UIKit (= 4.1.0)
+  - SwifterSwift/AppKit (4.1.0)
+  - SwifterSwift/CoreGraphics (4.1.0)
+  - SwifterSwift/CoreLocation (4.1.0)
+  - SwifterSwift/Foundation (4.1.0)
+  - SwifterSwift/SwiftStdlib (4.1.0)
+  - SwifterSwift/UIKit (4.1.0)
+  - SwiftMessages (4.1.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.3)
   - DZNEmptyDataSet
+  - Firebase/Auth
+  - Firebase/Core
   - Kingfisher
+  - NVActivityIndicatorView
   - ObjectMapper
+  - RealmSwift
   - SwifterSwift
+  - SwiftMessages
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
-  Kingfisher: 9ee7e788d8ba07c3f21ce0d43f33cec310a4f781
+  Firebase: 27321a925aa85520618255a7c630859e0502ccbd
+  FirebaseAnalytics: 5b02a63ead2c3f0259cfc7f15e053e440587ecf8
+  FirebaseAuth: e58563adb207a43910a2ed87fecb9fa7d556df5a
+  FirebaseCore: 2a946ece8fbe3ce1fdeeb55324f273caade22df9
+  FirebaseInstanceID: 24958382a1011bba5aaff37e334e7a650b9118f5
+  GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
+  GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
+  Kingfisher: 75541c4b62f02e1fde6f9772303de3d9ebe8f5b3
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  NVActivityIndicatorView: 54c9b93b6f25a4f467512680c0c90c09a1095cf2
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
-  SwifterSwift: 5f406a5f831343312d6d5b34282b57ef3f52c40b
+  Realm: 6f23fd1f178a09342eac21bfa7c2bf4312a7a180
+  RealmSwift: 695393add1b8f9d5fa75dd16e6355cf3935f71e2
+  SwifterSwift: 4d962b5d653760b85266832aff6ab6d08c1b7974
+  SwiftMessages: 1bacc783c8f10bdfdc57c14860cae8a1f1fa6591
 
-PODFILE CHECKSUM: 8804e91cd4db7c74d778fc27b8f4407a9cfd8f7f
+PODFILE CHECKSUM: cb3f9f6d575ee8ec9219ed0500abcd35d9751717
 
 COCOAPODS: 1.3.1
