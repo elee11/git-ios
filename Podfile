@@ -13,8 +13,10 @@ target 'Wathaq' do
   pod 'Kingfisher'    # for downloading and caching images from the web
   pod 'SwiftMessages'
   pod 'NVActivityIndicatorView' #Set of loadings
-  pod 'Firebase/Core'
+  pod 'Firebase'
   pod 'Firebase/Auth'
+  pod 'Firebase/Core'
+  pod 'SwiftyJSON'
 
 
 end

@@ -42,17 +42,11 @@ class SettingsViewController: UIViewController,RefreshAppProtocol {
     
     
         func changeLanguage() {
-        var languagesArr = [[String: String]]()
-        let keysArr = [Constants.Language.ARABIC, Constants.Language.ENGLISH]
-        let valuesArr = ["العربية" , "English"]
-        languagesArr.append([keysArr[0] : valuesArr[0]])
-        languagesArr.append([keysArr[1] : valuesArr[1]])
-        let selectedLanguageIndex = keysArr.index(of: Language.getCurrentLanguage())
         var selectedLanguage : String!
         let actionSheetController: UIAlertController = UIAlertController(title: "", message: NSLocalizedString("Change Language",comment:""), preferredStyle: .actionSheet)
         let cancelButton = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel) { _ in
         }
-            actionSheetController.addAction(cancelButton)
+        actionSheetController.addAction(cancelButton)
 
         let ArabicButton = UIAlertAction(title: "العربية", style: .default) { _ in
             selectedLanguage = "ar"
@@ -63,6 +57,7 @@ class SettingsViewController: UIViewController,RefreshAppProtocol {
             }
         }
         actionSheetController.addAction(ArabicButton)
+            
         let EnglishButton = UIAlertAction(title: "English", style: .default) { _ in
             selectedLanguage = "en"
             let langStr = Language.getCurrentLanguage()
@@ -72,6 +67,7 @@ class SettingsViewController: UIViewController,RefreshAppProtocol {
             }
         }
         actionSheetController.addAction(EnglishButton)
+            
         self.present(actionSheetController, animated: true, completion: nil)
     }
     
@@ -191,6 +187,9 @@ extension SettingsViewController: UITableViewDelegate {
         case 0 :
             changeLanguage()
             break
+        case 4:
+            self.performSegue(withIdentifier: "S_Settings_Login", sender: nil)
+            break
         default:
             break
         }
@@ -198,8 +197,6 @@ extension SettingsViewController: UITableViewDelegate {
      }
         
     }
-    
-    
 }
 
 extension UIView {

@@ -25,6 +25,18 @@
 		988942D61FC72074001B4F75 /* SettingsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 988942D81FC72074001B4F75 /* SettingsList.plist */; };
 		988942DC1FC7230D001B4F75 /* DinNextMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 988942DA1FC7230B001B4F75 /* DinNextMedium.ttf */; };
 		988942DD1FC7230D001B4F75 /* DinNextRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 988942DB1FC7230C001B4F75 /* DinNextRegular.ttf */; };
+		988942E01FCA0F73001B4F75 /* country-codes.json in Resources */ = {isa = PBXBuildFile; fileRef = 988942DF1FCA0F73001B4F75 /* country-codes.json */; };
+		988942E51FCA10E5001B4F75 /* JSONReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988942E41FCA10E5001B4F75 /* JSONReader.swift */; };
+		988942E91FCA123E001B4F75 /* View+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988942E81FCA123E001B4F75 /* View+Additions.swift */; };
+		988942ED1FCA12C2001B4F75 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988942EB1FCA12C2001B4F75 /* Country.swift */; };
+		988942EE1FCA12C2001B4F75 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988942EC1FCA12C2001B4F75 /* Countries.swift */; };
+		988942F31FCA12FB001B4F75 /* CountryCodeListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 988942EF1FCA12FA001B4F75 /* CountryCodeListCell.xib */; };
+		988942F41FCA12FB001B4F75 /* CountryCodeListController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 988942F01FCA12FA001B4F75 /* CountryCodeListController.xib */; };
+		988942FB1FCA1321001B4F75 /* CountryCodeListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988942F71FCA1320001B4F75 /* CountryCodeListController.swift */; };
+		988942FC1FCA1321001B4F75 /* CountryCodeListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988942F81FCA1320001B4F75 /* CountryCodeListCell.swift */; };
+		988942FD1FCA1321001B4F75 /* PhoneVerificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988942F91FCA1321001B4F75 /* PhoneVerificationController.swift */; };
+		988942FE1FCA1321001B4F75 /* PhoneEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988942FA1FCA1321001B4F75 /* PhoneEntryController.swift */; };
+		988943001FCA19C8001B4F75 /* singleToneClassValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988942FF1FCA19C8001B4F75 /* singleToneClassValues.swift */; };
 		989B46011FB8D9E200618519 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 989B46031FB8D9E200618519 /* Localizable.strings */; };
 		989B46081FB8DB8800618519 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989B45FD1FB8D9B400618519 /* Language.swift */; };
 		989B46091FB8DB8C00618519 /* Localizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989B45FE1FB8D9B400618519 /* Localizer.swift */; };
@@ -57,6 +69,19 @@
 		988942D71FC72074001B4F75 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/SettingsList.plist; sourceTree = "<group>"; };
 		988942DA1FC7230B001B4F75 /* DinNextMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DinNextMedium.ttf; sourceTree = "<group>"; };
 		988942DB1FC7230C001B4F75 /* DinNextRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DinNextRegular.ttf; sourceTree = "<group>"; };
+		988942DF1FCA0F73001B4F75 /* country-codes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "country-codes.json"; sourceTree = "<group>"; };
+		988942E11FCA0F8C001B4F75 /* Wathaq.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Wathaq.entitlements; sourceTree = "<group>"; };
+		988942E41FCA10E5001B4F75 /* JSONReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONReader.swift; sourceTree = "<group>"; };
+		988942E81FCA123E001B4F75 /* View+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Additions.swift"; sourceTree = "<group>"; };
+		988942EB1FCA12C2001B4F75 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		988942EC1FCA12C2001B4F75 /* Countries.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
+		988942EF1FCA12FA001B4F75 /* CountryCodeListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountryCodeListCell.xib; sourceTree = "<group>"; };
+		988942F01FCA12FA001B4F75 /* CountryCodeListController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountryCodeListController.xib; sourceTree = "<group>"; };
+		988942F71FCA1320001B4F75 /* CountryCodeListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCodeListController.swift; sourceTree = "<group>"; };
+		988942F81FCA1320001B4F75 /* CountryCodeListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCodeListCell.swift; sourceTree = "<group>"; };
+		988942F91FCA1321001B4F75 /* PhoneVerificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneVerificationController.swift; sourceTree = "<group>"; };
+		988942FA1FCA1321001B4F75 /* PhoneEntryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneEntryController.swift; sourceTree = "<group>"; };
+		988942FF1FCA19C8001B4F75 /* singleToneClassValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = singleToneClassValues.swift; sourceTree = "<group>"; };
 		989B45FD1FB8D9B400618519 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		989B45FE1FB8D9B400618519 /* Localizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizer.swift; sourceTree = "<group>"; };
 		989B46021FB8D9E200618519 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -105,30 +130,29 @@
 		982416C91FC4D7FD00080DE9 /* BaseClass */ = {
 			isa = PBXGroup;
 			children = (
+				988942FF1FCA19C8001B4F75 /* singleToneClassValues.swift */,
 				982416CC1FC4D93100080DE9 /* AbstractViewController.swift */,
 			);
 			path = BaseClass;
 			sourceTree = "<group>";
 		};
-		985587DE1FC6C2C4001AD5E5 /* New Group */ = {
+		985587DE1FC6C2C4001AD5E5 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				988942FA1FCA1321001B4F75 /* PhoneEntryController.swift */,
+				988942F91FCA1321001B4F75 /* PhoneVerificationController.swift */,
+				988942F81FCA1320001B4F75 /* CountryCodeListCell.swift */,
+				988942F71FCA1320001B4F75 /* CountryCodeListController.swift */,
 			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
-		985587E71FC6D816001AD5E5 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Settings;
+			path = Login;
 			sourceTree = "<group>";
 		};
 		985587F21FC6F21B001AD5E5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				985587F41FC6F24B001AD5E5 /* GoogleService-Info.plist */,
 				985587F61FC6F24B001AD5E5 /* Info.plist */,
+				988942DF1FCA0F73001B4F75 /* country-codes.json */,
+				985587F41FC6F24B001AD5E5 /* GoogleService-Info.plist */,
 				988942D81FC72074001B4F75 /* SettingsList.plist */,
 				988942DE1FC72312001B4F75 /* Fonts */,
 			);
@@ -187,6 +211,7 @@
 		9870BA071FB8D0A8008E678B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				988942EA1FCA1293001B4F75 /* Country */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -196,6 +221,8 @@
 			children = (
 				98DDA14E1FB797E500B8F42F /* Main.storyboard */,
 				98DDA1531FB797E500B8F42F /* LaunchScreen.storyboard */,
+				988942EF1FCA12FA001B4F75 /* CountryCodeListCell.xib */,
+				988942F01FCA12FA001B4F75 /* CountryCodeListController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -203,7 +230,7 @@
 		9870BA091FB8D0D5008E678B /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				985587DE1FC6C2C4001AD5E5 /* New Group */,
+				985587DE1FC6C2C4001AD5E5 /* Login */,
 				9870B9FF1FB8CDE5008E678B /* MyOrders */,
 				9870BA001FB8CDF6008E678B /* Watheq */,
 				9870BA011FB8CE07008E678B /* Notification */,
@@ -215,7 +242,6 @@
 		9870BA0A1FB8D0E0008E678B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				985587E71FC6D816001AD5E5 /* Settings */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -234,6 +260,7 @@
 		9870BA0C1FB8D11C008E678B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				988942E81FCA123E001B4F75 /* View+Additions.swift */,
 				985587EE1FC6D964001AD5E5 /* UIColorExtension.swift */,
 			);
 			path = Extensions;
@@ -242,6 +269,7 @@
 		9870BA0D1FB8D139008E678B /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				988942E31FCA10DB001B4F75 /* JSONReader */,
 				982416C91FC4D7FD00080DE9 /* BaseClass */,
 				989B46051FB8DA1400618519 /* Constants */,
 				989B45FC1FB8D9A300618519 /* MOLocalization */,
@@ -266,6 +294,23 @@
 				988942DB1FC7230C001B4F75 /* DinNextRegular.ttf */,
 			);
 			name = Fonts;
+			sourceTree = "<group>";
+		};
+		988942E31FCA10DB001B4F75 /* JSONReader */ = {
+			isa = PBXGroup;
+			children = (
+				988942E41FCA10E5001B4F75 /* JSONReader.swift */,
+			);
+			path = JSONReader;
+			sourceTree = "<group>";
+		};
+		988942EA1FCA1293001B4F75 /* Country */ = {
+			isa = PBXGroup;
+			children = (
+				988942EC1FCA12C2001B4F75 /* Countries.swift */,
+				988942EB1FCA12C2001B4F75 /* Country.swift */,
+			);
+			path = Country;
 			sourceTree = "<group>";
 		};
 		989B45FC1FB8D9A300618519 /* MOLocalization */ = {
@@ -307,6 +352,7 @@
 		98DDA1471FB797E500B8F42F /* Wathaq */ = {
 			isa = PBXGroup;
 			children = (
+				988942E11FCA0F8C001B4F75 /* Wathaq.entitlements */,
 				98DDA1481FB797E500B8F42F /* AppDelegate.swift */,
 				9870BA061FB8D08E008E678B /* Service Handler */,
 				9870BA0A1FB8D0E0008E678B /* ViewModel */,
@@ -358,6 +404,14 @@
 					98DDA1441FB797E500B8F42F = {
 						CreatedOnToolsVersion = 9.0;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -392,9 +446,12 @@
 				98DDA1551FB797E500B8F42F /* LaunchScreen.storyboard in Resources */,
 				988942DD1FC7230D001B4F75 /* DinNextRegular.ttf in Resources */,
 				9870BA121FB8D489008E678B /* Assets.xcassets in Resources */,
+				988942F31FCA12FB001B4F75 /* CountryCodeListCell.xib in Resources */,
 				982416C81FC4D15900080DE9 /* EmptyDataAssets.xcassets in Resources */,
 				988942D61FC72074001B4F75 /* SettingsList.plist in Resources */,
+				988942F41FCA12FB001B4F75 /* CountryCodeListController.xib in Resources */,
 				98DDA1501FB797E500B8F42F /* Main.storyboard in Resources */,
+				988942E01FCA0F73001B4F75 /* country-codes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +509,7 @@
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -467,6 +525,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,16 +545,25 @@
 				9870B9FE1FB8CA5D008E678B /* ProfileViewController.swift in Sources */,
 				989B460B1FB8DB9B00618519 /* RefreshAppProtocol.swift in Sources */,
 				989B46081FB8DB8800618519 /* Language.swift in Sources */,
+				988942FD1FCA1321001B4F75 /* PhoneVerificationController.swift in Sources */,
+				988942FB1FCA1321001B4F75 /* CountryCodeListController.swift in Sources */,
 				9870B9FC1FB8CA51008E678B /* NotficationsViewController.swift in Sources */,
+				988942FC1FCA1321001B4F75 /* CountryCodeListCell.swift in Sources */,
 				986516571FBA4E2B00551208 /* SettingsTableCell.swift in Sources */,
+				988942ED1FCA12C2001B4F75 /* Country.swift in Sources */,
 				985587E91FC6D882001AD5E5 /* plistReaderProtocol.swift in Sources */,
 				9870B9FA1FB8CA38008E678B /* WatheqViewController.swift in Sources */,
 				9870BA051FB8CEB3008E678B /* SettingsViewController.swift in Sources */,
 				989B46091FB8DB8C00618519 /* Localizer.swift in Sources */,
 				985587EF1FC6D964001AD5E5 /* UIColorExtension.swift in Sources */,
+				988942E51FCA10E5001B4F75 /* JSONReader.swift in Sources */,
 				985587ED1FC6D8EA001AD5E5 /* ToastAlertProtocol.swift in Sources */,
+				988942E91FCA123E001B4F75 /* View+Additions.swift in Sources */,
+				988943001FCA19C8001B4F75 /* singleToneClassValues.swift in Sources */,
 				982416CD1FC4D93100080DE9 /* AbstractViewController.swift in Sources */,
 				989B460A1FB8DB9000618519 /* Constants.swift in Sources */,
+				988942FE1FCA1321001B4F75 /* PhoneEntryController.swift in Sources */,
+				988942EE1FCA12C2001B4F75 /* Countries.swift in Sources */,
 				985587F11FC6DD19001AD5E5 /* LblWithTitleGenralCellProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -655,6 +723,7 @@
 			baseConfigurationReference = F63EA2BCA8CDE8EAE92B989D /* Pods-Wathaq.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Wathaq/Wathaq.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 337P66ND9P;
 				INFOPLIST_FILE = "$(SRCROOT)/Wathaq/Info.plist";
@@ -672,6 +741,7 @@
 			baseConfigurationReference = D0B5F7766D05DE86D3BE7140 /* Pods-Wathaq.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Wathaq/Wathaq.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 337P66ND9P;
 				INFOPLIST_FILE = "$(SRCROOT)/Wathaq/Info.plist";
