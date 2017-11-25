@@ -217,10 +217,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الائتمان" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wBe-vu-XO0">
-                                                    <rect key="frame" x="20" y="20" width="48" height="21"/>
+                                                    <rect key="frame" x="20" y="17.5" width="51.5" height="26.5"/>
                                                     <accessibility key="accessibilityConfiguration" hint="" identifier="32440960-EA82-4756-B7D8-4CE925257B3F" label=""/>
                                                     <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="17.760000000000002"/>
                                                     <color key="textColor" red="0.68627450980000004" green="0.71372549019999998" blue="0.7843137255" alpha="1" colorSpace="deviceRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blj-SS-KvE">
+                                                    <rect key="frame" x="301.5" y="17.5" width="0.0" height="26.5"/>
+                                                    <accessibility key="accessibilityConfiguration" hint="" identifier="32440960-EA82-4756-B7D8-4CE925257B3F" label=""/>
+                                                    <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="17.760000000000002"/>
+                                                    <color key="textColor" red="0.29019607843137252" green="0.56470588235294117" blue="0.88627450980392153" alpha="1" colorSpace="deviceRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mDe-ly-OJ3">
@@ -239,13 +246,18 @@
                                                 <constraint firstAttribute="bottom" secondItem="mDe-ly-OJ3" secondAttribute="bottom" id="DBc-Xb-J34"/>
                                                 <constraint firstAttribute="trailing" secondItem="mDe-ly-OJ3" secondAttribute="trailing" constant="20" id="OW1-F1-lUP"/>
                                                 <constraint firstItem="mDe-ly-OJ3" firstAttribute="leading" secondItem="21o-iS-D6v" secondAttribute="leading" constant="20" id="TTQ-CE-Y2q"/>
+                                                <constraint firstItem="8Df-oa-sHK" firstAttribute="leading" secondItem="blj-SS-KvE" secondAttribute="trailing" constant="10.5" id="bHd-II-PvH"/>
+                                                <constraint firstItem="blj-SS-KvE" firstAttribute="bottom" secondItem="wBe-vu-XO0" secondAttribute="bottom" id="ded-ZL-Sjx"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wBe-vu-XO0" secondAttribute="trailing" constant="20" symbolic="YES" id="jPe-1I-FvN"/>
+                                                <constraint firstItem="blj-SS-KvE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wBe-vu-XO0" secondAttribute="trailing" constant="5" id="jPh-Ao-beO"/>
                                                 <constraint firstItem="8Df-oa-sHK" firstAttribute="centerY" secondItem="wBe-vu-XO0" secondAttribute="centerY" id="pdt-mh-wzS"/>
                                                 <constraint firstAttribute="trailing" secondItem="8Df-oa-sHK" secondAttribute="trailing" constant="20" id="prU-7N-4U0"/>
+                                                <constraint firstItem="blj-SS-KvE" firstAttribute="top" secondItem="wBe-vu-XO0" secondAttribute="top" id="veB-XY-OXL"/>
                                                 <constraint firstItem="wBe-vu-XO0" firstAttribute="centerY" secondItem="21o-iS-D6v" secondAttribute="centerY" id="zq6-BN-6v1"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="lblDetails" destination="blj-SS-KvE" id="Mx4-nm-aWr"/>
                                             <outlet property="lblTitle" destination="wBe-vu-XO0" id="K26-Lh-QVS"/>
                                             <outlet property="viewSepartor" destination="mDe-ly-OJ3" id="3BF-CE-gKx"/>
                                         </connections>

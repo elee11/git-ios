@@ -44,20 +44,32 @@ class SettingsViewController: UIViewController,RefreshAppProtocol {
         func changeLanguage() {
         var languagesArr = [[String: String]]()
         let keysArr = [Constants.Language.ARABIC, Constants.Language.ENGLISH]
-        let valuesArr = [NSLocalizedString("Arabic", comment: "") , NSLocalizedString("English", comment: "")]
+        let valuesArr = ["العربية" , "English"]
         languagesArr.append([keysArr[0] : valuesArr[0]])
         languagesArr.append([keysArr[1] : valuesArr[1]])
         let selectedLanguageIndex = keysArr.index(of: Language.getCurrentLanguage())
         var selectedLanguage : String!
         let actionSheetController: UIAlertController = UIAlertController(title: "", message: NSLocalizedString("Change Language",comment:""), preferredStyle: .actionSheet)
-        let ArabicButton = UIAlertAction(title: NSLocalizedString("Arabic", comment: ""), style: .default) { _ in
+        let cancelButton = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel) { _ in
+        }
+            actionSheetController.addAction(cancelButton)
+
+        let ArabicButton = UIAlertAction(title: "العربية", style: .default) { _ in
             selectedLanguage = "ar"
+            let langStr = Language.getCurrentLanguage()
+            if langStr != selectedLanguage
+            {
             self.refreshAppDependOnLanguage(language: selectedLanguage)
+            }
         }
         actionSheetController.addAction(ArabicButton)
-        let EnglishButton = UIAlertAction(title: NSLocalizedString("English", comment: ""), style: .default) { _ in
+        let EnglishButton = UIAlertAction(title: "English", style: .default) { _ in
             selectedLanguage = "en"
-            self.refreshAppDependOnLanguage(language: selectedLanguage)
+            let langStr = Language.getCurrentLanguage()
+            if langStr != selectedLanguage
+            {
+                self.refreshAppDependOnLanguage(language: selectedLanguage)
+            }
         }
         actionSheetController.addAction(EnglishButton)
         self.present(actionSheetController, animated: true, completion: nil)
@@ -104,13 +116,26 @@ extension SettingsViewController: UITableViewDataSource {
         
         if indexPath.section == 0
         {
+            //language cell
+            if indexPath.row == 0
+            {
+                let langStr = Language.getCurrentLanguage()
+                if langStr == "en"
+                {
+                    cellSettings.lblDetails.text = "English"
+                }
+                else
+                {
+                    cellSettings.lblDetails.text = "العربية"
+                }
+                cellSettings.lblDetails.isHidden = false
+            }
+            
             //this is login cell
             if indexPath.row == 4
             {
                 cellSettings.viewSepartor.isHidden = true
-                
             }
-            
         }
         else if  indexPath.section == 1
         {

@@ -15,7 +15,6 @@
 		985587EF1FC6D964001AD5E5 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985587EE1FC6D964001AD5E5 /* UIColorExtension.swift */; };
 		985587F11FC6DD19001AD5E5 /* LblWithTitleGenralCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985587F01FC6DD19001AD5E5 /* LblWithTitleGenralCellProtocol.swift */; };
 		985587F81FC6F24B001AD5E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 985587F41FC6F24B001AD5E5 /* GoogleService-Info.plist */; };
-		985587FA1FC6F24B001AD5E5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 985587F61FC6F24B001AD5E5 /* Info.plist */; };
 		986516571FBA4E2B00551208 /* SettingsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986516561FBA4E2B00551208 /* SettingsTableCell.swift */; };
 		9870B9F81FB8CA2B008E678B /* MyOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870B9F71FB8CA2B008E678B /* MyOrdersViewController.swift */; };
 		9870B9FA1FB8CA38008E678B /* WatheqViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870B9F91FB8CA38008E678B /* WatheqViewController.swift */; };
@@ -353,7 +352,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0900;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Ahmed Zaky";
 				TargetAttributes = {
 					98DDA1441FB797E500B8F42F = {
@@ -394,7 +393,6 @@
 				988942DD1FC7230D001B4F75 /* DinNextRegular.ttf in Resources */,
 				9870BA121FB8D489008E678B /* Assets.xcassets in Resources */,
 				982416C81FC4D15900080DE9 /* EmptyDataAssets.xcassets in Resources */,
-				985587FA1FC6F24B001AD5E5 /* Info.plist in Resources */,
 				988942D61FC72074001B4F75 /* SettingsList.plist in Resources */,
 				98DDA1501FB797E500B8F42F /* Main.storyboard in Resources */,
 			);

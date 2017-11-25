@@ -10,7 +10,8 @@ import UIKit
 
 class SettingsTableCell: UITableViewCell {
     @IBOutlet weak var lblTitle: UILabel!
-    @IBOutlet weak var viewSepartor: UIView!
+    @IBOutlet weak var lblDetails: UILabel!
+@IBOutlet weak var viewSepartor: UIView!
 
 
     override func awakeFromNib() {
