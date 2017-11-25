@@ -17,6 +17,12 @@ class PhoneEntryController: UIViewController,countryPickerProtocol {
         }
     }
     @IBOutlet weak var phoneTextField: UITextField!
+    @IBOutlet weak var viewContainerTextFields: UIView!{
+        didSet {
+            viewContainerTextFields.applyviewBorderProperties()
+        }
+    }
+
     @IBOutlet weak var countryCodeTextField: UITextField! {
         didSet {
             countryCodeTextField.textColor = UIView().tintColor
@@ -33,7 +39,11 @@ class PhoneEntryController: UIViewController,countryPickerProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.titleView = titleView()
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        self.navigationController?.view.backgroundColor = .clear
+       // navigationItem.titleView = titleView()
         view.addTapToDismissKeyboard()
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -99,6 +109,14 @@ extension UIButton {
     func applyBorderProperties() {
         layer.borderWidth = 1.5
         layer.borderColor = tintColor?.cgColor
-        layer.cornerRadius = 3.0
+        layer.cornerRadius = 10.0
     }
 }
+extension UIView {
+    func applyviewBorderProperties() {
+        layer.borderWidth = 1.5
+        layer.borderColor = tintColor?.cgColor
+        layer.cornerRadius = 10.0
+    }
+}
+

@@ -37,6 +37,7 @@
 		988942FD1FCA1321001B4F75 /* PhoneVerificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988942F91FCA1321001B4F75 /* PhoneVerificationController.swift */; };
 		988942FE1FCA1321001B4F75 /* PhoneEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988942FA1FCA1321001B4F75 /* PhoneEntryController.swift */; };
 		988943001FCA19C8001B4F75 /* singleToneClassValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988942FF1FCA19C8001B4F75 /* singleToneClassValues.swift */; };
+		988943021FCA2B74001B4F75 /* LoginAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 988943011FCA2B74001B4F75 /* LoginAssets.xcassets */; };
 		989B46011FB8D9E200618519 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 989B46031FB8D9E200618519 /* Localizable.strings */; };
 		989B46081FB8DB8800618519 /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989B45FD1FB8D9B400618519 /* Language.swift */; };
 		989B46091FB8DB8C00618519 /* Localizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 989B45FE1FB8D9B400618519 /* Localizer.swift */; };
@@ -82,6 +83,7 @@
 		988942F91FCA1321001B4F75 /* PhoneVerificationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneVerificationController.swift; sourceTree = "<group>"; };
 		988942FA1FCA1321001B4F75 /* PhoneEntryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneEntryController.swift; sourceTree = "<group>"; };
 		988942FF1FCA19C8001B4F75 /* singleToneClassValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = singleToneClassValues.swift; sourceTree = "<group>"; };
+		988943011FCA2B74001B4F75 /* LoginAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LoginAssets.xcassets; sourceTree = "<group>"; };
 		989B45FD1FB8D9B400618519 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 		989B45FE1FB8D9B400618519 /* Localizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizer.swift; sourceTree = "<group>"; };
 		989B46021FB8D9E200618519 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 				9870BA111FB8D489008E678B /* Assets.xcassets */,
 				989B460C1FB8E48800618519 /* TabBarAssets.xcassets */,
 				982416C71FC4D15900080DE9 /* EmptyDataAssets.xcassets */,
+				988943011FCA2B74001B4F75 /* LoginAssets.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -447,6 +450,7 @@
 				988942DD1FC7230D001B4F75 /* DinNextRegular.ttf in Resources */,
 				9870BA121FB8D489008E678B /* Assets.xcassets in Resources */,
 				988942F31FCA12FB001B4F75 /* CountryCodeListCell.xib in Resources */,
+				988943021FCA2B74001B4F75 /* LoginAssets.xcassets in Resources */,
 				982416C81FC4D15900080DE9 /* EmptyDataAssets.xcassets in Resources */,
 				988942D61FC72074001B4F75 /* SettingsList.plist in Resources */,
 				988942F41FCA12FB001B4F75 /* CountryCodeListController.xib in Resources */,
