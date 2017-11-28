@@ -13,12 +13,12 @@ extension UIColor {
         self.init(red: r / 255, green: g / 255, blue: b / 255, alpha: 1)
     }
     
-    class var harvardCrimson: UIColor {
-        return UIColor(red: 208.0 / 255.0, green: 2.0 / 255.0, blue: 27.0 / 255.0, alpha: 1.0)
+    class var redAlert: UIColor {
+        return UIColor(red: 208.0 / 255.0, green: 75.0 / 255.0, blue: 75.0 / 255.0, alpha: 1.0)
     }
     
-    class var harvardCrimson1: UIColor {
-        return UIColor(red: 208.0 / 255.0, green: 1.0 / 255.0, blue: 27.0 / 255.0, alpha: 1.0)
+    class var greenAlert: UIColor {
+        return UIColor(red: 96.0 / 255.0, green: 208.0 / 255.0, blue: 75.0 / 255.0, alpha: 1.0)
     }
     
     class var pastelGray: UIColor {

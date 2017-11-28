@@ -12,8 +12,15 @@ import CountdownLabel
 import Hero
 
 
-class PhoneEntryController: UIViewController {
+class PhoneEntryController: AbstractViewController {
     
+    var localeCountry:Country?
+
+    @IBOutlet weak var lblLogin: UILabel!
+    @IBOutlet weak var lblLoginMsg: UILabel!
+    @IBOutlet weak var lblaskingAboutNotarizedMsg: UILabel!
+    @IBOutlet weak var btnDowndlowadNotarizedApp: UIButton!
+    @IBOutlet weak var btnClose: UIButton!
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var viewContainerPhoneTextFields: UIView!
         {
@@ -33,28 +40,34 @@ class PhoneEntryController: UIViewController {
     let countries:Countries = {
         return Countries.init(countries: JSONReader.countries())
     }()
-    var localeCountry:Country?
-    
-   
     @IBOutlet weak var sendCodeButton: UIButton!{
         didSet {
             sendCodeButton.applyBorderProperties()
         }
     }
     
- 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
-       // navigationItem.titleView = titleView()
         view.addTapToDismissKeyboard()
     }
     override func viewWillAppear(_ animated: Bool) {
+        phoneTextField.becomeFirstResponder()
         super.viewWillAppear(animated)
-      
+    }
+    
+    override  func viewDidLayoutSubviews() {
+        lblLogin.text = NSLocalizedString("login", comment: "")
+        lblLoginMsg.text = NSLocalizedString("LoginMsg", comment: "")
+        lblaskingAboutNotarizedMsg.text = NSLocalizedString("areyoulegalized", comment: "")
+        btnDowndlowadNotarizedApp.setTitle(NSLocalizedString("Download the Notaries application from here", comment: ""), for: .normal)
+        phoneTextField.placeholder = NSLocalizedString("PhoneNum", comment: "")
+        sendCodeButton.setTitle(NSLocalizedString("sendPhoneNumber", comment: ""), for: .normal)
+        btnClose.setTitle(NSLocalizedString("close", comment: ""), for: .normal)
+        btnDowndlowadNotarizedApp.titleLabel?.textAlignment = .center
     }
     
     @IBAction func closeview (_ sender :Any)
@@ -83,25 +96,37 @@ class PhoneEntryController: UIViewController {
     
     //MARK: - Button Actions
     @IBAction func didTapSendCode(_ sender: Any) {
-        
-        self.performSegue(withIdentifier: "S_PhoneEntery_PhoneVerify", sender: nil)
+        view.endEditing(true)
+        if phoneTextField.text?.characters.count == 0 {
+            AbstractViewController.showMessage(title: NSLocalizedString("Enter Phone number", comment: ""), body:"" , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
 
-//        if phoneTextField.text?.characters.count == 0 {
-//            debugPrint("Enter Phone number!")
-//            return
-//        }
-//        view.endEditing(true)
-//        let phoneNumber = "+" + (localeCountry?.e164Cc!)! + phoneTextField.text!
-//        PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber) { (verificationID, error) in
-//            if let error = error {
-//                debugPrint(error.localizedDescription)
-//                return
-//            }
-//            guard let verificationID = verificationID else { return }
-//            let verifyScene = PhoneVerificationController()
-//            verifyScene.verificationID = verificationID
-//            self.performSegue(withIdentifier: "S_PhoneEntery_PhoneVerify", sender: nil)
-//        }
+            return
+        }
+        let phoneNumber = "+" + (localeCountry?.e164Cc!)! + phoneTextField.text!
+        PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber) { (verificationID, error) in
+            if let error = error {
+                if let errorCode = AuthErrorCode(rawValue: error._code) {
+                    switch errorCode {
+                    case .invalidPhoneNumber:
+                        AbstractViewController.showMessage(title: NSLocalizedString("Enter avalid Phone number", comment: ""), body:"" , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+                        break
+                    default:
+                        print("There is an error")
+                    }
+                }
+                return
+            }
+            guard let verificationID = verificationID else { return }
+            self.performSegue(withIdentifier: "S_PhoneEntery_PhoneVerify", sender: verificationID)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+                if segue.identifier == "S_PhoneEntery_PhoneVerify"  {
+                    let PhoneVerificationView = segue.destination as! PhoneVerificationController
+                    PhoneVerificationView.PhoneNumber = phoneTextField.text
+                    PhoneVerificationView.verificationID = sender as? String
+                }
     }
     
 //    @IBAction func didTapShowCountryCode(_ sender: Any) {

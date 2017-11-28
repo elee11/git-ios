@@ -90,10 +90,10 @@ class AbstractViewController: UIViewController,NVActivityIndicatorViewable,UIGes
         messageView.iconImageView?.isHidden = true  // Hide icon
         messageView.button?.isHidden = true  // Hide button
         messageView.configureDropShadow()  // Add shadow
-        messageView.bodyLabel?.textAlignment = .justified
-        messageView.titleLabel?.textAlignment = .justified
+        messageView.bodyLabel?.textAlignment = .center
+        messageView.titleLabel?.textAlignment = .center
         messageView.bodyLabel?.isHidden = true
-
+        messageView.titleLabel?.font = UIFont(name: "DinNextRegular", size: 14)
 
         // Set message title, body. Here, we're overriding the default warning
         messageView.configureContent(title: title, body: body)

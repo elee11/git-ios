@@ -11,7 +11,14 @@ import Firebase
 import CountdownLabel
 
 
-class PhoneVerificationController: UIViewController {
+class PhoneVerificationController: AbstractViewController {
+  
+    @IBOutlet weak var lblLogin: UILabel!
+    @IBOutlet weak var lblLoginMsg: UILabel!
+    @IBOutlet weak var lblaskingAboutNotarizedMsg: UILabel!
+    @IBOutlet weak var btnDowndlowadNotarizedApp: UIButton!
+    @IBOutlet weak var btnClose: UIButton!
+    
     @IBOutlet weak var verificationCodeTextField: UITextField!
     @IBOutlet weak var verifyButton: UIButton! {
         didSet {
@@ -56,6 +63,8 @@ class PhoneVerificationController: UIViewController {
 
     
     var verificationID:String?
+    var PhoneNumber:String?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Enter your 6 digit code"
@@ -75,6 +84,19 @@ class PhoneVerificationController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         verificationCodeTextField.becomeFirstResponder()
+        lblLogin.text = NSLocalizedString("login", comment: "")
+        lblLoginMsg.text = NSLocalizedString("LoginMsg", comment: "")
+        lblaskingAboutNotarizedMsg.text = NSLocalizedString("areyoulegalized", comment: "")
+        btnDowndlowadNotarizedApp.setTitle(NSLocalizedString("Download the Notaries application from here", comment: ""), for: .normal)
+        phoneTextField.placeholder = NSLocalizedString("PhoneNum", comment: "")
+        phoneTextField.text = PhoneNumber
+        verificationCodeTextField.placeholder = NSLocalizedString("VerificationCode", comment: "")
+        verifyButton.setTitle(NSLocalizedString("sendVerificationCode", comment: ""), for: .normal)
+        btnResendVerificationCode.setTitle(NSLocalizedString("ResendVerificationCode", comment: ""), for: .normal)
+        btnClose.setTitle(NSLocalizedString("close", comment: ""), for: .normal)
+        btnDowndlowadNotarizedApp.titleLabel?.textAlignment = .center
+        
+
     }
     
     //MARK: - Private Functions
@@ -84,23 +106,42 @@ class PhoneVerificationController: UIViewController {
             countryCodeTextField.text = (localeCountry?.iso2Cc!)! + " " + "(+" + (localeCountry?.e164Cc!)! + ")"
         }
     }
+    
+    @IBAction func resendVerificationCode(_ sender: Any) {
+    }
+
    
     @IBAction func didTapVerifyFourDigitCode(_ sender: Any) {
+        view.endEditing(true)
+
         if verificationCodeTextField.text?.isEmpty == true {
-            debugPrint("Enter your verification code!")
+            AbstractViewController.showMessage(title: NSLocalizedString(("Enter your verification code"), comment: ""), body:"" , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
             return
         }
-        view.endEditing(true)
         if let verificationCode = verificationCodeTextField.text {
             let credential = PhoneAuthProvider.provider().credential(withVerificationID: verificationID!, verificationCode: verificationCode)
             Auth.auth().signIn(with: credential) { (user, error) in
                 if let error = error {
-                    debugPrint(error.localizedDescription)
+                    if let errorCode = AuthErrorCode(rawValue: error._code) {
+                        switch errorCode {
+                        case .invalidVerificationCode:
+                            AbstractViewController.showMessage(title: NSLocalizedString("Enter avalid verification number", comment: ""), body:"" , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+                            break
+                        case .sessionExpired:
+                            AbstractViewController.showMessage(title: NSLocalizedString("Session Expired", comment: ""), body:"" , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+                            break
+                        case .userDisabled:
+                            AbstractViewController.showMessage(title: NSLocalizedString("User Disabled", comment: ""), body:"" , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+                            break
+                        default:
+                            print("There is an error")
+                        }
+                    }
+
                 }else {
-                    debugPrint("Verified successfully")
                     //Once you have verified your phone number kill the firebase session.
                     try? Auth.auth().signOut()
-                    self.navigationController?.popViewController(animated: true)
+                    AbstractViewController.showMessage(title: NSLocalizedString("Your Phone verified successfully", comment: ""), body:"" , isWindowNeeded: true, BackgroundColor: UIColor.greenAlert, foregroundColor: UIColor.white)
                 }
             }
         }
@@ -125,4 +166,17 @@ extension PhoneVerificationController: CountdownLabelDelegate {
     }
 
 }
+
+extension PhoneVerificationController : UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+                if(range.length + range.location > (textField.text?.length)!)
+                {
+                    return false;
+                }
+                let  newLength = (textField.text?.length)! + string.length - range.length;
+                return newLength <= 6;
+            }
+}
+
 
