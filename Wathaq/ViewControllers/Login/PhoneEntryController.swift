@@ -8,21 +8,19 @@
 
 import UIKit
 import Firebase
+import CountdownLabel
+import Hero
 
-class PhoneEntryController: UIViewController,countryPickerProtocol {
+
+class PhoneEntryController: UIViewController {
     
-    @IBOutlet weak var sendCodeButton: UIButton!{
-        didSet {
-            sendCodeButton.applyBorderProperties()
-        }
-    }
     @IBOutlet weak var phoneTextField: UITextField!
-    @IBOutlet weak var viewContainerTextFields: UIView!{
+    @IBOutlet weak var viewContainerPhoneTextFields: UIView!
+        {
         didSet {
-            viewContainerTextFields.applyviewBorderProperties()
+            viewContainerPhoneTextFields.applyviewBorderProperties()
         }
     }
-
     @IBOutlet weak var countryCodeTextField: UITextField! {
         didSet {
             countryCodeTextField.textColor = UIView().tintColor
@@ -37,6 +35,14 @@ class PhoneEntryController: UIViewController,countryPickerProtocol {
     }()
     var localeCountry:Country?
     
+   
+    @IBOutlet weak var sendCodeButton: UIButton!{
+        didSet {
+            sendCodeButton.applyBorderProperties()
+        }
+    }
+    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -48,7 +54,12 @@ class PhoneEntryController: UIViewController,countryPickerProtocol {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        phoneTextField.becomeFirstResponder()
+      
+    }
+    
+    @IBAction func closeview (_ sender :Any)
+    {
+        self.dismiss(animated: true, completion: nil)
     }
     
     private func titleView()->UILabel {
@@ -69,41 +80,46 @@ class PhoneEntryController: UIViewController,countryPickerProtocol {
         }
     }
     
+    
     //MARK: - Button Actions
     @IBAction func didTapSendCode(_ sender: Any) {
-        if phoneTextField.text?.characters.count == 0 {
-            debugPrint("Enter Phone number!")
-            return
-        }
-        view.endEditing(true)
-        let phoneNumber = "+" + (localeCountry?.e164Cc!)! + phoneTextField.text!
-        PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber) { (verificationID, error) in
-            if let error = error {
-                debugPrint(error.localizedDescription)
-                return
-            }
-            guard let verificationID = verificationID else { return }
-            let StoryBoard = singleToneClassValues.loadStoryBoardWithStoryboardName(_StoryboardName: "Main")
-            let VerificationNavView = StoryBoard.instantiateViewController(withIdentifier: "PhoneVerificationController") as! PhoneVerificationController
-            VerificationNavView.verificationID = verificationID
-            self.navigationController?.pushViewController(VerificationNavView, animated: true)
-        }
+        
+        self.performSegue(withIdentifier: "S_PhoneEntery_PhoneVerify", sender: nil)
+
+//        if phoneTextField.text?.characters.count == 0 {
+//            debugPrint("Enter Phone number!")
+//            return
+//        }
+//        view.endEditing(true)
+//        let phoneNumber = "+" + (localeCountry?.e164Cc!)! + phoneTextField.text!
+//        PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber) { (verificationID, error) in
+//            if let error = error {
+//                debugPrint(error.localizedDescription)
+//                return
+//            }
+//            guard let verificationID = verificationID else { return }
+//            let verifyScene = PhoneVerificationController()
+//            verifyScene.verificationID = verificationID
+//            self.performSegue(withIdentifier: "S_PhoneEntery_PhoneVerify", sender: nil)
+//        }
     }
     
-    @IBAction func didTapShowCountryCode(_ sender: Any) {
-        let listScene = CountryCodeListController()
-        listScene.delegate = self
-        listScene.countries = countries
-        navigationController?.pushViewController(listScene, animated: true)
-    }
+//    @IBAction func didTapShowCountryCode(_ sender: Any) {
+//        let listScene = CountryCodeListController()
+//        listScene.delegate = self
+//        listScene.countries = countries
+//        navigationController?.pushViewController(listScene, animated: true)
+//    }
     
     //MARK: - countryPickerProtocol functions
-    func didPickCountry(model: Country) {
-        localeCountry = model
-        countryCodeTextField.text = model.iso2Cc! + " " + "(+" + model.e164Cc! + ")"
-    }
+//    func didPickCountry(model: Country) {
+//        localeCountry = model
+//        countryCodeTextField.text = model.iso2Cc! + " " + "(+" + model.e164Cc! + ")"
+//    }
     
 }
+
+
 
 extension UIButton {
     func applyBorderProperties() {
@@ -112,6 +128,7 @@ extension UIButton {
         layer.cornerRadius = 10.0
     }
 }
+
 extension UIView {
     func applyviewBorderProperties() {
         layer.borderWidth = 1.5
@@ -119,4 +136,6 @@ extension UIView {
         layer.cornerRadius = 10.0
     }
 }
+
+
 

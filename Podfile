@@ -17,6 +17,9 @@ target 'Wathaq' do
   pod 'Firebase/Auth'
   pod 'Firebase/Core'
   pod 'SwiftyJSON'
+  pod 'CountdownLabel'
+  pod "Hero"
+
 
 
 end

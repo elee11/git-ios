@@ -10,8 +10,16 @@ import UIKit
 
 class MyOrdersViewController: UIViewController {
 
+    @IBOutlet weak var sendCodeButton: UIButton!
+    @IBOutlet weak var view_bg: UIView!
+
+
     override func viewDidLoad() {
         super.viewDidLoad()
+          self.navigationController?.isHeroEnabled = true
+         self.isHeroEnabled = true
+        view.heroModifiers = [.useLayerRenderSnapshot]
+
         self.title = NSLocalizedString("myOrders", comment: "")
     }
     
@@ -20,6 +28,13 @@ class MyOrdersViewController: UIViewController {
             self.navigationController?.navigationBar.prefersLargeTitles = true
             self.navigationController?.navigationItem.largeTitleDisplayMode = .never
         }
+    }
+    
+    @IBAction func didTapSendCode(_ sender: Any) {
+        
+        
+        self.view_bg.heroModifiers = [.fade, .translate(x:0, y:-250), .rotate(x:-1.6), .scale(1.5)]
+
     }
 
     override func didReceiveMemoryWarning() {

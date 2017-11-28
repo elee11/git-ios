@@ -16,10 +16,12 @@ class SettingsViewController: UIViewController,RefreshAppProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = NSLocalizedString("Settings", comment: "")
-       
+        self.navigationController?.isHeroEnabled = true
         plistArr = readPlistSettings()
         configureView()
     }
+    
+    
     
     func configureView() {
       

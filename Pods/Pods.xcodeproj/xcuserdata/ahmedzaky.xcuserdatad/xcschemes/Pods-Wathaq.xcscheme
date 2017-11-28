@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9B61BABA66636A40F112BB0758794987"
+               BlueprintIdentifier = "44F7F23C63510D810A33046C87627DB5"
                BuildableName = "Pods_Wathaq.framework"
                BlueprintName = "Pods-Wathaq"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -47,7 +47,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9B61BABA66636A40F112BB0758794987"
+            BlueprintIdentifier = "44F7F23C63510D810A33046C87627DB5"
             BuildableName = "Pods_Wathaq.framework"
             BlueprintName = "Pods-Wathaq"
             ReferencedContainer = "container:Pods.xcodeproj">
