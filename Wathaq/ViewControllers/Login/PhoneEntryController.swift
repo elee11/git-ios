@@ -26,9 +26,10 @@ class PhoneEntryController: AbstractViewController {
     @IBOutlet weak var viewContainerPhoneTextFields: UIView!
         {
         didSet {
-            viewContainerPhoneTextFields.applyviewBorderProperties()
+            viewContainerPhoneTextFields.applyDimmviewBorderProperties()
         }
     }
+    
     @IBOutlet weak var countryCodeTextField: UITextField! {
         didSet {
             countryCodeTextField.textColor = UIView().tintColor
@@ -151,6 +152,20 @@ class PhoneEntryController: AbstractViewController {
     
 }
 
+extension PhoneEntryController : UITextFieldDelegate {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        viewContainerPhoneTextFields.applyActiveviewBorderProperties()
+        
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        viewContainerPhoneTextFields.applyDimmviewBorderProperties()
+
+        
+    }
+   
+}
+
 
 
 extension UIButton {
@@ -162,12 +177,20 @@ extension UIButton {
 }
 
 extension UIView {
-    func applyviewBorderProperties() {
+    func applyActiveviewBorderProperties() {
         layer.borderWidth = 1.5
         layer.borderColor = tintColor?.cgColor
         layer.cornerRadius = 10.0
     }
+    
+    func applyDimmviewBorderProperties() {
+        layer.borderWidth = 1.5
+        layer.borderColor = UIColor.clear.cgColor
+        layer.cornerRadius = 10.0
+    }
 }
+
+
 
 
 

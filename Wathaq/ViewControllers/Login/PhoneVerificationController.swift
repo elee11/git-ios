@@ -19,7 +19,6 @@ class PhoneVerificationController: AbstractViewController {
     @IBOutlet weak var lblaskingAboutNotarizedMsg: UILabel!
     @IBOutlet weak var btnDowndlowadNotarizedApp: UIButton!
     @IBOutlet weak var btnClose: UIButton!
-    
     @IBOutlet weak var verificationCodeTextField: UITextField!
     @IBOutlet weak var verifyButton: TransitionButton! {
         didSet {
@@ -30,13 +29,13 @@ class PhoneVerificationController: AbstractViewController {
     @IBOutlet weak var viewContainerPhoneTextFields: UIView!
         {
         didSet {
-            viewContainerPhoneTextFields.applyviewBorderProperties()
+            viewContainerPhoneTextFields.applyDimmviewBorderProperties()
         }
     }
     @IBOutlet weak var viewContainerVerificationTextFields: UIView!
         {
         didSet {
-            viewContainerVerificationTextFields.applyviewBorderProperties()
+            viewContainerVerificationTextFields.applyDimmviewBorderProperties()
         }
     }
     
@@ -75,6 +74,15 @@ class PhoneVerificationController: AbstractViewController {
     
     func addTimerLable()
     {
+        viewContainerPhoneTextFields.isUserInteractionEnabled = false
+        UIView.animate(withDuration: 0.5, animations: {
+            
+            self.btnResendVerificationCode.alpha = 0
+            self.lbl_Timer.alpha = 1
+            
+            
+        })
+        
         lbl_Timer.setCountDownTime(minutes: 300)
         lbl_Timer.animationType = .Sparkle
         lbl_Timer.countdownDelegate = self
@@ -109,6 +117,41 @@ class PhoneVerificationController: AbstractViewController {
     }
     
     @IBAction func resendVerificationCode(_ sender: Any) {
+        view.endEditing(true)
+        if phoneTextField.text?.characters.count == 0 {
+            AbstractViewController.showMessage(title: NSLocalizedString("Enter Phone number", comment: ""), body:"" , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+            
+            return
+        }
+        verifyButton.startAnimation()
+        self.view.isUserInteractionEnabled = false
+        let phoneNumber = "+" + (localeCountry?.e164Cc!)! + phoneTextField.text!
+        PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber) { (verificationTagID, error) in
+            if let error = error {
+                self.verifyButton.stopAnimation()
+                self.view.isUserInteractionEnabled = true
+                
+                
+                if let errorCode = AuthErrorCode(rawValue: error._code) {
+                    switch errorCode {
+                    case .invalidPhoneNumber:
+                        AbstractViewController.showMessage(title: NSLocalizedString("Enter avalid Phone number", comment: ""), body:"" , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+                        break
+                    default:
+                        print("There is an error")
+                    }
+                }
+                return
+            }
+            self.verifyButton.stopAnimation()
+            self.view.isUserInteractionEnabled = true
+
+            guard let verificationTagID = verificationTagID else { return }
+            self.verificationID = verificationTagID
+            AbstractViewController.showMessage(title: NSLocalizedString("Verification Code sent succussfully", comment: ""), body:"" , isWindowNeeded: true, BackgroundColor: UIColor.greenAlert, foregroundColor: UIColor.white)
+            self.addTimerLable()
+            
+        }
     }
 
    
@@ -147,6 +190,9 @@ class PhoneVerificationController: AbstractViewController {
                     //Once you have verified your phone number kill the firebase session.
                     try? Auth.auth().signOut()
                     AbstractViewController.showMessage(title: NSLocalizedString("Your Phone verified successfully", comment: ""), body:"" , isWindowNeeded: true, BackgroundColor: UIColor.greenAlert, foregroundColor: UIColor.white)
+                    self.performSegue(withIdentifier:"S_VerifyNumber_CompleteProfile", sender: nil
+                    )
+
                 }
             }
         }
@@ -156,6 +202,8 @@ class PhoneVerificationController: AbstractViewController {
 extension PhoneVerificationController: CountdownLabelDelegate {
     func countdownFinished() {
         debugPrint("countdownFinished at delegate.")
+        viewContainerPhoneTextFields.isUserInteractionEnabled = true
+
         UIView.animate(withDuration: 0.5, animations: {
 
             self.btnResendVerificationCode.alpha = 1
@@ -173,15 +221,47 @@ extension PhoneVerificationController: CountdownLabelDelegate {
 }
 
 extension PhoneVerificationController : UITextFieldDelegate {
-    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        if textField == verificationCodeTextField {
+            viewContainerVerificationTextFields.applyActiveviewBorderProperties()
+            viewContainerPhoneTextFields.applyDimmviewBorderProperties()
+
+        }
+        else
+        {
+            viewContainerPhoneTextFields.applyActiveviewBorderProperties()
+            viewContainerVerificationTextFields.applyDimmviewBorderProperties()
+
+
+        }
+        
+    }
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == verificationCodeTextField {
+            viewContainerVerificationTextFields.applyDimmviewBorderProperties()
+        }
+        else
+        {
+            viewContainerPhoneTextFields.applyDimmviewBorderProperties()
+
+        }
+    }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-                if(range.length + range.location > (textField.text?.length)!)
+        if textField == verificationCodeTextField {
+        if(range.length + range.location > (textField.text?.length)!)
                 {
-                    return false;
+                    return false
                 }
                 let  newLength = (textField.text?.length)! + string.length - range.length;
                 return newLength <= 6;
             }
+    else
+    {
+    return true
+
+    }
+}
 }
 
 
