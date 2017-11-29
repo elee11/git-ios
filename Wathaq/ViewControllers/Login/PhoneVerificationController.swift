@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import CountdownLabel
+import TransitionButton
 
 
 class PhoneVerificationController: AbstractViewController {
@@ -20,7 +21,7 @@ class PhoneVerificationController: AbstractViewController {
     @IBOutlet weak var btnClose: UIButton!
     
     @IBOutlet weak var verificationCodeTextField: UITextField!
-    @IBOutlet weak var verifyButton: UIButton! {
+    @IBOutlet weak var verifyButton: TransitionButton! {
         didSet {
             verifyButton.applyBorderProperties()
         }
@@ -118,10 +119,14 @@ class PhoneVerificationController: AbstractViewController {
             AbstractViewController.showMessage(title: NSLocalizedString(("Enter your verification code"), comment: ""), body:"" , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
             return
         }
+        verifyButton.startAnimation()
+        self.view.isUserInteractionEnabled = false
         if let verificationCode = verificationCodeTextField.text {
             let credential = PhoneAuthProvider.provider().credential(withVerificationID: verificationID!, verificationCode: verificationCode)
             Auth.auth().signIn(with: credential) { (user, error) in
                 if let error = error {
+                    self.verifyButton.stopAnimation()
+                    self.view.isUserInteractionEnabled = true
                     if let errorCode = AuthErrorCode(rawValue: error._code) {
                         switch errorCode {
                         case .invalidVerificationCode:

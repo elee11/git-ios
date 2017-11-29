@@ -130,14 +130,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الائتمان" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p69-tB-xIc">
-                                                    <rect key="frame" x="20" y="20.5" width="48" height="21"/>
+                                                    <rect key="frame" x="20" y="17" width="51.5" height="26.5"/>
                                                     <accessibility key="accessibilityConfiguration" hint="" identifier="32440960-EA82-4756-B7D8-4CE925257B3F" label=""/>
                                                     <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="17.760000000000002"/>
                                                     <color key="textColor" red="0.68627450980000004" green="0.71372549019999998" blue="0.7843137255" alpha="1" colorSpace="deviceRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9v-hJ-M8a">
-                                                    <rect key="frame" x="301.5" y="20.5" width="0.0" height="21"/>
+                                                    <rect key="frame" x="301.5" y="17" width="0.0" height="26.5"/>
                                                     <accessibility key="accessibilityConfiguration" hint="" identifier="32440960-EA82-4756-B7D8-4CE925257B3F" label=""/>
                                                     <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="17.760000000000002"/>
                                                     <color key="textColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="deviceRGB"/>
@@ -344,7 +344,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تسجيل دخول" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Fu-1b-y0e">
-                                <rect key="frame" x="137" y="40" width="102" height="26"/>
+                                <rect key="frame" x="133.5" y="40" width="109.5" height="33"/>
                                 <accessibility key="accessibilityConfiguration" hint="" identifier="BFAD5806-895A-44FD-A070-16F216BD8E50" label=""/>
                                 <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="22.199999999999999"/>
                                 <color key="textColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="deviceRGB"/>
@@ -354,7 +354,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ادخل رقم جوالك ثم كود التحقق من الرساله التي ستصلك على هذا الرقم" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mr3-DZ-sZl">
-                                <rect key="frame" x="5" y="77" width="364.5" height="44"/>
+                                <rect key="frame" x="17" y="84" width="342.5" height="55.5"/>
                                 <accessibility key="accessibilityConfiguration" hint="" identifier="074EEBD8-5493-4ABA-BBEA-A819E12ED6B6" label=""/>
                                 <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="18.870000000000001"/>
                                 <color key="textColor" red="0.58823529409999997" green="0.60784313729999995" blue="0.66274509800000003" alpha="1" colorSpace="deviceRGB"/>
@@ -364,20 +364,20 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="هل أنت مستخدم؟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xn1-sH-QOJ">
-                                <rect key="frame" x="131" y="578" width="113.5" height="22"/>
+                                <rect key="frame" x="123" y="567" width="130" height="28"/>
                                 <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="18.799999237060547"/>
                                 <color key="textColor" red="0.58823529409999997" green="0.60784313729999995" blue="0.66274509800000003" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="FzS-gm-Y1Z">
-                                <rect key="frame" x="10" y="605" width="355" height="32"/>
+                                <rect key="frame" x="10" y="600" width="355" height="37"/>
                                 <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="17"/>
                                 <state key="normal" title="حمل تطبيق المستخدم من هنا">
                                     <color key="titleColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uB3-Ix-ojH">
-                                <rect key="frame" x="30" y="181" width="315" height="60"/>
+                                <rect key="frame" x="30" y="199.5" width="315" height="60"/>
                                 <subviews>
                                     <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="US (+1)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HkG-FN-JL2">
                                         <rect key="frame" x="0.0" y="5.5" width="61.5" height="50"/>
@@ -435,7 +435,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="olm-vL-2JC">
-                                <rect key="frame" x="30" y="256" width="315" height="60"/>
+                                <rect key="frame" x="30" y="274.5" width="315" height="60"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Verification number" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="gwj-ve-H8F">
                                         <rect key="frame" x="5" y="5" width="305" height="50"/>
@@ -463,16 +463,16 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xwb-tj-Zvq">
-                                <rect key="frame" x="30" y="326" width="315" height="30"/>
+                                <rect key="frame" x="30" y="344.5" width="315" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03:35" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YV8-T3-dXR" customClass="CountdownLabel" customModule="CountdownLabel">
-                                        <rect key="frame" x="136.5" y="5" width="43" height="20"/>
+                                        <rect key="frame" x="137.5" y="2.5" width="41.5" height="25"/>
                                         <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="17"/>
                                         <color key="textColor" red="0.31372549020000001" green="0.62745098040000002" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1c2-vD-oyC">
-                                        <rect key="frame" x="76" y="-1" width="163" height="32"/>
+                                        <rect key="frame" x="70" y="-3.5" width="175" height="37"/>
                                         <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="17"/>
                                         <state key="normal" title="ارسل كود التفعيل مره اخري">
                                             <color key="titleColor" red="0.63137254899999995" green="0.63137254899999995" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -492,8 +492,8 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="viewTimerContainer"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eC-wM-DNS">
-                                <rect key="frame" x="30" y="366" width="315" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2eC-wM-DNS" customClass="TransitionButton" customModule="TransitionButton">
+                                <rect key="frame" x="30" y="384.5" width="315" height="60"/>
                                 <color key="backgroundColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Q2x-Kd-u6e"/>
@@ -505,13 +505,19 @@
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="btnConfirm"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="spinnerColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="didTapVerifyFourDigitCode:" destination="CX3-lV-Pc6" eventType="touchUpInside" id="TGK-1C-qtT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrw-5f-zMA">
-                                <rect key="frame" x="30" y="20" width="44" height="32"/>
+                                <rect key="frame" x="30" y="20" width="41" height="37"/>
                                 <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="17"/>
                                 <state key="normal" title="Close">
                                     <color key="titleColor" red="0.58823529409999997" green="0.60784313729999995" blue="0.66274509800000003" alpha="1" colorSpace="deviceRGB"/>
@@ -576,7 +582,7 @@
                         <outlet property="lblaskingAboutNotarizedMsg" destination="xn1-sH-QOJ" id="InY-ua-kcf"/>
                         <outlet property="phoneTextField" destination="8EV-f0-oif" id="YLy-ev-zML"/>
                         <outlet property="verificationCodeTextField" destination="gwj-ve-H8F" id="Yal-DE-F7b"/>
-                        <outlet property="verifyButton" destination="2eC-wM-DNS" id="37a-hI-VhG"/>
+                        <outlet property="verifyButton" destination="2eC-wM-DNS" id="RVJ-eN-HdR"/>
                         <outlet property="viewContainerPhoneTextFields" destination="uB3-Ix-ojH" id="Ffz-ZG-8Ni"/>
                         <outlet property="viewContainerVerificationTextFields" destination="olm-vL-2JC" id="VdX-fy-iOj"/>
                     </connections>
@@ -594,7 +600,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تسجيل دخول" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGG-ur-cer">
-                                <rect key="frame" x="137" y="40" width="102" height="26"/>
+                                <rect key="frame" x="133.5" y="40" width="109.5" height="33"/>
                                 <accessibility key="accessibilityConfiguration" hint="" identifier="BFAD5806-895A-44FD-A070-16F216BD8E50" label=""/>
                                 <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="22.199999999999999"/>
                                 <color key="textColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="deviceRGB"/>
@@ -605,7 +611,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ادخل رقم جوالك ثم كود التحقق من الرساله التي ستصلك على هذا الرقم" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pb5-Js-6Zq">
-                                <rect key="frame" x="5" y="77" width="364.5" height="44"/>
+                                <rect key="frame" x="17" y="84" width="342.5" height="55.5"/>
                                 <accessibility key="accessibilityConfiguration" hint="" identifier="074EEBD8-5493-4ABA-BBEA-A819E12ED6B6" label=""/>
                                 <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="18.870000000000001"/>
                                 <color key="textColor" red="0.58823529409999997" green="0.60784313729999995" blue="0.66274509800000003" alpha="1" colorSpace="deviceRGB"/>
@@ -616,20 +622,20 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="هل أنت مستخدم؟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYF-AF-6rF">
-                                <rect key="frame" x="131.5" y="578" width="113.5" height="22"/>
+                                <rect key="frame" x="123.5" y="567" width="130" height="28"/>
                                 <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="18.799999237060547"/>
                                 <color key="textColor" red="0.58823529409999997" green="0.60784313729999995" blue="0.66274509800000003" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="NC2-Un-2Yi">
-                                <rect key="frame" x="103.5" y="605" width="169" height="32"/>
+                                <rect key="frame" x="92" y="600" width="192" height="37"/>
                                 <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="17"/>
                                 <state key="normal" title="حمل تطبيق المستخدم من هنا">
                                     <color key="titleColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jcJ-HQ-022">
-                                <rect key="frame" x="30" y="181" width="315" height="60"/>
+                                <rect key="frame" x="30" y="199.5" width="315" height="60"/>
                                 <subviews>
                                     <textField hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="US (+1)" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vcC-BN-Ger">
                                         <rect key="frame" x="0.0" y="5" width="62" height="50"/>
@@ -688,10 +694,10 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VM4-4N-Ujv">
-                                <rect key="frame" x="30" y="256" width="315" height="1"/>
+                                <rect key="frame" x="30" y="274.5" width="315" height="1"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Verification number" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="h28-vX-upT">
-                                        <rect key="frame" x="5" y="5" width="305" height="20"/>
+                                        <rect key="frame" x="5" y="5" width="305" height="25"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="textColor"/>
@@ -713,16 +719,16 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mfp-Z2-jbd">
-                                <rect key="frame" x="30" y="272" width="315" height="1"/>
+                                <rect key="frame" x="30" y="290.5" width="315" height="1"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03:35" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ps6-aX-uik" customClass="CountdownLabel" customModule="CountdownLabel">
-                                        <rect key="frame" x="136.5" y="-9.5" width="43" height="20"/>
+                                        <rect key="frame" x="137.5" y="-12" width="41.5" height="25"/>
                                         <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="17"/>
                                         <color key="textColor" red="0.31372549020000001" green="0.62745098040000002" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ze-Ks-OV6">
-                                        <rect key="frame" x="76" y="-15.5" width="163" height="32"/>
+                                        <rect key="frame" x="70" y="-18" width="175" height="37"/>
                                         <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="17"/>
                                         <state key="normal" title="ارسل كود التفعيل مره اخري">
                                             <color key="titleColor" red="0.63137254899999995" green="0.63137254899999995" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -743,8 +749,8 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="scale(0.5)"/>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUM-Vm-mrp">
-                                <rect key="frame" x="30" y="266" width="315" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WUM-Vm-mrp" customClass="TransitionButton" customModule="TransitionButton">
+                                <rect key="frame" x="30" y="284.5" width="315" height="60"/>
                                 <color key="backgroundColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="HtS-3b-yHg"/>
@@ -757,13 +763,19 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="btnConfirm"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="arc"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="spinnerColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="didTapSendCode:" destination="MR9-9g-UI6" eventType="touchUpInside" id="0TI-1Y-eQ8"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tNj-1k-P69">
-                                <rect key="frame" x="30" y="20" width="44" height="32"/>
+                                <rect key="frame" x="30" y="20" width="41" height="37"/>
                                 <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="17"/>
                                 <state key="normal" title="Close">
                                     <color key="titleColor" red="0.58823529409999997" green="0.60784313729999995" blue="0.66274509800000003" alpha="1" colorSpace="deviceRGB"/>
@@ -823,7 +835,7 @@
                         <outlet property="lblLoginMsg" destination="Pb5-Js-6Zq" id="MGB-48-2Tw"/>
                         <outlet property="lblaskingAboutNotarizedMsg" destination="fYF-AF-6rF" id="tqB-Xt-NYQ"/>
                         <outlet property="phoneTextField" destination="cHq-ku-rJn" id="AvR-h2-DGa"/>
-                        <outlet property="sendCodeButton" destination="WUM-Vm-mrp" id="koD-RZ-SbH"/>
+                        <outlet property="sendCodeButton" destination="WUM-Vm-mrp" id="Zmc-it-Ase"/>
                         <outlet property="viewContainerPhoneTextFields" destination="jcJ-HQ-022" id="DYc-zw-nCg"/>
                         <segue destination="CX3-lV-Pc6" kind="show" identifier="S_PhoneEntery_PhoneVerify" id="yVs-f9-Omj"/>
                     </connections>
@@ -869,55 +881,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q1K-Em-GtE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="748.79999999999995" y="-320.23988005997006"/>
-        </scene>
-        <!--Phone Verification Controller1-->
-        <scene sceneID="3ei-dn-9Sk">
-            <objects>
-                <viewController storyboardIdentifier="PhoneVerificationController1" id="Cvs-G3-wt5" customClass="PhoneVerificationController1" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="NQ2-6e-nus">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ZLP-x6-QlA">
-                                <rect key="frame" x="20" y="278.5" width="335" height="110"/>
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Verification code" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Xu4-lC-N7b">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="45"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="top-lp-gtZ">
-                                        <rect key="frame" x="0.0" y="65" width="335" height="45"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="20"/>
-                                        <state key="normal" title="Verify"/>
-                                        <connections>
-                                            <action selector="didTapVerifyFourDigitCode:" destination="Cvs-G3-wt5" eventType="touchUpInside" id="Fhl-eb-VAR"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="110" id="IOL-MH-vqn"/>
-                                </constraints>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="3tx-k8-Ltb" firstAttribute="trailing" secondItem="ZLP-x6-QlA" secondAttribute="trailing" constant="20" id="1KI-FA-ohs"/>
-                            <constraint firstItem="ZLP-x6-QlA" firstAttribute="centerY" secondItem="NQ2-6e-nus" secondAttribute="centerY" id="PiC-w5-e7M"/>
-                            <constraint firstItem="ZLP-x6-QlA" firstAttribute="centerX" secondItem="NQ2-6e-nus" secondAttribute="centerX" id="iG0-ye-TLV"/>
-                            <constraint firstItem="ZLP-x6-QlA" firstAttribute="leading" secondItem="3tx-k8-Ltb" secondAttribute="leading" constant="20" id="lci-bX-DBD"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="3tx-k8-Ltb"/>
-                    </view>
-                    <connections>
-                        <outlet property="verificationCodeTextField" destination="Xu4-lC-N7b" id="xGs-gD-EOj"/>
-                        <outlet property="verifyButton" destination="top-lp-gtZ" id="Yui-yf-gEg"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3jq-g4-UUM" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2897" y="-1109"/>
         </scene>
         <!--Watheq View Controller-->
         <scene sceneID="rKu-Zd-kVl">

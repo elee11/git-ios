@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import CountdownLabel
 import Hero
+import TransitionButton
 
 
 class PhoneEntryController: AbstractViewController {
@@ -40,7 +41,7 @@ class PhoneEntryController: AbstractViewController {
     let countries:Countries = {
         return Countries.init(countries: JSONReader.countries())
     }()
-    @IBOutlet weak var sendCodeButton: UIButton!{
+    @IBOutlet weak var sendCodeButton: TransitionButton!{
         didSet {
             sendCodeButton.applyBorderProperties()
         }
@@ -102,9 +103,15 @@ class PhoneEntryController: AbstractViewController {
 
             return
         }
+         sendCodeButton.startAnimation()
+        self.view.isUserInteractionEnabled = false
         let phoneNumber = "+" + (localeCountry?.e164Cc!)! + phoneTextField.text!
         PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber) { (verificationID, error) in
             if let error = error {
+                self.sendCodeButton.stopAnimation()
+                self.view.isUserInteractionEnabled = true
+
+
                 if let errorCode = AuthErrorCode(rawValue: error._code) {
                     switch errorCode {
                     case .invalidPhoneNumber:

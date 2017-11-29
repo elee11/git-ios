@@ -19,6 +19,7 @@ target 'Wathaq' do
   pod 'SwiftyJSON'
   pod 'CountdownLabel'
   pod "Hero"
+  pod 'TransitionButton'
 
 
 
