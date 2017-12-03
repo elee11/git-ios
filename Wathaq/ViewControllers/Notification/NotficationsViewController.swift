@@ -17,8 +17,14 @@ class NotficationsViewController: UIViewController {
     override  func viewDidLayoutSubviews() {
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true
-            self.navigationController?.navigationItem.largeTitleDisplayMode = .never
+            let attributes = [
+                NSAttributedStringKey.foregroundColor : UIColor.deepBlue,
+                NSAttributedStringKey.font :  UIFont(name: "DinNextRegular", size: 30)
+            ]
+            
+            navigationController?.navigationBar.largeTitleTextAttributes = attributes
         }
+
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

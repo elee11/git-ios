@@ -36,9 +36,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         
         application.registerForRemoteNotifications()
         FirebaseApp.configure()
+        self.startNetworkListener()
+        self.customizeTabBar()
         
 
         return true
+    }
+    
+    func customizeTabBar ()
+    {
+        
+        let navigationBarAppearace = UINavigationBar.appearance()
+        navigationBarAppearace.tintColor = UIColor.deepBlue // Back buttons and such
+        navigationBarAppearace.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.deepBlue,NSAttributedStringKey.font: UIFont(name: "DinNextRegular", size: 18) as Any]
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "DinNextRegular", size: 16)!], for: .normal) // your textattributes here
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "DinNextRegular", size: 16)!], for: .highlighted) // your textattributes here
+
+
+        let colorNormal : UIColor = UIColor.lightimpactGray
+        let colorSelected : UIColor = UIColor.deepBlue
+        let titleFontAll : UIFont = UIFont(name: "DinNextRegular", size: 11.0)!
+        
+        let attributesNormal = [
+            NSAttributedStringKey.foregroundColor : colorNormal,
+            NSAttributedStringKey.font : titleFontAll
+        ]
+        
+        let attributesSelected = [
+            NSAttributedStringKey.foregroundColor : colorSelected,
+            NSAttributedStringKey.font : titleFontAll
+        ]
+        
+        
+        UITabBarItem.appearance().setTitleTextAttributes(attributesNormal, for: .normal)
+        UITabBarItem.appearance().setTitleTextAttributes(attributesSelected, for: .selected)
+        
+        
+    }
+    
+    
+    func startNetworkListener() {
+        NWConnectivity.sharedInstance.startNetworkReachabilityObserver()
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {

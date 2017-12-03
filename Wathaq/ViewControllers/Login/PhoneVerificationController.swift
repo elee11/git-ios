@@ -12,8 +12,10 @@ import CountdownLabel
 import TransitionButton
 
 
-class PhoneVerificationController: AbstractViewController {
-  
+class PhoneVerificationController: UIViewController,ToastAlertProtocol {
+ 
+    
+    var viewModel: UserViewModel!
     @IBOutlet weak var lblLogin: UILabel!
     @IBOutlet weak var lblLoginMsg: UILabel!
     @IBOutlet weak var lblaskingAboutNotarizedMsg: UILabel!
@@ -67,6 +69,8 @@ class PhoneVerificationController: AbstractViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = UserViewModel()
+
         title = "Enter your 6 digit code"
         view.addTapToDismissKeyboard()
         self.addTimerLable()
@@ -119,7 +123,7 @@ class PhoneVerificationController: AbstractViewController {
     @IBAction func resendVerificationCode(_ sender: Any) {
         view.endEditing(true)
         if phoneTextField.text?.characters.count == 0 {
-            AbstractViewController.showMessage(title: NSLocalizedString("Enter Phone number", comment: ""), body:"" , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+            self.showToastMessage(title: NSLocalizedString("Enter Phone number", comment: ""), isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
             
             return
         }
@@ -128,19 +132,20 @@ class PhoneVerificationController: AbstractViewController {
         let phoneNumber = "+" + (localeCountry?.e164Cc!)! + phoneTextField.text!
         PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber) { (verificationTagID, error) in
             if let error = error {
-                self.verifyButton.stopAnimation()
-                self.view.isUserInteractionEnabled = true
-                
-                
                 if let errorCode = AuthErrorCode(rawValue: error._code) {
                     switch errorCode {
                     case .invalidPhoneNumber:
-                        AbstractViewController.showMessage(title: NSLocalizedString("Enter avalid Phone number", comment: ""), body:"" , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+                        self.showToastMessage(title: NSLocalizedString("Enter avalid Phone number", comment: ""), isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+                        break
+                    case .networkError:
+                        self.showToastMessage(title: NSLocalizedString("No_Internet", comment: ""), isBottom: true, isWindowNeeded: false, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
                         break
                     default:
                         print("There is an error")
                     }
                 }
+                self.verifyButton.stopAnimation()
+                self.view.isUserInteractionEnabled = true
                 return
             }
             self.verifyButton.stopAnimation()
@@ -148,7 +153,7 @@ class PhoneVerificationController: AbstractViewController {
 
             guard let verificationTagID = verificationTagID else { return }
             self.verificationID = verificationTagID
-            AbstractViewController.showMessage(title: NSLocalizedString("Verification Code sent succussfully", comment: ""), body:"" , isWindowNeeded: true, BackgroundColor: UIColor.greenAlert, foregroundColor: UIColor.white)
+            self.showToastMessage(title: NSLocalizedString("Verification Code sent succussfully", comment: ""), isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.greenAlert, foregroundColor: UIColor.white)
             self.addTimerLable()
             
         }
@@ -159,7 +164,7 @@ class PhoneVerificationController: AbstractViewController {
         view.endEditing(true)
 
         if verificationCodeTextField.text?.isEmpty == true {
-            AbstractViewController.showMessage(title: NSLocalizedString(("Enter your verification code"), comment: ""), body:"" , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+            self.showToastMessage(title: NSLocalizedString(("Enter your verification code"), comment: ""), isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
             return
         }
         verifyButton.startAnimation()
@@ -168,34 +173,54 @@ class PhoneVerificationController: AbstractViewController {
             let credential = PhoneAuthProvider.provider().credential(withVerificationID: verificationID!, verificationCode: verificationCode)
             Auth.auth().signIn(with: credential) { (user, error) in
                 if let error = error {
-                    self.verifyButton.stopAnimation()
-                    self.view.isUserInteractionEnabled = true
+                   
                     if let errorCode = AuthErrorCode(rawValue: error._code) {
                         switch errorCode {
                         case .invalidVerificationCode:
-                            AbstractViewController.showMessage(title: NSLocalizedString("Enter avalid verification number", comment: ""), body:"" , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+                            self.showToastMessage(title: NSLocalizedString("Enter avalid verification number", comment: ""), isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+                            break
+                        case .networkError:
+                            self.showToastMessage(title: NSLocalizedString("No_Internet", comment: ""), isBottom: true, isWindowNeeded: false, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
                             break
                         case .sessionExpired:
-                            AbstractViewController.showMessage(title: NSLocalizedString("Session Expired", comment: ""), body:"" , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+                            self.showToastMessage(title: NSLocalizedString("Session Expired", comment: ""), isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
                             break
                         case .userDisabled:
-                            AbstractViewController.showMessage(title: NSLocalizedString("User Disabled", comment: ""), body:"" , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+                            self.showToastMessage(title: NSLocalizedString("User Disabled", comment: ""), isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
                             break
                         default:
                             print("There is an error")
                         }
                     }
+                    self.verifyButton.stopAnimation()
+                    self.view.isUserInteractionEnabled = true
 
                 }else {
                     //Once you have verified your phone number kill the firebase session.
                     try? Auth.auth().signOut()
-                    AbstractViewController.showMessage(title: NSLocalizedString("Your Phone verified successfully", comment: ""), body:"" , isWindowNeeded: true, BackgroundColor: UIColor.greenAlert, foregroundColor: UIColor.white)
+                    self.showToastMessage(title: NSLocalizedString("Your Phone verified successfully", comment: ""), isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.greenAlert, foregroundColor: UIColor.white)
                     self.performSegue(withIdentifier:"S_VerifyNumber_CompleteProfile", sender: nil
                     )
+                    self.loginUserWithPhoneNumber ()
+
 
                 }
             }
         }
+    }
+    
+    func loginUserWithPhoneNumber ()
+    {
+        let phoneNumber = "+" + (localeCountry?.e164Cc!)! + phoneTextField.text!
+
+        viewModel.loginUser(Phone: phoneNumber, completion: { (userObj, errorMsg) in
+            if errorMsg == nil {
+
+            } else{
+                self.showToastMessage(title:errorMsg! , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+            }
+        })
+
     }
 }
 

@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -200,130 +199,14 @@
             </objects>
             <point key="canvasLocation" x="2348" y="1781.5592203898052"/>
         </scene>
-        <!--My Orders View Controller-->
+        <!--Watheq View Controller-->
         <scene sceneID="kvZ-gL-Iog">
             <objects>
-                <viewController id="0j5-N6-Vo1" customClass="MyOrdersViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0j5-N6-Vo1" customClass="WatheqViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ol8-id-uXD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HXx-MC-b7N">
-                                <rect key="frame" x="35" y="294" width="75" height="75"/>
-                                <color key="backgroundColor" red="0.3231979311" green="0.62352418899999995" blue="0.80385208129999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="CzY-73-jwl"/>
-                                    <constraint firstAttribute="width" constant="75" id="FVp-Fm-ZH6"/>
-                                </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="blue"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="arc"/>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rtz-5d-LfV">
-                                <rect key="frame" x="118" y="294" width="110" height="75"/>
-                                <color key="backgroundColor" red="0.65110915899999999" green="0.49157077069999999" blue="0.75600677729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="110" id="L0M-e4-aP6"/>
-                                    <constraint firstAttribute="height" constant="75" id="YxZ-jc-qlz"/>
-                                </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="purple"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="arc"/>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nNl-A1-yzK">
-                                <rect key="frame" x="236" y="294" width="75" height="75"/>
-                                <color key="backgroundColor" red="0.33910316229999998" green="0.73554944990000004" blue="0.53971123700000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="9MT-H1-C3I"/>
-                                    <constraint firstAttribute="width" constant="75" id="Qin-6W-S5G"/>
-                                </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="green"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="arc"/>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="purple" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zri-UP-xPG">
-                                <rect key="frame" x="148" y="265" width="49" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.2388712764" green="0.33509445189999998" blue="0.42733851080000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="purpleLabel"/>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="green" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdy-rN-BVM">
-                                <rect key="frame" x="251" y="265" width="44" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.2388712764" green="0.33509445189999998" blue="0.42733851080000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="greenLabel"/>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HeroID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqC-uE-MLb">
-                                <rect key="frame" x="145" y="228" width="56" height="21"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" red="0.2388712764" green="0.33509445189999998" blue="0.42733851080000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="heroIDLabel"/>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="blue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Co-sq-I8D">
-                                <rect key="frame" x="56" y="265" width="33" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.2388712764" green="0.33509445189999998" blue="0.42733851080000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="blueLabel"/>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d61-db-GdN">
-                                <rect key="frame" x="157" y="469" width="32" height="30"/>
-                                <color key="tintColor" red="0.2388712764" green="0.33509445189999998" blue="0.42733851080000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Next"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="translate(0,100) fade"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="nextButton"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <segue destination="Ogu-9w-2nH" kind="show" id="3N5-Cm-wyX"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="zri-UP-xPG" firstAttribute="centerX" secondItem="Rtz-5d-LfV" secondAttribute="centerX" id="34j-mh-CZJ"/>
-                            <constraint firstItem="Rtz-5d-LfV" firstAttribute="centerY" secondItem="Ol8-id-uXD" secondAttribute="centerY" constant="-2" id="4Oa-x3-WRR"/>
-                            <constraint firstItem="zri-UP-xPG" firstAttribute="top" secondItem="mqC-uE-MLb" secondAttribute="bottom" constant="16" id="5xY-oz-Wy4"/>
-                            <constraint firstItem="nNl-A1-yzK" firstAttribute="leading" secondItem="Rtz-5d-LfV" secondAttribute="trailing" constant="8" id="D5j-Xp-uXV"/>
-                            <constraint firstItem="nNl-A1-yzK" firstAttribute="top" secondItem="Sdy-rN-BVM" secondAttribute="bottom" constant="8" id="FRp-t7-mV0"/>
-                            <constraint firstItem="d61-db-GdN" firstAttribute="centerX" secondItem="Ol8-id-uXD" secondAttribute="centerX" constant="-14.5" id="Gfl-ua-ePp"/>
-                            <constraint firstItem="nNl-A1-yzK" firstAttribute="centerY" secondItem="Ol8-id-uXD" secondAttribute="centerY" constant="-2" id="O6L-c3-R5X"/>
-                            <constraint firstItem="Rtz-5d-LfV" firstAttribute="leading" secondItem="HXx-MC-b7N" secondAttribute="trailing" constant="8" id="UIu-13-Soj"/>
-                            <constraint firstItem="Sdy-rN-BVM" firstAttribute="centerX" secondItem="nNl-A1-yzK" secondAttribute="centerX" id="V25-oZ-8cY"/>
-                            <constraint firstItem="mqC-uE-MLb" firstAttribute="centerX" secondItem="Ol8-id-uXD" secondAttribute="centerX" constant="-14.5" id="XvM-m8-dMZ"/>
-                            <constraint firstItem="HXx-MC-b7N" firstAttribute="centerY" secondItem="Ol8-id-uXD" secondAttribute="centerY" constant="-2" id="fuj-dQ-ksM"/>
-                            <constraint firstItem="Rtz-5d-LfV" firstAttribute="centerX" secondItem="Ol8-id-uXD" secondAttribute="centerX" constant="-14.5" id="gLX-3v-Fsp"/>
-                            <constraint firstItem="9Co-sq-I8D" firstAttribute="centerX" secondItem="HXx-MC-b7N" secondAttribute="centerX" id="h29-Uh-SZ2"/>
-                            <constraint firstItem="Rtz-5d-LfV" firstAttribute="top" secondItem="zri-UP-xPG" secondAttribute="bottom" constant="8" id="iWU-dY-KRm"/>
-                            <constraint firstItem="HXx-MC-b7N" firstAttribute="top" secondItem="9Co-sq-I8D" secondAttribute="bottom" constant="8" id="w2o-ah-cNk"/>
-                            <constraint firstItem="d61-db-GdN" firstAttribute="top" secondItem="Rtz-5d-LfV" secondAttribute="bottom" constant="100" id="zv6-WQ-uAB"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="dax-tg-vbp"/>
                     </view>
                     <navigationItem key="navigationItem" id="A6i-Yx-cDZ"/>
@@ -785,7 +668,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ادخل رقم جوالك ثم كود التحقق من الرساله التي ستصلك على هذا الرقم" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pb5-Js-6Zq">
-                                <rect key="frame" x="16" y="84" width="342.5" height="55.5"/>
+                                <rect key="frame" x="17" y="84" width="342.5" height="55.5"/>
                                 <accessibility key="accessibilityConfiguration" hint="" identifier="074EEBD8-5493-4ABA-BBEA-A819E12ED6B6" label=""/>
                                 <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="18.870000000000001"/>
                                 <color key="textColor" red="0.58823529409999997" green="0.60784313729999995" blue="0.66274509800000003" alpha="1" colorSpace="deviceRGB"/>
@@ -1040,11 +923,11 @@
             </objects>
             <point key="canvasLocation" x="748" y="1783"/>
         </scene>
-        <!--My Orders-->
+        <!--Watheq-->
         <scene sceneID="7a3-eY-vx8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0Lu-Q0-Ef2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="My Orders" image="Orders_InActive" id="Sd1-6p-tGT"/>
+                    <tabBarItem key="tabBarItem" title="Watheq" image="Wathaq_InActive" id="Sd1-6p-tGT"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WZ8-cx-HRG">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1059,10 +942,10 @@
             </objects>
             <point key="canvasLocation" x="748.79999999999995" y="-320.23988005997006"/>
         </scene>
-        <!--Watheq View Controller-->
+        <!--My Orders View Controller-->
         <scene sceneID="rKu-Zd-kVl">
             <objects>
-                <viewController id="RMd-Ih-Rtn" customClass="WatheqViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="RMd-Ih-Rtn" customClass="MyOrdersViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H7N-35-4DK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1129,11 +1012,11 @@
             </objects>
             <point key="canvasLocation" x="1546" y="1050"/>
         </scene>
-        <!--Watheq-->
+        <!--My Orders-->
         <scene sceneID="ssq-em-ywY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dyM-4y-zTw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Watheq" image="Wathaq_InActive" id="oMP-M4-7fM"/>
+                    <tabBarItem key="tabBarItem" title="My Orders" image="Orders_InActive" id="oMP-M4-7fM"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ct7-Ca-hfn">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1148,176 +1031,6 @@
             </objects>
             <point key="canvasLocation" x="748.79999999999995" y="359.82008995502252"/>
         </scene>
-        <!--View Controller 2-->
-        <scene sceneID="bSc-yP-EHe">
-            <objects>
-                <viewController title="View Controller 2" id="Ogu-9w-2nH" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="auX-cQ-eGh"/>
-                        <viewControllerLayoutGuide type="bottom" id="aUM-Rq-O9d"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="NIb-GM-1Fg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="440"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xyi-Yx-9F5">
-                                <rect key="frame" x="35" y="88" width="150" height="75"/>
-                                <color key="backgroundColor" red="0.3231979311" green="0.62352418899999995" blue="0.80385208129999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="6T9-zo-gZi"/>
-                                    <constraint firstAttribute="width" constant="150" id="nhJ-67-FzS"/>
-                                </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="blue"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="arc"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="hero_dismissViewController" destination="Qll-Ma-a0r" eventType="touchUpInside" id="FZE-Bc-EZT"/>
-                                </connections>
-                            </button>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPn-HP-UM1">
-                                <rect key="frame" x="35" y="183" width="150" height="75"/>
-                                <color key="backgroundColor" red="0.65110915899999999" green="0.49157077069999999" blue="0.75600677729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="JhN-jK-tfq"/>
-                                    <constraint firstAttribute="width" constant="150" id="lWH-dV-6rq"/>
-                                </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="purple"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="arc"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="hero_dismissViewController" destination="Qll-Ma-a0r" eventType="touchUpInside" id="VUv-R8-6F2"/>
-                                </connections>
-                            </button>
-                            <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aL5-Ce-Fmr">
-                                <rect key="frame" x="35" y="278" width="150" height="75"/>
-                                <color key="backgroundColor" red="0.33910316229999998" green="0.73554944990000004" blue="0.53971123700000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="bl4-gR-WK6"/>
-                                    <constraint firstAttribute="width" constant="150" id="oth-sM-HCN"/>
-                                </constraints>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="green"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="arc"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="hero_dismissViewController" destination="Qll-Ma-a0r" eventType="touchUpInside" id="Ffm-9h-bEV"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="purple" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRy-PQ-ORp">
-                                <rect key="frame" x="201" y="210" width="49" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.2388712764" green="0.33509445189999998" blue="0.42733851080000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="purpleLabel"/>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="green" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dm2-El-M38">
-                                <rect key="frame" x="201" y="305" width="44" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.2388712764" green="0.33509445189999998" blue="0.42733851080000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="greenLabel"/>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="blue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UoG-Hx-C0e">
-                                <rect key="frame" x="201" y="115" width="33" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.2388712764" green="0.33509445189999998" blue="0.42733851080000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="blueLabel"/>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HeroID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sb8-04-pT1">
-                                <rect key="frame" x="201" y="48" width="56" height="21"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <color key="textColor" red="0.2388712764" green="0.33509445189999998" blue="0.42733851080000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="heroIDLabel"/>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hG5-Bf-HdK">
-                                <rect key="frame" x="4" y="52" width="48" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="48" id="fal-x1-opx"/>
-                                    <constraint firstAttribute="height" constant="48" id="kT4-nI-3VG"/>
-                                </constraints>
-                                <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" image="ic_keyboard_arrow_down"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="24"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="fade translate(0, -150)"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="back"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="hero_unwindToRootViewController" destination="Qll-Ma-a0r" eventType="touchUpInside" id="Id7-mK-ZUC"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Re-4v-3RG">
-                                <rect key="frame" x="143" y="382" width="34" height="30"/>
-                                <color key="tintColor" red="0.2388712764" green="0.33509445189999998" blue="0.42733851080000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Back"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="translate(0,100) fade"/>
-                                    <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="nextButton"/>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="hero_dismissViewController" destination="Qll-Ma-a0r" eventType="touchUpInside" id="ZNc-ma-KtV"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="yRy-PQ-ORp" firstAttribute="top" secondItem="UoG-Hx-C0e" secondAttribute="bottom" constant="74" id="0T5-6f-EGS"/>
-                            <constraint firstItem="Xyi-Yx-9F5" firstAttribute="centerX" secondItem="NIb-GM-1Fg" secondAttribute="centerX" constant="-50" id="1M2-Nm-TS6"/>
-                            <constraint firstItem="aL5-Ce-Fmr" firstAttribute="top" secondItem="DPn-HP-UM1" secondAttribute="bottom" constant="20" id="BAQ-zl-RmW"/>
-                            <constraint firstItem="hG5-Bf-HdK" firstAttribute="top" secondItem="auX-cQ-eGh" secondAttribute="bottom" constant="8" id="DpV-j3-Aql"/>
-                            <constraint firstItem="yRy-PQ-ORp" firstAttribute="leading" secondItem="DPn-HP-UM1" secondAttribute="trailing" constant="16" id="Flk-p6-Mv5"/>
-                            <constraint firstItem="hG5-Bf-HdK" firstAttribute="leading" secondItem="NIb-GM-1Fg" secondAttribute="leadingMargin" constant="-12" id="Fp1-cf-jqA"/>
-                            <constraint firstItem="aL5-Ce-Fmr" firstAttribute="centerX" secondItem="NIb-GM-1Fg" secondAttribute="centerX" constant="-50" id="I7G-SF-CbS"/>
-                            <constraint firstItem="DPn-HP-UM1" firstAttribute="centerX" secondItem="NIb-GM-1Fg" secondAttribute="centerX" constant="-50" id="IfB-AQ-rM4"/>
-                            <constraint firstItem="DPn-HP-UM1" firstAttribute="top" secondItem="Xyi-Yx-9F5" secondAttribute="bottom" constant="20" id="KX8-Vd-atx"/>
-                            <constraint firstItem="dm2-El-M38" firstAttribute="leading" secondItem="Sb8-04-pT1" secondAttribute="leading" id="MXS-14-576"/>
-                            <constraint firstItem="UoG-Hx-C0e" firstAttribute="leading" secondItem="Sb8-04-pT1" secondAttribute="leading" id="XmJ-uy-HpK"/>
-                            <constraint firstItem="dm2-El-M38" firstAttribute="top" secondItem="yRy-PQ-ORp" secondAttribute="bottom" constant="74" id="c5R-fi-LyH"/>
-                            <constraint firstItem="yRy-PQ-ORp" firstAttribute="leading" secondItem="Sb8-04-pT1" secondAttribute="leading" id="cUR-ON-4D4"/>
-                            <constraint firstItem="8Re-4v-3RG" firstAttribute="top" secondItem="aL5-Ce-Fmr" secondAttribute="bottom" constant="29" id="eah-wY-EMm"/>
-                            <constraint firstItem="8Re-4v-3RG" firstAttribute="centerX" secondItem="NIb-GM-1Fg" secondAttribute="centerX" id="qcx-2V-KiD"/>
-                            <constraint firstItem="DPn-HP-UM1" firstAttribute="centerY" secondItem="NIb-GM-1Fg" secondAttribute="centerY" id="ugr-y9-DmE"/>
-                            <constraint firstItem="UoG-Hx-C0e" firstAttribute="top" secondItem="Sb8-04-pT1" secondAttribute="bottom" constant="46" id="vJA-Zs-O3L"/>
-                            <constraint firstItem="yRy-PQ-ORp" firstAttribute="centerY" secondItem="NIb-GM-1Fg" secondAttribute="centerY" id="xnq-4z-rsU"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Tcj-vp-0wm"/>
-                    </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="440"/>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
-                    </userDefinedRuntimeAttributes>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qll-Ma-a0r" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2304" y="-322"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Notifications_InActive" width="26" height="30"/>
@@ -1326,7 +1039,6 @@
         <image name="Wathaq_InActive" width="29" height="26"/>
         <image name="ic_arrow_r" width="13" height="23"/>
         <image name="ic_avatar" width="107" height="106"/>
-        <image name="ic_keyboard_arrow_down" width="16" height="16"/>
         <image name="ic_saudi_arabia" width="40" height="29"/>
     </resources>
 </document>

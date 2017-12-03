@@ -5,6 +5,11 @@
   Created by Ahmed Zaky on 11/12/17.
   Copyright © 2017 Ahmed Zaky. All rights reserved.
 */
+//uiTabBar title
+
+
+"No_Internet"  = "No Internet Connection";
+"Slow_Internet"  = "Slow Internet Connection";
 "Settings" = "Settings";
 "profile" = "Profile";
 "notifications" = "Notifications";
@@ -27,3 +32,4 @@
 "Enter your verification code" = "Enter your verification code!";
 "Enter avalid verification number" = "Enter avalid verification number";
 "Verification Code sent succussfully" = "Verification Code sent succussfully";
+"SERVER_ERROR" = "Error occured, please try again later";

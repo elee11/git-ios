@@ -13,7 +13,8 @@ import Hero
 import TransitionButton
 
 
-class PhoneEntryController: AbstractViewController {
+class PhoneEntryController: UIViewController,ToastAlertProtocol {
+ 
     
     var localeCountry:Country?
 
@@ -50,12 +51,15 @@ class PhoneEntryController: AbstractViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
         view.addTapToDismissKeyboard()
     }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         phoneTextField.becomeFirstResponder()
         super.viewWillAppear(animated)
@@ -100,7 +104,7 @@ class PhoneEntryController: AbstractViewController {
     @IBAction func didTapSendCode(_ sender: Any) {
         view.endEditing(true)
         if phoneTextField.text?.characters.count == 0 {
-            AbstractViewController.showMessage(title: NSLocalizedString("Enter Phone number", comment: ""), body:"" , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+            self.showToastMessage(title: NSLocalizedString("Enter Phone number", comment: ""), isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
 
             return
         }
@@ -109,19 +113,26 @@ class PhoneEntryController: AbstractViewController {
         let phoneNumber = "+" + (localeCountry?.e164Cc!)! + phoneTextField.text!
         PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber) { (verificationID, error) in
             if let error = error {
-                self.sendCodeButton.stopAnimation()
-                self.view.isUserInteractionEnabled = true
-
-
+               
                 if let errorCode = AuthErrorCode(rawValue: error._code) {
                     switch errorCode {
                     case .invalidPhoneNumber:
-                        AbstractViewController.showMessage(title: NSLocalizedString("Enter avalid Phone number", comment: ""), body:"" , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+                        self.showToastMessage(title: NSLocalizedString("Enter avalid Phone number", comment: ""), isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
                         break
+                    case .networkError:
+                            self.showToastMessage(title: NSLocalizedString("No_Internet", comment: ""), isBottom: true, isWindowNeeded: false, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+                        break
+                    case .tooManyRequests:
+                        self.showToastMessage(title: NSLocalizedString("Too Many Requests", comment: ""), isBottom: true, isWindowNeeded: false, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+                        break
+
                     default:
                         print("There is an error")
                     }
                 }
+                self.sendCodeButton.stopAnimation()
+                self.view.isUserInteractionEnabled = true
+
                 return
             }
             guard let verificationID = verificationID else { return }

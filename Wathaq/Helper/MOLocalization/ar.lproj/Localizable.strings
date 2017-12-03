@@ -5,6 +5,9 @@
   Created by Ahmed Zaky on 11/12/17.
   Copyright © 2017 Ahmed Zaky. All rights reserved.
 */
+"No_Internet" = "لا يوجد إتصال بالإنترنت";
+"Slow_Internet" = "بطء الإتصال بالإنترنت";
+
 "Settings" = "الإعدادات";
 "profile" = "ملفي الشخصي";
 "notifications" = "التنبيهات";
@@ -28,3 +31,4 @@
 "Enter avalid verification number" = "أدخل رقم تحقق صحيح";
 "Your Phone verified successfully" = "تم التحقق من هاتفك بنجاح";
 "Verification Code sent succussfully" = "تم إرسال رمز التحقق بنجاح";
+"SERVER_ERROR" = "حدث خطأ ما، برجاء اعادة المحاولة";

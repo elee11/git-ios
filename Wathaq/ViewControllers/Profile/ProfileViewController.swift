@@ -16,7 +16,8 @@ class ProfileViewController: UIViewController {
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true
             let attributes = [
-                NSAttributedStringKey.foregroundColor : UIColor.red,
+                NSAttributedStringKey.foregroundColor : UIColor.deepBlue,
+                NSAttributedStringKey.font :  UIFont(name: "DinNextRegular", size: 30)
                 ]
             
             navigationController?.navigationBar.largeTitleTextAttributes = attributes

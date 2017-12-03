@@ -10,6 +10,11 @@
 		2132D6F17AD8E0C73A1C3143 /* Pods_Wathaq.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB92683FFED97ABD1A09A345 /* Pods_Wathaq.framework */; };
 		982416C81FC4D15900080DE9 /* EmptyDataAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 982416C71FC4D15900080DE9 /* EmptyDataAssets.xcassets */; };
 		982416CD1FC4D93100080DE9 /* AbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982416CC1FC4D93100080DE9 /* AbstractViewController.swift */; };
+		9825C3001FD1CCD300FE93E3 /* WatheqApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825C2FF1FD1CCD300FE93E3 /* WatheqApi.swift */; };
+		9825C3021FD1DD2400FE93E3 /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825C3011FD1DD2400FE93E3 /* NetworkHandler.swift */; };
+		9825C3041FD1DDA100FE93E3 /* DefaultAlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825C3031FD1DDA100FE93E3 /* DefaultAlamofireManager.swift */; };
+		9825C3091FD1DFD200FE93E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825C3081FD1DFD200FE93E3 /* User.swift */; };
+		9825C30C1FD1E2F500FE93E3 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825C30B1FD1E2F500FE93E3 /* UserViewModel.swift */; };
 		982B5D381FCB4C840028092E /* PhoneNumberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982B5D371FCB4C840028092E /* PhoneNumberTableViewCell.swift */; };
 		982B5D3A1FCB528A0028092E /* phoneVerificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982B5D391FCB528A0028092E /* phoneVerificationTableViewCell.swift */; };
 		982C682D1FCEF2DC0090F5F6 /* CompleteProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982C682C1FCEF2DC0090F5F6 /* CompleteProfileViewController.swift */; };
@@ -20,6 +25,8 @@
 		985587F11FC6DD19001AD5E5 /* LblWithTitleGenralCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985587F01FC6DD19001AD5E5 /* LblWithTitleGenralCellProtocol.swift */; };
 		985587F81FC6F24B001AD5E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 985587F41FC6F24B001AD5E5 /* GoogleService-Info.plist */; };
 		986516571FBA4E2B00551208 /* SettingsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986516561FBA4E2B00551208 /* SettingsTableCell.swift */; };
+		986F54ED1FD0069500E9F842 /* NWConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986F54EC1FD0069500E9F842 /* NWConnectivity.swift */; };
+		986F54EF1FD007AF00E9F842 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986F54EE1FD007AF00E9F842 /* NotificationExtension.swift */; };
 		9870B9F81FB8CA2B008E678B /* MyOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870B9F71FB8CA2B008E678B /* MyOrdersViewController.swift */; };
 		9870B9FA1FB8CA38008E678B /* WatheqViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870B9F91FB8CA38008E678B /* WatheqViewController.swift */; };
 		9870B9FC1FB8CA51008E678B /* NotficationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870B9FB1FB8CA51008E678B /* NotficationsViewController.swift */; };
@@ -56,6 +63,11 @@
 /* Begin PBXFileReference section */
 		982416C71FC4D15900080DE9 /* EmptyDataAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = EmptyDataAssets.xcassets; sourceTree = "<group>"; };
 		982416CC1FC4D93100080DE9 /* AbstractViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractViewController.swift; sourceTree = "<group>"; };
+		9825C2FF1FD1CCD300FE93E3 /* WatheqApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatheqApi.swift; sourceTree = "<group>"; };
+		9825C3011FD1DD2400FE93E3 /* NetworkHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
+		9825C3031FD1DDA100FE93E3 /* DefaultAlamofireManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultAlamofireManager.swift; sourceTree = "<group>"; };
+		9825C3081FD1DFD200FE93E3 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9825C30B1FD1E2F500FE93E3 /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		982B5D371FCB4C840028092E /* PhoneNumberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberTableViewCell.swift; sourceTree = "<group>"; };
 		982B5D391FCB528A0028092E /* phoneVerificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = phoneVerificationTableViewCell.swift; sourceTree = "<group>"; };
 		982C682C1FCEF2DC0090F5F6 /* CompleteProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteProfileViewController.swift; sourceTree = "<group>"; };
@@ -66,8 +78,9 @@
 		985587F01FC6DD19001AD5E5 /* LblWithTitleGenralCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LblWithTitleGenralCellProtocol.swift; sourceTree = "<group>"; };
 		985587F41FC6F24B001AD5E5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		985587F61FC6F24B001AD5E5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		986516551FBA471800551208 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		986516561FBA4E2B00551208 /* SettingsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableCell.swift; sourceTree = "<group>"; };
+		986F54EC1FD0069500E9F842 /* NWConnectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NWConnectivity.swift; sourceTree = "<group>"; };
+		986F54EE1FD007AF00E9F842 /* NotificationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
 		9870B9F61FB8C7CB008E678B /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		9870B9F71FB8CA2B008E678B /* MyOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrdersViewController.swift; sourceTree = "<group>"; };
 		9870B9F91FB8CA38008E678B /* WatheqViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatheqViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +159,22 @@
 			path = BaseClass;
 			sourceTree = "<group>";
 		};
+		9825C3051FD1DE0D00FE93E3 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				9825C3081FD1DFD200FE93E3 /* User.swift */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		9825C30A1FD1E2C000FE93E3 /* userViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9825C30B1FD1E2F500FE93E3 /* UserViewModel.swift */,
+			);
+			name = userViewModel;
+			sourceTree = "<group>";
+		};
 		982C682B1FCEF2BF0090F5F6 /* CompleteProfile */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +207,14 @@
 				988942DE1FC72312001B4F75 /* Fonts */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		986F54EB1FD0068800E9F842 /* NWConnectivity */ = {
+			isa = PBXGroup;
+			children = (
+				986F54EC1FD0069500E9F842 /* NWConnectivity.swift */,
+			);
+			path = NWConnectivity;
 			sourceTree = "<group>";
 		};
 		9870B9FF1FB8CDE5008E678B /* MyOrders */ = {
@@ -226,6 +263,9 @@
 		9870BA061FB8D08E008E678B /* Service Handler */ = {
 			isa = PBXGroup;
 			children = (
+				9825C2FF1FD1CCD300FE93E3 /* WatheqApi.swift */,
+				9825C3011FD1DD2400FE93E3 /* NetworkHandler.swift */,
+				9825C3031FD1DDA100FE93E3 /* DefaultAlamofireManager.swift */,
 			);
 			path = "Service Handler";
 			sourceTree = "<group>";
@@ -233,6 +273,7 @@
 		9870BA071FB8D0A8008E678B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9825C3051FD1DE0D00FE93E3 /* User */,
 				988942EA1FCA1293001B4F75 /* Country */,
 			);
 			path = Model;
@@ -253,8 +294,8 @@
 			isa = PBXGroup;
 			children = (
 				985587DE1FC6C2C4001AD5E5 /* Login */,
-				9870B9FF1FB8CDE5008E678B /* MyOrders */,
 				9870BA001FB8CDF6008E678B /* Watheq */,
+				9870B9FF1FB8CDE5008E678B /* MyOrders */,
 				9870BA011FB8CE07008E678B /* Notification */,
 				9870BA021FB8CE1F008E678B /* Profile */,
 			);
@@ -264,6 +305,7 @@
 		9870BA0A1FB8D0E0008E678B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				9825C30A1FD1E2C000FE93E3 /* userViewModel */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -282,6 +324,7 @@
 		9870BA0C1FB8D11C008E678B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				986F54EE1FD007AF00E9F842 /* NotificationExtension.swift */,
 				988942E81FCA123E001B4F75 /* View+Additions.swift */,
 				985587EE1FC6D964001AD5E5 /* UIColorExtension.swift */,
 			);
@@ -291,6 +334,7 @@
 		9870BA0D1FB8D139008E678B /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				986F54EB1FD0068800E9F842 /* NWConnectivity */,
 				988942E31FCA10DB001B4F75 /* JSONReader */,
 				982416C91FC4D7FD00080DE9 /* BaseClass */,
 				989B46051FB8DA1400618519 /* Constants */,
@@ -529,10 +573,12 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -548,10 +594,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -583,20 +631,27 @@
 				988942FC1FCA1321001B4F75 /* CountryCodeListCell.swift in Sources */,
 				98337A071FCC334B00EE7539 /* TimerTableViewCell.swift in Sources */,
 				986516571FBA4E2B00551208 /* SettingsTableCell.swift in Sources */,
+				9825C3091FD1DFD200FE93E3 /* User.swift in Sources */,
 				988942ED1FCA12C2001B4F75 /* Country.swift in Sources */,
+				9825C3001FD1CCD300FE93E3 /* WatheqApi.swift in Sources */,
 				985587E91FC6D882001AD5E5 /* plistReaderProtocol.swift in Sources */,
 				982C682D1FCEF2DC0090F5F6 /* CompleteProfileViewController.swift in Sources */,
+				986F54EF1FD007AF00E9F842 /* NotificationExtension.swift in Sources */,
 				9870B9FA1FB8CA38008E678B /* WatheqViewController.swift in Sources */,
 				9870BA051FB8CEB3008E678B /* SettingsViewController.swift in Sources */,
 				989B46091FB8DB8C00618519 /* Localizer.swift in Sources */,
 				985587EF1FC6D964001AD5E5 /* UIColorExtension.swift in Sources */,
 				988942E51FCA10E5001B4F75 /* JSONReader.swift in Sources */,
+				9825C3021FD1DD2400FE93E3 /* NetworkHandler.swift in Sources */,
+				9825C30C1FD1E2F500FE93E3 /* UserViewModel.swift in Sources */,
 				985587ED1FC6D8EA001AD5E5 /* ToastAlertProtocol.swift in Sources */,
 				988942E91FCA123E001B4F75 /* View+Additions.swift in Sources */,
+				9825C3041FD1DDA100FE93E3 /* DefaultAlamofireManager.swift in Sources */,
 				988943001FCA19C8001B4F75 /* singleToneClassValues.swift in Sources */,
 				982416CD1FC4D93100080DE9 /* AbstractViewController.swift in Sources */,
 				989B460A1FB8DB9000618519 /* Constants.swift in Sources */,
 				988942FE1FCA1321001B4F75 /* PhoneEntryController.swift in Sources */,
+				986F54ED1FD0069500E9F842 /* NWConnectivity.swift in Sources */,
 				988942EE1FCA12C2001B4F75 /* Countries.swift in Sources */,
 				985587F11FC6DD19001AD5E5 /* LblWithTitleGenralCellProtocol.swift in Sources */,
 			);
@@ -626,7 +681,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				98DDA14F1FB797E500B8F42F /* Base */,
-				986516551FBA471800551208 /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

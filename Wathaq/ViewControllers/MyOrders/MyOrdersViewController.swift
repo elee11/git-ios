@@ -19,14 +19,38 @@ class MyOrdersViewController: UIViewController {
           self.navigationController?.isHeroEnabled = true
          self.isHeroEnabled = true
         view.heroModifiers = [.useLayerRenderSnapshot]
-
         self.title = NSLocalizedString("myOrders", comment: "")
+     
+
+        NotificationCenter.default.addObserver(self, selector: #selector(self.NWConnectivityDidChangeCalled) , name: .NWConnectivityDidChange, object: nil)
+
     }
+    
+    
     
     override  func viewDidLayoutSubviews() {
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true
-            self.navigationController?.navigationItem.largeTitleDisplayMode = .never
+            let attributes = [
+                NSAttributedStringKey.foregroundColor : UIColor.deepBlue,
+                NSAttributedStringKey.font :  UIFont(name: "DinNextRegular", size: 30)
+            ]
+            
+            navigationController?.navigationBar.largeTitleTextAttributes = attributes
+        }
+
+        
+        self.tabBarItem.title = NSLocalizedString("myOrders", comment: "")
+
+    }
+    
+    @objc func NWConnectivityDidChangeCalled() {
+        print("=========================")
+        print("network connectivity changed")
+        print("=========================")
+        
+        if NWConnectivity.sharedInstance.isConnectedToInternet() {
+            print("========================= Connected ")
         }
     }
     

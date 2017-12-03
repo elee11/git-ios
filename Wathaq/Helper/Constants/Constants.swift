@@ -25,6 +25,7 @@ struct Constants {
     
     struct keys {
         static let flurry = "HBVRP3Y6QCT2CZMFTTQ5"
+        
     }
     
     struct WebService {
@@ -34,6 +35,7 @@ struct Constants {
         // About //used in constants as this string will be removed from nextPageUrl to get pagingInfo and used it as a parameter in MOYA
         static let URL_NEWS_get = URL_BASE + "/About/News?pageSize=20&pagingInfo="
         static let mobileType = "100010000"
+        static let ApiKey = "85BCbm7U7JsQdbB5Z95vmvN4LyQmqVxp"
     }
     
     struct shareApp {

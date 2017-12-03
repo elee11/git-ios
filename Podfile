@@ -20,6 +20,8 @@ target 'Wathaq' do
   pod 'CountdownLabel'
   pod "Hero"
   pod 'TransitionButton'
+  pod 'Moya'
+
 
 
 

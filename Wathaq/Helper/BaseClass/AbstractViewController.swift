@@ -73,32 +73,7 @@ class AbstractViewController: UIViewController,NVActivityIndicatorViewable,UIGes
 //        ActivityIndicatorView?.stopAnimating()
 //    }
     
-    //MARK: Messages
-    class  func showMessage(title:String,body:String,isWindowNeeded:Bool,BackgroundColor:UIColor,foregroundColor:UIColor)
-    {
-        let messageView: MessageView = MessageView.viewFromNib(layout: .messageView)
- 
-        //Configurations
-        var config = SwiftMessages.Config()
-        config.presentationStyle = .bottom //Presentationstyle
-        config.duration = .seconds(seconds: 5) //Set duration
-
-        if isWindowNeeded {
-        config.presentationContext = .window(windowLevel: UIWindowLevelNormal) //add notification on window level
-        }
-        messageView.configureTheme(backgroundColor: BackgroundColor, foregroundColor: foregroundColor, iconImage: nil, iconText: nil)
-        messageView.iconImageView?.isHidden = true  // Hide icon
-        messageView.button?.isHidden = true  // Hide button
-        messageView.configureDropShadow()  // Add shadow
-        messageView.bodyLabel?.textAlignment = .center
-        messageView.titleLabel?.textAlignment = .center
-        messageView.bodyLabel?.isHidden = true
-        messageView.titleLabel?.font = UIFont(name: "DinNextRegular", size: 14)
-
-        // Set message title, body. Here, we're overriding the default warning
-        messageView.configureContent(title: title, body: body)
-        SwiftMessages.show(config: config, view: messageView)
-    }
+  
     
     //MARK: load storyboard
     func loadStoryBoardWithStoryboardName(_StoryboardName : NSString) -> UIStoryboard {

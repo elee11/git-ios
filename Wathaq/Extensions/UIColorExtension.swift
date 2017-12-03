@@ -21,12 +21,12 @@ extension UIColor {
         return UIColor(red: 96.0 / 255.0, green: 208.0 / 255.0, blue: 75.0 / 255.0, alpha: 1.0)
     }
     
-    class var pastelGray: UIColor {
-        return UIColor(red: 202.0 / 255.0, green: 202.0 / 255.0, blue: 202.0 / 255.0, alpha: 1.0)
+    class var deepBlue: UIColor {
+        return UIColor(red: 74.0 / 255.0, green: 144.0 / 255.0, blue: 226.0 / 255.0, alpha: 1.0)
     }
     
-    class var indiaYellow: UIColor {
-        return UIColor(red: 226.0 / 255.0, green: 173.0 / 255.0, blue: 86.0 / 255.0, alpha: 1.0)
+    class var lightimpactGray: UIColor {
+        return UIColor(red: 149.0 / 255.0, green: 149.0 / 255.0, blue: 149.0 / 255.0, alpha: 1.0)
     }
     
     class var battleshipGrey: UIColor {
