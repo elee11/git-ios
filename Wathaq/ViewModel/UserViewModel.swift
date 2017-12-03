@@ -24,35 +24,30 @@ class UserViewModel: ToastAlertProtocol {
         }
     }
     
-    func loginUser(Phone: String, completion: @escaping (User?, String?) -> ()){
-        
+    func loginUser(Phone:[String: String], completion: @escaping (User?, String?) -> ()){
+        print(Phone)
+
         NetworkHandler.requestTarget(target: .login(Phone), isDictionary: true) { (result, errorMsg) in
             if errorMsg == nil {
-                let model = Mapper<User>().map(JSONString: result as! String)!
-                
-                //show alert if you want to login next time with touch id
-                //save user name , password , model from api "token " ...
-                //model save token "bearer + token"
-                //save flag in realm
-                
+                let model = Mapper<UserRootClass>().map(JSONString: result as! String)!
+                let userModel = model.user
+                completion(userModel,nil)
+                if userModel?.isCompleteProfile == true
+                {
                 do {
                 self.deleteUser()
-                
                 let realm = try! Realm()
                 try realm.write {
-                    realm.add(model, update: true)
+                    realm.add(userModel!, update: true)
                 }
-                
-                completion(model,nil)
                 } catch {
                     completion(nil, "fail parsing objects")
                 }
-
+                }
             } else{
                 completion(nil,errorMsg)
             }
         }
-        
     }
     
     func deleteUser () {

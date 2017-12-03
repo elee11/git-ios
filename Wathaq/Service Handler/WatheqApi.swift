@@ -11,7 +11,6 @@ import Moya
 
 // MARK: - Provider setup
 
-let ApiKeyToken = "85BCbm7U7JsQdbB5Z95vmvN4LyQmqVxp"
 
 private func JSONResponseDataFormatter(_ data: Data) -> Data {
     do {
@@ -59,19 +58,14 @@ private extension String {
     }
 }
 
-enum RequestData {
-    case jsonEncodable(Encodable)
-    case parameterEncoding([String: Any], ParameterEncoding?) // a default parameter encoding could be provided in the TargetType, too (with an empty default implementation)
-}
+
 
 public enum WatheqApi {
-    case login(String)
+    case login([String: String])
 }
 
 extension WatheqApi: TargetType {
     public var baseURL: URL { return URL(string: "http://138.197.41.25/watheq/public/api")! }
-    public var parameterEncoding: Moya.ParameterEncoding { return JSONEncoding.prettyPrinted }
-
     public var path: String {
         switch self {
         case .login:
@@ -84,29 +78,54 @@ extension WatheqApi: TargetType {
             return .post
         }
     }
-     var parameters: RequestData? {
+    public var parameters: [String: Any]? {
         switch self {
-        case .login(let phone):
-            return .parameterEncoding(["phone": phone], JSONEncoding.default)
-
+        case .login(let dataDict):
+            return dataDict
+     
+        default:
+            return nil
         }
     }
     
-   
-   
-    public var task: Task {
-        return Task.requestPlain
+    public var parameterEncoding: ParameterEncoding {
+        switch self {
+        case  .login :
+            return JSONEncoding.default
+        default:
+            return URLEncoding.default
+        }
     }
-    public var headers: [String : String]? {
-        return nil
+
+  
+    public var task: Task {
+        return .request
+    }
+    
+    public var validate: Bool {
+        
+        return false
     }
     public var sampleData: Data {
+        return "Sample data".data(using: String.Encoding.utf8)!
+    }
+    
+}
+    
+
+extension WatheqApi: AccessTokenAuthorizable {
+    
+    public var shouldAuthorize: Bool {
         switch self {
-        case .login:
-            return "Sample data".data(using: String.Encoding.utf8)!
+        case  .login :
+            return true
+        default:
+            return false
         }
     }
 }
+   
+
 
 public func url(_ route: TargetType) -> String {
     return route.baseURL.appendingPathComponent(route.path).absoluteString

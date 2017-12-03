@@ -15,9 +15,9 @@ class User : Object, NSCoding, Mappable{
 
 	var createdAt : Int?
 	var email : String?
-	var id = 0
+    @objc dynamic var id = 0
 	var image : String?
-	var isCompleteProfile : Int?
+	var isCompleteProfile : Bool?
 	var language : String?
 	var name : String?
 	var phone : Int?
@@ -60,7 +60,7 @@ class User : Object, NSCoding, Mappable{
          email = aDecoder.decodeObject(forKey: "email") as? String
         id = (aDecoder.decodeObject(forKey: "id") as? Int)!
          image = aDecoder.decodeObject(forKey: "image") as? String
-         isCompleteProfile = aDecoder.decodeObject(forKey: "isCompleteProfile") as? Int
+         isCompleteProfile = aDecoder.decodeObject(forKey: "isCompleteProfile") as? Bool
          language = aDecoder.decodeObject(forKey: "language") as? String
          name = aDecoder.decodeObject(forKey: "name") as? String
          phone = aDecoder.decodeObject(forKey: "phone") as? Int
@@ -80,9 +80,8 @@ class User : Object, NSCoding, Mappable{
 		if email != nil{
 			aCoder.encode(email, forKey: "email")
 		}
-		if id != nil{
-			aCoder.encode(id, forKey: "id")
-		}
+        aCoder.encode(id, forKey: "id")
+
 		if image != nil{
 			aCoder.encode(image, forKey: "image")
 		}

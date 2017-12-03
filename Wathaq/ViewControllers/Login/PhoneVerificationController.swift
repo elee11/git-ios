@@ -213,7 +213,10 @@ class PhoneVerificationController: UIViewController,ToastAlertProtocol {
     {
         let phoneNumber = "+" + (localeCountry?.e164Cc!)! + phoneTextField.text!
 
-        viewModel.loginUser(Phone: phoneNumber, completion: { (userObj, errorMsg) in
+        var phoneDict = [String:String]()
+        phoneDict ["phone"] = phoneNumber
+        
+        viewModel.loginUser(Phone: phoneDict, completion: { (userObj, errorMsg) in
             if errorMsg == nil {
 
             } else{

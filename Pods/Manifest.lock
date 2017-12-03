@@ -35,9 +35,9 @@ PODS:
   - GTMSessionFetcher/Core (1.1.12)
   - Hero (1.0.1)
   - Kingfisher (4.3.1)
-  - Moya (10.0.1):
-    - Moya/Core (= 10.0.1)
-  - Moya/Core (10.0.1):
+  - Moya (8.0.5):
+    - Moya/Core (= 8.0.5)
+  - Moya/Core (8.0.5):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
   - nanopb (0.3.8):
@@ -81,7 +81,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Hero
   - Kingfisher
-  - Moya
+  - Moya (~> 8.0.5)
   - NVActivityIndicatorView
   - ObjectMapper
   - RealmSwift
@@ -103,7 +103,7 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: ebaa1f79a5366922c1735f1566901f50beba23b7
   Hero: cee286821578e170d8c0c9c9cda7897357401112
   Kingfisher: 75541c4b62f02e1fde6f9772303de3d9ebe8f5b3
-  Moya: 9e621707ff754eeb51ff3ec51a3d54e517c0733a
+  Moya: c37eec09a098ba9991b5a963b291fc5704bdb9ef
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   NVActivityIndicatorView: 54c9b93b6f25a4f467512680c0c90c09a1095cf2
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
@@ -115,6 +115,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   TransitionButton: 0bf7e5ffe80030f9d10d57983a04acf2f511998a
 
-PODFILE CHECKSUM: 52da6aa70dfaf848727521bdb60b329454a39003
+PODFILE CHECKSUM: c91e79ef19bb759138c24f5c1dbd604db400ba51
 
 COCOAPODS: 1.3.1

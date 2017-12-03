@@ -18,6 +18,7 @@
 		982B5D381FCB4C840028092E /* PhoneNumberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982B5D371FCB4C840028092E /* PhoneNumberTableViewCell.swift */; };
 		982B5D3A1FCB528A0028092E /* phoneVerificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982B5D391FCB528A0028092E /* phoneVerificationTableViewCell.swift */; };
 		982C682D1FCEF2DC0090F5F6 /* CompleteProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982C682C1FCEF2DC0090F5F6 /* CompleteProfileViewController.swift */; };
+		982DF1FD1FD40DC000E4A8EA /* UserRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982DF1FC1FD40DC000E4A8EA /* UserRootClass.swift */; };
 		98337A071FCC334B00EE7539 /* TimerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98337A061FCC334B00EE7539 /* TimerTableViewCell.swift */; };
 		985587E91FC6D882001AD5E5 /* plistReaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985587E81FC6D882001AD5E5 /* plistReaderProtocol.swift */; };
 		985587ED1FC6D8EA001AD5E5 /* ToastAlertProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985587EC1FC6D8EA001AD5E5 /* ToastAlertProtocol.swift */; };
@@ -71,6 +72,7 @@
 		982B5D371FCB4C840028092E /* PhoneNumberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberTableViewCell.swift; sourceTree = "<group>"; };
 		982B5D391FCB528A0028092E /* phoneVerificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = phoneVerificationTableViewCell.swift; sourceTree = "<group>"; };
 		982C682C1FCEF2DC0090F5F6 /* CompleteProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteProfileViewController.swift; sourceTree = "<group>"; };
+		982DF1FC1FD40DC000E4A8EA /* UserRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRootClass.swift; sourceTree = "<group>"; };
 		98337A061FCC334B00EE7539 /* TimerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTableViewCell.swift; sourceTree = "<group>"; };
 		985587E81FC6D882001AD5E5 /* plistReaderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = plistReaderProtocol.swift; sourceTree = "<group>"; };
 		985587EC1FC6D8EA001AD5E5 /* ToastAlertProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastAlertProtocol.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 		9825C3051FD1DE0D00FE93E3 /* User */ = {
 			isa = PBXGroup;
 			children = (
+				982DF1FC1FD40DC000E4A8EA /* UserRootClass.swift */,
 				9825C3081FD1DFD200FE93E3 /* User.swift */,
 			);
 			name = User;
@@ -619,6 +622,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				982B5D3A1FCB528A0028092E /* phoneVerificationTableViewCell.swift in Sources */,
+				982DF1FD1FD40DC000E4A8EA /* UserRootClass.swift in Sources */,
 				98DDA1491FB797E500B8F42F /* AppDelegate.swift in Sources */,
 				9870B9F81FB8CA2B008E678B /* MyOrdersViewController.swift in Sources */,
 				9870B9FE1FB8CA5D008E678B /* ProfileViewController.swift in Sources */,
