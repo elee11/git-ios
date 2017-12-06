@@ -37,9 +37,9 @@
 		</dict>
 		<dict>
 			<key>Name</key>
-			<string>تسجيل دخول</string>
+			<string>تسجيل خروج</string>
 			<key>Name_EN</key>
-			<string>Login</string>
+			<string>Logout</string>
 			<key>isForLoginedUser</key>
 			<false/>
 		</dict>

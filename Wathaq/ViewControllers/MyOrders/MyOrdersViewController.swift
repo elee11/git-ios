@@ -33,7 +33,7 @@ class MyOrdersViewController: UIViewController {
             self.navigationController?.navigationBar.prefersLargeTitles = true
             let attributes = [
                 NSAttributedStringKey.foregroundColor : UIColor.deepBlue,
-                NSAttributedStringKey.font :  UIFont(name: "DinNextRegular", size: 30)
+                NSAttributedStringKey.font :  UIFont(name: Constants.FONTS.FONT_PARALLAX_AR, size: 30)
             ]
             
             navigationController?.navigationBar.largeTitleTextAttributes = attributes

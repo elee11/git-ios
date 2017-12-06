@@ -33,3 +33,19 @@
 "Enter avalid verification number" = "Enter avalid verification number";
 "Verification Code sent succussfully" = "Verification Code sent succussfully";
 "SERVER_ERROR" = "Error occured, please try again later";
+"FillAllFields" = "Please fill all fields";
+"EmailisNotValid" = "Invalid Email Format";
+"Photo Gallery" = "Photo Gallery";
+"Camera" = "Camera";
+"Take Profile Pictuere from" = "Take Profile Pictuere from";
+"hello" = "Hello";
+"CompleteProfileMsg" = "We need to add some data to appear in profile" ;
+"AgreeOnTerms" = "Agree to all terms and conditions";
+"userName" = "user Name";
+"UserMail" = " EMail";
+"Confirm" = "Confirm";
+"Profile Data Completed Thank you" = "Profile Data Completed Thank you";
+"ReconnectToInternet" = "Please reconnect and try again";
+"TryAgainLater"="Please and try again later";
+
+

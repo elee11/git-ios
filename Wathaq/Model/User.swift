@@ -7,16 +7,13 @@
 
 import Foundation 
 import ObjectMapper
-import RealmSwift
 
-
-
-class User : Object, NSCoding, Mappable{
+class User : NSObject, NSCoding, Mappable{
 
 	var createdAt : Int?
 	var email : String?
-    @objc dynamic var id = 0
-	var image : String?
+    var userID : Int?
+    var image : String?
 	var isCompleteProfile : Bool?
 	var language : String?
 	var name : String?
@@ -31,15 +28,12 @@ class User : Object, NSCoding, Mappable{
         self.init()
     }
     
-    override static func primaryKey() -> String? {
-        return "id"
-    }
 
 	func mapping(map: Map)
 	{
 		createdAt <- map["created_at"]
 		email <- map["email"]
-		id <- map["id"]
+		userID <- map["id"]
 		image <- map["image"]
 		isCompleteProfile <- map["isCompleteProfile"]
 		language <- map["language"]
@@ -58,7 +52,7 @@ class User : Object, NSCoding, Mappable{
         self.init()
          createdAt = aDecoder.decodeObject(forKey: "created_at") as? Int
          email = aDecoder.decodeObject(forKey: "email") as? String
-        id = (aDecoder.decodeObject(forKey: "id") as? Int)!
+         userID = aDecoder.decodeObject(forKey: "id") as? Int
          image = aDecoder.decodeObject(forKey: "image") as? String
          isCompleteProfile = aDecoder.decodeObject(forKey: "isCompleteProfile") as? Bool
          language = aDecoder.decodeObject(forKey: "language") as? String
@@ -80,7 +74,7 @@ class User : Object, NSCoding, Mappable{
 		if email != nil{
 			aCoder.encode(email, forKey: "email")
 		}
-        aCoder.encode(id, forKey: "id")
+        aCoder.encode(userID, forKey: "id")
 
 		if image != nil{
 			aCoder.encode(image, forKey: "image")

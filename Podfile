@@ -8,7 +8,7 @@ target 'Wathaq' do
   pod 'Alamofire', '~> 4.3'   # network helper
   pod 'SwifterSwift'  #Swift Helper
   pod 'ObjectMapper'  #mapping json object
-  pod 'RealmSwift'     #Realm
+  pod 'RealmSwift'  #Realm
   pod 'DZNEmptyDataSet' #empty state for Tableviews
   pod 'Kingfisher'    # for downloading and caching images from the web
   pod 'SwiftMessages'
@@ -20,7 +20,9 @@ target 'Wathaq' do
   pod 'CountdownLabel'
   pod "Hero"
   pod 'TransitionButton'
-  pod 'Moya', '~> 8.0.5' 
+  pod 'Moya'
+  pod "MXParallaxHeader", "~> 0.6.0”
+
 
 
 

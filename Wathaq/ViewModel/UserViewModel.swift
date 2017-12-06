@@ -11,6 +11,7 @@ import RealmSwift
 import ObjectMapper
 import RealmSwift
 
+
 class UserViewModel: ToastAlertProtocol {
     
     static let shareManager = UserViewModel()
@@ -24,25 +25,49 @@ class UserViewModel: ToastAlertProtocol {
         }
     }
     
-    func loginUser(Phone:[String: String], completion: @escaping (User?, String?) -> ()){
+    func loginUser(Phone:String, completion: @escaping (User?, String?) -> ()){
         print(Phone)
 
-        NetworkHandler.requestTarget(target: .login(Phone), isDictionary: true) { (result, errorMsg) in
+        NetworkHandler.requestTarget(target: .login(phone: Phone), isDictionary: true) { (result, errorMsg) in
+            if errorMsg == nil {
+                let model = Mapper<UserRootClass>().map(JSONString: result as! String)!
+                let userModel = model.user
+                UserDefaults.standard.rm_setCustomObject(userModel, forKey: Constants.keys.KeyUser)
+                completion(userModel,nil)
+            } else{
+                completion(nil,errorMsg)
+            }
+        }
+    }
+    
+    func completeUserProfile(userName:String,UseEmail:String,UseImage:String, completion: @escaping (User?, String?) -> ()){
+        
+        NetworkHandler.requestTarget(target: .completeProfile(name: userName, email: UseEmail, image: UseImage), isDictionary: true) { (result, errorMsg) in
+            if errorMsg == nil {
+                let model = Mapper<UserRootClass>().map(JSONString: result as! String)!
+                let userModel = model.user
+                if userModel?.isCompleteProfile == true
+                {
+                    UserDefaults.standard.rm_setCustomObject(userModel, forKey: Constants.keys.KeyUser)
+                }
+                completion(userModel,nil)
+
+            } else{
+                completion(nil,errorMsg)
+            }
+        }
+    }
+    
+    func updateUserProfile(userName:String,UseEmail:String,UseImage:String,userPhone:String, completion: @escaping (User?, String?) -> ()){
+        
+        NetworkHandler.requestTarget(target: .UpdateProfile(name: userName, email: UseEmail, image: UseImage, phone: userPhone), isDictionary: true) { (result, errorMsg) in
             if errorMsg == nil {
                 let model = Mapper<UserRootClass>().map(JSONString: result as! String)!
                 let userModel = model.user
                 completion(userModel,nil)
                 if userModel?.isCompleteProfile == true
                 {
-                do {
-                self.deleteUser()
-                let realm = try! Realm()
-                try realm.write {
-                    realm.add(userModel!, update: true)
-                }
-                } catch {
-                    completion(nil, "fail parsing objects")
-                }
+                    UserDefaults.standard.rm_setCustomObject(userModel, forKey: Constants.keys.KeyUser)
                 }
             } else{
                 completion(nil,errorMsg)
@@ -52,27 +77,29 @@ class UserViewModel: ToastAlertProtocol {
     
     func deleteUser () {
         if isUserLogined() {
-            let realm = try! Realm()
-            let userResults = realm.objects(User.self)
-            
-            try! realm.write {
-                realm.delete(userResults)
-            }
+            UserDefaults.standard.removeObject(forKey: Constants.keys.KeyUser)
         }
     }
     
     func getToken () -> String? {
         if let token   = self.getUser()?.token {
-            return ("bearer " + token)
+             var TokenNoBearer = token
+            if let range = TokenNoBearer.range(of: "Bearer ") {
+                TokenNoBearer.removeSubrange(range)
+                 return (TokenNoBearer)
+            }
+            else
+            {
+                return token
+            }
         }else{
             return nil
         }
     }
     
     func getUser () -> User? {
-        let realm = try! Realm()
-        let userResults: Results<User> = realm.objects(User.self)
-        if let user: User = userResults.first {
+
+        if let user: User = UserDefaults.standard.rm_customObject(forKey: Constants.keys.KeyUser) as? User {
             return user
         }
         return nil

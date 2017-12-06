@@ -28,26 +28,18 @@ let endpointClosure = { (target: WatheqApi) -> Endpoint<WatheqApi> in
     if lang == "en-US" {
         lang = "en"
     }
-    return defaultEndpoint.adding(newHTTPHeaderFields: ["x-language":lang])
+    return defaultEndpoint.adding(newHTTPHeaderFields: ["X-Api-Language":lang])
 }
 
-
-
-struct AuthPlugin: PluginType, ToastAlertProtocol {
-
-    func prepare(_ request: URLRequest, target: TargetType) -> URLRequest {
-        var request = request
-        request.addValue("85BCbm7U7JsQdbB5Z95vmvN4LyQmqVxp", forHTTPHeaderField: "X_Api_Key")
-        return request
-    }
-}
+let token = UserViewModel.shareManager.getToken()
+let authPlugin = AccessTokenPlugin(tokenClosure: token!)
 
 
 let WatheqProvider = MoyaProvider<WatheqApi>(
     
     endpointClosure: endpointClosure,
     manager: DefaultAlamofireManager.sharedManager,
-    plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: JSONResponseDataFormatter),AuthPlugin()]
+    plugins: [NetworkLoggerPlugin(verbose: true, responseDataFormatter: JSONResponseDataFormatter),authPlugin]
 )
 
 // MARK: - Provider support
@@ -61,72 +53,81 @@ private extension String {
 
 
 public enum WatheqApi {
-    case login([String: String])
+    //User Login 
+    case login(phone:String)
+    case completeProfile(name:String, email:String, image:String)
+    case UpdateProfile(name:String, email:String, image:String, phone:String)
+    case registerDeviceToken(identifier:String, firebaseToken:String)
+    case logout(identifier:String)
+    case getCategories
+
+
+
 }
 
-extension WatheqApi: TargetType {
-    public var baseURL: URL { return URL(string: "http://138.197.41.25/watheq/public/api")! }
+extension WatheqApi: TargetType,AccessTokenAuthorizable {
+    public var headers : [String : String]? {
+        return ["Content-type": "application/json" , Constants.WebService.ApiKeyName: Constants.WebService.ApiKeyValue]
+    }
+    
+    public var baseURL: URL { return URL(string: Constants.ApiConstants.BaseUrl)! }
     public var path: String {
         switch self {
         case .login:
-            return "/client/login"
+            return "api/client/login"
+        case .completeProfile:
+            return "api/auth/client/completeProfile"
+        case .UpdateProfile:
+            return "api/auth/client/updateProfile"
+        case .registerDeviceToken:
+            return "api/auth/client/registerDeviceToken"
+        case .logout:
+            return "api/auth/client/logout"
+        case .getCategories:
+            return "api/auth/category/list"
         }
     }
     public var method: Moya.Method {
         switch self {
-        case .login:
+        case .login,.completeProfile,.UpdateProfile,.registerDeviceToken,.logout:
             return .post
-        }
-    }
-    public var parameters: [String: Any]? {
-        switch self {
-        case .login(let dataDict):
-            return dataDict
-     
-        default:
-            return nil
+        case .getCategories:
+            return .get
         }
     }
     
-    public var parameterEncoding: ParameterEncoding {
+    public var task : Task {
         switch self {
-        case  .login :
-            return JSONEncoding.default
-        default:
-            return URLEncoding.default
+        case .login(let phone):
+            return .requestParameters(parameters: ["phone":phone], encoding: JSONEncoding.default)
+        case .completeProfile(let name,let email,let image):
+            return .requestParameters(parameters: ["name":name , "email":email , "image":image], encoding: JSONEncoding.default)
+        case .UpdateProfile(let name,let email,let image,let phone):
+            return .requestParameters(parameters: ["name":name , "email":email , "image":image, "phone":phone], encoding: JSONEncoding.default)
+        case .registerDeviceToken(let identifier, let firebaseToken):
+            return .requestParameters(parameters: ["identifier":identifier , "firebaseToken" :firebaseToken], encoding: JSONEncoding.default)
+        case .logout(let identifier):
+            return .requestParameters(parameters: ["identifier":identifier], encoding: JSONEncoding.default)
+        case .getCategories:
+            return .requestPlain
         }
     }
-
-  
-    public var task: Task {
-        return .request
+    
+    public var authorizationType: AuthorizationType {
+        switch self {
+        case .login:
+            return .none
+        case .completeProfile,.UpdateProfile,.registerDeviceToken,.logout,.getCategories :
+            return .bearer
+        }
     }
     
     public var validate: Bool {
         
         return false
     }
-    public var sampleData: Data {
-        return "Sample data".data(using: String.Encoding.utf8)!
-    }
-    
+    public var sampleData: Data { return Data() }  // We just need to return something here to fully implement the protocol
 }
-    
-
-extension WatheqApi: AccessTokenAuthorizable {
-    
-    public var shouldAuthorize: Bool {
-        switch self {
-        case  .login :
-            return true
-        default:
-            return false
-        }
-    }
-}
-   
-
-
 public func url(_ route: TargetType) -> String {
     return route.baseURL.appendingPathComponent(route.path).absoluteString
 }

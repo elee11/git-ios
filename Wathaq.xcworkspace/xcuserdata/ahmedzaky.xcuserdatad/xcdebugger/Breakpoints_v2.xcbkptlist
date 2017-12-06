@@ -10,43 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Wathaq/ViewControllers/Login/PhoneVerificationController.swift"
-            timestampString = "533995031.434806"
+            timestampString = "534111460.970134"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "275"
-            endingLineNumber = "275"
-            landmarkName = "textFieldDidEndEditing(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Wathaq/ViewControllers/Login/PhoneVerificationController.swift"
-            timestampString = "533995031.434868"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "261"
-            endingLineNumber = "261"
-            landmarkName = "textFieldDidBeginEditing(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Wathaq/ViewControllers/Login/PhoneVerificationController.swift"
-            timestampString = "533995031.434912"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
+            startingLineNumber = "129"
+            endingLineNumber = "129"
             landmarkName = "resendVerificationCode(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,28 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Wathaq/ViewControllers/Login/PhoneVerificationController.swift"
-            timestampString = "533995031.434953"
+            timestampString = "534111460.970514"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "resendVerificationCode(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Wathaq/ViewControllers/Login/PhoneVerificationController.swift"
-            timestampString = "533995031.434996"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "222"
-            endingLineNumber = "222"
-            landmarkName = "loginUserWithPhoneNumber()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -90,13 +42,109 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Wathaq/ViewModel/UserViewModel.swift"
-            timestampString = "533995031.435038"
+            timestampString = "534204448.965437"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "loginUser(Phone:completion:)"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "isUserLogined()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Wathaq/Service Handler/NetworkHandler.swift"
+            timestampString = "534110371.092684"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "requestTarget(target:isDictionary:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Wathaq/Service Handler/NetworkHandler.swift"
+            timestampString = "534110371.092957"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "requestTarget(target:isDictionary:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Wathaq/Service Handler/NetworkHandler.swift"
+            timestampString = "534110371.093195"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "requestTarget(target:isDictionary:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Wathaq/ViewControllers/Login/PhoneEntryController.swift"
+            timestampString = "534111460.972343"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "didTapSendCode(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Wathaq.PhoneEntryController.didTapSendCode(Any) -&gt; ()"
+                  moduleName = "Wathaq"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedzaky/Documents/iOS%20Projects/NewProjects/Wathaq/Wathaq/ViewControllers/Login/PhoneEntryController.swift"
+                  timestampString = "534290333.687749"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "1576">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Wathaq.PhoneEntryController.didTapSendCode(Any) -&gt; ()"
+                  moduleName = "Wathaq"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ahmedzaky/Documents/iOS%20Projects/NewProjects/Wathaq/Wathaq/ViewControllers/Login/PhoneEntryController.swift"
+                  timestampString = "534290333.689914"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "4548">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

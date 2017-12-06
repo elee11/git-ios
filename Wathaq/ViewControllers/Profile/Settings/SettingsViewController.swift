@@ -191,7 +191,6 @@ extension SettingsViewController: UITableViewDelegate {
             changeLanguage()
             break
         case 4:
-            self.performSegue(withIdentifier: "S_Settings_Login", sender: nil)
             break
         default:
             break

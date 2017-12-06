@@ -72,7 +72,7 @@ class PhoneEntryController: UIViewController,ToastAlertProtocol {
         btnDowndlowadNotarizedApp.setTitle(NSLocalizedString("Download the Notaries application from here", comment: ""), for: .normal)
         phoneTextField.placeholder = NSLocalizedString("PhoneNum", comment: "")
         sendCodeButton.setTitle(NSLocalizedString("sendPhoneNumber", comment: ""), for: .normal)
-        btnClose.setTitle(NSLocalizedString("close", comment: ""), for: .normal)
+//        btnClose.setTitle(NSLocalizedString("close", comment: ""), for: .normal)
         btnDowndlowadNotarizedApp.titleLabel?.textAlignment = .center
     }
     

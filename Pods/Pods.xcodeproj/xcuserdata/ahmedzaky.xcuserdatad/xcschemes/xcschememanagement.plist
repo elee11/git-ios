@@ -39,6 +39,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>MXParallaxHeader.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Moya.xcscheme</key>
 		<dict>
 			<key>isShown</key>

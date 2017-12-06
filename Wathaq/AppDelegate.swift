@@ -38,24 +38,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         FirebaseApp.configure()
         self.startNetworkListener()
         self.customizeTabBar()
-        
+        self.checkifuserLoggedIn()
 
         return true
     }
     
+    func checkifuserLoggedIn()
+    {
+        let userObj:User? = UserDefaults.standard.rm_customObject(forKey: Constants.keys.KeyUser) as? User
+        if (userObj == nil || userObj?.isCompleteProfile == false)
+     {
+        
+        let MainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+        let loginViewController = MainStoryBoard.instantiateViewController(withIdentifier: "PhoneEntryController")
+        self.window?.rootViewController? = loginViewController
+     }
+    }
+    
     func customizeTabBar ()
     {
-        
         let navigationBarAppearace = UINavigationBar.appearance()
         navigationBarAppearace.tintColor = UIColor.deepBlue // Back buttons and such
-        navigationBarAppearace.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.deepBlue,NSAttributedStringKey.font: UIFont(name: "DinNextRegular", size: 18) as Any]
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "DinNextRegular", size: 16)!], for: .normal) // your textattributes here
-        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "DinNextRegular", size: 16)!], for: .highlighted) // your textattributes here
-
+        navigationBarAppearace.titleTextAttributes = [NSAttributedStringKey.foregroundColor:UIColor.deepBlue,NSAttributedStringKey.font: UIFont(name: Constants.FONTS.FONT_AR, size: 18) as Any]
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: Constants.FONTS.FONT_AR, size: 16)!], for: .normal) // your textattributes here
+        UIBarButtonItem.appearance().setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: Constants.FONTS.FONT_AR, size: 16)!], for: .highlighted) // your textattributes here
 
         let colorNormal : UIColor = UIColor.lightimpactGray
         let colorSelected : UIColor = UIColor.deepBlue
-        let titleFontAll : UIFont = UIFont(name: "DinNextRegular", size: 11.0)!
+        let titleFontAll : UIFont = UIFont(name: Constants.FONTS.FONT_AR, size: 11.0)!
         
         let attributesNormal = [
             NSAttributedStringKey.foregroundColor : colorNormal,
@@ -67,10 +77,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
             NSAttributedStringKey.font : titleFontAll
         ]
         
-        
         UITabBarItem.appearance().setTitleTextAttributes(attributesNormal, for: .normal)
         UITabBarItem.appearance().setTitleTextAttributes(attributesSelected, for: .selected)
-        
         
     }
     

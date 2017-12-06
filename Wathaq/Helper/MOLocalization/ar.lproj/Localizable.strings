@@ -32,3 +32,19 @@
 "Your Phone verified successfully" = "تم التحقق من هاتفك بنجاح";
 "Verification Code sent succussfully" = "تم إرسال رمز التحقق بنجاح";
 "SERVER_ERROR" = "حدث خطأ ما، برجاء اعادة المحاولة";
+"FillAllFields" = "يرجى ملء جميع الحقول";
+"EmailisNotValid" = "ادخل بريد الكتروني صحيح";
+"Photo Gallery" = "معرض الصور";
+"Camera" = "كاميرا";
+"Take Profile Pictuere from" = "التقاط صورة الملف الشخصي من";
+"hello" = "مرحبا";
+"CompleteProfileMsg" = "نحتاج لاضافة بعض البيانات لتظهر في ملفك الشخصي" ;
+"AgreeOnTerms" = "موافق على كافة الأحكام والشروط";
+"userName" = "اسم المستخدم";
+"UserMail" = "البريد الإلكتروني";
+"Confirm" = "تأكيد";
+"Profile Data Completed Thank you" = "بيانات الملف الشخصي اكتملت شكرا";
+"ReconnectToInternet" = "الرجاء إعادة الاتصال والمحاولة مرة أخرى";
+"TryAgainLater"="الرجاء المحاولة مرة أخرى لاحقا";
+
+

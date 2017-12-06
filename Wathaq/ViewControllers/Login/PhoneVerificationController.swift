@@ -41,9 +41,13 @@ class PhoneVerificationController: UIViewController,ToastAlertProtocol {
         }
     }
     
-    @IBAction func closeview (_ sender :Any)
+     func closeview ()
     {
-        self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
+        
+        let MainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+        let TabViewController = MainStoryBoard.instantiateViewController(withIdentifier: "rootVC") as! UITabBarController
+        UIApplication.shared.keyWindow?.rootViewController = TabViewController
+       // self.view.window!.rootViewController?.dismiss(animated: false, completion: nil)
     }
 
     @IBOutlet weak var countryCodeTextField: UITextField! {
@@ -106,7 +110,7 @@ class PhoneVerificationController: UIViewController,ToastAlertProtocol {
         verificationCodeTextField.placeholder = NSLocalizedString("VerificationCode", comment: "")
         verifyButton.setTitle(NSLocalizedString("sendVerificationCode", comment: ""), for: .normal)
         btnResendVerificationCode.setTitle(NSLocalizedString("ResendVerificationCode", comment: ""), for: .normal)
-        btnClose.setTitle(NSLocalizedString("close", comment: ""), for: .normal)
+//        btnClose.setTitle(NSLocalizedString("close", comment: ""), for: .normal)
         btnDowndlowadNotarizedApp.titleLabel?.textAlignment = .center
         
 
@@ -199,8 +203,6 @@ class PhoneVerificationController: UIViewController,ToastAlertProtocol {
                     //Once you have verified your phone number kill the firebase session.
                     try? Auth.auth().signOut()
                     self.showToastMessage(title: NSLocalizedString("Your Phone verified successfully", comment: ""), isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.greenAlert, foregroundColor: UIColor.white)
-                    self.performSegue(withIdentifier:"S_VerifyNumber_CompleteProfile", sender: nil
-                    )
                     self.loginUserWithPhoneNumber ()
 
 
@@ -212,12 +214,19 @@ class PhoneVerificationController: UIViewController,ToastAlertProtocol {
     func loginUserWithPhoneNumber ()
     {
         let phoneNumber = "+" + (localeCountry?.e164Cc!)! + phoneTextField.text!
-
-        var phoneDict = [String:String]()
-        phoneDict ["phone"] = phoneNumber
-        
-        viewModel.loginUser(Phone: phoneDict, completion: { (userObj, errorMsg) in
+        viewModel.loginUser(Phone: phoneNumber, completion: { (userObj, errorMsg) in
             if errorMsg == nil {
+                if userObj?.isCompleteProfile == true
+                {
+                    self.closeview()
+                    
+                }
+                else
+                {
+                    self.performSegue(withIdentifier:"S_VerifyNumber_CompleteProfile", sender: nil)
+
+                }
+                
 
             } else{
                 self.showToastMessage(title:errorMsg! , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
