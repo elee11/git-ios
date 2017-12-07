@@ -43,3 +43,48 @@ class NotficationsViewController: UIViewController {
     */
 
 }
+
+extension NotficationsViewController: UITableViewDataSource {
+    // table view data source methods
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+    {
+        return 5
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
+    {
+        
+        //        let cellLoader:MyOrderPlaceHolderTableViewCell = tableView.dequeueReusableCell(withIdentifier:"MyOrderPlaceHolderTableViewCell") as UITableViewCell! as! MyOrderPlaceHolderTableViewCell
+        //
+        //        cellLoader.gradientLayers.forEach { gradientLayer in
+        //            let baseColor = cellLoader.lblLawerName.backgroundColor!
+        //            gradientLayer.colors = [baseColor.cgColor,
+        //                                    baseColor.brightened(by: 0.93).cgColor,
+        //                                    baseColor.cgColor]
+        //            gradientLayer.slide(to: .right)
+        //        }
+        //        return cellLoader
+        
+        let cellOrderCell:MyOrderTableViewCell = tableView.dequeueReusableCell(withIdentifier:"MyOrderTableViewCell") as UITableViewCell! as! MyOrderTableViewCell
+        
+        return cellOrderCell
+    }
+    
+}
+
+extension NotficationsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return self.view.frame.size.height * 0.24
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    
+}

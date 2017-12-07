@@ -65,7 +65,7 @@ extension ProfileViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 0
+        return 4
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -73,10 +73,9 @@ extension ProfileViewController: UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cellSettings:SettingsTableCell = tableView.dequeueReusableCell(withIdentifier:"SettingsTableCell") as UITableViewCell! as! SettingsTableCell
+        let cellOrderCell:MyOrderTableViewCell = tableView.dequeueReusableCell(withIdentifier:"MyOrderTableViewCell") as UITableViewCell! as! MyOrderTableViewCell
         
-        
-        return cellSettings
+        return cellOrderCell
     }
     
 }
@@ -113,7 +112,7 @@ extension ProfileViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return self.view.frame.size.height * 0.08
+        return self.view.frame.size.height * 0.24
     }
 }
 

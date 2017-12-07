@@ -13,9 +13,12 @@ class WatheqTableViewCell: UITableViewCell {
     @IBOutlet weak var lblCatDesc: UILabel!
     @IBOutlet weak var imgCatIcon: UIImageView!
 
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

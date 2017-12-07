@@ -156,6 +156,8 @@ extension WatheqViewController: UITableViewDelegate {
         return self.view.frame.size.height * 0.24
     }
     
+    
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if IsDataFirstLoading == false
         {

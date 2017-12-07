@@ -28,6 +28,8 @@
 		982CFA311FD961290055593C /* Sub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982CFA301FD961290055593C /* Sub.swift */; };
 		982CFA351FD967A50055593C /* WatheqPlaceHolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982CFA341FD967A50055593C /* WatheqPlaceHolderTableViewCell.swift */; };
 		982CFA371FD97A7E0055593C /* WatheqSubCatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982CFA361FD97A7E0055593C /* WatheqSubCatViewController.swift */; };
+		982CFA391FD9A4830055593C /* MyOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982CFA381FD9A4830055593C /* MyOrderTableViewCell.swift */; };
+		982CFA3B1FD9B19D0055593C /* MyOrderPlaceHolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982CFA3A1FD9B19D0055593C /* MyOrderPlaceHolderTableViewCell.swift */; };
 		982DF1FD1FD40DC000E4A8EA /* UserRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982DF1FC1FD40DC000E4A8EA /* UserRootClass.swift */; };
 		98337A071FCC334B00EE7539 /* TimerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98337A061FCC334B00EE7539 /* TimerTableViewCell.swift */; };
 		985587E91FC6D882001AD5E5 /* plistReaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985587E81FC6D882001AD5E5 /* plistReaderProtocol.swift */; };
@@ -98,6 +100,8 @@
 		982CFA301FD961290055593C /* Sub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sub.swift; sourceTree = "<group>"; };
 		982CFA341FD967A50055593C /* WatheqPlaceHolderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatheqPlaceHolderTableViewCell.swift; sourceTree = "<group>"; };
 		982CFA361FD97A7E0055593C /* WatheqSubCatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatheqSubCatViewController.swift; sourceTree = "<group>"; };
+		982CFA381FD9A4830055593C /* MyOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderTableViewCell.swift; sourceTree = "<group>"; };
+		982CFA3A1FD9B19D0055593C /* MyOrderPlaceHolderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderPlaceHolderTableViewCell.swift; sourceTree = "<group>"; };
 		982DF1FC1FD40DC000E4A8EA /* UserRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRootClass.swift; sourceTree = "<group>"; };
 		98337A061FCC334B00EE7539 /* TimerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTableViewCell.swift; sourceTree = "<group>"; };
 		985587E81FC6D882001AD5E5 /* plistReaderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = plistReaderProtocol.swift; sourceTree = "<group>"; };
@@ -280,6 +284,8 @@
 			isa = PBXGroup;
 			children = (
 				9870B9F71FB8CA2B008E678B /* MyOrdersViewController.swift */,
+				982CFA381FD9A4830055593C /* MyOrderTableViewCell.swift */,
+				982CFA3A1FD9B19D0055593C /* MyOrderPlaceHolderTableViewCell.swift */,
 			);
 			path = MyOrders;
 			sourceTree = "<group>";
@@ -712,6 +718,7 @@
 			files = (
 				982B5D3A1FCB528A0028092E /* phoneVerificationTableViewCell.swift in Sources */,
 				982DF1FD1FD40DC000E4A8EA /* UserRootClass.swift in Sources */,
+				982CFA391FD9A4830055593C /* MyOrderTableViewCell.swift in Sources */,
 				98DDA1491FB797E500B8F42F /* AppDelegate.swift in Sources */,
 				9870B9F81FB8CA2B008E678B /* MyOrdersViewController.swift in Sources */,
 				9870B9FE1FB8CA5D008E678B /* ProfileViewController.swift in Sources */,
@@ -746,6 +753,7 @@
 				988942E51FCA10E5001B4F75 /* JSONReader.swift in Sources */,
 				9883DF8A1FD56F2E008FC708 /* NSObject+RMArchivable.m in Sources */,
 				982CFA2F1FD9552E0055593C /* ProfileHeaderTableViewCell.swift in Sources */,
+				982CFA3B1FD9B19D0055593C /* MyOrderPlaceHolderTableViewCell.swift in Sources */,
 				982CFA201FD87FDB0055593C /* CategoriesRootClass.swift in Sources */,
 				9825C3021FD1DD2400FE93E3 /* NetworkHandler.swift in Sources */,
 				9825C30C1FD1E2F500FE93E3 /* UserViewModel.swift in Sources */,
