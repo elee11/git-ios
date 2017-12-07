@@ -7,12 +7,11 @@
 //
 
 import UIKit
-import MXParallaxHeader
 import Kingfisher
 
 
 
-class ProfileViewController: UIViewController,MXParallaxHeaderDelegate {
+class ProfileViewController: UIViewController {
     @IBOutlet weak var tbl_Orders: UITableView!
     var viewModel: UserViewModel!
     override func viewDidLoad() {
@@ -20,41 +19,28 @@ class ProfileViewController: UIViewController,MXParallaxHeaderDelegate {
         viewModel = UserViewModel()
 
         self.title = NSLocalizedString("profile", comment: "")
-//        if #available(iOS 11.0, *) {
-//            self.navigationController?.navigationBar.prefersLargeTitles = true
-//            let attributes = [
-//                NSAttributedStringKey.foregroundColor : UIColor.deepBlue,
-//                NSAttributedStringKey.font :  UIFont(name: Constants.FONTS.FONT_PARALLAX_AR, size: 30)
-//                ]
-//            
-//            navigationController?.navigationBar.largeTitleTextAttributes = attributes
-//        }
-        self.addHeaderData()
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.prefersLargeTitles = true
+            let attributes = [
+                NSAttributedStringKey.foregroundColor : UIColor.deepBlue,
+                NSAttributedStringKey.font :  UIFont(name: Constants.FONTS.FONT_PARALLAX_AR, size: 30)
+                ]
+            
+            navigationController?.navigationBar.largeTitleTextAttributes = attributes
+        }
     }
     
     override  func viewDidLayoutSubviews() {
        
     }
     
-   func addHeaderData()
-   {
-    let MainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
-    let ProfileHeader:ProfileHeaderView = MainStoryBoard.instantiateViewController(withIdentifier: "ProfileHeaderView") as! ProfileHeaderView
-    ProfileHeader.view.frame = CGRect(x: 0, y: 0, width: self.view.width, height: 300)
-    tbl_Orders.parallaxHeader.view = ProfileHeader.view // You can set the parallax header view from the floating view
-    tbl_Orders.parallaxHeader.height = 300
-    tbl_Orders.parallaxHeader.mode = MXParallaxHeaderMode.fill
-    tbl_Orders.parallaxHeader.delegate = self
-    }
+
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        tbl_Orders.parallaxHeader.minimumHeight = topLayoutGuide.length
     }
     
-    func parallaxHeaderDidScroll(_ parallaxHeader: MXParallaxHeader) {
-        NSLog("progress %f", parallaxHeader.progress)
-    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -76,6 +62,7 @@ class ProfileViewController: UIViewController,MXParallaxHeaderDelegate {
 
 extension ProfileViewController: UITableViewDataSource {
     // table view data source methods
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return 0
@@ -97,10 +84,36 @@ extension ProfileViewController: UITableViewDataSource {
 extension ProfileViewController: UITableViewDelegate {
     
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
+    {
+            return 300
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
+    {
+        let cellHeader:ProfileHeaderTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ProfileHeaderTableViewCell") as UITableViewCell! as! ProfileHeaderTableViewCell
+        viewModel = UserViewModel()
+        let UserModel = viewModel.getUser()
+        if let name = UserModel?.name
+        {
+            cellHeader.lblUserName.text = name
+        }
+        if let url = UserModel?.image
+        {
+            let imgUrl =  URL(string: Constants.ApiConstants.BaseUrl+url)
+            cellHeader.imgUserImg.kf.setImage(with:imgUrl, placeholder: UIImage.init(named: "avatar2"), options: nil, progressBlock: nil, completionHandler: nil)
+        }
+        else
+        {
+            cellHeader.imgUserImg.kf.setImage(with: nil, placeholder: UIImage.init(named: "avatar2"), options: nil, progressBlock: nil, completionHandler: nil)
+        }
+        
+        return cellHeader
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         return self.view.frame.size.height * 0.08
     }
-    
 }
 

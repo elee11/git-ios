@@ -1,7 +1,7 @@
 //
-//	Category.swift
+//	Sub.swift
 //
-//	Create by Ahmed Zaky on 6/12/2017
+//	Create by Ahmed Zaky on 7/12/2017
 //	Copyright © 2017 Ibtikar Technolgoies. All rights reserved.
 //	Model file generated using JSONExport: https://github.com/Ahmed-Ali/JSONExport
 
@@ -9,7 +9,7 @@ import Foundation
 import ObjectMapper
 
 
-class Category : NSObject, NSCoding, Mappable{
+class Sub : NSObject, NSCoding, Mappable{
 
 	var cost : Int?
 	var discription : String?
@@ -20,7 +20,7 @@ class Category : NSObject, NSCoding, Mappable{
 
 
 	class func newInstance(map: Map) -> Mappable?{
-		return Category()
+		return Sub()
 	}
 	required init?(map: Map){}
 	private override init(){}
@@ -47,7 +47,8 @@ class Category : NSObject, NSCoding, Mappable{
          hasSubs = aDecoder.decodeObject(forKey: "hasSubs") as? Bool
          id = aDecoder.decodeObject(forKey: "id") as? Int
          name = aDecoder.decodeObject(forKey: "name") as? String
-         subs = aDecoder.decodeObject(forKey: "subs") as? [Sub]
+        subs = aDecoder.decodeObject(forKey: "subs") as? [Sub]
+
 
 	}
 

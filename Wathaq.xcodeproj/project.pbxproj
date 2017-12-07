@@ -24,6 +24,10 @@
 		982CFA291FD8828E0055593C /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982CFA281FD8828E0055593C /* CategoriesViewModel.swift */; };
 		982CFA2B1FD889320055593C /* WatheqAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 982CFA2A1FD889320055593C /* WatheqAssets.xcassets */; };
 		982CFA2D1FD88D0C0055593C /* WatheqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982CFA2C1FD88D0C0055593C /* WatheqTableViewCell.swift */; };
+		982CFA2F1FD9552E0055593C /* ProfileHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982CFA2E1FD9552E0055593C /* ProfileHeaderTableViewCell.swift */; };
+		982CFA311FD961290055593C /* Sub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982CFA301FD961290055593C /* Sub.swift */; };
+		982CFA351FD967A50055593C /* WatheqPlaceHolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982CFA341FD967A50055593C /* WatheqPlaceHolderTableViewCell.swift */; };
+		982CFA371FD97A7E0055593C /* WatheqSubCatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982CFA361FD97A7E0055593C /* WatheqSubCatViewController.swift */; };
 		982DF1FD1FD40DC000E4A8EA /* UserRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982DF1FC1FD40DC000E4A8EA /* UserRootClass.swift */; };
 		98337A071FCC334B00EE7539 /* TimerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98337A061FCC334B00EE7539 /* TimerTableViewCell.swift */; };
 		985587E91FC6D882001AD5E5 /* plistReaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985587E81FC6D882001AD5E5 /* plistReaderProtocol.swift */; };
@@ -90,6 +94,10 @@
 		982CFA281FD8828E0055593C /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
 		982CFA2A1FD889320055593C /* WatheqAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WatheqAssets.xcassets; sourceTree = "<group>"; };
 		982CFA2C1FD88D0C0055593C /* WatheqTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatheqTableViewCell.swift; sourceTree = "<group>"; };
+		982CFA2E1FD9552E0055593C /* ProfileHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		982CFA301FD961290055593C /* Sub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sub.swift; sourceTree = "<group>"; };
+		982CFA341FD967A50055593C /* WatheqPlaceHolderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatheqPlaceHolderTableViewCell.swift; sourceTree = "<group>"; };
+		982CFA361FD97A7E0055593C /* WatheqSubCatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatheqSubCatViewController.swift; sourceTree = "<group>"; };
 		982DF1FC1FD40DC000E4A8EA /* UserRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRootClass.swift; sourceTree = "<group>"; };
 		98337A061FCC334B00EE7539 /* TimerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTableViewCell.swift; sourceTree = "<group>"; };
 		985587E81FC6D882001AD5E5 /* plistReaderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = plistReaderProtocol.swift; sourceTree = "<group>"; };
@@ -220,6 +228,7 @@
 			children = (
 				982CFA1D1FD87FDB0055593C /* CategoriesRootClass.swift */,
 				982CFA1E1FD87FDB0055593C /* Category.swift */,
+				982CFA301FD961290055593C /* Sub.swift */,
 				982CFA1F1FD87FDB0055593C /* WkalatType.swift */,
 			);
 			name = Categories;
@@ -279,6 +288,8 @@
 			isa = PBXGroup;
 			children = (
 				9870B9F91FB8CA38008E678B /* WatheqViewController.swift */,
+				982CFA361FD97A7E0055593C /* WatheqSubCatViewController.swift */,
+				982CFA341FD967A50055593C /* WatheqPlaceHolderTableViewCell.swift */,
 				982CFA2C1FD88D0C0055593C /* WatheqTableViewCell.swift */,
 			);
 			path = Watheq;
@@ -296,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				9870B9FD1FB8CA5D008E678B /* ProfileViewController.swift */,
+				982CFA2E1FD9552E0055593C /* ProfileHeaderTableViewCell.swift */,
 				988E423A1FD73C3500A6AF59 /* ProfileHeaderView.swift */,
 				9870BA031FB8CE9B008E678B /* Settings */,
 				982C682B1FCEF2BF0090F5F6 /* CompleteProfile */,
@@ -656,6 +668,7 @@
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/Skeleton/Skeleton.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftMessages/SwiftMessages.framework",
 				"${BUILT_PRODUCTS_DIR}/SwifterSwift/SwifterSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -678,6 +691,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Skeleton.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftMessages.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwifterSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -715,19 +729,23 @@
 				986516571FBA4E2B00551208 /* SettingsTableCell.swift in Sources */,
 				9825C3091FD1DFD200FE93E3 /* User.swift in Sources */,
 				988942ED1FCA12C2001B4F75 /* Country.swift in Sources */,
+				982CFA351FD967A50055593C /* WatheqPlaceHolderTableViewCell.swift in Sources */,
 				9825C3001FD1CCD300FE93E3 /* WatheqApi.swift in Sources */,
 				9883DF8C1FD56F2E008FC708 /* RMMapper.m in Sources */,
 				985587E91FC6D882001AD5E5 /* plistReaderProtocol.swift in Sources */,
 				982C682D1FCEF2DC0090F5F6 /* CompleteProfileViewController.swift in Sources */,
+				982CFA371FD97A7E0055593C /* WatheqSubCatViewController.swift in Sources */,
 				986F54EF1FD007AF00E9F842 /* NotificationExtension.swift in Sources */,
 				9870B9FA1FB8CA38008E678B /* WatheqViewController.swift in Sources */,
 				9870BA051FB8CEB3008E678B /* SettingsViewController.swift in Sources */,
+				982CFA311FD961290055593C /* Sub.swift in Sources */,
 				989B46091FB8DB8C00618519 /* Localizer.swift in Sources */,
 				988E423B1FD73C3500A6AF59 /* ProfileHeaderView.swift in Sources */,
 				985587EF1FC6D964001AD5E5 /* UIColorExtension.swift in Sources */,
 				982CFA291FD8828E0055593C /* CategoriesViewModel.swift in Sources */,
 				988942E51FCA10E5001B4F75 /* JSONReader.swift in Sources */,
 				9883DF8A1FD56F2E008FC708 /* NSObject+RMArchivable.m in Sources */,
+				982CFA2F1FD9552E0055593C /* ProfileHeaderTableViewCell.swift in Sources */,
 				982CFA201FD87FDB0055593C /* CategoriesRootClass.swift in Sources */,
 				9825C3021FD1DD2400FE93E3 /* NetworkHandler.swift in Sources */,
 				9825C30C1FD1E2F500FE93E3 /* UserViewModel.swift in Sources */,

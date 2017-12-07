@@ -14,6 +14,8 @@ class WatheqViewController: AbstractViewController,ToastAlertProtocol {
     var catViewModel: CategoriesViewModel!
     var ArrCat :[Category]!
     var ErrorStr : String!
+    var IsDataFirstLoading : Bool!
+
 
     @IBOutlet weak var tbl_Categories: UITableView!
 
@@ -21,22 +23,6 @@ class WatheqViewController: AbstractViewController,ToastAlertProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        ArrCat = [Category]()
-        catViewModel = CategoriesViewModel()
-        getWkalataCategories()
-        tbl_Categories.estimatedRowHeight = self.view.frame.size.height * 0.42
-        tbl_Categories.rowHeight = UITableViewAutomaticDimension
-        self.title = NSLocalizedString("watheq", comment: "")
-        self.tabBarItem.title = NSLocalizedString("watheq", comment: "")
-        self.ErrorStr = ""
-
-       // AbstractViewController.showMessage(title: "No Internet Connection", body: "", isWindowNeeded: false, BackgroundColor: UIColor.black, foregroundColor: UIColor.white)
-
-        // Do any additional setup after loading the view.
-    }
-    override  func viewDidLayoutSubviews() {
-       self.customizeTabBarLocal()
-        
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true
             let attributes = [
@@ -47,6 +33,21 @@ class WatheqViewController: AbstractViewController,ToastAlertProtocol {
             navigationController?.navigationBar.largeTitleTextAttributes = attributes
         }
 
+        ArrCat = [Category]()
+        catViewModel = CategoriesViewModel()
+        IsDataFirstLoading = true
+        getWkalataCategories()
+//        tbl_Categories.estimatedRowHeight = self.view.frame.size.height * 0.42
+//        tbl_Categories.rowHeight = UITableViewAutomaticDimension
+        self.title = NSLocalizedString("watheq", comment: "")
+        self.tabBarItem.title = NSLocalizedString("watheq", comment: "")
+        self.ErrorStr = ""
+
+    }
+    override  func viewDidLayoutSubviews() {
+       self.customizeTabBarLocal()
+        
+    
     }
     
     func getWkalataCategories()
@@ -54,14 +55,17 @@ class WatheqViewController: AbstractViewController,ToastAlertProtocol {
         catViewModel.GetCategories { (wkalatTypeObj, errorMsg) in
             if errorMsg == nil {
                 self.ErrorStr = ""
+                self.IsDataFirstLoading = false
                 self.ArrCat = wkalatTypeObj?.categories
                 self.tbl_Categories.reloadData()
                 
             } else{
                 self.ErrorStr = errorMsg
+                self.IsDataFirstLoading = false
 
                 self.showToastMessage(title:errorMsg! , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
                 self.tbl_Categories.reloadData()
+                
 
              
             }
@@ -91,15 +95,14 @@ class WatheqViewController: AbstractViewController,ToastAlertProtocol {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+                if segue.identifier == "WatheqCat_SubCat"  {
+                    let CatObj = sender as!  Category
+                    let SubCatDetails = segue.destination as! WatheqSubCatViewController
+                    SubCatDetails.title = CatObj.name
+                    SubCatDetails.ArrSubCat = CatObj.subs
+              }
     }
-    */
 
 }
 
@@ -107,24 +110,65 @@ extension WatheqViewController: UITableViewDataSource {
     // table view data source methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
+        if IsDataFirstLoading == true
+        {
+            return 3
+        }
+        else
+        {
             return ArrCat.count
+        }
     }
     
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
+        
+        if IsDataFirstLoading == true
+        {
+            let cellLoader:WatheqPlaceHolderTableViewCell = tableView.dequeueReusableCell(withIdentifier:"WatheqPlaceHolderTableViewCell") as UITableViewCell! as! WatheqPlaceHolderTableViewCell
+            
+            cellLoader.gradientLayers.forEach { gradientLayer in
+                let baseColor = cellLoader.lbl_CatPlaceholderView.backgroundColor!
+                gradientLayer.colors = [baseColor.cgColor,
+                                        baseColor.brightened(by: 0.93).cgColor,
+                                        baseColor.cgColor]
+                gradientLayer.slide(to: .right)
+            }
+            return cellLoader
+        }
+        else
+        {
         let cellWatheqCat:WatheqTableViewCell = tableView.dequeueReusableCell(withIdentifier:"WatheqTableViewCell") as UITableViewCell! as! WatheqTableViewCell
         let CatObj =  self.ArrCat[indexPath.row]
         cellWatheqCat.lblCatName.text = CatObj.name
         cellWatheqCat.lblCatDesc.text = CatObj.discription
         return cellWatheqCat
+        }
     }
     
 }
 
 extension WatheqViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        return self.view.frame.size.height * 0.24
+    }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if IsDataFirstLoading == false
+        {
+            let CatObj =  self.ArrCat[indexPath.row]
+            if CatObj.hasSubs == true{
+                self.performSegue(withIdentifier: "WatheqCat_SubCat", sender: CatObj)
+            }
+            else
+            {
+                
+            }
+        }
+    }
   
     
 }
@@ -232,5 +276,12 @@ extension WatheqViewController:DZNEmptyDataSetDelegate
     }
 }
 
+extension UIColor {
+    func brightened(by factor: CGFloat) -> UIColor {
+        var h: CGFloat = 0, s: CGFloat = 0, b: CGFloat = 0, a: CGFloat = 0
+        getHue(&h, saturation: &s, brightness: &b, alpha: &a)
+        return UIColor(hue: h, saturation: s, brightness: b * factor, alpha: a)
+    }
+}
 
 

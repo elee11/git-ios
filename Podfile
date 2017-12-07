@@ -22,6 +22,7 @@ target 'Wathaq' do
   pod 'TransitionButton'
   pod 'Moya'
   pod "MXParallaxHeader", "~> 0.6.0”
+  pod 'Skeleton'
 
 
 
