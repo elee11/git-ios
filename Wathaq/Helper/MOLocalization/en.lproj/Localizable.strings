@@ -47,5 +47,8 @@
 "Profile Data Completed Thank you" = "Profile Data Completed Thank you";
 "ReconnectToInternet" = "Please reconnect and try again";
 "TryAgainLater"="Please and try again later";
-
+"client" = "Client name";
+"clientOwner" = "Client Owner";
+"AddClientMsg" = "You can add a client by clicking on the label at the bottom";
+"AddClientOwnerMsg" = "You can add a client owner by clicking on the label at the bottom";
 

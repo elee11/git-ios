@@ -195,8 +195,8 @@ extension CompleteProfileViewController : UITextFieldDelegate {
         }
         else
         {
-            viewContaineruserTextFields.applyActiveviewBorderProperties()
-            viewContaineMailTextFields.applyDimmviewBorderProperties()
+            viewContaineruserTextFields.applyDimmviewBorderProperties()
+            viewContaineMailTextFields.applyActiveviewBorderProperties()
         }
         
     }

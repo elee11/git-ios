@@ -66,6 +66,10 @@
 		988942FE1FCA1321001B4F75 /* PhoneEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988942FA1FCA1321001B4F75 /* PhoneEntryController.swift */; };
 		988943001FCA19C8001B4F75 /* singleToneClassValues.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988942FF1FCA19C8001B4F75 /* singleToneClassValues.swift */; };
 		988943021FCA2B74001B4F75 /* LoginAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 988943011FCA2B74001B4F75 /* LoginAssets.xcassets */; };
+		988A6B3F1FDF33CA003368C6 /* MawklViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988A6B3E1FDF33CA003368C6 /* MawklViewController.swift */; };
+		988A6B411FDF33FA003368C6 /* TawkeelOwnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988A6B401FDF33FA003368C6 /* TawkeelOwnerViewController.swift */; };
+		988A6B431FDF40AA003368C6 /* DeliveryLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988A6B421FDF40AA003368C6 /* DeliveryLocationViewController.swift */; };
+		988A6B451FDF41FB003368C6 /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988A6B441FDF41FB003368C6 /* CurrentLocationViewController.swift */; };
 		988E42391FD7333200A6AF59 /* ProfileAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 988E42381FD7333200A6AF59 /* ProfileAssets.xcassets */; };
 		988E423B1FD73C3500A6AF59 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 988E423A1FD73C3500A6AF59 /* ProfileHeaderView.swift */; };
 		989B46011FB8D9E200618519 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 989B46031FB8D9E200618519 /* Localizable.strings */; };
@@ -146,6 +150,10 @@
 		988942FA1FCA1321001B4F75 /* PhoneEntryController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhoneEntryController.swift; sourceTree = "<group>"; };
 		988942FF1FCA19C8001B4F75 /* singleToneClassValues.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = singleToneClassValues.swift; sourceTree = "<group>"; };
 		988943011FCA2B74001B4F75 /* LoginAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LoginAssets.xcassets; sourceTree = "<group>"; };
+		988A6B3E1FDF33CA003368C6 /* MawklViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MawklViewController.swift; sourceTree = "<group>"; };
+		988A6B401FDF33FA003368C6 /* TawkeelOwnerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TawkeelOwnerViewController.swift; sourceTree = "<group>"; };
+		988A6B421FDF40AA003368C6 /* DeliveryLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeliveryLocationViewController.swift; sourceTree = "<group>"; };
+		988A6B441FDF41FB003368C6 /* CurrentLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocationViewController.swift; sourceTree = "<group>"; };
 		988E42381FD7333200A6AF59 /* ProfileAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ProfileAssets.xcassets; sourceTree = "<group>"; };
 		988E423A1FD73C3500A6AF59 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
 		989B45FD1FB8D9B400618519 /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
@@ -297,6 +305,10 @@
 				982CFA361FD97A7E0055593C /* WatheqSubCatViewController.swift */,
 				982CFA341FD967A50055593C /* WatheqPlaceHolderTableViewCell.swift */,
 				982CFA2C1FD88D0C0055593C /* WatheqTableViewCell.swift */,
+				988A6B3E1FDF33CA003368C6 /* MawklViewController.swift */,
+				988A6B401FDF33FA003368C6 /* TawkeelOwnerViewController.swift */,
+				988A6B421FDF40AA003368C6 /* DeliveryLocationViewController.swift */,
+				988A6B441FDF41FB003368C6 /* CurrentLocationViewController.swift */,
 			);
 			path = Watheq;
 			sourceTree = "<group>";
@@ -739,7 +751,9 @@
 				982CFA351FD967A50055593C /* WatheqPlaceHolderTableViewCell.swift in Sources */,
 				9825C3001FD1CCD300FE93E3 /* WatheqApi.swift in Sources */,
 				9883DF8C1FD56F2E008FC708 /* RMMapper.m in Sources */,
+				988A6B3F1FDF33CA003368C6 /* MawklViewController.swift in Sources */,
 				985587E91FC6D882001AD5E5 /* plistReaderProtocol.swift in Sources */,
+				988A6B411FDF33FA003368C6 /* TawkeelOwnerViewController.swift in Sources */,
 				982C682D1FCEF2DC0090F5F6 /* CompleteProfileViewController.swift in Sources */,
 				982CFA371FD97A7E0055593C /* WatheqSubCatViewController.swift in Sources */,
 				986F54EF1FD007AF00E9F842 /* NotificationExtension.swift in Sources */,
@@ -754,6 +768,7 @@
 				9883DF8A1FD56F2E008FC708 /* NSObject+RMArchivable.m in Sources */,
 				982CFA2F1FD9552E0055593C /* ProfileHeaderTableViewCell.swift in Sources */,
 				982CFA3B1FD9B19D0055593C /* MyOrderPlaceHolderTableViewCell.swift in Sources */,
+				988A6B451FDF41FB003368C6 /* CurrentLocationViewController.swift in Sources */,
 				982CFA201FD87FDB0055593C /* CategoriesRootClass.swift in Sources */,
 				9825C3021FD1DD2400FE93E3 /* NetworkHandler.swift in Sources */,
 				9825C30C1FD1E2F500FE93E3 /* UserViewModel.swift in Sources */,
@@ -765,6 +780,7 @@
 				989B460A1FB8DB9000618519 /* Constants.swift in Sources */,
 				988942FE1FCA1321001B4F75 /* PhoneEntryController.swift in Sources */,
 				986F54ED1FD0069500E9F842 /* NWConnectivity.swift in Sources */,
+				988A6B431FDF40AA003368C6 /* DeliveryLocationViewController.swift in Sources */,
 				9883DF8B1FD56F2E008FC708 /* NSUserDefaults+RMSaveCustomObject.m in Sources */,
 				988942EE1FCA12C2001B4F75 /* Countries.swift in Sources */,
 				985587F11FC6DD19001AD5E5 /* LblWithTitleGenralCellProtocol.swift in Sources */,

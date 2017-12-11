@@ -63,5 +63,9 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Watheq wants To access your Camera to use it while you using app</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>watheq wants To access you photo gallery to use it while you using app</string>
 </dict>
 </plist>
