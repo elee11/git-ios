@@ -12,6 +12,8 @@ class WatheqTableViewCell: UITableViewCell {
     @IBOutlet weak var lblCatName: UILabel!
     @IBOutlet weak var lblCatDesc: UILabel!
     @IBOutlet weak var imgCatIcon: UIImageView!
+    @IBOutlet weak var viewContainer: UIView!
+
 
 
     override func awakeFromNib() {

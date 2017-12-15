@@ -9,7 +9,10 @@
 import UIKit
 import TransitionButton
 
-class TawkeelOwnerViewController: UIViewController {
+class TawkeelOwnerViewController:UIViewController, ToastAlertProtocol {
+   
+    var OrderDataDic : NSMutableDictionary!
+
     @IBOutlet weak var lblMwklMsg: UILabel!
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtCivilRegistry: UITextField!
@@ -34,8 +37,22 @@ class TawkeelOwnerViewController: UIViewController {
         super.viewDidLoad()
         self.title = NSLocalizedString("clientOwner", comment: "")
         lblMwklMsg.text = NSLocalizedString("AddClientOwnerMsg", comment: "")
-
+        ConfirmButton.setTitle(NSLocalizedString("nextStep", comment: ""), for: .normal)
+        txtName.placeholder = NSLocalizedString("name", comment: "")
+        txtCivilRegistry.placeholder = NSLocalizedString("civilReg", comment: "")
+        if OrderDataDic != nil
+        {
+            txtName.text = OrderDataDic.value(forKey: "representativeName") as? String
+            txtCivilRegistry.text = OrderDataDic.value(forKey: "representativeNationalID") as? String
+        }
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidLayoutSubviews() {
+        
+      
+       
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,16 +60,33 @@ class TawkeelOwnerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    @IBAction func addMawklOwnerDataToOrder(_ sender: Any) {
+        view.endEditing(true)
+        
+        if txtName.text?.isEmpty == true || txtCivilRegistry.text?.isEmpty == true {
+            self.showToastMessage(title: NSLocalizedString(("FillAllFields"), comment: ""), isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+            return
+        }
+        
+        let username =  txtName.text!
+        let civilReg =  txtCivilRegistry.text!
+        
+        OrderDataDic.setValue(username, forKey: "representativeName")
+        OrderDataDic.setValue(civilReg, forKey: "representativeNationalID")
+        
+        self.performSegue(withIdentifier: "S_TawkeelOwner_DeliveryLocation", sender: OrderDataDic)
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
     }
-    */
+
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "S_TawkeelOwner_DeliveryLocation"  {
+            let OrderDic = sender as!  NSMutableDictionary
+            let DeliveryLocationView = segue.destination as! DeliveryLocationViewController
+            DeliveryLocationView.OrderDataDic = OrderDic
+        }
+    }
 
 }
 extension TawkeelOwnerViewController : UITextFieldDelegate {

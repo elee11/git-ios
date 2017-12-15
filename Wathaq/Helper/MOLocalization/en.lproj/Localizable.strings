@@ -47,8 +47,15 @@
 "Profile Data Completed Thank you" = "Profile Data Completed Thank you";
 "ReconnectToInternet" = "Please reconnect and try again";
 "TryAgainLater"="Please and try again later";
-"client" = "Client name";
-"clientOwner" = "Client Owner";
+"client" = "Agent name";
+"clientOwner" = "Agent Owner";
 "AddClientMsg" = "You can add a client by clicking on the label at the bottom";
 "AddClientOwnerMsg" = "You can add a client owner by clicking on the label at the bottom";
-
+"nextStep" = "Next Step";
+"office" = "Office";
+"home" = "Residence";
+"name" = "Name of the grantor";
+"civilReg" = "Civil Registry";
+"Receiving the POA" = "Receiving the POA";
+"ChooseAdreess" = "Choose Address";
+"pleaseChooseaddressFirst" = "Please choose address";

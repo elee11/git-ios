@@ -31,6 +31,7 @@ struct Constants {
         static let flurry = "HBVRP3Y6QCT2CZMFTTQ5"
         static let KeyUser = "UserKey"
         static let keyFirstTimeUser = "keyFirstTimeUser"
+        static let GoogleMapsKey = "AIzaSyCb4KG8z7i2tj3G5Dfe5SFBcLKIsQSCYN4"
         
     }
     

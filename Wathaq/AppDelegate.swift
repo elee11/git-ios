@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import UserNotifications
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDelegate {
@@ -20,6 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         setupLanguage()
         removeTabBarShadowLine()
+        GMSServices.provideAPIKey(Constants.keys.GoogleMapsKey)
+
         //Firebase
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
@@ -46,13 +49,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
     func checkifuserLoggedIn()
     {
         let userObj:User? = UserDefaults.standard.rm_customObject(forKey: Constants.keys.KeyUser) as? User
-        if (userObj == nil || userObj?.isCompleteProfile == false)
+        if userObj == nil
      {
         
         let MainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
         let loginViewController = MainStoryBoard.instantiateViewController(withIdentifier: "PhoneEntryController")
         self.window?.rootViewController? = loginViewController
      }
+        else if userObj != nil
+        {
+            if userObj?.isCompleteProfile == false
+            {
+                let MainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
+                let CompleteProfileViewController = MainStoryBoard.instantiateViewController(withIdentifier: "CompleteProfileViewController")
+                self.window?.rootViewController? = CompleteProfileViewController
+            }
+        }
     }
     
     func customizeTabBar ()

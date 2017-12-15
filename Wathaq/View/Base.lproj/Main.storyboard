@@ -91,7 +91,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vM5-gC-u1G">
-                                                            <rect key="frame" x="134.5" y="26.5" width="107" height="107"/>
+                                                            <rect key="frame" x="134.5" y="27" width="107" height="107"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="107" id="2aW-GO-C3A"/>
                                                                 <constraint firstAttribute="width" constant="107" id="m7I-cg-u7p"/>
@@ -106,27 +106,27 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Zo-wC-ey8">
-                                                            <rect key="frame" x="20" y="148.5" width="335" height="33.5"/>
+                                                            <rect key="frame" x="20" y="149" width="335" height="33.5"/>
                                                             <accessibility key="accessibilityConfiguration" hint="" identifier="32440960-EA82-4756-B7D8-4CE925257B3F" label=""/>
                                                             <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="22.760000000000002"/>
                                                             <color key="textColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="deviceRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="gIs-0x-YCo">
-                                                            <rect key="frame" x="96" y="214" width="183.5" height="68.5"/>
+                                                            <rect key="frame" x="96" y="214.5" width="183.5" height="68"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="c4E-wu-Ewi">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="52" height="68.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="52" height="68"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="57" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kS-Dg-ecO">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="52" height="42"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="52" height="41.5"/>
                                                                             <accessibility key="accessibilityConfiguration" hint="" identifier="32440960-EA82-4756-B7D8-4CE925257B3F" label=""/>
                                                                             <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="25"/>
                                                                             <color key="textColor" red="0.85490196080000003" green="0.12941176469999999" blue="0.21960784310000001" alpha="1" colorSpace="deviceRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="خدمة" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNk-we-bGu">
-                                                                            <rect key="frame" x="0.0" y="42" width="52" height="26.5"/>
+                                                                            <rect key="frame" x="0.0" y="41.5" width="52" height="26.5"/>
                                                                             <accessibility key="accessibilityConfiguration" hint="" identifier="32440960-EA82-4756-B7D8-4CE925257B3F" label=""/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="51.5" id="28n-wJ-nFJ"/>
@@ -139,17 +139,17 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Zhi-4y-mvK">
-                                                                    <rect key="frame" x="132" y="0.0" width="51.5" height="68.5"/>
+                                                                    <rect key="frame" x="132" y="0.0" width="51.5" height="68"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="57" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4D5-g5-dks">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="51.5" height="42"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="51.5" height="41.5"/>
                                                                             <accessibility key="accessibilityConfiguration" hint="" identifier="32440960-EA82-4756-B7D8-4CE925257B3F" label=""/>
                                                                             <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="25"/>
                                                                             <color key="textColor" red="0.85490196078431369" green="0.12941176470588234" blue="0.2196078431372549" alpha="1" colorSpace="deviceRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="خدمة" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMJ-7h-Zvo">
-                                                                            <rect key="frame" x="0.0" y="42" width="51.5" height="26.5"/>
+                                                                            <rect key="frame" x="0.0" y="41.5" width="51.5" height="26.5"/>
                                                                             <accessibility key="accessibilityConfiguration" hint="" identifier="32440960-EA82-4756-B7D8-4CE925257B3F" label=""/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="51.5" id="eRf-uJ-OWE"/>
@@ -164,7 +164,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OY5-du-6ze">
-                                                            <rect key="frame" x="0.0" y="197" width="375" height="1"/>
+                                                            <rect key="frame" x="0.0" y="197.5" width="375" height="1"/>
                                                             <color key="backgroundColor" red="0.95686274510000002" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="deviceRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="1.5" id="NjL-12-XHm"/>
@@ -273,7 +273,7 @@
                                                     <rect key="frame" x="15" y="10" width="345" height="111.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="246" verticalHuggingPriority="251" text="خدمة #٤٨٤٨٣" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aD2-cn-tmi">
-                                                            <rect key="frame" x="97" y="20" width="97" height="28"/>
+                                                            <rect key="frame" x="97" y="20.5" width="97" height="28"/>
                                                             <accessibility key="accessibilityConfiguration" hint="" identifier="BFAD5806-895A-44FD-A070-16F216BD8E50" label=""/>
                                                             <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="19"/>
                                                             <color key="textColor" red="0.63137254899999995" green="0.63137254899999995" blue="0.63137254899999995" alpha="1" colorSpace="deviceRGB"/>
@@ -284,7 +284,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="245" verticalHuggingPriority="251" text="سلطان علي" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTt-3B-yIv">
-                                                            <rect key="frame" x="97" y="53" width="74" height="24.5"/>
+                                                            <rect key="frame" x="97" y="53.5" width="74" height="24.5"/>
                                                             <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="16.5"/>
                                                             <color key="textColor" red="0.58823529409999997" green="0.60784313729999995" blue="0.66274509800000003" alpha="1" colorSpace="deviceRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -416,14 +416,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="الائتمان" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p69-tB-xIc">
-                                                    <rect key="frame" x="20" y="17.5" width="51.5" height="26.5"/>
+                                                    <rect key="frame" x="20" y="17" width="51.5" height="26.5"/>
                                                     <accessibility key="accessibilityConfiguration" hint="" identifier="32440960-EA82-4756-B7D8-4CE925257B3F" label=""/>
                                                     <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="17.760000000000002"/>
                                                     <color key="textColor" red="0.68627450980000004" green="0.71372549019999998" blue="0.7843137255" alpha="1" colorSpace="deviceRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9v-hJ-M8a">
-                                                    <rect key="frame" x="301.5" y="17.5" width="0.0" height="26.5"/>
+                                                    <rect key="frame" x="301.5" y="17" width="0.0" height="26.5"/>
                                                     <accessibility key="accessibilityConfiguration" hint="" identifier="32440960-EA82-4756-B7D8-4CE925257B3F" label=""/>
                                                     <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="17.760000000000002"/>
                                                     <color key="textColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="deviceRGB"/>
@@ -817,7 +817,7 @@
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="tbl_SubCategories" destination="SiQ-Du-ZJ7" id="bPO-6R-DdI"/>
-                        <segue destination="CSN-VM-0pr" kind="show" id="8fg-Oy-9Z8"/>
+                        <segue destination="CSN-VM-0pr" kind="show" identifier="S_SubCat_Mawkl" id="8fg-Oy-9Z8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sV3-uW-l6p" sceneMemberID="firstResponder"/>
@@ -833,7 +833,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WNK-Cj-1dC">
-                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="473"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WatheqTableViewCell" rowHeight="220" id="FhB-vt-3q2" customClass="WatheqTableViewCell" customModule="Wathaq" customModuleProvider="target">
@@ -847,7 +847,7 @@
                                                     <rect key="frame" x="25" y="10" width="325" height="200"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="246" verticalHuggingPriority="251" text="سكنك" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8A-2D-IjQ">
-                                                            <rect key="frame" x="96" y="80" width="67" height="40"/>
+                                                            <rect key="frame" x="96" y="80.5" width="67" height="40"/>
                                                             <accessibility key="accessibilityConfiguration" hint="" identifier="BFAD5806-895A-44FD-A070-16F216BD8E50" label=""/>
                                                             <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="27"/>
                                                             <color key="textColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="deviceRGB"/>
@@ -899,6 +899,7 @@
                                         <connections>
                                             <outlet property="imgCatIcon" destination="dWF-WQ-098" id="I78-zh-VIf"/>
                                             <outlet property="lblCatName" destination="n8A-2D-IjQ" id="x2U-ts-Qr5"/>
+                                            <outlet property="viewContainer" destination="u0F-0k-sOP" id="4jN-wk-mKm"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -907,13 +908,40 @@
                                     <outlet property="delegate" destination="2Vy-fH-5Pk" id="HAP-By-4f9"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y3n-ta-10b" customClass="TransitionButton" customModule="TransitionButton">
+                                <rect key="frame" x="15" y="542" width="345" height="60"/>
+                                <color key="backgroundColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="VEz-Uy-Mv2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="18.870000000000001"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Create Request">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="spinnerColor">
+                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addMawklOwnerDataToOrder:" destination="INg-Ud-p1c" eventType="touchUpInside" id="era-cZ-tK0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.95686274510000002" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="fq9-lf-L1d" firstAttribute="trailing" secondItem="Y3n-ta-10b" secondAttribute="trailing" constant="15" id="BtE-FZ-ekQ"/>
                             <constraint firstItem="WNK-Cj-1dC" firstAttribute="trailing" secondItem="fq9-lf-L1d" secondAttribute="trailing" id="Mt9-ah-2W6"/>
                             <constraint firstItem="WNK-Cj-1dC" firstAttribute="leading" secondItem="fq9-lf-L1d" secondAttribute="leading" id="NaY-22-b4o"/>
-                            <constraint firstItem="WNK-Cj-1dC" firstAttribute="bottom" secondItem="fq9-lf-L1d" secondAttribute="bottom" id="aAd-LG-Hfh"/>
+                            <constraint firstItem="fq9-lf-L1d" firstAttribute="bottom" secondItem="Y3n-ta-10b" secondAttribute="bottom" constant="16" id="NpP-3H-8SL"/>
+                            <constraint firstItem="Y3n-ta-10b" firstAttribute="leading" secondItem="fq9-lf-L1d" secondAttribute="leading" constant="15" id="Q18-Iz-ZCB"/>
+                            <constraint firstItem="Y3n-ta-10b" firstAttribute="top" secondItem="WNK-Cj-1dC" secondAttribute="bottom" constant="5" id="YlH-oa-wdW"/>
                             <constraint firstItem="WNK-Cj-1dC" firstAttribute="top" secondItem="fq9-lf-L1d" secondAttribute="top" id="lZV-uT-Png"/>
+                            <constraint firstItem="Y3n-ta-10b" firstAttribute="centerX" secondItem="Ikv-56-IGj" secondAttribute="centerX" id="xqu-dc-fkg"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fq9-lf-L1d"/>
                     </view>
@@ -923,12 +951,12 @@
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="tbl_DeliveryLocation" destination="WNK-Cj-1dC" id="pIN-sa-UTP"/>
-                        <segue destination="Xky-PW-dFG" kind="show" id="S7l-Sm-mvg"/>
+                        <segue destination="Xky-PW-dFG" kind="show" identifier="S_Home_Location" id="S7l-Sm-mvg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EXQ-Q7-Ofv" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4521" y="-322"/>
+            <point key="canvasLocation" x="4520.8000000000002" y="-322.48875562218893"/>
         </scene>
         <!--Current Location View Controller-->
         <scene sceneID="Q8u-e5-dfr">
@@ -958,7 +986,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تسجيل دخول" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Fu-1b-y0e">
-                                <rect key="frame" x="133" y="40" width="109.5" height="33"/>
+                                <rect key="frame" x="133.5" y="40" width="109.5" height="33"/>
                                 <accessibility key="accessibilityConfiguration" hint="" identifier="BFAD5806-895A-44FD-A070-16F216BD8E50" label=""/>
                                 <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="22.199999999999999"/>
                                 <color key="textColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="deviceRGB"/>
@@ -978,7 +1006,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="هل أنت مستخدم؟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xn1-sH-QOJ">
-                                <rect key="frame" x="122.5" y="567" width="130" height="28"/>
+                                <rect key="frame" x="123" y="567" width="130" height="28"/>
                                 <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="18.799999237060547"/>
                                 <color key="textColor" red="0.58823529409999997" green="0.60784313729999995" blue="0.66274509800000003" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1083,7 +1111,7 @@
                                 <rect key="frame" x="30" y="344.5" width="315" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03:35" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YV8-T3-dXR" customClass="CountdownLabel" customModule="CountdownLabel">
-                                        <rect key="frame" x="137" y="2.5" width="41.5" height="25"/>
+                                        <rect key="frame" x="137.5" y="2.5" width="41.5" height="25"/>
                                         <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="17"/>
                                         <color key="textColor" red="0.31372549020000001" green="0.62745098040000002" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1467,6 +1495,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addMawklDataToOrder:" destination="CSN-VM-0pr" eventType="touchUpInside" id="5m3-Qx-sGs"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.95686274510000002" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="deviceRGB"/>
@@ -1498,7 +1529,7 @@
                         <outlet property="txtName" destination="Qcl-wQ-8Jm" id="eQz-FW-oLV"/>
                         <outlet property="viewContaineCivilReigestryTextFields" destination="pLE-4j-xdb" id="hKC-v9-zxo"/>
                         <outlet property="viewContainerNameTextFields" destination="X1n-s5-DJE" id="Yn1-g5-ll2"/>
-                        <segue destination="INg-Ud-p1c" kind="show" id="QOr-3H-wpd"/>
+                        <segue destination="INg-Ud-p1c" kind="show" identifier="S_Mawkl_MawkelOwner" id="QOr-3H-wpd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DsH-i4-tY7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1592,6 +1623,9 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="addMawklOwnerDataToOrder:" destination="INg-Ud-p1c" eventType="touchUpInside" id="Wi0-uP-5Tg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.95686274510000002" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="deviceRGB"/>
@@ -1618,11 +1652,12 @@
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="ConfirmButton" destination="FV0-Hk-oWo" id="X40-1l-jxy"/>
+                        <outlet property="lblMwklMsg" destination="ggO-tV-DH0" id="4Wt-Lz-1f1"/>
                         <outlet property="txtCivilRegistry" destination="K25-cb-2Qg" id="qjA-6o-EGs"/>
                         <outlet property="txtName" destination="HHy-sr-UIp" id="OWN-4N-onb"/>
                         <outlet property="viewContaineCivilReigestryTextFields" destination="GMg-Ey-l1r" id="2vL-7f-Wfv"/>
                         <outlet property="viewContainerNameTextFields" destination="ZF5-t5-dxX" id="oj8-To-6jh"/>
-                        <segue destination="2Vy-fH-5Pk" kind="show" id="72P-7v-MWe"/>
+                        <segue destination="2Vy-fH-5Pk" kind="show" identifier="S_TawkeelOwner_DeliveryLocation" id="72P-7v-MWe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BlE-nX-anq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1638,7 +1673,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="تسجيل دخول" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGG-ur-cer">
-                                <rect key="frame" x="133.5" y="40" width="109.5" height="33"/>
+                                <rect key="frame" x="133" y="40" width="109.5" height="33"/>
                                 <accessibility key="accessibilityConfiguration" hint="" identifier="BFAD5806-895A-44FD-A070-16F216BD8E50" label=""/>
                                 <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="22.199999999999999"/>
                                 <color key="textColor" red="0.2901960784" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="deviceRGB"/>
@@ -1649,7 +1684,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ادخل رقم جوالك ثم كود التحقق من الرساله التي ستصلك على هذا الرقم" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pb5-Js-6Zq">
-                                <rect key="frame" x="17" y="84" width="342.5" height="55.5"/>
+                                <rect key="frame" x="16" y="84" width="342.5" height="55.5"/>
                                 <accessibility key="accessibilityConfiguration" hint="" identifier="074EEBD8-5493-4ABA-BBEA-A819E12ED6B6" label=""/>
                                 <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="18.870000000000001"/>
                                 <color key="textColor" red="0.58823529409999997" green="0.60784313729999995" blue="0.66274509800000003" alpha="1" colorSpace="deviceRGB"/>
@@ -1660,7 +1695,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="هل أنت مستخدم؟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYF-AF-6rF">
-                                <rect key="frame" x="123.5" y="567" width="130" height="28"/>
+                                <rect key="frame" x="124" y="567" width="130" height="28"/>
                                 <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="18.799999237060547"/>
                                 <color key="textColor" red="0.58823529409999997" green="0.60784313729999995" blue="0.66274509800000003" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1763,7 +1798,7 @@
                                 <rect key="frame" x="30" y="290.5" width="315" height="1"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="03:35" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ps6-aX-uik" customClass="CountdownLabel" customModule="CountdownLabel">
-                                        <rect key="frame" x="137.5" y="-12" width="41.5" height="25"/>
+                                        <rect key="frame" x="137" y="-12" width="41.5" height="25"/>
                                         <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="17"/>
                                         <color key="textColor" red="0.31372549020000001" green="0.62745098040000002" blue="0.87450980389999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -1983,7 +2018,7 @@
                                                     <rect key="frame" x="15" y="10" width="345" height="111.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="246" verticalHuggingPriority="251" text="خدمة #٤٨٤٨٣" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Q6-Sb-N6s">
-                                                            <rect key="frame" x="97" y="19.5" width="97" height="28"/>
+                                                            <rect key="frame" x="97" y="20" width="97" height="28"/>
                                                             <accessibility key="accessibilityConfiguration" hint="" identifier="BFAD5806-895A-44FD-A070-16F216BD8E50" label=""/>
                                                             <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="19"/>
                                                             <color key="textColor" red="0.63137254901960782" green="0.63137254901960782" blue="0.63137254901960782" alpha="1" colorSpace="deviceRGB"/>
@@ -1994,7 +2029,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="245" verticalHuggingPriority="251" text="سلطان علي" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBX-8q-QyG">
-                                                            <rect key="frame" x="97" y="52.5" width="74" height="24.5"/>
+                                                            <rect key="frame" x="97" y="53" width="74" height="24.5"/>
                                                             <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="16.5"/>
                                                             <color key="textColor" red="0.58823529409999997" green="0.60784313729999995" blue="0.66274509800000003" alpha="1" colorSpace="deviceRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -2070,6 +2105,7 @@
                                             <outlet property="lblServiceNum" destination="0Q6-Sb-N6s" id="jTU-DD-jyI"/>
                                             <outlet property="viewBigContainer" destination="1Rn-Jr-uQ1" id="qHy-8f-n3r"/>
                                             <outlet property="viewsmallContainer" destination="Ypk-zp-2Tq" id="SW1-WF-2rp"/>
+                                            <segue destination="tmZ-Aa-hu1" kind="show" id="FV8-tr-qOP"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyOrderPlaceHolderTableViewCell" rowHeight="170" id="s2f-EI-Pnr" userLabel="SkeletonplaceHolderCell" customClass="MyOrderPlaceHolderTableViewCell" customModule="Wathaq" customModuleProvider="target">
@@ -2602,6 +2638,108 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0pd-hk-yBd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="748.79999999999995" y="359.82008995502252"/>
+        </scene>
+        <!--Channel List View Controller-->
+        <scene sceneID="mrA-EI-vFf">
+            <objects>
+                <tableViewController id="tmZ-Aa-hu1" customClass="ChannelListViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="J0k-KE-svj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NewChannel" id="OhX-TN-a2L" customClass="CreateChannelCell" customModule="Wathaq" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OhX-TN-a2L" id="Jj8-BR-IS2">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Create a New Channel" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NbT-gs-KQa">
+                                            <rect key="frame" x="24" y="7" width="281" height="30"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
+                                        </textField>
+                                        <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Vd-xm-oZJ">
+                                            <rect key="frame" x="313" y="7" width="46" height="30"/>
+                                            <state key="normal" title="Create"/>
+                                            <connections>
+                                                <action selector="createChannel:" destination="tmZ-Aa-hu1" eventType="touchUpInside" id="Qsw-cg-Osv"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="3Vd-xm-oZJ" firstAttribute="centerY" secondItem="Jj8-BR-IS2" secondAttribute="centerY" id="Duo-Fe-7ny"/>
+                                        <constraint firstItem="3Vd-xm-oZJ" firstAttribute="trailing" secondItem="Jj8-BR-IS2" secondAttribute="trailingMargin" id="JR2-os-kP3"/>
+                                        <constraint firstItem="3Vd-xm-oZJ" firstAttribute="leading" secondItem="NbT-gs-KQa" secondAttribute="trailing" constant="8" id="Pgl-8g-vIo"/>
+                                        <constraint firstItem="3Vd-xm-oZJ" firstAttribute="leading" secondItem="NbT-gs-KQa" secondAttribute="trailing" constant="8" id="eDf-9F-nZs"/>
+                                        <constraint firstItem="3Vd-xm-oZJ" firstAttribute="leading" secondItem="NbT-gs-KQa" secondAttribute="trailing" constant="8" id="jM0-pD-dHy"/>
+                                        <constraint firstItem="NbT-gs-KQa" firstAttribute="centerY" secondItem="Jj8-BR-IS2" secondAttribute="centerY" id="lSL-Gj-vEV"/>
+                                        <constraint firstItem="NbT-gs-KQa" firstAttribute="leading" secondItem="Jj8-BR-IS2" secondAttribute="leadingMargin" constant="8" id="qce-Y5-liU"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="Pgl-8g-vIo"/>
+                                            <exclude reference="jM0-pD-dHy"/>
+                                        </mask>
+                                    </variation>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="createChannelButton" destination="3Vd-xm-oZJ" id="Gjh-dn-VHc"/>
+                                    <outlet property="newChannelNameField" destination="NbT-gs-KQa" id="Dpf-8g-Ix3"/>
+                                    <segue destination="IE2-sH-wev" kind="show" identifier="ShowChannel" id="l9I-cX-mmk">
+                                        <nil key="action"/>
+                                    </segue>
+                                </connections>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ExistingChannel" textLabel="PhO-TC-AqF" style="IBUITableViewCellStyleDefault" id="B9A-0F-hpP">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B9A-0F-hpP" id="DT4-Gl-djJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PhO-TC-AqF">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="tmZ-Aa-hu1" id="yxL-eK-r4j"/>
+                            <outlet property="delegate" destination="tmZ-Aa-hu1" id="UU8-nz-Fcu"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="zDm-qw-NjW"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="04E-Wt-TSv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2318" y="359"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="F1z-LN-ZDd">
+            <objects>
+                <viewController id="IE2-sH-wev" customClass="ChatViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="q3d-ut-sMt"/>
+                        <viewControllerLayoutGuide type="bottom" id="pjR-Fd-ffa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="x7c-2p-bYa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="QbR-1c-8lu"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="TO3-eL-N6t"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9A2-3f-nZL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3078" y="359"/>
         </scene>
     </scenes>
     <resources>

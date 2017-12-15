@@ -59,7 +59,9 @@ public enum WatheqApi {
     case UpdateProfile(name:String, email:String, image:String, phone:String)
     case registerDeviceToken(identifier:String, firebaseToken:String)
     case logout(identifier:String)
+    //Order
     case getCategories
+    case CreateOrder(categoryId:String, clientName:String, representativeName:String, clientNationalID:String,representativeNationalID:String, delivery:String, latitude:Double, longitude:Double )
 
 
 
@@ -85,11 +87,13 @@ extension WatheqApi: TargetType,AccessTokenAuthorizable {
             return "api/auth/client/logout"
         case .getCategories:
             return "api/auth/category/list"
+        case .CreateOrder:
+            return "api/auth/order"
         }
     }
     public var method: Moya.Method {
         switch self {
-        case .login,.completeProfile,.UpdateProfile,.registerDeviceToken,.logout:
+        case .login,.completeProfile,.UpdateProfile,.registerDeviceToken,.logout,.CreateOrder:
             return .post
         case .getCategories:
             return .get
@@ -110,6 +114,9 @@ extension WatheqApi: TargetType,AccessTokenAuthorizable {
             return .requestParameters(parameters: ["identifier":identifier], encoding: JSONEncoding.default)
         case .getCategories:
             return .requestPlain
+        case .CreateOrder(let categoryId, let clientName, let representativeName, let clientNationalID, let representativeNationalID, let delivery, let latitude, let longitude ):
+            return .requestParameters(parameters: ["categoryId":categoryId , "clientName":clientName , "representativeName":representativeName, "clientNationalID":clientNationalID, "representativeNationalID": representativeNationalID, "delivery":delivery, "latitude":latitude, "longitude":longitude], encoding: JSONEncoding.default)
+            
         }
     }
     
@@ -117,7 +124,7 @@ extension WatheqApi: TargetType,AccessTokenAuthorizable {
         switch self {
         case .login:
             return .none
-        case .completeProfile,.UpdateProfile,.registerDeviceToken,.logout,.getCategories :
+        case .completeProfile,.UpdateProfile,.registerDeviceToken,.logout,.getCategories,.CreateOrder :
             return .bearer
         }
     }

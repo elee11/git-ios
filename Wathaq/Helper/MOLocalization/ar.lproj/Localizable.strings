@@ -46,8 +46,16 @@
 "Profile Data Completed Thank you" = "بيانات الملف الشخصي اكتملت شكرا";
 "ReconnectToInternet" = "الرجاء إعادة الاتصال والمحاولة مرة أخرى";
 "TryAgainLater"="الرجاء المحاولة مرة أخرى لاحقا";
-"client" = "اسم الموكل"
+"client" = "اسم الموكل";
 "clientOwner" = "صاحب التوكيل";
 "AddClientMsg" = "بامكانك اضافة موكل بالضغط على العلامة في الاسفل";
 "AddClientOwnerMsg" = "بامكانك اضافة صاحب التوكيل بالضغط على العلامة في الاسفل";
+"nextStep" = "الخطوة التالية";
+"office" = "مكتب";
+"home" = "سكنك";
+"name" = "الاسم" ;
+"civilReg" = "السجل المدني";
+"Receiving the POA" = "استلام التوكيل";
+"ChooseAdreess" = "اختيار العنوان";
+"pleaseChooseaddressFirst" = "الرجاء اختيار عنوان";
 

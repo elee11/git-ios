@@ -23,6 +23,12 @@ target 'Wathaq' do
   pod 'Moya'
   pod "MXParallaxHeader", "~> 0.6.0”
   pod 'Skeleton'
+  pod 'Firebase/Storage'
+  pod 'Firebase/Database'
+  pod 'Firebase/RemoteConfig'
+  pod 'JSQMessagesViewController'
+  pod 'GoogleMaps'
+  pod 'GooglePlaces'
 
 
 

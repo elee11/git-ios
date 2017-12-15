@@ -67,5 +67,12 @@
 	<string>Watheq wants To access your Camera to use it while you using app</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>watheq wants To access you photo gallery to use it while you using app</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Watheq wants to access your location while using app to get you nearest requests to you</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>googlechromes</string>
+		<string>comgooglemaps</string>
+	</array>
 </dict>
 </plist>

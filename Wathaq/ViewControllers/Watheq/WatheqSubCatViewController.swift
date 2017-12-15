@@ -35,15 +35,13 @@ class WatheqSubCatViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "S_SubCat_Mawkl"  {
+            let OrderDic = sender as!  NSMutableDictionary
+            let MawklView = segue.destination as! MawklViewController
+            MawklView.OrderDataDic = OrderDic
+        }
     }
-    */
 
 }
 
@@ -86,7 +84,9 @@ extension WatheqSubCatViewController: UITableViewDelegate {
         }
         else
         {
-            
+            let OrderDataDic = NSMutableDictionary ()
+            OrderDataDic.setValue(SubObj.id, forKey: "categoryId")
+            self.performSegue(withIdentifier: "S_SubCat_Mawkl", sender: OrderDataDic)
         }
     }
     
