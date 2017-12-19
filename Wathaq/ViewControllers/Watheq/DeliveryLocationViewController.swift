@@ -7,16 +7,26 @@
 //
 
 import UIKit
+import TransitionButton
 
-class DeliveryLocationViewController: UIViewController {
+class DeliveryLocationViewController: UIViewController ,ToastAlertProtocol{
+   
+    var viewModel: OrderViewModel!
+
     @IBOutlet weak var tbl_DeliveryLocation: UITableView!
-
+    @IBOutlet weak var ConfirmButton: TransitionButton! {
+        didSet {
+            ConfirmButton.applyBorderProperties()
+        }
+    }
     var OrderDataDic : NSMutableDictionary!
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = NSLocalizedString("Receiving the POA", comment: "")
+        viewModel = OrderViewModel()
+
+        ConfirmButton.setTitle(NSLocalizedString("CreatOrder", comment: ""), for: .normal)
 
         // Do any additional setup after loading the view.
     }
@@ -36,6 +46,55 @@ class DeliveryLocationViewController: UIViewController {
     }
     
 
+    @IBAction func CreateOrder (_ sender :Any)
+    {
+        
+        if OrderDataDic.value(forKey: "delivery") != nil {
+            ConfirmButton.startAnimation()
+            self.view.isUserInteractionEnabled = false
+            if OrderDataDic.value(forKey: "longitude") == nil && OrderDataDic.value(forKey: "latitude") == nil{
+                OrderDataDic.setValue(0, forKey: "longitude")
+                OrderDataDic.setValue(0, forKey: "latitude")
+            }
+            
+             if OrderDataDic.value(forKey: "clientName") == nil
+             {
+                OrderDataDic.setValue("", forKey: "clientName")
+                OrderDataDic.setValue("", forKey: "clientNationalID")
+                
+                OrderDataDic.setValue("", forKey: "representativeName")
+                OrderDataDic.setValue("", forKey: "representativeNationalID")
+             }
+            
+            
+            viewModel.CreateOrder(OrderDic: OrderDataDic, completion: { (OrderObj, errorMsg) in
+                if errorMsg == nil {
+                
+                self.ConfirmButton.stopAnimation()
+                self.view.isUserInteractionEnabled = true
+                    
+                    self.showToastMessage(title:NSLocalizedString("OrderProceeded", comment: "") , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.greenAlert, foregroundColor: UIColor.white)
+                    
+                    self.performSegue(withIdentifier: "S_Request_SearchingLawyer", sender:nil)
+                            
+                } else{
+                self.showToastMessage(title:errorMsg! , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+                self.ConfirmButton.stopAnimation()
+                self.view.isUserInteractionEnabled = true
+                }
+                })
+
+            
+        }
+        else
+        {
+            self.showToastMessage(title: NSLocalizedString(("pleaseChooseDeliveryLocation"), comment: ""), isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+            
+        }
+        
+    
+        
+    }
     
 
 }

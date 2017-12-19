@@ -35,6 +35,7 @@ class TawkeelOwnerViewController:UIViewController, ToastAlertProtocol {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addTapToDismissKeyboard()
         self.title = NSLocalizedString("clientOwner", comment: "")
         lblMwklMsg.text = NSLocalizedString("AddClientOwnerMsg", comment: "")
         ConfirmButton.setTitle(NSLocalizedString("nextStep", comment: ""), for: .normal)
@@ -84,6 +85,7 @@ class TawkeelOwnerViewController:UIViewController, ToastAlertProtocol {
         if segue.identifier == "S_TawkeelOwner_DeliveryLocation"  {
             let OrderDic = sender as!  NSMutableDictionary
             let DeliveryLocationView = segue.destination as! DeliveryLocationViewController
+            DeliveryLocationView.title = NSLocalizedString("Receiving the POA", comment: "")
             DeliveryLocationView.OrderDataDic = OrderDic
         }
     }

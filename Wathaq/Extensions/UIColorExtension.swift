@@ -22,7 +22,7 @@ extension UIColor {
     }
     
     class var deepBlue: UIColor {
-        return UIColor(red: 74.0 / 255.0, green: 144.0 / 255.0, blue: 226.0 / 255.0, alpha: 1.0)
+        return UIColor(red: 0.0 / 255.0, green: 147.0 / 255.0, blue: 82.0 / 255.0, alpha: 1.0)
     }
     
     class var lightimpactGray: UIColor {

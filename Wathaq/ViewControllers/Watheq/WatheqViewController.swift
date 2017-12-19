@@ -16,11 +16,7 @@ class WatheqViewController: AbstractViewController,ToastAlertProtocol {
     var ErrorStr : String!
     var IsDataFirstLoading : Bool!
 
-
     @IBOutlet weak var tbl_Categories: UITableView!
-
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         if #available(iOS 11.0, *) {
@@ -29,7 +25,6 @@ class WatheqViewController: AbstractViewController,ToastAlertProtocol {
                 NSAttributedStringKey.foregroundColor : UIColor.deepBlue,
                 NSAttributedStringKey.font :  UIFont(name: Constants.FONTS.FONT_PARALLAX_AR, size: 30)
             ]
-            
             navigationController?.navigationBar.largeTitleTextAttributes = attributes
         }
 
@@ -37,8 +32,7 @@ class WatheqViewController: AbstractViewController,ToastAlertProtocol {
         catViewModel = CategoriesViewModel()
         IsDataFirstLoading = true
         getWkalataCategories()
-//        tbl_Categories.estimatedRowHeight = self.view.frame.size.height * 0.42
-//        tbl_Categories.rowHeight = UITableViewAutomaticDimension
+
         self.title = NSLocalizedString("watheq", comment: "")
         self.tabBarItem.title = NSLocalizedString("watheq", comment: "")
         self.ErrorStr = ""

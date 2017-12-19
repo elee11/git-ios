@@ -10,6 +10,7 @@ import UIKit
 
 class WatheqSubCatViewController: UIViewController {
     var ArrSubCat :[Sub]!
+    var DeliveryLocationTitle : String!
     @IBOutlet weak var tbl_SubCategories: UITableView!
 
     override func viewDidLoad() {
@@ -40,6 +41,13 @@ class WatheqSubCatViewController: UIViewController {
             let OrderDic = sender as!  NSMutableDictionary
             let MawklView = segue.destination as! MawklViewController
             MawklView.OrderDataDic = OrderDic
+        }
+        else if segue.identifier == "S_SubCat_DeliveryLocation"
+        {
+            let OrderDic = sender as!  NSMutableDictionary
+            let DeliveryLocationView = segue.destination as! DeliveryLocationViewController
+            DeliveryLocationView.title = DeliveryLocationTitle
+            DeliveryLocationView.OrderDataDic = OrderDic
         }
     }
 
@@ -86,7 +94,17 @@ extension WatheqSubCatViewController: UITableViewDelegate {
         {
             let OrderDataDic = NSMutableDictionary ()
             OrderDataDic.setValue(SubObj.id, forKey: "categoryId")
+            
+            if ( SubObj.id == 3 || SubObj.id == 4 || SubObj.id == 5 || SubObj.id == 7 || SubObj.id == 8 || SubObj.id == 9 )
+            {
             self.performSegue(withIdentifier: "S_SubCat_Mawkl", sender: OrderDataDic)
+            }
+            else
+            {
+                DeliveryLocationTitle = NSLocalizedString("Recieving", comment: "") + " " + SubObj.name!
+                self.performSegue(withIdentifier: "S_SubCat_DeliveryLocation", sender: OrderDataDic)
+
+            }
         }
     }
     

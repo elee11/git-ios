@@ -12,9 +12,6 @@ class NotficationsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = NSLocalizedString("notifications", comment: "")
-    }
-    override  func viewDidLayoutSubviews() {
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true
             let attributes = [
@@ -24,6 +21,10 @@ class NotficationsViewController: UIViewController {
             
             navigationController?.navigationBar.largeTitleTextAttributes = attributes
         }
+        self.title = NSLocalizedString("notifications", comment: "")
+    }
+    override  func viewDidLayoutSubviews() {
+       
 
     }
     override func didReceiveMemoryWarning() {

@@ -7,28 +7,23 @@
 //
 
 import UIKit
+import BetterSegmentedControl
 
-class MyOrdersViewController: UIViewController {
 
-    @IBOutlet weak var sendCodeButton: UIButton!
-    @IBOutlet weak var view_bg: UIView!
+class MyOrdersViewController: UIViewController,ToastAlertProtocol {
+
+  
+    @IBOutlet weak var SegmentControl: BetterSegmentedControl!
+    var viewModel: OrderViewModel!
+    var newPageNum : Int!
+    var PendingPageNum : Int!
+    var ClosedPageNum : Int!
+
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-          self.navigationController?.isHeroEnabled = true
-         self.isHeroEnabled = true
-        view.heroModifiers = [.useLayerRenderSnapshot]
-        self.title = NSLocalizedString("myOrders", comment: "")
-     
-
-        NotificationCenter.default.addObserver(self, selector: #selector(self.NWConnectivityDidChangeCalled) , name: .NWConnectivityDidChange, object: nil)
-
-    }
-    
-    
-    
-    override  func viewDidLayoutSubviews() {
+        viewModel = OrderViewModel()
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true
             let attributes = [
@@ -38,9 +33,74 @@ class MyOrdersViewController: UIViewController {
             
             navigationController?.navigationBar.largeTitleTextAttributes = attributes
         }
-
-        
-        self.tabBarItem.title = NSLocalizedString("myOrders", comment: "")
+       self.title = NSLocalizedString("myOrders", comment: "")
+       self.adjustSegmentControl()
+        newPageNum = 1
+       // self.getNewOrdersWithPageNum(newPageNum)
+        }
+    
+    
+    func adjustSegmentControl ()
+    {
+        SegmentControl.titles = [NSLocalizedString("new", comment: ""), NSLocalizedString("opened", comment: ""), NSLocalizedString("finished", comment: "")]
+        SegmentControl.titleFont = UIFont(name: Constants.FONTS.FONT_AR, size: 16.0)!
+        SegmentControl.selectedTitleFont = UIFont(name: Constants.FONTS.FONT_AR, size: 16.0)!
+        SegmentControl.addTarget(self, action: #selector(navigationSegmentedControlValueChanged(_:)), for: .valueChanged)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.NWConnectivityDidChangeCalled) , name: .NWConnectivityDidChange, object: nil)
+    }
+    
+    @objc func navigationSegmentedControlValueChanged(_ sender: BetterSegmentedControl) {
+        if sender.index == 0 {
+            self.getNewOrdersWithPageNum(newPageNum)
+        }
+        else if sender.index == 1  {
+            self.getPendingOrdersWithPageNum(PendingPageNum)
+        }
+        else
+        {
+            self.getClosedOrdersWithPageNum(ClosedPageNum)
+        }
+    }
+    
+    
+    func getNewOrdersWithPageNum (_ PageNum : Int)
+    {
+        viewModel.getNewOrders(orderPageNum: PageNum, completion: { (OrderObj, errorMsg) in
+            if errorMsg == nil {
+                
+                
+            } else{
+                self.showToastMessage(title:errorMsg! , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+            }
+        })
+    }
+    
+    func getPendingOrdersWithPageNum (_ PageNum : Int)
+    {
+        viewModel.getPendingOrders(orderPageNum: PageNum, completion: { (OrderObj, errorMsg) in
+            if errorMsg == nil {
+                
+                
+            } else{
+                self.showToastMessage(title:errorMsg! , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+            }
+        })
+    }
+    
+    func getClosedOrdersWithPageNum (_ PageNum : Int)
+    {
+        viewModel.getClosedOrders(orderPageNum: PageNum, completion: { (OrderObj, errorMsg) in
+            if errorMsg == nil {
+                
+                
+            } else{
+                self.showToastMessage(title:errorMsg! , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+            }
+        })
+    }
+    
+    override  func viewDidLayoutSubviews() {
+      
 
     }
     
@@ -54,12 +114,7 @@ class MyOrdersViewController: UIViewController {
         }
     }
     
-    @IBAction func didTapSendCode(_ sender: Any) {
-        
-        
-        self.view_bg.heroModifiers = [.fade, .translate(x:0, y:-250), .rotate(x:-1.6), .scale(1.5)]
-
-    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

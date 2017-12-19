@@ -75,6 +75,7 @@ class PhoneVerificationController: UIViewController,ToastAlertProtocol {
         super.viewDidLoad()
         viewModel = UserViewModel()
 
+
         title = "Enter your 6 digit code"
         view.addTapToDismissKeyboard()
         self.addTimerLable()
@@ -260,16 +261,17 @@ extension PhoneVerificationController: CountdownLabelDelegate {
 extension PhoneVerificationController : UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
+
         if textField == verificationCodeTextField {
             viewContainerVerificationTextFields.applyActiveviewBorderProperties()
             viewContainerPhoneTextFields.applyDimmviewBorderProperties()
+
 
         }
         else
         {
             viewContainerPhoneTextFields.applyActiveviewBorderProperties()
             viewContainerVerificationTextFields.applyDimmviewBorderProperties()
-
 
         }
         

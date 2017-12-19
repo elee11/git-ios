@@ -12,6 +12,9 @@
 		9820B6011FE08FB40075B5FA /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9820B5FD1FE08FB30075B5FA /* Client.swift */; };
 		9820B6021FE08FB40075B5FA /* OrderRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9820B5FE1FE08FB40075B5FA /* OrderRootClass.swift */; };
 		9820B6051FE090390075B5FA /* Orderdata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9820B6041FE090390075B5FA /* Orderdata.swift */; };
+		9820B60D1FE433070075B5FA /* ChooseLawyerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9820B60C1FE433070075B5FA /* ChooseLawyerViewController.swift */; };
+		9820B60F1FE435C30075B5FA /* LawyerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9820B60E1FE435C30075B5FA /* LawyerTableViewCell.swift */; };
+		9823961E1FE9A611006405C4 /* SearchingForAlawyerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9823961D1FE9A611006405C4 /* SearchingForAlawyerViewController.swift */; };
 		982416C81FC4D15900080DE9 /* EmptyDataAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 982416C71FC4D15900080DE9 /* EmptyDataAssets.xcassets */; };
 		982416CD1FC4D93100080DE9 /* AbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982416CC1FC4D93100080DE9 /* AbstractViewController.swift */; };
 		9825C3001FD1CCD300FE93E3 /* WatheqApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825C2FF1FD1CCD300FE93E3 /* WatheqApi.swift */; };
@@ -19,6 +22,7 @@
 		9825C3041FD1DDA100FE93E3 /* DefaultAlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825C3031FD1DDA100FE93E3 /* DefaultAlamofireManager.swift */; };
 		9825C3091FD1DFD200FE93E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825C3081FD1DFD200FE93E3 /* User.swift */; };
 		9825C30C1FD1E2F500FE93E3 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825C30B1FD1E2F500FE93E3 /* UserViewModel.swift */; };
+		98276FD01FE7183A00E3AE01 /* NewOrderRequestRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98276FCF1FE7183A00E3AE01 /* NewOrderRequestRootClass.swift */; };
 		98298A491FDFD41B00B651C5 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98298A481FDFD41B00B651C5 /* Channel.swift */; };
 		98298A4B1FDFD43F00B651C5 /* ChannelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98298A4A1FDFD43F00B651C5 /* ChannelListViewController.swift */; };
 		98298A4D1FDFD87100B651C5 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98298A4C1FDFD87100B651C5 /* ChatViewController.swift */; };
@@ -97,6 +101,9 @@
 		9820B5FD1FE08FB30075B5FA /* Client.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		9820B5FE1FE08FB40075B5FA /* OrderRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderRootClass.swift; sourceTree = "<group>"; };
 		9820B6041FE090390075B5FA /* Orderdata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Orderdata.swift; sourceTree = "<group>"; };
+		9820B60C1FE433070075B5FA /* ChooseLawyerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLawyerViewController.swift; sourceTree = "<group>"; };
+		9820B60E1FE435C30075B5FA /* LawyerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LawyerTableViewCell.swift; sourceTree = "<group>"; };
+		9823961D1FE9A611006405C4 /* SearchingForAlawyerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingForAlawyerViewController.swift; sourceTree = "<group>"; };
 		982416C71FC4D15900080DE9 /* EmptyDataAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = EmptyDataAssets.xcassets; sourceTree = "<group>"; };
 		982416CC1FC4D93100080DE9 /* AbstractViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractViewController.swift; sourceTree = "<group>"; };
 		9825C2FF1FD1CCD300FE93E3 /* WatheqApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatheqApi.swift; sourceTree = "<group>"; };
@@ -104,6 +111,7 @@
 		9825C3031FD1DDA100FE93E3 /* DefaultAlamofireManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultAlamofireManager.swift; sourceTree = "<group>"; };
 		9825C3081FD1DFD200FE93E3 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9825C30B1FD1E2F500FE93E3 /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		98276FCF1FE7183A00E3AE01 /* NewOrderRequestRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewOrderRequestRootClass.swift; sourceTree = "<group>"; };
 		98298A481FDFD41B00B651C5 /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		98298A4A1FDFD43F00B651C5 /* ChannelListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelListViewController.swift; sourceTree = "<group>"; };
 		98298A4C1FDFD87100B651C5 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
@@ -230,6 +238,7 @@
 		9820B5F71FE08CD70075B5FA /* Order */ = {
 			isa = PBXGroup;
 			children = (
+				98276FCF1FE7183A00E3AE01 /* NewOrderRequestRootClass.swift */,
 				9820B5FE1FE08FB40075B5FA /* OrderRootClass.swift */,
 				9820B6041FE090390075B5FA /* Orderdata.swift */,
 				9820B5FD1FE08FB30075B5FA /* Client.swift */,
@@ -348,6 +357,9 @@
 				988A6B401FDF33FA003368C6 /* TawkeelOwnerViewController.swift */,
 				988A6B421FDF40AA003368C6 /* DeliveryLocationViewController.swift */,
 				988A6B441FDF41FB003368C6 /* CurrentLocationViewController.swift */,
+				9820B60C1FE433070075B5FA /* ChooseLawyerViewController.swift */,
+				9823961D1FE9A611006405C4 /* SearchingForAlawyerViewController.swift */,
+				9820B60E1FE435C30075B5FA /* LawyerTableViewCell.swift */,
 			);
 			path = Watheq;
 			sourceTree = "<group>";
@@ -720,8 +732,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Wathaq/Pods-Wathaq-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/BetterSegmentedControl/BetterSegmentedControl.framework",
 				"${BUILT_PRODUCTS_DIR}/CountdownLabel/CountdownLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/EasyAnimation/EasyAnimation.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
@@ -747,8 +761,10 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BetterSegmentedControl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CountdownLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EasyAnimation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
@@ -833,18 +849,22 @@
 				9825C3021FD1DD2400FE93E3 /* NetworkHandler.swift in Sources */,
 				9825C30C1FD1E2F500FE93E3 /* UserViewModel.swift in Sources */,
 				985587ED1FC6D8EA001AD5E5 /* ToastAlertProtocol.swift in Sources */,
+				9820B60D1FE433070075B5FA /* ChooseLawyerViewController.swift in Sources */,
 				98298A491FDFD41B00B651C5 /* Channel.swift in Sources */,
 				988942E91FCA123E001B4F75 /* View+Additions.swift in Sources */,
 				9825C3041FD1DDA100FE93E3 /* DefaultAlamofireManager.swift in Sources */,
 				988943001FCA19C8001B4F75 /* singleToneClassValues.swift in Sources */,
+				9823961E1FE9A611006405C4 /* SearchingForAlawyerViewController.swift in Sources */,
 				982416CD1FC4D93100080DE9 /* AbstractViewController.swift in Sources */,
 				989B460A1FB8DB9000618519 /* Constants.swift in Sources */,
 				988942FE1FCA1321001B4F75 /* PhoneEntryController.swift in Sources */,
 				986F54ED1FD0069500E9F842 /* NWConnectivity.swift in Sources */,
 				988A6B431FDF40AA003368C6 /* DeliveryLocationViewController.swift in Sources */,
+				98276FD01FE7183A00E3AE01 /* NewOrderRequestRootClass.swift in Sources */,
 				9820B6011FE08FB40075B5FA /* Client.swift in Sources */,
 				98298A511FDFDAEC00B651C5 /* UIImage+Gif.swift in Sources */,
 				9883DF8B1FD56F2E008FC708 /* NSUserDefaults+RMSaveCustomObject.m in Sources */,
+				9820B60F1FE435C30075B5FA /* LawyerTableViewCell.swift in Sources */,
 				988942EE1FCA12C2001B4F75 /* Countries.swift in Sources */,
 				985587F11FC6DD19001AD5E5 /* LblWithTitleGenralCellProtocol.swift in Sources */,
 				98298A4D1FDFD87100B651C5 /* ChatViewController.swift in Sources */,

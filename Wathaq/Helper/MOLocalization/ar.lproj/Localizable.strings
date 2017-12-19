@@ -58,4 +58,10 @@
 "Receiving the POA" = "استلام التوكيل";
 "ChooseAdreess" = "اختيار العنوان";
 "pleaseChooseaddressFirst" = "الرجاء اختيار عنوان";
-
+"Recieving" =  "استلام";
+"CreatOrder" = "اكمل الطلب";
+"pleaseChooseDeliveryLocation" = "الرجاء اختيار موقع التسليم";
+"OrderProceeded" = "طلبك اكتمل يرجى الانتظار حتي نجد ممثل لطلبك";
+"new" = "جديدة";
+"opened" = "مفتوحة";
+"finished" = "منتهية";

@@ -59,3 +59,10 @@
 "Receiving the POA" = "Receiving the POA";
 "ChooseAdreess" = "Choose Address";
 "pleaseChooseaddressFirst" = "Please choose address";
+"Recieving" =  "Recieving";
+"CreatOrder" = "Complete Order";
+"pleaseChooseDeliveryLocation" = "pleaseChooseDeliveryLocation";
+"OrderProceeded" = "Your order has been completed Please wait until we find a representative for your application";
+"new" = "New";
+"opened" = "Opened";
+"finished" = "Finished";

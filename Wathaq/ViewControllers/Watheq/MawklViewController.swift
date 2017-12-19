@@ -36,6 +36,8 @@ class MawklViewController: UIViewController,ToastAlertProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addTapToDismissKeyboard()
+
         self.title = NSLocalizedString("client", comment: "")
         lblMwklMsg.text = NSLocalizedString("AddClientMsg", comment: "")
         ConfirmButton.setTitle(NSLocalizedString("nextStep", comment: ""), for: .normal)

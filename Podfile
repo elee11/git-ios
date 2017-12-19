@@ -29,9 +29,8 @@ target 'Wathaq' do
   pod 'JSQMessagesViewController'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
-
-
-
-
+  pod 'BetterSegmentedControl', '~> 0.9'
+  pod 'IQKeyboardManagerSwift'
+  pod 'EasyAnimation'
 
 end
