@@ -16,7 +16,6 @@ class CurrentLocationViewController: UIViewController,CLLocationManagerDelegate,
 
     
     var OrderDataDic : NSMutableDictionary!
-
     var locationManager:CLLocationManager!
     var currentLocation: CLLocation?
     var mapView: GMSMapView!

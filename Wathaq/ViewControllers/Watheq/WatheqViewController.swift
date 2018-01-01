@@ -161,7 +161,8 @@ extension WatheqViewController: UITableViewDelegate {
             }
             else
             {
-                
+                self.performSegue(withIdentifier: "S_Watheq_MaazonLocation", sender: nil)
+  
             }
         }
     }

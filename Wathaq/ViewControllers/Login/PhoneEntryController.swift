@@ -128,6 +128,8 @@ class PhoneEntryController: UIViewController,ToastAlertProtocol {
 
                     default:
                         print("There is an error")
+                        self.showToastMessage(title:error.localizedDescription, isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+
                     }
                 }
                 self.sendCodeButton.stopAnimation()

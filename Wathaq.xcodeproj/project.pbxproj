@@ -22,6 +22,13 @@
 		9825C3041FD1DDA100FE93E3 /* DefaultAlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825C3031FD1DDA100FE93E3 /* DefaultAlamofireManager.swift */; };
 		9825C3091FD1DFD200FE93E3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825C3081FD1DFD200FE93E3 /* User.swift */; };
 		9825C30C1FD1E2F500FE93E3 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825C30B1FD1E2F500FE93E3 /* UserViewModel.swift */; };
+		9826D6B41FF6F601002B50FA /* SefaMowaklViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D6B31FF6F601002B50FA /* SefaMowaklViewController.swift */; };
+		9826D6B61FF6FAE5002B50FA /* SefaMowklCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D6B51FF6FAE5002B50FA /* SefaMowklCollectionViewCell.swift */; };
+		9826D6B81FF70037002B50FA /* SefaMowaklList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9826D6B71FF70037002B50FA /* SefaMowaklList.plist */; };
+		9826D6BA1FF713A2002B50FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9826D6B91FF713A1002B50FA /* GoogleService-Info.plist */; };
+		9826D6BC1FF81538002B50FA /* LetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D6BB1FF81538002B50FA /* LetterViewController.swift */; };
+		9826D6BE1FF81EF7002B50FA /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D6BD1FF81EF7002B50FA /* DatePickerViewController.swift */; };
+		9826D6C21FF8321D002B50FA /* HorizontalProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9826D6C01FF8321D002B50FA /* HorizontalProgressView.m */; };
 		98276FD01FE7183A00E3AE01 /* NewOrderRequestRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98276FCF1FE7183A00E3AE01 /* NewOrderRequestRootClass.swift */; };
 		98298A491FDFD41B00B651C5 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98298A481FDFD41B00B651C5 /* Channel.swift */; };
 		98298A4B1FDFD43F00B651C5 /* ChannelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98298A4A1FDFD43F00B651C5 /* ChannelListViewController.swift */; };
@@ -49,8 +56,11 @@
 		985587ED1FC6D8EA001AD5E5 /* ToastAlertProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985587EC1FC6D8EA001AD5E5 /* ToastAlertProtocol.swift */; };
 		985587EF1FC6D964001AD5E5 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985587EE1FC6D964001AD5E5 /* UIColorExtension.swift */; };
 		985587F11FC6DD19001AD5E5 /* LblWithTitleGenralCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985587F01FC6DD19001AD5E5 /* LblWithTitleGenralCellProtocol.swift */; };
-		985587F81FC6F24B001AD5E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 985587F41FC6F24B001AD5E5 /* GoogleService-Info.plist */; };
 		986516571FBA4E2B00551208 /* SettingsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986516561FBA4E2B00551208 /* SettingsTableCell.swift */; };
+		9867AB2F1FF9B02900F16ECD /* ChooseMaazonLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9867AB2E1FF9B02900F16ECD /* ChooseMaazonLocationViewController.swift */; };
+		9867AB311FF9B06800F16ECD /* MaazonDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9867AB301FF9B06800F16ECD /* MaazonDataViewController.swift */; };
+		9867AB331FF9C1B100F16ECD /* TimePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9867AB321FF9C1B100F16ECD /* TimePickerViewController.swift */; };
+		9867AB351FF9C52200F16ECD /* MarriageContractLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9867AB341FF9C52200F16ECD /* MarriageContractLocationViewController.swift */; };
 		986F54ED1FD0069500E9F842 /* NWConnectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986F54EC1FD0069500E9F842 /* NWConnectivity.swift */; };
 		986F54EF1FD007AF00E9F842 /* NotificationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986F54EE1FD007AF00E9F842 /* NotificationExtension.swift */; };
 		9870B9F81FB8CA2B008E678B /* MyOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870B9F71FB8CA2B008E678B /* MyOrdersViewController.swift */; };
@@ -111,6 +121,14 @@
 		9825C3031FD1DDA100FE93E3 /* DefaultAlamofireManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultAlamofireManager.swift; sourceTree = "<group>"; };
 		9825C3081FD1DFD200FE93E3 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9825C30B1FD1E2F500FE93E3 /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		9826D6B31FF6F601002B50FA /* SefaMowaklViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SefaMowaklViewController.swift; sourceTree = "<group>"; };
+		9826D6B51FF6FAE5002B50FA /* SefaMowklCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SefaMowklCollectionViewCell.swift; sourceTree = "<group>"; };
+		9826D6B71FF70037002B50FA /* SefaMowaklList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SefaMowaklList.plist; sourceTree = "<group>"; };
+		9826D6B91FF713A1002B50FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9826D6BB1FF81538002B50FA /* LetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterViewController.swift; sourceTree = "<group>"; };
+		9826D6BD1FF81EF7002B50FA /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		9826D6C01FF8321D002B50FA /* HorizontalProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalProgressView.m; sourceTree = "<group>"; };
+		9826D6C11FF8321D002B50FA /* HorizontalProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalProgressView.h; sourceTree = "<group>"; };
 		98276FCF1FE7183A00E3AE01 /* NewOrderRequestRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewOrderRequestRootClass.swift; sourceTree = "<group>"; };
 		98298A481FDFD41B00B651C5 /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		98298A4A1FDFD43F00B651C5 /* ChannelListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelListViewController.swift; sourceTree = "<group>"; };
@@ -138,9 +156,12 @@
 		985587EC1FC6D8EA001AD5E5 /* ToastAlertProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastAlertProtocol.swift; sourceTree = "<group>"; };
 		985587EE1FC6D964001AD5E5 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		985587F01FC6DD19001AD5E5 /* LblWithTitleGenralCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LblWithTitleGenralCellProtocol.swift; sourceTree = "<group>"; };
-		985587F41FC6F24B001AD5E5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		985587F61FC6F24B001AD5E5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		986516561FBA4E2B00551208 /* SettingsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableCell.swift; sourceTree = "<group>"; };
+		9867AB2E1FF9B02900F16ECD /* ChooseMaazonLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMaazonLocationViewController.swift; sourceTree = "<group>"; };
+		9867AB301FF9B06800F16ECD /* MaazonDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaazonDataViewController.swift; sourceTree = "<group>"; };
+		9867AB321FF9C1B100F16ECD /* TimePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePickerViewController.swift; sourceTree = "<group>"; };
+		9867AB341FF9C52200F16ECD /* MarriageContractLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarriageContractLocationViewController.swift; sourceTree = "<group>"; };
 		986F54EC1FD0069500E9F842 /* NWConnectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NWConnectivity.swift; sourceTree = "<group>"; };
 		986F54EE1FD007AF00E9F842 /* NotificationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationExtension.swift; sourceTree = "<group>"; };
 		9870B9F61FB8C7CB008E678B /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
@@ -272,6 +293,15 @@
 			name = userViewModel;
 			sourceTree = "<group>";
 		};
+		9826D6BF1FF8320E002B50FA /* HorizontalProgress */ = {
+			isa = PBXGroup;
+			children = (
+				9826D6C11FF8321D002B50FA /* HorizontalProgressView.h */,
+				9826D6C01FF8321D002B50FA /* HorizontalProgressView.m */,
+			);
+			path = HorizontalProgress;
+			sourceTree = "<group>";
+		};
 		982C682B1FCEF2BF0090F5F6 /* CompleteProfile */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,8 +348,9 @@
 			children = (
 				985587F61FC6F24B001AD5E5 /* Info.plist */,
 				988942DF1FCA0F73001B4F75 /* country-codes.json */,
-				985587F41FC6F24B001AD5E5 /* GoogleService-Info.plist */,
+				9826D6B91FF713A1002B50FA /* GoogleService-Info.plist */,
 				988942D81FC72074001B4F75 /* SettingsList.plist */,
+				9826D6B71FF70037002B50FA /* SefaMowaklList.plist */,
 				988942DE1FC72312001B4F75 /* Fonts */,
 			);
 			name = Resources;
@@ -351,15 +382,23 @@
 			children = (
 				9870B9F91FB8CA38008E678B /* WatheqViewController.swift */,
 				982CFA361FD97A7E0055593C /* WatheqSubCatViewController.swift */,
+				9867AB2E1FF9B02900F16ECD /* ChooseMaazonLocationViewController.swift */,
+				9867AB301FF9B06800F16ECD /* MaazonDataViewController.swift */,
+				9867AB341FF9C52200F16ECD /* MarriageContractLocationViewController.swift */,
+				9826D6BB1FF81538002B50FA /* LetterViewController.swift */,
 				982CFA341FD967A50055593C /* WatheqPlaceHolderTableViewCell.swift */,
 				982CFA2C1FD88D0C0055593C /* WatheqTableViewCell.swift */,
 				988A6B3E1FDF33CA003368C6 /* MawklViewController.swift */,
+				9826D6B31FF6F601002B50FA /* SefaMowaklViewController.swift */,
 				988A6B401FDF33FA003368C6 /* TawkeelOwnerViewController.swift */,
 				988A6B421FDF40AA003368C6 /* DeliveryLocationViewController.swift */,
 				988A6B441FDF41FB003368C6 /* CurrentLocationViewController.swift */,
 				9820B60C1FE433070075B5FA /* ChooseLawyerViewController.swift */,
 				9823961D1FE9A611006405C4 /* SearchingForAlawyerViewController.swift */,
 				9820B60E1FE435C30075B5FA /* LawyerTableViewCell.swift */,
+				9826D6B51FF6FAE5002B50FA /* SefaMowklCollectionViewCell.swift */,
+				9826D6BD1FF81EF7002B50FA /* DatePickerViewController.swift */,
+				9867AB321FF9C1B100F16ECD /* TimePickerViewController.swift */,
 			);
 			path = Watheq;
 			sourceTree = "<group>";
@@ -472,6 +511,7 @@
 		9870BA0D1FB8D139008E678B /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				9826D6BF1FF8320E002B50FA /* HorizontalProgress */,
 				98298A501FDFDAEC00B651C5 /* UIImage+Gif.swift */,
 				9883DF801FD56EF1008FC708 /* RMMapper */,
 				986F54EB1FD0068800E9F842 /* NWConnectivity */,
@@ -667,8 +707,9 @@
 			files = (
 				988942DC1FC7230D001B4F75 /* DinNextMedium.ttf in Resources */,
 				989B460D1FB8E48800618519 /* TabBarAssets.xcassets in Resources */,
-				985587F81FC6F24B001AD5E5 /* GoogleService-Info.plist in Resources */,
 				989B46011FB8D9E200618519 /* Localizable.strings in Resources */,
+				9826D6B81FF70037002B50FA /* SefaMowaklList.plist in Resources */,
+				9826D6BA1FF713A2002B50FA /* GoogleService-Info.plist in Resources */,
 				98DDA1551FB797E500B8F42F /* LaunchScreen.storyboard in Resources */,
 				988942DD1FC7230D001B4F75 /* DinNextRegular.ttf in Resources */,
 				9870BA121FB8D489008E678B /* Assets.xcassets in Resources */,
@@ -739,6 +780,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQMessagesViewController/JSQMessagesViewController.framework",
 				"${BUILT_PRODUCTS_DIR}/JSQSystemSoundPlayer/JSQSystemSoundPlayer.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
@@ -768,6 +810,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQMessagesViewController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JSQSystemSoundPlayer.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
@@ -809,6 +852,7 @@
 				989B460B1FB8DB9B00618519 /* RefreshAppProtocol.swift in Sources */,
 				98298A4B1FDFD43F00B651C5 /* ChannelListViewController.swift in Sources */,
 				989B46081FB8DB8800618519 /* Language.swift in Sources */,
+				9826D6BC1FF81538002B50FA /* LetterViewController.swift in Sources */,
 				9883DF8D1FD56F2E008FC708 /* NSObject+RMCopyable.m in Sources */,
 				982B5D381FCB4C840028092E /* PhoneNumberTableViewCell.swift in Sources */,
 				988942FD1FCA1321001B4F75 /* PhoneVerificationController.swift in Sources */,
@@ -823,7 +867,9 @@
 				9825C3091FD1DFD200FE93E3 /* User.swift in Sources */,
 				9820B6051FE090390075B5FA /* Orderdata.swift in Sources */,
 				988942ED1FCA12C2001B4F75 /* Country.swift in Sources */,
+				9867AB331FF9C1B100F16ECD /* TimePickerViewController.swift in Sources */,
 				982CFA351FD967A50055593C /* WatheqPlaceHolderTableViewCell.swift in Sources */,
+				9867AB351FF9C52200F16ECD /* MarriageContractLocationViewController.swift in Sources */,
 				9825C3001FD1CCD300FE93E3 /* WatheqApi.swift in Sources */,
 				9883DF8C1FD56F2E008FC708 /* RMMapper.m in Sources */,
 				988A6B3F1FDF33CA003368C6 /* MawklViewController.swift in Sources */,
@@ -832,9 +878,11 @@
 				982C682D1FCEF2DC0090F5F6 /* CompleteProfileViewController.swift in Sources */,
 				982CFA371FD97A7E0055593C /* WatheqSubCatViewController.swift in Sources */,
 				986F54EF1FD007AF00E9F842 /* NotificationExtension.swift in Sources */,
+				9867AB2F1FF9B02900F16ECD /* ChooseMaazonLocationViewController.swift in Sources */,
 				9870B9FA1FB8CA38008E678B /* WatheqViewController.swift in Sources */,
 				9870BA051FB8CEB3008E678B /* SettingsViewController.swift in Sources */,
 				98298A4F1FDFD88400B651C5 /* CreateChannelCell.swift in Sources */,
+				9826D6B61FF6FAE5002B50FA /* SefaMowklCollectionViewCell.swift in Sources */,
 				982CFA311FD961290055593C /* Sub.swift in Sources */,
 				989B46091FB8DB8C00618519 /* Localizer.swift in Sources */,
 				988E423B1FD73C3500A6AF59 /* ProfileHeaderView.swift in Sources */,
@@ -857,14 +905,18 @@
 				9823961E1FE9A611006405C4 /* SearchingForAlawyerViewController.swift in Sources */,
 				982416CD1FC4D93100080DE9 /* AbstractViewController.swift in Sources */,
 				989B460A1FB8DB9000618519 /* Constants.swift in Sources */,
+				9826D6BE1FF81EF7002B50FA /* DatePickerViewController.swift in Sources */,
 				988942FE1FCA1321001B4F75 /* PhoneEntryController.swift in Sources */,
 				986F54ED1FD0069500E9F842 /* NWConnectivity.swift in Sources */,
+				9826D6C21FF8321D002B50FA /* HorizontalProgressView.m in Sources */,
 				988A6B431FDF40AA003368C6 /* DeliveryLocationViewController.swift in Sources */,
 				98276FD01FE7183A00E3AE01 /* NewOrderRequestRootClass.swift in Sources */,
+				9867AB311FF9B06800F16ECD /* MaazonDataViewController.swift in Sources */,
 				9820B6011FE08FB40075B5FA /* Client.swift in Sources */,
 				98298A511FDFDAEC00B651C5 /* UIImage+Gif.swift in Sources */,
 				9883DF8B1FD56F2E008FC708 /* NSUserDefaults+RMSaveCustomObject.m in Sources */,
 				9820B60F1FE435C30075B5FA /* LawyerTableViewCell.swift in Sources */,
+				9826D6B41FF6F601002B50FA /* SefaMowaklViewController.swift in Sources */,
 				988942EE1FCA12C2001B4F75 /* Countries.swift in Sources */,
 				985587F11FC6DD19001AD5E5 /* LblWithTitleGenralCellProtocol.swift in Sources */,
 				98298A4D1FDFD87100B651C5 /* ChatViewController.swift in Sources */,
@@ -1029,11 +1081,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Wathaq/Wathaq.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 337P66ND9P;
+				DEVELOPMENT_TEAM = 83J77SFAFA;
 				INFOPLIST_FILE = "$(SRCROOT)/Wathaq/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.themar.watheq;
+				PRODUCT_BUNDLE_IDENTIFIER = com.watheq.watheq;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Wathaq/Wathaq-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1050,11 +1102,11 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Wathaq/Wathaq.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 337P66ND9P;
+				DEVELOPMENT_TEAM = 83J77SFAFA;
 				INFOPLIST_FILE = "$(SRCROOT)/Wathaq/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.themar.watheq;
+				PRODUCT_BUNDLE_IDENTIFIER = com.watheq.watheq;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Wathaq/Wathaq-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;

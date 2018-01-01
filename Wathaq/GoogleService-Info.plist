@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>96166899429-u18gr15odbhanip69teo5i37h1icqin8.apps.googleusercontent.com</string>
+	<string>96166899429-di3ss6to6oq16f390emulch8cv4rhn96.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.96166899429-u18gr15odbhanip69teo5i37h1icqin8</string>
+	<string>com.googleusercontent.apps.96166899429-di3ss6to6oq16f390emulch8cv4rhn96</string>
 	<key>API_KEY</key>
 	<string>AIzaSyBcXGIQQ403Ndttnn9TfYSF6JSQ5RgUhTc</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.themar.watheq</string>
+	<string>com.watheq.watheq</string>
 	<key>PROJECT_ID</key>
 	<string>watheq-89cd7</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:96166899429:ios:7b549f6e5c5615d0</string>
+	<string>1:96166899429:ios:9bbdc49ce64e72a2</string>
 	<key>DATABASE_URL</key>
 	<string>https://watheq-89cd7.firebaseio.com</string>
 </dict>

@@ -27,8 +27,15 @@ class SearchingForAlawyerViewController: UIViewController {
                        animations: {
                         self.mainlawyer.layer.cornerRadius = 50.0
                         self.mainlawyer.layer.transform = CATransform3DMakeScale(0.9, 0.9, 1.0)
-                        self.lawyer2.layer.position.x -= 167
-                        self.lawyer1.layer.position.x += 167
+                        if Language.getCurrentLanguage() == Constants.Language.ARABIC {
+                        self.lawyer1.layer.position.x -= 167
+                        self.lawyer2.layer.position.x += 167
+                        }
+                        else
+                        {
+                            self.lawyer2.layer.position.x -= 167
+                            self.lawyer1.layer.position.x += 167
+                        }
         }, completion: nil)
         
 }

@@ -89,8 +89,8 @@ class MawklViewController: UIViewController,ToastAlertProtocol {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "S_Mawkl_MawkelOwner"  {
             let OrderDic = sender as!  NSMutableDictionary
-            let MawklOwnerView = segue.destination as! TawkeelOwnerViewController
-            MawklOwnerView.OrderDataDic = OrderDic
+            let MawklownerView = segue.destination as! TawkeelOwnerViewController
+            MawklownerView.OrderDataDic = OrderDic
         }
     }
 

@@ -176,6 +176,8 @@ extension DeliveryLocationViewController: UITableViewDelegate {
         if indexPath.row == 0
         {
             OrderDataDic.setValue("office", forKey: "delivery")
+            self.performSegue(withIdentifier: "S_Home_Location", sender: OrderDataDic)
+
         }
         else
         {

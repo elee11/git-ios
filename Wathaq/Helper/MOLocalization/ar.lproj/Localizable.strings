@@ -14,6 +14,7 @@
 "watheq" = "وثق";
 "myOrders" = "طلباتي";
 "Cancel" = "إلغاء";
+"ok" = "تآكيد";
 "Change Language" =  "تغيير اللغة";
 "login" = "تسجيل دخول";
 "LoginMsg" = "ادخل رقم جوالك ثم كود التحقق من الرساله التي ستصلك على هذا الرقم";
@@ -65,3 +66,16 @@
 "new" = "جديدة";
 "opened" = "مفتوحة";
 "finished" = "منتهية";
+"clientDesc" = "صفه الموكل";
+"Please choose Client Describtion" = "من فضلك ادخل صفه الموكل";
+"LetterData" = "بيانات الخطاب";
+"letterDataMsg" = "رقم الخطاب الوارد من وزاره الصناعه و تاريخه";
+"letterNumber" = "رقم الخطاب";
+"letterDate" = "تاريخ الخطاب";
+"Document marriage contract" = "توثيق عقد زواج";
+"ClientLocation" = "مقر العميل";
+"MaazonLocation" = "مقر المآذون";
+"DocumentDate" = "ميعاد حضور الماذون";
+"DocumentMarriageMessage" = "اطلب حضور الماذون ف الميعاد التالي";
+"Time"= "الميعاد";
+"Date" = "التاريخ";

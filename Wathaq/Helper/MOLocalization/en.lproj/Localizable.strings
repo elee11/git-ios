@@ -16,6 +16,7 @@
 "watheq" = "Watheq";
 "myOrders" = "My Orders";
 "Cancel" = "Cancel";
+"ok" = "Ok";
 "Change Language" = "Change Language";
 "login" = "Login";
 "LoginMsg" = "Enter your mobile number and the verification code of the message you will receive on this number";
@@ -66,3 +67,16 @@
 "new" = "New";
 "opened" = "Opened";
 "finished" = "Finished";
+"clientDesc" = "Client Describtion";
+"Please choose Client Describtion" = "Please choose Client Describtion";
+"LetterData" = "Letter Data";
+"letterDataMsg" = "The letter of the Ministry of Industry and its date";
+"letterNumber" = "letter Number";
+"letterDate" = "letter Date";
+"Document marriage contract" = "Document marriage contract";
+"ClientLocation" = "Client Location";
+"MaazonLocation" = "Maazon Location";
+"DocumentDate" = "Document marriage date";
+"DocumentMarriageMessage" = "I'm Asking Maazon to attend at";
+"Time"= "Time";
+"Date" = "Date";

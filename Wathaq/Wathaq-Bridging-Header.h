@@ -4,3 +4,5 @@
 
 #import "NSObject+RMArchivable.h"
 #import "NSUserDefaults+RMSaveCustomObject.h"
+#import "HorizontalProgressView.h"
+

@@ -16,10 +16,37 @@
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.96166899429-di3ss6to6oq16f390emulch8cv4rhn96</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>3</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>googlechromes</string>
+		<string>comgooglemaps</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Watheq wants To access your Camera to use it while you using app</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Watheq wants to access your location while using app to get you nearest requests to you</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>watheq wants To access you photo gallery to use it while you using app</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>DinNextMedium.ttf</string>
@@ -57,22 +84,6 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
-	</array>
-	<key>NSAppTransportSecurity</key>
-	<dict>
-		<key>NSAllowsArbitraryLoads</key>
-		<true/>
-	</dict>
-	<key>NSCameraUsageDescription</key>
-	<string>Watheq wants To access your Camera to use it while you using app</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>watheq wants To access you photo gallery to use it while you using app</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Watheq wants to access your location while using app to get you nearest requests to you</string>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>googlechromes</string>
-		<string>comgooglemaps</string>
 	</array>
 </dict>
 </plist>
