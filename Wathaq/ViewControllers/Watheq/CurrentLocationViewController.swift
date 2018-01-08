@@ -14,13 +14,12 @@ import GoogleMaps
 
 class CurrentLocationViewController: UIViewController,CLLocationManagerDelegate,ToastAlertProtocol {
 
-    
+    var TotalCost : Int!
     var OrderDataDic : NSMutableDictionary!
     var locationManager:CLLocationManager!
     var currentLocation: CLLocation?
     var mapView: GMSMapView!
     var zoomLevel: Float = 15.0
-
 
     
     override func viewDidLoad() {
@@ -62,7 +61,8 @@ class CurrentLocationViewController: UIViewController,CLLocationManagerDelegate,
         
         if OrderDataDic.value(forKey: "longitude") != nil && OrderDataDic.value(forKey: "latitude") != nil{
             
-            _ = navigationController?.popViewController(animated: true)
+           // _ = navigationController?.popViewController(animated: true)
+            self.performSegue(withIdentifier: "S_Location_WakeelTime", sender: OrderDataDic)
 
         }
         else
@@ -117,15 +117,15 @@ class CurrentLocationViewController: UIViewController,CLLocationManagerDelegate,
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "S_Location_WakeelTime"  {
+            let OrderDic = sender as!  NSMutableDictionary
+            let ArrivalTimeView = segue.destination as! MoawtheqArrivalTimeViewController
+            ArrivalTimeView.OrderDataDic = OrderDic
+            ArrivalTimeView.TotalCost = self.TotalCost
+
+        }
     }
-    */
 
 }
 

@@ -22,7 +22,7 @@ class Orderdata : NSObject, NSCoding, Mappable{
 	var delivery : String?
 	var id : Int?
 	var isInAcceptLawyerPeriod : Int?
-	var lawyer : AnyObject?
+	var lawyer : MowatheqData?
 	var nationalID : Int?
 	var representativeName : String?
 	var status : String?
@@ -71,7 +71,7 @@ class Orderdata : NSObject, NSCoding, Mappable{
          delivery = aDecoder.decodeObject(forKey: "delivery") as? String
          id = aDecoder.decodeObject(forKey: "id") as? Int
          isInAcceptLawyerPeriod = aDecoder.decodeObject(forKey: "isInAcceptLawyerPeriod") as? Int
-         lawyer = aDecoder.decodeObject(forKey: "lawyer") as? AnyObject
+         lawyer = aDecoder.decodeObject(forKey: "lawyer") as? MowatheqData
          nationalID = aDecoder.decodeObject(forKey: "nationalID") as? Int
          representativeName = aDecoder.decodeObject(forKey: "representativeName") as? String
          status = aDecoder.decodeObject(forKey: "status") as? String

@@ -40,10 +40,7 @@ class SettingsViewController: UIViewController,RefreshAppProtocol {
        
     }
     
-    
-    
-    
-        func changeLanguage() {
+    func changeLanguage() {
         var selectedLanguage : String!
         let actionSheetController: UIAlertController = UIAlertController(title: "", message: NSLocalizedString("Change Language",comment:""), preferredStyle: .actionSheet)
         let cancelButton = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel) { _ in

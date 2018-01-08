@@ -62,9 +62,11 @@ public enum WatheqApi {
     //Order
     case getCategories
     case CreateOrder(categoryId:Int, clientName:String, representativeName:String, clientNationalID:String,representativeNationalID:String, delivery:String, latitude:Double, longitude:Double )
-    case getNewOrders
-    case getPendingOrders(Int)
-    case getClosedOrders(Int)
+    case getNewOrders(Int,Int)
+    case getPendingOrders(Int,Int)
+    case getClosedOrders(Int,Int)
+    case getLawyerList(Int)
+    case selectLawyer (Int,Int)
 
 
 }
@@ -91,19 +93,23 @@ extension WatheqApi: TargetType,AccessTokenAuthorizable {
             return "api/auth/category/list"
         case .CreateOrder:
             return "api/auth/order"
+        case .getLawyerList:
+            return "api/auth/order/laywersList"
+        case .selectLawyer :
+            return "api/auth/client/order/selectLaywer"
         case .getNewOrders:
-            return "api/auth/client/order/listNewOrders?page=1&limit=10"
-        case .getPendingOrders(let page):
-            return "api/auth/client/order/listPendingOrders?page=\(page)&limit=10"
-        case .getClosedOrders(let page):
-            return "api/auth/client/order/listClosedOrders?page=\(page)&limit=10"
+            return "api/auth/client/order/listNewOrders"
+        case .getPendingOrders:
+            return "api/auth/client/order/listPendingOrders"
+        case .getClosedOrders:
+            return "api/auth/client/order/listClosedOrders"
         }
     }
     public var method: Moya.Method {
         switch self {
         case .login,.completeProfile,.UpdateProfile,.registerDeviceToken,.logout,.CreateOrder:
             return .post
-        case .getCategories,.getNewOrders,.getPendingOrders,.getClosedOrders:
+        case .getCategories,.getNewOrders,.getPendingOrders,.getClosedOrders,.getLawyerList,.selectLawyer:
             return .get
         }
     }
@@ -120,8 +126,18 @@ extension WatheqApi: TargetType,AccessTokenAuthorizable {
             return .requestParameters(parameters: ["identifier":identifier , "firebaseToken" :firebaseToken], encoding: JSONEncoding.default)
         case .logout(let identifier):
             return .requestParameters(parameters: ["identifier":identifier], encoding: JSONEncoding.default)
-        case .getCategories,.getNewOrders,.getPendingOrders,.getClosedOrders:
+        case .getCategories:
             return .requestPlain
+        case .getLawyerList(let orderId):
+            return .requestParameters(parameters: ["orderId":orderId], encoding: URLEncoding.default)
+        case .selectLawyer(let orderId, let lawyerId):
+            return .requestParameters(parameters: ["orderId":orderId , "lawyerId" : lawyerId], encoding: URLEncoding.default)
+        case .getNewOrders(let page, let limit):
+            return .requestParameters(parameters: ["page":page , "limit" : limit], encoding: URLEncoding.default)
+        case .getPendingOrders(let page, let limit):
+            return .requestParameters(parameters: ["page":page , "limit" : limit], encoding: URLEncoding.default)
+        case .getClosedOrders(let page, let limit):
+            return .requestParameters(parameters: ["page":page , "limit" : limit], encoding: URLEncoding.default)
         case .CreateOrder(let categoryId, let clientName, let representativeName, let clientNationalID, let representativeNationalID, let delivery, let latitude, let longitude ):
             return .requestParameters(parameters: ["categoryId":categoryId , "clientName":clientName , "representativeName":representativeName, "clientNationalID":clientNationalID, "representativeNationalID": representativeNationalID, "delivery":delivery, "latitude":latitude, "longitude":longitude], encoding: JSONEncoding.default)
             
@@ -132,7 +148,7 @@ extension WatheqApi: TargetType,AccessTokenAuthorizable {
         switch self {
         case .login:
             return .none
-        case .completeProfile,.UpdateProfile,.registerDeviceToken,.logout,.getCategories,.CreateOrder,.getNewOrders,.getClosedOrders,.getPendingOrders :
+        case .completeProfile,.UpdateProfile,.registerDeviceToken,.logout,.getCategories,.CreateOrder,.getNewOrders,.getClosedOrders,.getPendingOrders,.getLawyerList,.selectLawyer:
             return .bearer
         }
     }

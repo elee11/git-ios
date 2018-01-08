@@ -17,6 +17,7 @@
 		9823961E1FE9A611006405C4 /* SearchingForAlawyerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9823961D1FE9A611006405C4 /* SearchingForAlawyerViewController.swift */; };
 		982416C81FC4D15900080DE9 /* EmptyDataAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 982416C71FC4D15900080DE9 /* EmptyDataAssets.xcassets */; };
 		982416CD1FC4D93100080DE9 /* AbstractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982416CC1FC4D93100080DE9 /* AbstractViewController.swift */; };
+		982427E41FFD8656003848BF /* MoawtheqArrivalTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982427E31FFD8656003848BF /* MoawtheqArrivalTimeViewController.swift */; };
 		9825C3001FD1CCD300FE93E3 /* WatheqApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825C2FF1FD1CCD300FE93E3 /* WatheqApi.swift */; };
 		9825C3021FD1DD2400FE93E3 /* NetworkHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825C3011FD1DD2400FE93E3 /* NetworkHandler.swift */; };
 		9825C3041FD1DDA100FE93E3 /* DefaultAlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825C3031FD1DDA100FE93E3 /* DefaultAlamofireManager.swift */; };
@@ -28,7 +29,6 @@
 		9826D6BA1FF713A2002B50FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9826D6B91FF713A1002B50FA /* GoogleService-Info.plist */; };
 		9826D6BC1FF81538002B50FA /* LetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D6BB1FF81538002B50FA /* LetterViewController.swift */; };
 		9826D6BE1FF81EF7002B50FA /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D6BD1FF81EF7002B50FA /* DatePickerViewController.swift */; };
-		9826D6C21FF8321D002B50FA /* HorizontalProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9826D6C01FF8321D002B50FA /* HorizontalProgressView.m */; };
 		98276FD01FE7183A00E3AE01 /* NewOrderRequestRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98276FCF1FE7183A00E3AE01 /* NewOrderRequestRootClass.swift */; };
 		98298A491FDFD41B00B651C5 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98298A481FDFD41B00B651C5 /* Channel.swift */; };
 		98298A4B1FDFD43F00B651C5 /* ChannelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98298A4A1FDFD43F00B651C5 /* ChannelListViewController.swift */; };
@@ -73,6 +73,9 @@
 		9883DF8B1FD56F2E008FC708 /* NSUserDefaults+RMSaveCustomObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9883DF841FD56F2D008FC708 /* NSUserDefaults+RMSaveCustomObject.m */; };
 		9883DF8C1FD56F2E008FC708 /* RMMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9883DF851FD56F2D008FC708 /* RMMapper.m */; };
 		9883DF8D1FD56F2E008FC708 /* NSObject+RMCopyable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9883DF871FD56F2E008FC708 /* NSObject+RMCopyable.m */; };
+		9886E70B2002C72A007BEA77 /* MoawtheqRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9886E7092002C729007BEA77 /* MoawtheqRootClass.swift */; };
+		9886E70C2002C72A007BEA77 /* MowatheqData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9886E70A2002C72A007BEA77 /* MowatheqData.swift */; };
+		9886E70E2002CB06007BEA77 /* lawyercellPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9886E70D2002CB06007BEA77 /* lawyercellPlaceholder.swift */; };
 		988942D61FC72074001B4F75 /* SettingsList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 988942D81FC72074001B4F75 /* SettingsList.plist */; };
 		988942DC1FC7230D001B4F75 /* DinNextMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 988942DA1FC7230B001B4F75 /* DinNextMedium.ttf */; };
 		988942DD1FC7230D001B4F75 /* DinNextRegular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 988942DB1FC7230C001B4F75 /* DinNextRegular.ttf */; };
@@ -116,6 +119,7 @@
 		9823961D1FE9A611006405C4 /* SearchingForAlawyerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingForAlawyerViewController.swift; sourceTree = "<group>"; };
 		982416C71FC4D15900080DE9 /* EmptyDataAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = EmptyDataAssets.xcassets; sourceTree = "<group>"; };
 		982416CC1FC4D93100080DE9 /* AbstractViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbstractViewController.swift; sourceTree = "<group>"; };
+		982427E31FFD8656003848BF /* MoawtheqArrivalTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoawtheqArrivalTimeViewController.swift; sourceTree = "<group>"; };
 		9825C2FF1FD1CCD300FE93E3 /* WatheqApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatheqApi.swift; sourceTree = "<group>"; };
 		9825C3011FD1DD2400FE93E3 /* NetworkHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkHandler.swift; sourceTree = "<group>"; };
 		9825C3031FD1DDA100FE93E3 /* DefaultAlamofireManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultAlamofireManager.swift; sourceTree = "<group>"; };
@@ -127,8 +131,6 @@
 		9826D6B91FF713A1002B50FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9826D6BB1FF81538002B50FA /* LetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterViewController.swift; sourceTree = "<group>"; };
 		9826D6BD1FF81EF7002B50FA /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
-		9826D6C01FF8321D002B50FA /* HorizontalProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HorizontalProgressView.m; sourceTree = "<group>"; };
-		9826D6C11FF8321D002B50FA /* HorizontalProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HorizontalProgressView.h; sourceTree = "<group>"; };
 		98276FCF1FE7183A00E3AE01 /* NewOrderRequestRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewOrderRequestRootClass.swift; sourceTree = "<group>"; };
 		98298A481FDFD41B00B651C5 /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
 		98298A4A1FDFD43F00B651C5 /* ChannelListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelListViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +182,9 @@
 		9883DF871FD56F2E008FC708 /* NSObject+RMCopyable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RMCopyable.m"; sourceTree = "<group>"; };
 		9883DF881FD56F2E008FC708 /* NSUserDefaults+RMSaveCustomObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+RMSaveCustomObject.h"; sourceTree = "<group>"; };
 		9883DF891FD56F2E008FC708 /* RMMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMapper.h; sourceTree = "<group>"; };
+		9886E7092002C729007BEA77 /* MoawtheqRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoawtheqRootClass.swift; sourceTree = "<group>"; };
+		9886E70A2002C72A007BEA77 /* MowatheqData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MowatheqData.swift; sourceTree = "<group>"; };
+		9886E70D2002CB06007BEA77 /* lawyercellPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lawyercellPlaceholder.swift; sourceTree = "<group>"; };
 		988942D71FC72074001B4F75 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/SettingsList.plist; sourceTree = "<group>"; };
 		988942DA1FC7230B001B4F75 /* DinNextMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DinNextMedium.ttf; sourceTree = "<group>"; };
 		988942DB1FC7230C001B4F75 /* DinNextRegular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DinNextRegular.ttf; sourceTree = "<group>"; };
@@ -293,15 +298,6 @@
 			name = userViewModel;
 			sourceTree = "<group>";
 		};
-		9826D6BF1FF8320E002B50FA /* HorizontalProgress */ = {
-			isa = PBXGroup;
-			children = (
-				9826D6C11FF8321D002B50FA /* HorizontalProgressView.h */,
-				9826D6C01FF8321D002B50FA /* HorizontalProgressView.m */,
-			);
-			path = HorizontalProgress;
-			sourceTree = "<group>";
-		};
 		982C682B1FCEF2BF0090F5F6 /* CompleteProfile */ = {
 			isa = PBXGroup;
 			children = (
@@ -393,9 +389,11 @@
 				988A6B401FDF33FA003368C6 /* TawkeelOwnerViewController.swift */,
 				988A6B421FDF40AA003368C6 /* DeliveryLocationViewController.swift */,
 				988A6B441FDF41FB003368C6 /* CurrentLocationViewController.swift */,
-				9820B60C1FE433070075B5FA /* ChooseLawyerViewController.swift */,
+				982427E31FFD8656003848BF /* MoawtheqArrivalTimeViewController.swift */,
 				9823961D1FE9A611006405C4 /* SearchingForAlawyerViewController.swift */,
+				9820B60C1FE433070075B5FA /* ChooseLawyerViewController.swift */,
 				9820B60E1FE435C30075B5FA /* LawyerTableViewCell.swift */,
+				9886E70D2002CB06007BEA77 /* lawyercellPlaceholder.swift */,
 				9826D6B51FF6FAE5002B50FA /* SefaMowklCollectionViewCell.swift */,
 				9826D6BD1FF81EF7002B50FA /* DatePickerViewController.swift */,
 				9867AB321FF9C1B100F16ECD /* TimePickerViewController.swift */,
@@ -480,6 +478,7 @@
 		9870BA0A1FB8D0E0008E678B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				9886E7082002C712007BEA77 /* MowatheqViewModel */,
 				9820B5F41FE08A9A0075B5FA /* Order */,
 				982CFA251FD8822B0055593C /* CategoriesViewModel */,
 				9825C30A1FD1E2C000FE93E3 /* userViewModel */,
@@ -511,7 +510,6 @@
 		9870BA0D1FB8D139008E678B /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				9826D6BF1FF8320E002B50FA /* HorizontalProgress */,
 				98298A501FDFDAEC00B651C5 /* UIImage+Gif.swift */,
 				9883DF801FD56EF1008FC708 /* RMMapper */,
 				986F54EB1FD0068800E9F842 /* NWConnectivity */,
@@ -549,6 +547,15 @@
 				9883DF851FD56F2D008FC708 /* RMMapper.m */,
 			);
 			path = RMMapper;
+			sourceTree = "<group>";
+		};
+		9886E7082002C712007BEA77 /* MowatheqViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				9886E7092002C729007BEA77 /* MoawtheqRootClass.swift */,
+				9886E70A2002C72A007BEA77 /* MowatheqData.swift */,
+			);
+			name = MowatheqViewModel;
 			sourceTree = "<group>";
 		};
 		988942DE1FC72312001B4F75 /* Fonts */ = {
@@ -857,6 +864,7 @@
 				982B5D381FCB4C840028092E /* PhoneNumberTableViewCell.swift in Sources */,
 				988942FD1FCA1321001B4F75 /* PhoneVerificationController.swift in Sources */,
 				9820B5F61FE08ADC0075B5FA /* OrderViewModel.swift in Sources */,
+				9886E70C2002C72A007BEA77 /* MowatheqData.swift in Sources */,
 				988942FB1FCA1321001B4F75 /* CountryCodeListController.swift in Sources */,
 				9870B9FC1FB8CA51008E678B /* NotficationsViewController.swift in Sources */,
 				988942FC1FCA1321001B4F75 /* CountryCodeListCell.swift in Sources */,
@@ -886,12 +894,14 @@
 				982CFA311FD961290055593C /* Sub.swift in Sources */,
 				989B46091FB8DB8C00618519 /* Localizer.swift in Sources */,
 				988E423B1FD73C3500A6AF59 /* ProfileHeaderView.swift in Sources */,
+				9886E70E2002CB06007BEA77 /* lawyercellPlaceholder.swift in Sources */,
 				985587EF1FC6D964001AD5E5 /* UIColorExtension.swift in Sources */,
 				982CFA291FD8828E0055593C /* CategoriesViewModel.swift in Sources */,
 				988942E51FCA10E5001B4F75 /* JSONReader.swift in Sources */,
 				9883DF8A1FD56F2E008FC708 /* NSObject+RMArchivable.m in Sources */,
 				982CFA2F1FD9552E0055593C /* ProfileHeaderTableViewCell.swift in Sources */,
 				982CFA3B1FD9B19D0055593C /* MyOrderPlaceHolderTableViewCell.swift in Sources */,
+				9886E70B2002C72A007BEA77 /* MoawtheqRootClass.swift in Sources */,
 				988A6B451FDF41FB003368C6 /* CurrentLocationViewController.swift in Sources */,
 				982CFA201FD87FDB0055593C /* CategoriesRootClass.swift in Sources */,
 				9825C3021FD1DD2400FE93E3 /* NetworkHandler.swift in Sources */,
@@ -908,11 +918,11 @@
 				9826D6BE1FF81EF7002B50FA /* DatePickerViewController.swift in Sources */,
 				988942FE1FCA1321001B4F75 /* PhoneEntryController.swift in Sources */,
 				986F54ED1FD0069500E9F842 /* NWConnectivity.swift in Sources */,
-				9826D6C21FF8321D002B50FA /* HorizontalProgressView.m in Sources */,
 				988A6B431FDF40AA003368C6 /* DeliveryLocationViewController.swift in Sources */,
 				98276FD01FE7183A00E3AE01 /* NewOrderRequestRootClass.swift in Sources */,
 				9867AB311FF9B06800F16ECD /* MaazonDataViewController.swift in Sources */,
 				9820B6011FE08FB40075B5FA /* Client.swift in Sources */,
+				982427E41FFD8656003848BF /* MoawtheqArrivalTimeViewController.swift in Sources */,
 				98298A511FDFDAEC00B651C5 /* UIImage+Gif.swift in Sources */,
 				9883DF8B1FD56F2E008FC708 /* NSUserDefaults+RMSaveCustomObject.m in Sources */,
 				9820B60F1FE435C30075B5FA /* LawyerTableViewCell.swift in Sources */,

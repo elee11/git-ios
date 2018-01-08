@@ -8,9 +8,19 @@
 //
 
 import UIKit
+import TransitionButton
 
 class LawyerTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var imgLawyer: UIImageView!
+    @IBOutlet weak var lbl_mowatheqName: UILabel!
+    @IBOutlet weak var lbl_mowatheqRate: UILabel!
+    @IBOutlet weak var btnFawd: TransitionButton!
+
+
+
+
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

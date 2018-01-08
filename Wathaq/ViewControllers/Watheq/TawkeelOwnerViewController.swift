@@ -12,7 +12,11 @@ import TransitionButton
 class TawkeelOwnerViewController:UIViewController, ToastAlertProtocol {
    
     var OrderDataDic : NSMutableDictionary!
-
+    var TotalCost : Int!
+    var IsMovingPrgressBarDrawn = false
+    @IBOutlet weak var lblServiceTotalPrice: UILabel!
+    @IBOutlet weak var viewTotalProgressBar: UIView!
+    @IBOutlet weak var viewMovingProgressBar: UIView!
     @IBOutlet weak var lblMwklMsg: UILabel!
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtCivilRegistry: UITextField!
@@ -36,6 +40,7 @@ class TawkeelOwnerViewController:UIViewController, ToastAlertProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addTapToDismissKeyboard()
+        lblServiceTotalPrice.text = "\(TotalCost as Int) \(NSLocalizedString("SR", comment: "") as String)"
         self.title = NSLocalizedString("clientOwner", comment: "")
         lblMwklMsg.text = NSLocalizedString("AddClientOwnerMsg", comment: "")
         ConfirmButton.setTitle(NSLocalizedString("nextStep", comment: ""), for: .normal)
@@ -52,7 +57,23 @@ class TawkeelOwnerViewController:UIViewController, ToastAlertProtocol {
     override func viewDidLayoutSubviews() {
         
       
-       
+        if IsMovingPrgressBarDrawn == false {
+            viewMovingProgressBar.alpha = 0
+            viewMovingProgressBar.width = viewTotalProgressBar.frame.size.width / 3
+            viewMovingProgressBar.x = -viewMovingProgressBar.width
+            viewMovingProgressBar.alpha = 1
+            viewTotalProgressBar.roundCorners([.topLeft, .topRight, .bottomLeft , .bottomRight], radius: 5)
+            viewMovingProgressBar.roundCorners([.topLeft, .topRight, .bottomLeft , .bottomRight], radius: 5)
+            
+            UIView.animate(withDuration: 2.0, animations: {
+               // self.viewMovingProgressBar.layer.position.x = 0
+                self.viewMovingProgressBar.x = 0
+            }, completion: { (true) in
+                self.IsMovingPrgressBarDrawn = true
+                
+            })
+            
+        }
 
     }
 
@@ -87,6 +108,7 @@ class TawkeelOwnerViewController:UIViewController, ToastAlertProtocol {
             let DeliveryLocationView = segue.destination as! DeliveryLocationViewController
             DeliveryLocationView.title = NSLocalizedString("Receiving the POA", comment: "")
             DeliveryLocationView.OrderDataDic = OrderDic
+            DeliveryLocationView.TotalCost = self.TotalCost
         }
     }
 

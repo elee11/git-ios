@@ -10,10 +10,11 @@ import UIKit
 
 class WatheqSubCatViewController: UIViewController {
     var ArrSubCat :[Sub]!
+    var SubCat : Sub!
+
     var DeliveryLocationTitle : String!
     @IBOutlet weak var tbl_SubCategories: UITableView!
     @IBOutlet weak var viewContainerProgressBar: UIView!
-    var horizontalProgressView : HorizontalProgressView!
 
 
 
@@ -24,18 +25,7 @@ class WatheqSubCatViewController: UIViewController {
     
     func configureTitleView() {
         
-        horizontalProgressView = HorizontalProgressView.init()
-        horizontalProgressView.frame = CGRect(x: 0, y: 0, width: self.viewContainerProgressBar.frame.size.width, height: self.viewContainerProgressBar.frame.size.height)
-        horizontalProgressView.progressLevelArray = [" ", " ", " ", " ", " "," "];
-        horizontalProgressView.lineMaxHeight = 20;
-        horizontalProgressView.pointMaxRadius = 0;
-        horizontalProgressView.currentLevel = 1;
-        horizontalProgressView.achievedColor = UIColor.LightGreen
-        horizontalProgressView.unachievedColor = UIColor.ashGrey
-        horizontalProgressView.animationDuration = 1;
-        horizontalProgressView.textPosition = .topPostion
-        viewContainerProgressBar.roundCorners([.topLeft, .topRight, .bottomLeft , .bottomRight], radius: 5)
-        self.viewContainerProgressBar.addSubview(horizontalProgressView)
+      
 
         if #available(iOS 11.0, *) {
             navigationItem.largeTitleDisplayMode = .never
@@ -46,7 +36,7 @@ class WatheqSubCatViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        horizontalProgressView.startAnimation()
+        
     }
     
     override func viewDidLayoutSubviews() {
@@ -63,6 +53,7 @@ class WatheqSubCatViewController: UIViewController {
             let OrderDic = sender as!  NSMutableDictionary
             let MawklView = segue.destination as! MawklViewController
             MawklView.OrderDataDic = OrderDic
+            MawklView.TotalCost = SubCat.cost
         }
         else if segue.identifier == "S_Sub_Letter"  {
             let OrderDic = sender as!  NSMutableDictionary
@@ -110,6 +101,7 @@ extension WatheqSubCatViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let SubObj =  self.ArrSubCat[indexPath.row]
+        SubCat = SubObj
         if SubObj.hasSubs == true{
             let MainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
             let WatheqSubCatViewController = MainStoryBoard.instantiateViewController(withIdentifier: "WatheqSubCatViewController")   as! WatheqSubCatViewController

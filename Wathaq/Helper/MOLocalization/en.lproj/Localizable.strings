@@ -80,3 +80,15 @@
 "DocumentMarriageMessage" = "I'm Asking Maazon to attend at";
 "Time"= "Time";
 "Date" = "Date";
+"MowatheqArrivalat" = "Ask the binder's presence during";
+"SR" = "SR";
+"1Hour" = "Hour";
+"2Hours" = "2 Hours";
+"3Hours" = "3 Hours";
+"MawtheqArrivalLater" = "Or attend later";
+"pleaseChooseArrivalTime" = "Please Choose time";
+"Searching" = "Searching ... " ;
+"SearchingMsg" = "You will be looking for the closest registrar to approve your application or you can choose a certified document from here";
+"ChooseMowtheq" = "Choose a specific documentor";
+"MowatheqArrivaOfficelat" = "I go to the office of the binder during";
+"fawd" = "authorize";

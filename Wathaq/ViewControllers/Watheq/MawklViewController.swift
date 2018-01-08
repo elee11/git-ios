@@ -8,13 +8,19 @@
 
 import UIKit
 import TransitionButton
+import EasyAnimation
 
 class MawklViewController: UIViewController,ToastAlertProtocol {
   
     var OrderDataDic : NSMutableDictionary!
+    var TotalCost : Int!
     @IBOutlet weak var lblMwklMsg: UILabel!
+    @IBOutlet weak var lblServiceTotalPrice: UILabel!
+    @IBOutlet weak var viewTotalProgressBar: UIView!
+    @IBOutlet weak var viewMovingProgressBar: UIView!
     @IBOutlet weak var txtName: UITextField!
     @IBOutlet weak var txtCivilRegistry: UITextField!
+    var IsMovingPrgressBarDrawn = false
     @IBOutlet weak var ConfirmButton: TransitionButton! {
         didSet {
             ConfirmButton.applyBorderProperties()
@@ -38,6 +44,7 @@ class MawklViewController: UIViewController,ToastAlertProtocol {
         super.viewDidLoad()
         view.addTapToDismissKeyboard()
 
+        lblServiceTotalPrice.text = "\(TotalCost as Int) \(NSLocalizedString("SR", comment: "") as String)"
         self.title = NSLocalizedString("client", comment: "")
         lblMwklMsg.text = NSLocalizedString("AddClientMsg", comment: "")
         ConfirmButton.setTitle(NSLocalizedString("nextStep", comment: ""), for: .normal)
@@ -52,8 +59,27 @@ class MawklViewController: UIViewController,ToastAlertProtocol {
     }
     
     override func viewDidLayoutSubviews() {
-        
-       
+
+        //To Avoid Drawing moving progress bar every time loads view
+        if IsMovingPrgressBarDrawn == false {
+        viewMovingProgressBar.alpha = 0
+        viewMovingProgressBar.width = viewTotalProgressBar.frame.size.width / 4
+        viewMovingProgressBar.x = -viewMovingProgressBar.width
+        viewMovingProgressBar.alpha = 1
+        viewTotalProgressBar.roundCorners([.topLeft, .topRight, .bottomLeft , .bottomRight], radius: 5)
+        viewMovingProgressBar.roundCorners([.topLeft, .topRight, .bottomLeft , .bottomRight], radius: 5)
+    
+            UIView.animate(withDuration: 2.0, animations: {
+                self.viewMovingProgressBar.x = 0
+            }, completion: { (true) in
+                self.IsMovingPrgressBarDrawn = true
+
+            })
+            
+        }
+
+
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -91,6 +117,9 @@ class MawklViewController: UIViewController,ToastAlertProtocol {
             let OrderDic = sender as!  NSMutableDictionary
             let MawklownerView = segue.destination as! TawkeelOwnerViewController
             MawklownerView.OrderDataDic = OrderDic
+            MawklownerView.TotalCost = self.TotalCost
+
+            
         }
     }
 

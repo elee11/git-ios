@@ -79,3 +79,15 @@
 "DocumentMarriageMessage" = "اطلب حضور الماذون ف الميعاد التالي";
 "Time"= "الميعاد";
 "Date" = "التاريخ";
+"MowatheqArrivalat" = "اطلب حضور الموثق خلال ";
+"SR" = "رس";
+"1Hour" = "ساعه";
+"2Hours" = "ساعتان";
+"3Hours" = "٣ ساعات";
+"MawtheqArrivalLater" = "او الحضور ف وقت لاحق";
+"pleaseChooseArrivalTime" = "من فضلك اختر وقت الحضور ";
+"Searching" = "قيد البحث...";
+"SearchingMsg" = "سوف يتم البحث عن اقرب موثق يوافقك علي طلبك او من الممكن اختيار موثق لتفويضة من هنا";
+"ChooseMowtheq" = "اختر موثق معين";
+"MowatheqArrivaOfficelat" = "ساتجه الي مكتب الموثق خلال";
+"fawd" = "فوض";
