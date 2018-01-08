@@ -96,6 +96,11 @@ class WatheqViewController: AbstractViewController,ToastAlertProtocol {
                     SubCatDetails.title = CatObj.name
                     SubCatDetails.ArrSubCat = CatObj.subs
               }
+                else if segue.identifier == "S_Watheq_MaazonLocation"  {
+                    let CatObj = sender as!  Category
+                    let maazonLocation = segue.destination as! ChooseMaazonLocationViewController
+                    maazonLocation.CatObj = CatObj
+        }
     }
 
 }
@@ -161,7 +166,7 @@ extension WatheqViewController: UITableViewDelegate {
             }
             else
             {
-                self.performSegue(withIdentifier: "S_Watheq_MaazonLocation", sender: nil)
+                self.performSegue(withIdentifier: "S_Watheq_MaazonLocation", sender: CatObj)
   
             }
         }

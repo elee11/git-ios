@@ -13,6 +13,8 @@ import TransitionButton
 class ChooseMaazonLocationViewController: UIViewController,ToastAlertProtocol{
     
     var viewModel: OrderViewModel!
+    var CatObj : Category!
+
     
     @IBOutlet weak var tbl_DeliveryLocation: UITableView!
     @IBOutlet weak var ConfirmButton: TransitionButton! {
@@ -26,6 +28,7 @@ class ChooseMaazonLocationViewController: UIViewController,ToastAlertProtocol{
     override func viewDidLoad() {
         super.viewDidLoad()
         OrderDataDic = NSMutableDictionary ()
+        OrderDataDic.setValue(CatObj.id, forKey: "categoryId")
         ConfirmButton.setTitle(NSLocalizedString("nextStep", comment: ""), for: .normal)
         self.title = NSLocalizedString("Document marriage contract", comment: "")
         configureTitleView()
@@ -45,7 +48,16 @@ class ChooseMaazonLocationViewController: UIViewController,ToastAlertProtocol{
     
     @IBAction func nextStep (_ sender : Any)
     {
+        if  (OrderDataDic.value(forKey: "delivery") != nil)
+        {
         self.performSegue(withIdentifier: "S_MaazonLocation_MaazonData", sender: OrderDataDic)
+        }
+        else
+        {
+            self.showToastMessage(title: NSLocalizedString(("ChooseDeliveryLocation"), comment: ""), isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

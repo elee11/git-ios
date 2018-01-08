@@ -42,14 +42,28 @@ class MaazonDataViewController: UIViewController,ToastAlertProtocol {
         super.viewDidLoad()
         view.addTapToDismissKeyboard()
         self.title = NSLocalizedString("DocumentDate", comment: "")
-        lblMsg.text = NSLocalizedString("DocumentMarriageMessage", comment: "")
+        
+        
+        if OrderDataDic.value(forKey: "delivery") as! String == "office"
+        {
+            lblMsg.text = NSLocalizedString("DocumentMarriageMessagetoOffice", comment: "")
+
+        }
+        else
+        {
+            lblMsg.text = NSLocalizedString("DocumentMarriageMessage", comment: "")
+
+        }
+        
+        
+        
         ConfirmButton.setTitle(NSLocalizedString("nextStep", comment: ""), for: .normal)
         txtTime.placeholder = NSLocalizedString("Time", comment: "")
         txtrDate.placeholder = NSLocalizedString("Date", comment: "")
         if OrderDataDic != nil
         {
-            txtTime.text = OrderDataDic.value(forKey: "MarriageTime") as? String
-            txtrDate.text = OrderDataDic.value(forKey: "MarriageDate") as? String
+            txtTime.text = OrderDataDic.value(forKey: "marriageTime") as? String
+            txtrDate.text = OrderDataDic.value(forKey: "marriageDate") as? String
         }
 
         // Do any additional setup after loading the view.
@@ -183,8 +197,8 @@ class MaazonDataViewController: UIViewController,ToastAlertProtocol {
         
         
         
-        OrderDataDic.setValue(txtDate, forKey: "MarriageDate")
-        OrderDataDic.setValue(txtTime, forKey: "MarriageTime")
+        OrderDataDic.setValue(txtDate, forKey: "marriageDate")
+        OrderDataDic.setValue(txtTime, forKey: "marriageTime")
         
         self.performSegue(withIdentifier: "S_MaazonData_ContractLocation", sender: OrderDataDic)
         
@@ -223,7 +237,7 @@ extension MaazonDataViewController: PickerDateDelegate {
     func DidUserChoosedDate(_ ChoosedDate : String){
         
         txtrDate.text = ChoosedDate
-        OrderDataDic.setValue(ChoosedDate, forKey: "MarriageDate")
+        OrderDataDic.setValue(ChoosedDate, forKey: "marriageDate")
         self.RemovedatePickerView()
     }
 }
@@ -239,7 +253,7 @@ extension MaazonDataViewController: PickerTimeDelegate {
     func DidUserChoosedTime(_ ChoosedDate : String){
         
         txtTime.text = ChoosedDate
-        OrderDataDic.setValue(ChoosedDate, forKey: "MarriageTime")
+        OrderDataDic.setValue(ChoosedDate, forKey: "marriageTime")
         self.RemoveTimePickerView()
     }
 }

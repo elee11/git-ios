@@ -9,6 +9,7 @@
 import UIKit
 import Kingfisher
 import TransitionButton
+import DZNEmptyDataSet
 
 
 
@@ -21,13 +22,15 @@ class ChooseLawyerViewController: UIViewController,ToastAlertProtocol {
     @IBOutlet weak var tbl_Lawyers: UITableView!
     var IsDataFirstLoading : Bool!
 
+    var ErrorStr : String!
 
 
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.ErrorStr = ""
+
         //Remove back button
         let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: navigationController, action: nil)
         navigationItem.leftBarButtonItem = backButton
@@ -45,12 +48,17 @@ class ChooseLawyerViewController: UIViewController,ToastAlertProtocol {
     {
         viewModel.getLawyerList(OrderId: OrderObj.Orderdata?.id as! Int, completion: { (lawerRootClass, errorMsg) in
             if errorMsg == nil {
+                self.ErrorStr = ""
+
                 self.ArrLawyers = lawerRootClass?.mowatheqData
                 self.IsDataFirstLoading = false
                 self.tbl_Lawyers.reloadData()
 
                 
             } else{
+                self.ErrorStr = errorMsg
+                self.IsDataFirstLoading = false
+
                 self.showToastMessage(title:errorMsg! , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
                 self.IsDataFirstLoading = false
 
@@ -185,4 +193,118 @@ extension ChooseLawyerViewController: UITableViewDelegate {
     }
     
     
+}
+
+extension ChooseLawyerViewController:DZNEmptyDataSetSource
+{
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        
+        let myMutableString = NSMutableAttributedString()
+        
+        if ErrorStr == NSLocalizedString("No_Internet", comment: "")
+        {
+            var myMutableString1 = NSMutableAttributedString()
+            
+            myMutableString1 = NSMutableAttributedString(string: NSLocalizedString("NoInternetConnection", comment: ""))
+            myMutableString1.setAttributes([NSAttributedStringKey.font : UIFont(name: Constants.FONTS.FONT_AR, size: 18.0)!
+                , NSAttributedStringKey.foregroundColor : UIColor.deepBlue], range: NSRange(location:0,length:myMutableString1.length)) // What ever range you want to give
+            
+            var myMutableString2 = NSMutableAttributedString()
+            myMutableString2 = NSMutableAttributedString(string: NSLocalizedString("ReconnectToInternet", comment: ""))
+            myMutableString2.setAttributes([NSAttributedStringKey.font : UIFont(name: Constants.FONTS.FONT_AR, size: 18.0)!
+                , NSAttributedStringKey.foregroundColor : UIColor(red: 16 / 255.0, green: 16 / 255.0, blue: 16 / 255.0, alpha: 1.0)], range: NSRange(location:0,length:myMutableString2.length)) // What ever range you want to give
+            
+            
+            myMutableString.append(myMutableString1)
+            myMutableString.append(NSAttributedString(string: "\n"))
+            myMutableString.append(myMutableString2)
+            
+            
+        }
+        else if ErrorStr == NSLocalizedString("SERVER_ERROR", comment: "")
+        {
+            var myMutableString1 = NSMutableAttributedString()
+            
+            myMutableString1 = NSMutableAttributedString(string: NSLocalizedString("SERVER_ERROR", comment: ""))
+            myMutableString1.setAttributes([NSAttributedStringKey.font :UIFont(name: Constants.FONTS.FONT_AR, size: 18.0)!
+                , NSAttributedStringKey.foregroundColor : UIColor.deepBlue], range: NSRange(location:0,length:myMutableString1.length)) // What ever range you want to give
+            
+            var myMutableString2 = NSMutableAttributedString()
+            
+            myMutableString2 = NSMutableAttributedString(string: NSLocalizedString("TryAgainLater", comment: ""))
+            myMutableString2.setAttributes([NSAttributedStringKey.font : UIFont(name: Constants.FONTS.FONT_AR, size: 18.0)!
+                , NSAttributedStringKey.foregroundColor : UIColor(red: 16 / 255.0, green: 16 / 255.0, blue: 16 / 255.0, alpha: 1.0)], range: NSRange(location:0,length:myMutableString2.length)) // What ever range you want to give
+            
+            myMutableString.append(myMutableString1)
+            myMutableString.append(NSAttributedString(string: "\n"))
+            myMutableString.append(myMutableString2)
+            
+            
+        }
+        else
+        {
+            var myMutableString1 = NSMutableAttributedString()
+            
+            myMutableString1 = NSMutableAttributedString(string: NSLocalizedString("No moawtheq now", comment: ""))
+            myMutableString1.setAttributes([NSAttributedStringKey.font :UIFont(name: Constants.FONTS.FONT_AR, size: 18.0)!
+                , NSAttributedStringKey.foregroundColor : UIColor.deepBlue], range: NSRange(location:0,length:myMutableString1.length)) // What ever range you want to give
+            
+            myMutableString.append(myMutableString1)
+            
+        }
+        return myMutableString
+    }
+    
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        
+        if ErrorStr == NSLocalizedString("No_Internet", comment: "") || ErrorStr == NSLocalizedString("SERVER_ERROR", comment: "")
+        {
+            return UIImage(named:"EmptyData_NoInternet")
+            
+        }
+        else
+        {
+            return UIImage(named:"EmptyData_OrdersEmpty")
+            
+        }
+    }
+    
+    func imageAnimation(forEmptyDataSet scrollView: UIScrollView!) -> CAAnimation!
+    {
+        let animation:CABasicAnimation = CABasicAnimation(keyPath: "transform.scale")
+        animation.fromValue = NSValue(caTransform3D:CATransform3DIdentity)
+        animation.toValue = NSValue(caTransform3D:CATransform3DMakeScale(1.1, 1.1, 1.1))
+        animation.duration = 5
+        animation.autoreverses = true
+        animation.repeatCount = MAXFLOAT
+        
+        return animation
+    }
+    
+    
+    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+        return UIColor.clear
+    }
+    
+}
+
+extension ChooseLawyerViewController:DZNEmptyDataSetDelegate
+{
+    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool
+    {
+        return true
+    }
+    func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool
+    {
+        return true
+    }
+    
+    func emptyDataSetShouldAnimateImageView(_ scrollView: UIScrollView!) -> Bool
+    {
+        return false
+    }
+    func emptyDataSet(_ scrollView: UIScrollView!, didTap view: UIView!)
+    {
+        getlawyerList()
+    }
 }

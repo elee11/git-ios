@@ -91,3 +91,9 @@
 "ChooseMowtheq" = "اختر موثق معين";
 "MowatheqArrivaOfficelat" = "ساتجه الي مكتب الموثق خلال";
 "fawd" = "فوض";
+"NoInternetConnection" = "لا يوجد اتصال بالانترنت";
+"No Orders" = "لا يوجد طلبات";
+"OrderNumber" = "رقم الطلب #";
+"ChooseDeliveryLocation" = "من فضلك اختار مكان عقد النكاح";
+"DocumentMarriageMessagetoOffice" = "سوف احضر الي مكتب المآذون ف المعاد التالي";
+"No moawtheq now" = "لا يوجد موثقين ف المنطقه حوللك سوف نتواصل معك لاحقا";

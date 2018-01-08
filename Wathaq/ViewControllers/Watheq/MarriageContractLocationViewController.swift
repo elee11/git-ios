@@ -97,7 +97,7 @@ class MarriageContractLocationViewController: UIViewController,CLLocationManager
             }
             
             
-            viewModel.CreateOrder(OrderDic: OrderDataDic, completion: { (OrderObj, errorMsg) in
+            viewModel.CreateNekahOrder(OrderDic: OrderDataDic, completion: { (OrderObj, errorMsg) in
                 if errorMsg == nil {
                     
                     self.ConfirmButton.stopAnimation()
@@ -105,7 +105,7 @@ class MarriageContractLocationViewController: UIViewController,CLLocationManager
                     
                     self.showToastMessage(title:NSLocalizedString("OrderProceeded", comment: "") , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.greenAlert, foregroundColor: UIColor.white)
                     
-                    self.performSegue(withIdentifier: "S_MarriageContractLocation_SearchingLawyers", sender:nil)
+                    self.performSegue(withIdentifier: "S_MarriageContractLocation_SearchingLawyers", sender:OrderObj)
                     
                 } else{
                     self.showToastMessage(title:errorMsg! , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
@@ -171,15 +171,12 @@ class MarriageContractLocationViewController: UIViewController,CLLocationManager
     }
     
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "S_MarriageContractLocation_SearchingLawyers"  {
+            let searchingView = segue.destination as! SearchingForAlawyerViewController
+            searchingView.OrderObj = sender as! OrderRootClass
+        }
+    }
     
 }
 

@@ -66,10 +66,8 @@ class SettingsViewController: UIViewController,RefreshAppProtocol {
             }
         }
         actionSheetController.addAction(EnglishButton)
-            
         self.present(actionSheetController, animated: true, completion: nil)
     }
-    
     func refreshAppDependOnLanguage(language: String) {
         Language.setAppLanguage(lang: language)
         if language == "ar" {

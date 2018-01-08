@@ -25,6 +25,18 @@ class OrderViewModel: ToastAlertProtocol {
     }
     
     
+    func CreateNekahOrder(OrderDic:NSDictionary, completion: @escaping (OrderRootClass?, String?) -> ()){
+        NetworkHandler.requestTarget(target: .createNekahOrder(categoryId: OrderDic.object(forKey: "categoryId") as! Int, delivery: OrderDic.object(forKey: "delivery") as! String, latitude: OrderDic.object(forKey: "latitude") as! Double, longitude: OrderDic.object(forKey: "longitude") as! Double, marriageDate: OrderDic.object(forKey: "marriageDate") as! String, marriageTime: OrderDic.object(forKey: "marriageTime") as! String), isDictionary: true) { (result, errorMsg) in
+            if errorMsg == nil {
+                let Ordermodel = Mapper<OrderRootClass>().map(JSONString: result as! String)!
+                completion(Ordermodel,nil)
+                
+            } else{
+                completion(nil,errorMsg)
+            }
+        }
+    }
+    
     func getNewOrders(orderPageNum:Int,completion: @escaping (NewOrderRequestRootClass?, String?) -> ()){
         NetworkHandler.requestTarget(target: .getNewOrders(orderPageNum, 10), isDictionary: true) { (result, errorMsg) in
             if errorMsg == nil {
