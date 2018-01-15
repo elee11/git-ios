@@ -21,6 +21,8 @@ class WatheqSubCatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.configureTitleView()
+        self.tbl_SubCategories.rowHeight = UITableViewAutomaticDimension
+
     }
     
     func configureTitleView() {
@@ -59,6 +61,8 @@ class WatheqSubCatViewController: UIViewController {
             let OrderDic = sender as!  NSMutableDictionary
             let letterView = segue.destination as! LetterViewController
             letterView.OrderDataDic = OrderDic
+            letterView.TotalCost = SubCat.cost
+
         }
         else if segue.identifier == "S_SubCat_DeliveryLocation"
         {
@@ -94,10 +98,7 @@ extension WatheqSubCatViewController: UITableViewDataSource {
 
 extension WatheqSubCatViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
-    {
-        return self.view.frame.size.height * 0.24
-    }
+   
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let SubObj =  self.ArrSubCat[indexPath.row]

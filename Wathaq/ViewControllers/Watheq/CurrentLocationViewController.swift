@@ -15,6 +15,8 @@ import GoogleMaps
 class CurrentLocationViewController: UIViewController,CLLocationManagerDelegate,ToastAlertProtocol {
 
     var TotalCost : Int!
+    var NumOfSteps : Int!
+
     var OrderDataDic : NSMutableDictionary!
     var locationManager:CLLocationManager!
     var currentLocation: CLLocation?
@@ -123,6 +125,7 @@ class CurrentLocationViewController: UIViewController,CLLocationManagerDelegate,
             let ArrivalTimeView = segue.destination as! MoawtheqArrivalTimeViewController
             ArrivalTimeView.OrderDataDic = OrderDic
             ArrivalTimeView.TotalCost = self.TotalCost
+            ArrivalTimeView.NumOfSteps = NumOfSteps - 1
 
         }
     }

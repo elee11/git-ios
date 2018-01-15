@@ -25,6 +25,8 @@ class WatheqViewController: AbstractViewController,ToastAlertProtocol {
                 NSAttributedStringKey.foregroundColor : UIColor.deepBlue,
                 NSAttributedStringKey.font :  UIFont(name: Constants.FONTS.FONT_PARALLAX_AR, size: 30)
             ]
+            self.tbl_Categories.rowHeight = UITableViewAutomaticDimension
+
             navigationController?.navigationBar.largeTitleTextAttributes = attributes
         }
 
@@ -150,10 +152,10 @@ extension WatheqViewController: UITableViewDataSource {
 
 extension WatheqViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
-    {
-        return self.view.frame.size.height * 0.24
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+//    {
+//        return self.view.frame.size.height * 0.24
+//    }
     
     
     

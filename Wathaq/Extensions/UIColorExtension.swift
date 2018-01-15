@@ -141,4 +141,7 @@ extension UIColor {
         return UIColor(red: 240.0 / 255.0, green: 160.0 / 255.0, blue: 28.0 / 255.0, alpha: 1.0)
     }
     
+    class var lightpink: UIColor {
+        return UIColor(red: 233.0 / 255.0, green: 61.0 / 255.0, blue: 115.0 / 255.0, alpha: 1.0)
+    }
 }

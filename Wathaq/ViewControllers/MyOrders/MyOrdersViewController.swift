@@ -85,6 +85,13 @@ class MyOrdersViewController: UIViewController,ToastAlertProtocol {
         }
     
     
+    override func viewWillAppear(_ animated: Bool) {
+        newPageNum = 1
+        self.getNewOrdersWithPageNum(newPageNum)
+
+    }
+    
+    
     func adjustSegmentControl ()
     {
         SegmentControl.titles = [NSLocalizedString("new", comment: ""), NSLocalizedString("opened", comment: ""), NSLocalizedString("finished", comment: "")]
@@ -219,16 +226,18 @@ class MyOrdersViewController: UIViewController,ToastAlertProtocol {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "S_Orders_Lawyers"  {
+            let chooseLawyerView = segue.destination as! ChooseLawyerViewController
+            chooseLawyerView.OrderObj = sender as! Orderdata
+        }
+        else  if segue.identifier == "S_MyOrders_Chat"  {
+            let OrderObj = sender as!  Orderdata
+            let chatViewController = segue.destination as! ChatVC
+            chatViewController.OrderObj = OrderObj
+            chatViewController.MoawtheqObj = OrderObj.lawyer
+        }
     }
-    */
-
 }
 
 extension MyOrdersViewController: UITableViewDataSource {
@@ -423,6 +432,25 @@ extension MyOrdersViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
       
+        
+        if isNewData == true
+        {
+            let ObjOrder =  self.ArrNewOrdersCat[indexPath.row]
+            self.performSegue(withIdentifier: "S_Orders_Lawyers", sender: ObjOrder)
+
+        }
+        else if isPendingData == true
+        {
+            let ObjOrder =  self.ArrPendingOrdersCat[indexPath.row]
+            self.performSegue(withIdentifier: "S_MyOrders_Chat", sender: ObjOrder)
+
+        }
+        else
+        {
+            let ObjOrder =  self.ArrClosedOrdersCat[indexPath.row]
+           // self.performSegue(withIdentifier: "S_Orders_Lawyers", sender: ObjOrder)
+
+        }
     }
 }
 

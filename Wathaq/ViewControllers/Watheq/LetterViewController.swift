@@ -11,6 +11,14 @@ import TransitionButton
 
 class LetterViewController: UIViewController,ToastAlertProtocol {
     var OrderDataDic : NSMutableDictionary!
+    var IsMovingPrgressBarDrawn = false
+
+    var TotalCost : Int!
+    var NumOfSteps : Int!
+    
+    @IBOutlet weak var lblServiceTotalPrice: UILabel!
+    @IBOutlet weak var viewTotalProgressBar: UIView!
+    @IBOutlet weak var viewMovingProgressBar: UIView!
     @IBOutlet weak var lblLetterMsg: UILabel!
     @IBOutlet weak var txtLetterNumber: UITextField!
     @IBOutlet weak var txtLetterDate: UITextField!
@@ -39,6 +47,8 @@ class LetterViewController: UIViewController,ToastAlertProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addTapToDismissKeyboard()
+        NumOfSteps = 3
+        lblServiceTotalPrice.text = "\(TotalCost as Int) \(NSLocalizedString("SR", comment: "") as String)"
         self.title = NSLocalizedString("LetterData", comment: "")
         lblLetterMsg.text = NSLocalizedString("letterDataMsg", comment: "")
         ConfirmButton.setTitle(NSLocalizedString("nextStep", comment: ""), for: .normal)
@@ -50,6 +60,30 @@ class LetterViewController: UIViewController,ToastAlertProtocol {
             txtLetterDate.text = OrderDataDic.value(forKey: "letterDate") as? String
         }
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidLayoutSubviews() {
+        
+        //To Avoid Drawing moving progress bar every time loads view
+        if IsMovingPrgressBarDrawn == false {
+            viewMovingProgressBar.alpha = 0
+            viewMovingProgressBar.width = viewTotalProgressBar.frame.size.width / CGFloat(NumOfSteps)
+            viewMovingProgressBar.x = -viewMovingProgressBar.width
+            viewMovingProgressBar.alpha = 1
+            viewTotalProgressBar.roundCorners([.topLeft, .topRight, .bottomLeft , .bottomRight], radius: 5)
+            viewMovingProgressBar.roundCorners([.topLeft, .topRight, .bottomLeft , .bottomRight], radius: 5)
+            
+            UIView.animate(withDuration: 2.0, animations: {
+                self.viewMovingProgressBar.x = 0
+            }, completion: { (true) in
+                self.IsMovingPrgressBarDrawn = true
+                
+            })
+            
+        }
+        
+        
+        
     }
 
     
@@ -128,6 +162,8 @@ class LetterViewController: UIViewController,ToastAlertProtocol {
             let DeliveryLocationView = segue.destination as! DeliveryLocationViewController
             DeliveryLocationView.title = NSLocalizedString("Receiving the POA", comment: "")
             DeliveryLocationView.OrderDataDic = OrderDic
+            DeliveryLocationView.NumOfSteps = NumOfSteps - 1
+            DeliveryLocationView.TotalCost = self.TotalCost
         }
     }
     

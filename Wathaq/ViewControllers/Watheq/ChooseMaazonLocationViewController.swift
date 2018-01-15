@@ -15,6 +15,13 @@ class ChooseMaazonLocationViewController: UIViewController,ToastAlertProtocol{
     var viewModel: OrderViewModel!
     var CatObj : Category!
 
+    var IsMovingPrgressBarDrawn = false
+    var TotalCost : Int!
+    var NumOfSteps : Int!
+    
+    @IBOutlet weak var lblServiceTotalPrice: UILabel!
+    @IBOutlet weak var viewTotalProgressBar: UIView!
+    @IBOutlet weak var viewMovingProgressBar: UIView!
     
     @IBOutlet weak var tbl_DeliveryLocation: UITableView!
     @IBOutlet weak var ConfirmButton: TransitionButton! {
@@ -27,6 +34,8 @@ class ChooseMaazonLocationViewController: UIViewController,ToastAlertProtocol{
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        TotalCost = CatObj.cost
+        lblServiceTotalPrice.text = "\(TotalCost as Int) \(NSLocalizedString("SR", comment: "") as String)"
         OrderDataDic = NSMutableDictionary ()
         OrderDataDic.setValue(CatObj.id, forKey: "categoryId")
         ConfirmButton.setTitle(NSLocalizedString("nextStep", comment: ""), for: .normal)
@@ -34,6 +43,32 @@ class ChooseMaazonLocationViewController: UIViewController,ToastAlertProtocol{
         configureTitleView()
         // Do any additional setup after loading the view.
     }
+    
+    
+    override func viewDidLayoutSubviews() {
+        
+        //To Avoid Drawing moving progress bar every time loads view
+        if IsMovingPrgressBarDrawn == false {
+            viewMovingProgressBar.alpha = 0
+            viewMovingProgressBar.width = viewTotalProgressBar.frame.size.width / CGFloat(2)
+            viewMovingProgressBar.x = -viewMovingProgressBar.width
+            viewMovingProgressBar.alpha = 1
+            viewTotalProgressBar.roundCorners([.topLeft, .topRight, .bottomLeft , .bottomRight], radius: 5)
+            viewMovingProgressBar.roundCorners([.topLeft, .topRight, .bottomLeft , .bottomRight], radius: 5)
+            
+            UIView.animate(withDuration: 2.0, animations: {
+                self.viewMovingProgressBar.x = 0
+            }, completion: { (true) in
+                self.IsMovingPrgressBarDrawn = true
+                
+            })
+            
+        }
+        
+        
+        
+    }
+
     
     func configureTitleView() {
         
@@ -71,6 +106,7 @@ class ChooseMaazonLocationViewController: UIViewController,ToastAlertProtocol{
             let OrderDic = sender as!  NSMutableDictionary
             let maazonDataView = segue.destination as! MaazonDataViewController
             maazonDataView.OrderDataDic = OrderDic
+            maazonDataView.TotalCost = self.TotalCost
         }
     }
 

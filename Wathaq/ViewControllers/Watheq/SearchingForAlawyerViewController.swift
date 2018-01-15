@@ -78,7 +78,7 @@ class SearchingForAlawyerViewController: UIViewController {
     
     @IBAction func chooseSpecficDocumenter (_ sender:Any)
     {
-        self.performSegue(withIdentifier: "S_ChooseLawyer", sender: OrderObj)
+        self.performSegue(withIdentifier: "S_ChooseLawyer", sender: OrderObj.Orderdata)
     }
 
     override func didReceiveMemoryWarning() {
@@ -90,7 +90,8 @@ class SearchingForAlawyerViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "S_ChooseLawyer"  {
             let chooseLawyerView = segue.destination as! ChooseLawyerViewController
-            chooseLawyerView.OrderObj = sender as! OrderRootClass
+            chooseLawyerView.OrderObj = sender as! Orderdata
+            chooseLawyerView.removeBackBtn = true
         }
     }
 

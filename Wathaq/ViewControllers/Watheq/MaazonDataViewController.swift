@@ -11,6 +11,16 @@ import TransitionButton
 
 class MaazonDataViewController: UIViewController,ToastAlertProtocol {
     var OrderDataDic : NSMutableDictionary!
+    
+    var IsMovingPrgressBarDrawn = false
+    
+    var TotalCost : Int!
+    var NumOfSteps : Int!
+    
+    @IBOutlet weak var lblServiceTotalPrice: UILabel!
+    @IBOutlet weak var viewTotalProgressBar: UIView!
+    @IBOutlet weak var viewMovingProgressBar: UIView!
+    
     @IBOutlet weak var lblMsg: UILabel!
     @IBOutlet weak var txtTime: UITextField!
     @IBOutlet weak var txtrDate: UITextField!
@@ -40,6 +50,7 @@ class MaazonDataViewController: UIViewController,ToastAlertProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        lblServiceTotalPrice.text = "\(TotalCost as Int) \(NSLocalizedString("SR", comment: "") as String)"
         view.addTapToDismissKeyboard()
         self.title = NSLocalizedString("DocumentDate", comment: "")
         
@@ -69,6 +80,32 @@ class MaazonDataViewController: UIViewController,ToastAlertProtocol {
         // Do any additional setup after loading the view.
     }
 
+    
+    override func viewDidLayoutSubviews() {
+        
+        //To Avoid Drawing moving progress bar every time loads view
+        if IsMovingPrgressBarDrawn == false {
+            viewMovingProgressBar.alpha = 0
+            viewMovingProgressBar.width = viewTotalProgressBar.frame.size.width
+            viewMovingProgressBar.x = -viewMovingProgressBar.width
+            viewMovingProgressBar.alpha = 1
+            viewTotalProgressBar.roundCorners([.topLeft, .topRight, .bottomLeft , .bottomRight], radius: 5)
+            viewMovingProgressBar.roundCorners([.topLeft, .topRight, .bottomLeft , .bottomRight], radius: 5)
+            
+            UIView.animate(withDuration: 2.0, animations: {
+                self.viewMovingProgressBar.x = 0
+            }, completion: { (true) in
+                self.IsMovingPrgressBarDrawn = true
+                
+            })
+            
+        }
+        
+        
+        
+    }
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

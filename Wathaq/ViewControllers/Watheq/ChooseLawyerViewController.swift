@@ -16,11 +16,13 @@ import DZNEmptyDataSet
 class ChooseLawyerViewController: UIViewController,ToastAlertProtocol {
 
 
-    var OrderObj : OrderRootClass!
+    var OrderObj : Orderdata!
     var viewModel: OrderViewModel!
     var ArrLawyers :[MowatheqData]!
     @IBOutlet weak var tbl_Lawyers: UITableView!
     var IsDataFirstLoading : Bool!
+    var removeBackBtn : Bool!
+
 
     var ErrorStr : String!
 
@@ -29,11 +31,16 @@ class ChooseLawyerViewController: UIViewController,ToastAlertProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTitleView()
         self.ErrorStr = ""
 
-        //Remove back button
-        let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: navigationController, action: nil)
-        navigationItem.leftBarButtonItem = backButton
+//        //Remove back button
+        if removeBackBtn == true
+        {
+           let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: navigationController, action: nil)
+            navigationItem.leftBarButtonItem = backButton
+        }
+
         self.title = NSLocalizedString("ChooseMowtheq", comment: "")
         IsDataFirstLoading = true
         viewModel = OrderViewModel()
@@ -44,9 +51,21 @@ class ChooseLawyerViewController: UIViewController,ToastAlertProtocol {
         // Do any additional setup after loading the view.
     }
     
+    func configureTitleView() {
+        
+        
+        
+        if #available(iOS 11.0, *) {
+            navigationItem.largeTitleDisplayMode = .never
+        } else {
+            // Fallback on earlier versions
+        }
+        
+    }
+    
     func getlawyerList ()
     {
-        viewModel.getLawyerList(OrderId: OrderObj.Orderdata?.id as! Int, completion: { (lawerRootClass, errorMsg) in
+        viewModel.getLawyerList(OrderId: OrderObj?.id as! Int, completion: { (lawerRootClass, errorMsg) in
             if errorMsg == nil {
                 self.ErrorStr = ""
 
@@ -79,13 +98,16 @@ class ChooseLawyerViewController: UIViewController,ToastAlertProtocol {
 
         let TranstBtn:TransitionButton =  sender as! TransitionButton
         TranstBtn.startAnimation()
-        viewModel.selectLawyer(OrderId: OrderObj.Orderdata?.id as! Int, lawyerid: ObjLawyer.id as! Int, completion: { (OrderObj, errorMsg) in
+        viewModel.selectLawyer(OrderId: OrderObj?.id as! Int, lawyerid: ObjLawyer.id as! Int, completion: { (OrderObj, errorMsg) in
             if errorMsg == nil {
                 if OrderObj?.code == 200
                 {
                 TranstBtn.stopAnimation()
                 self.view.isUserInteractionEnabled = true
-                self.showToastMessage(title:NSLocalizedString("OrderProceeded", comment: "") , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.greenAlert, foregroundColor: UIColor.white)
+                
+                self.performSegue(withIdentifier: "S_Lawyer_Chat", sender: ObjLawyer)
+                    
+                self.showToastMessage(title:NSLocalizedString("Moawtheq choosen", comment: "") , isBottom:false , isWindowNeeded: true, BackgroundColor: UIColor.greenAlert, foregroundColor: UIColor.white)
                     self.view.window!.rootViewController?.dismiss(animated: true, completion: nil)
                 }
                 else
@@ -105,15 +127,15 @@ class ChooseLawyerViewController: UIViewController,ToastAlertProtocol {
         })
     }
         
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "S_Lawyer_Chat"  {
+            let chatView = segue.destination as! ChatVC
+            chatView.MoawtheqObj = sender as! MowatheqData
+            chatView.OrderObj = OrderObj
+            chatView.custmoizeBackButton = true
+
+        }
     }
-    */
 
 }
 
@@ -188,6 +210,9 @@ extension ChooseLawyerViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if IsDataFirstLoading == false
         {
+            let ObjLawyer =  self.ArrLawyers[indexPath.row]
+
+            self.performSegue(withIdentifier: "S_Lawyer_Chat", sender: ObjLawyer)
             
         }
     }

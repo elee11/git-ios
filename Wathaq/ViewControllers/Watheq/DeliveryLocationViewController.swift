@@ -12,6 +12,8 @@ import TransitionButton
 class DeliveryLocationViewController: UIViewController ,ToastAlertProtocol{
    
     var TotalCost : Int!
+    var NumOfSteps : Int!
+
     var IsMovingPrgressBarDrawn = false
 
     @IBOutlet weak var lblServiceTotalPrice: UILabel!
@@ -40,7 +42,7 @@ class DeliveryLocationViewController: UIViewController ,ToastAlertProtocol{
         
         if IsMovingPrgressBarDrawn == false {
             viewMovingProgressBar.alpha = 0
-            viewMovingProgressBar.width = viewTotalProgressBar.frame.size.width / 2
+            viewMovingProgressBar.width = viewTotalProgressBar.frame.size.width / CGFloat(NumOfSteps)
             viewMovingProgressBar.x = -viewMovingProgressBar.width
             viewMovingProgressBar.alpha = 1
             viewTotalProgressBar.roundCorners([.topLeft, .topRight, .bottomLeft , .bottomRight], radius: 5)
@@ -83,6 +85,7 @@ class DeliveryLocationViewController: UIViewController ,ToastAlertProtocol{
             let CurrentLocationView = segue.destination as! CurrentLocationViewController
             CurrentLocationView.OrderDataDic = OrderDic
             CurrentLocationView.TotalCost = self.TotalCost
+            CurrentLocationView.NumOfSteps = NumOfSteps - 1
         }
     }
     

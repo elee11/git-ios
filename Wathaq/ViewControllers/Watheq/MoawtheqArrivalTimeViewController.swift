@@ -13,6 +13,8 @@ import TransitionButton
 class MoawtheqArrivalTimeViewController: UIViewController,ToastAlertProtocol {
 
     var TotalCost : Int!
+    var NumOfSteps : Int!
+
     var IsMovingPrgressBarDrawn = false
     @IBOutlet weak var lblServiceTotalPrice: UILabel!
     @IBOutlet weak var viewTotalProgressBar: UIView!
@@ -206,8 +208,29 @@ class MoawtheqArrivalTimeViewController: UIViewController,ToastAlertProtocol {
                 OrderDataDic.setValue("", forKey: "representativeName")
                 OrderDataDic.setValue("", forKey: "representativeNationalID")
             }
-            
-            
+        
+        
+        if let letterNumber =  OrderDataDic.value(forKey: "letterNumber")
+        {
+            viewModel.CreateContractOrder(OrderDic: OrderDataDic, completion: { (OrderObj, errorMsg) in
+                if errorMsg == nil {
+                    
+                    self.ConfirmButton.stopAnimation()
+                    self.view.isUserInteractionEnabled = true
+                    
+                    self.showToastMessage(title:NSLocalizedString("OrderProceeded", comment: "") , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.greenAlert, foregroundColor: UIColor.white)
+                    
+                    self.performSegue(withIdentifier: "S_Request_SearchingLawyer", sender:OrderObj)
+                    
+                } else{
+                    self.showToastMessage(title:errorMsg! , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+                    self.ConfirmButton.stopAnimation()
+                    self.view.isUserInteractionEnabled = true
+                }
+            })
+        }
+        else
+        {
             viewModel.CreateOrder(OrderDic: OrderDataDic, completion: { (OrderObj, errorMsg) in
                 if errorMsg == nil {
                     
@@ -224,6 +247,8 @@ class MoawtheqArrivalTimeViewController: UIViewController,ToastAlertProtocol {
                     self.view.isUserInteractionEnabled = true
                 }
             })
+            
+        }
             
             
 //        }

@@ -30,10 +30,6 @@
 		9826D6BC1FF81538002B50FA /* LetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D6BB1FF81538002B50FA /* LetterViewController.swift */; };
 		9826D6BE1FF81EF7002B50FA /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D6BD1FF81EF7002B50FA /* DatePickerViewController.swift */; };
 		98276FD01FE7183A00E3AE01 /* NewOrderRequestRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98276FCF1FE7183A00E3AE01 /* NewOrderRequestRootClass.swift */; };
-		98298A491FDFD41B00B651C5 /* Channel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98298A481FDFD41B00B651C5 /* Channel.swift */; };
-		98298A4B1FDFD43F00B651C5 /* ChannelListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98298A4A1FDFD43F00B651C5 /* ChannelListViewController.swift */; };
-		98298A4D1FDFD87100B651C5 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98298A4C1FDFD87100B651C5 /* ChatViewController.swift */; };
-		98298A4F1FDFD88400B651C5 /* CreateChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98298A4E1FDFD88400B651C5 /* CreateChannelCell.swift */; };
 		98298A511FDFDAEC00B651C5 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98298A501FDFDAEC00B651C5 /* UIImage+Gif.swift */; };
 		982B5D381FCB4C840028092E /* PhoneNumberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982B5D371FCB4C840028092E /* PhoneNumberTableViewCell.swift */; };
 		982B5D3A1FCB528A0028092E /* phoneVerificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982B5D391FCB528A0028092E /* phoneVerificationTableViewCell.swift */; };
@@ -56,6 +52,12 @@
 		985587ED1FC6D8EA001AD5E5 /* ToastAlertProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985587EC1FC6D8EA001AD5E5 /* ToastAlertProtocol.swift */; };
 		985587EF1FC6D964001AD5E5 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985587EE1FC6D964001AD5E5 /* UIColorExtension.swift */; };
 		985587F11FC6DD19001AD5E5 /* LblWithTitleGenralCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985587F01FC6DD19001AD5E5 /* LblWithTitleGenralCellProtocol.swift */; };
+		985B36C2200A731F002F11B0 /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985B36C0200A731E002F11B0 /* ChatVC.swift */; };
+		985B36C3200A731F002F11B0 /* VCCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985B36C1200A731F002F11B0 /* VCCells.swift */; };
+		985B36C6200A7377002F11B0 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985B36C5200A7377002F11B0 /* Message.swift */; };
+		985B36CB200A7C25002F11B0 /* Helper Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985B36C8200A7C23002F11B0 /* Helper Files.swift */; };
+		985B36CD200A7C25002F11B0 /* ContactsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985B36CA200A7C24002F11B0 /* ContactsManager.swift */; };
+		985B36CF200B84B5002F11B0 /* Chat.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 985B36CE200B84B5002F11B0 /* Chat.xcassets */; };
 		986516571FBA4E2B00551208 /* SettingsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 986516561FBA4E2B00551208 /* SettingsTableCell.swift */; };
 		9867AB2F1FF9B02900F16ECD /* ChooseMaazonLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9867AB2E1FF9B02900F16ECD /* ChooseMaazonLocationViewController.swift */; };
 		9867AB311FF9B06800F16ECD /* MaazonDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9867AB301FF9B06800F16ECD /* MaazonDataViewController.swift */; };
@@ -132,10 +134,6 @@
 		9826D6BB1FF81538002B50FA /* LetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterViewController.swift; sourceTree = "<group>"; };
 		9826D6BD1FF81EF7002B50FA /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		98276FCF1FE7183A00E3AE01 /* NewOrderRequestRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewOrderRequestRootClass.swift; sourceTree = "<group>"; };
-		98298A481FDFD41B00B651C5 /* Channel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Channel.swift; sourceTree = "<group>"; };
-		98298A4A1FDFD43F00B651C5 /* ChannelListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelListViewController.swift; sourceTree = "<group>"; };
-		98298A4C1FDFD87100B651C5 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
-		98298A4E1FDFD88400B651C5 /* CreateChannelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateChannelCell.swift; sourceTree = "<group>"; };
 		98298A501FDFDAEC00B651C5 /* UIImage+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
 		982B5D371FCB4C840028092E /* PhoneNumberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberTableViewCell.swift; sourceTree = "<group>"; };
 		982B5D391FCB528A0028092E /* phoneVerificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = phoneVerificationTableViewCell.swift; sourceTree = "<group>"; };
@@ -159,6 +157,12 @@
 		985587EE1FC6D964001AD5E5 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		985587F01FC6DD19001AD5E5 /* LblWithTitleGenralCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LblWithTitleGenralCellProtocol.swift; sourceTree = "<group>"; };
 		985587F61FC6F24B001AD5E5 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		985B36C0200A731E002F11B0 /* ChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		985B36C1200A731F002F11B0 /* VCCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCCells.swift; sourceTree = "<group>"; };
+		985B36C5200A7377002F11B0 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		985B36C8200A7C23002F11B0 /* Helper Files.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Helper Files.swift"; sourceTree = "<group>"; };
+		985B36CA200A7C24002F11B0 /* ContactsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsManager.swift; sourceTree = "<group>"; };
+		985B36CE200B84B5002F11B0 /* Chat.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Chat.xcassets; sourceTree = "<group>"; };
 		986516561FBA4E2B00551208 /* SettingsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableCell.swift; sourceTree = "<group>"; };
 		9867AB2E1FF9B02900F16ECD /* ChooseMaazonLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseMaazonLocationViewController.swift; sourceTree = "<group>"; };
 		9867AB301FF9B06800F16ECD /* MaazonDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaazonDataViewController.swift; sourceTree = "<group>"; };
@@ -183,7 +187,7 @@
 		9883DF881FD56F2E008FC708 /* NSUserDefaults+RMSaveCustomObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSUserDefaults+RMSaveCustomObject.h"; sourceTree = "<group>"; };
 		9883DF891FD56F2E008FC708 /* RMMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMMapper.h; sourceTree = "<group>"; };
 		9886E7092002C729007BEA77 /* MoawtheqRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoawtheqRootClass.swift; sourceTree = "<group>"; };
-		9886E70A2002C72A007BEA77 /* MowatheqData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MowatheqData.swift; sourceTree = "<group>"; };
+		9886E70A2002C72A007BEA77 /* MowatheqData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MowatheqData.swift; path = ../ViewModel/MowatheqData.swift; sourceTree = "<group>"; };
 		9886E70D2002CB06007BEA77 /* lawyercellPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = lawyercellPlaceholder.swift; sourceTree = "<group>"; };
 		988942D71FC72074001B4F75 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/SettingsList.plist; sourceTree = "<group>"; };
 		988942DA1FC7230B001B4F75 /* DinNextMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DinNextMedium.ttf; sourceTree = "<group>"; };
@@ -264,6 +268,7 @@
 		9820B5F71FE08CD70075B5FA /* Order */ = {
 			isa = PBXGroup;
 			children = (
+				9886E70A2002C72A007BEA77 /* MowatheqData.swift */,
 				98276FCF1FE7183A00E3AE01 /* NewOrderRequestRootClass.swift */,
 				9820B5FE1FE08FB40075B5FA /* OrderRootClass.swift */,
 				9820B6041FE090390075B5FA /* Orderdata.swift */,
@@ -352,6 +357,33 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		985B36BD200A6D5C002F11B0 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				985B36C7200A7C18002F11B0 /* Helper files */,
+				985B36C0200A731E002F11B0 /* ChatVC.swift */,
+				985B36C1200A731F002F11B0 /* VCCells.swift */,
+			);
+			name = Chat;
+			sourceTree = "<group>";
+		};
+		985B36C4200A736B002F11B0 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				985B36C5200A7377002F11B0 /* Message.swift */,
+			);
+			name = Messages;
+			sourceTree = "<group>";
+		};
+		985B36C7200A7C18002F11B0 /* Helper files */ = {
+			isa = PBXGroup;
+			children = (
+				985B36CA200A7C24002F11B0 /* ContactsManager.swift */,
+				985B36C8200A7C23002F11B0 /* Helper Files.swift */,
+			);
+			name = "Helper files";
+			sourceTree = "<group>";
+		};
 		986F54EB1FD0068800E9F842 /* NWConnectivity */ = {
 			isa = PBXGroup;
 			children = (
@@ -366,9 +398,6 @@
 				9870B9F71FB8CA2B008E678B /* MyOrdersViewController.swift */,
 				982CFA381FD9A4830055593C /* MyOrderTableViewCell.swift */,
 				982CFA3A1FD9B19D0055593C /* MyOrderPlaceHolderTableViewCell.swift */,
-				98298A4A1FDFD43F00B651C5 /* ChannelListViewController.swift */,
-				98298A4C1FDFD87100B651C5 /* ChatViewController.swift */,
-				98298A4E1FDFD88400B651C5 /* CreateChannelCell.swift */,
 			);
 			path = MyOrders;
 			sourceTree = "<group>";
@@ -397,6 +426,7 @@
 				9826D6B51FF6FAE5002B50FA /* SefaMowklCollectionViewCell.swift */,
 				9826D6BD1FF81EF7002B50FA /* DatePickerViewController.swift */,
 				9867AB321FF9C1B100F16ECD /* TimePickerViewController.swift */,
+				985B36BD200A6D5C002F11B0 /* Chat */,
 			);
 			path = Watheq;
 			sourceTree = "<group>";
@@ -443,8 +473,8 @@
 		9870BA071FB8D0A8008E678B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				985B36C4200A736B002F11B0 /* Messages */,
 				9820B5F71FE08CD70075B5FA /* Order */,
-				98298A481FDFD41B00B651C5 /* Channel.swift */,
 				982CFA1C1FD87FCE0055593C /* Categories */,
 				9825C3051FD1DE0D00FE93E3 /* User */,
 				988942EA1FCA1293001B4F75 /* Country */,
@@ -530,6 +560,7 @@
 				988943011FCA2B74001B4F75 /* LoginAssets.xcassets */,
 				988E42381FD7333200A6AF59 /* ProfileAssets.xcassets */,
 				982CFA2A1FD889320055593C /* WatheqAssets.xcassets */,
+				985B36CE200B84B5002F11B0 /* Chat.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -553,7 +584,6 @@
 			isa = PBXGroup;
 			children = (
 				9886E7092002C729007BEA77 /* MoawtheqRootClass.swift */,
-				9886E70A2002C72A007BEA77 /* MowatheqData.swift */,
 			);
 			name = MowatheqViewModel;
 			sourceTree = "<group>";
@@ -713,6 +743,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				988942DC1FC7230D001B4F75 /* DinNextMedium.ttf in Resources */,
+				985B36CF200B84B5002F11B0 /* Chat.xcassets in Resources */,
 				989B460D1FB8E48800618519 /* TabBarAssets.xcassets in Resources */,
 				989B46011FB8D9E200618519 /* Localizable.strings in Resources */,
 				9826D6B81FF70037002B50FA /* SefaMowaklList.plist in Resources */,
@@ -855,9 +886,9 @@
 				982CFA391FD9A4830055593C /* MyOrderTableViewCell.swift in Sources */,
 				98DDA1491FB797E500B8F42F /* AppDelegate.swift in Sources */,
 				9870B9F81FB8CA2B008E678B /* MyOrdersViewController.swift in Sources */,
+				985B36CB200A7C25002F11B0 /* Helper Files.swift in Sources */,
 				9870B9FE1FB8CA5D008E678B /* ProfileViewController.swift in Sources */,
 				989B460B1FB8DB9B00618519 /* RefreshAppProtocol.swift in Sources */,
-				98298A4B1FDFD43F00B651C5 /* ChannelListViewController.swift in Sources */,
 				989B46081FB8DB8800618519 /* Language.swift in Sources */,
 				9826D6BC1FF81538002B50FA /* LetterViewController.swift in Sources */,
 				9883DF8D1FD56F2E008FC708 /* NSObject+RMCopyable.m in Sources */,
@@ -883,20 +914,23 @@
 				988A6B3F1FDF33CA003368C6 /* MawklViewController.swift in Sources */,
 				985587E91FC6D882001AD5E5 /* plistReaderProtocol.swift in Sources */,
 				988A6B411FDF33FA003368C6 /* TawkeelOwnerViewController.swift in Sources */,
+				985B36CD200A7C25002F11B0 /* ContactsManager.swift in Sources */,
 				982C682D1FCEF2DC0090F5F6 /* CompleteProfileViewController.swift in Sources */,
 				982CFA371FD97A7E0055593C /* WatheqSubCatViewController.swift in Sources */,
 				986F54EF1FD007AF00E9F842 /* NotificationExtension.swift in Sources */,
 				9867AB2F1FF9B02900F16ECD /* ChooseMaazonLocationViewController.swift in Sources */,
 				9870B9FA1FB8CA38008E678B /* WatheqViewController.swift in Sources */,
 				9870BA051FB8CEB3008E678B /* SettingsViewController.swift in Sources */,
-				98298A4F1FDFD88400B651C5 /* CreateChannelCell.swift in Sources */,
 				9826D6B61FF6FAE5002B50FA /* SefaMowklCollectionViewCell.swift in Sources */,
 				982CFA311FD961290055593C /* Sub.swift in Sources */,
 				989B46091FB8DB8C00618519 /* Localizer.swift in Sources */,
 				988E423B1FD73C3500A6AF59 /* ProfileHeaderView.swift in Sources */,
+				985B36C3200A731F002F11B0 /* VCCells.swift in Sources */,
 				9886E70E2002CB06007BEA77 /* lawyercellPlaceholder.swift in Sources */,
+				985B36C2200A731F002F11B0 /* ChatVC.swift in Sources */,
 				985587EF1FC6D964001AD5E5 /* UIColorExtension.swift in Sources */,
 				982CFA291FD8828E0055593C /* CategoriesViewModel.swift in Sources */,
+				985B36C6200A7377002F11B0 /* Message.swift in Sources */,
 				988942E51FCA10E5001B4F75 /* JSONReader.swift in Sources */,
 				9883DF8A1FD56F2E008FC708 /* NSObject+RMArchivable.m in Sources */,
 				982CFA2F1FD9552E0055593C /* ProfileHeaderTableViewCell.swift in Sources */,
@@ -908,7 +942,6 @@
 				9825C30C1FD1E2F500FE93E3 /* UserViewModel.swift in Sources */,
 				985587ED1FC6D8EA001AD5E5 /* ToastAlertProtocol.swift in Sources */,
 				9820B60D1FE433070075B5FA /* ChooseLawyerViewController.swift in Sources */,
-				98298A491FDFD41B00B651C5 /* Channel.swift in Sources */,
 				988942E91FCA123E001B4F75 /* View+Additions.swift in Sources */,
 				9825C3041FD1DDA100FE93E3 /* DefaultAlamofireManager.swift in Sources */,
 				988943001FCA19C8001B4F75 /* singleToneClassValues.swift in Sources */,
@@ -929,7 +962,6 @@
 				9826D6B41FF6F601002B50FA /* SefaMowaklViewController.swift in Sources */,
 				988942EE1FCA12C2001B4F75 /* Countries.swift in Sources */,
 				985587F11FC6DD19001AD5E5 /* LblWithTitleGenralCellProtocol.swift in Sources */,
-				98298A4D1FDFD87100B651C5 /* ChatViewController.swift in Sources */,
 				982CFA211FD87FDB0055593C /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

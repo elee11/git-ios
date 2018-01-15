@@ -14,6 +14,8 @@ class MawklViewController: UIViewController,ToastAlertProtocol {
   
     var OrderDataDic : NSMutableDictionary!
     var TotalCost : Int!
+    var NumOfSteps : Int!
+
     @IBOutlet weak var lblMwklMsg: UILabel!
     @IBOutlet weak var lblServiceTotalPrice: UILabel!
     @IBOutlet weak var viewTotalProgressBar: UIView!
@@ -43,7 +45,7 @@ class MawklViewController: UIViewController,ToastAlertProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addTapToDismissKeyboard()
-
+        NumOfSteps = 4
         lblServiceTotalPrice.text = "\(TotalCost as Int) \(NSLocalizedString("SR", comment: "") as String)"
         self.title = NSLocalizedString("client", comment: "")
         lblMwklMsg.text = NSLocalizedString("AddClientMsg", comment: "")
@@ -63,7 +65,7 @@ class MawklViewController: UIViewController,ToastAlertProtocol {
         //To Avoid Drawing moving progress bar every time loads view
         if IsMovingPrgressBarDrawn == false {
         viewMovingProgressBar.alpha = 0
-        viewMovingProgressBar.width = viewTotalProgressBar.frame.size.width / 4
+        viewMovingProgressBar.width = viewTotalProgressBar.frame.size.width / CGFloat(NumOfSteps)
         viewMovingProgressBar.x = -viewMovingProgressBar.width
         viewMovingProgressBar.alpha = 1
         viewTotalProgressBar.roundCorners([.topLeft, .topRight, .bottomLeft , .bottomRight], radius: 5)
@@ -118,8 +120,7 @@ class MawklViewController: UIViewController,ToastAlertProtocol {
             let MawklownerView = segue.destination as! TawkeelOwnerViewController
             MawklownerView.OrderDataDic = OrderDic
             MawklownerView.TotalCost = self.TotalCost
-
-            
+            MawklownerView.NumOfSteps = NumOfSteps - 1
         }
     }
 

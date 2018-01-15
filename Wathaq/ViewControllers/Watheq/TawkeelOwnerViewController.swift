@@ -13,6 +13,8 @@ class TawkeelOwnerViewController:UIViewController, ToastAlertProtocol {
    
     var OrderDataDic : NSMutableDictionary!
     var TotalCost : Int!
+    var NumOfSteps : Int!
+
     var IsMovingPrgressBarDrawn = false
     @IBOutlet weak var lblServiceTotalPrice: UILabel!
     @IBOutlet weak var viewTotalProgressBar: UIView!
@@ -59,7 +61,7 @@ class TawkeelOwnerViewController:UIViewController, ToastAlertProtocol {
       
         if IsMovingPrgressBarDrawn == false {
             viewMovingProgressBar.alpha = 0
-            viewMovingProgressBar.width = viewTotalProgressBar.frame.size.width / 3
+            viewMovingProgressBar.width = viewTotalProgressBar.frame.size.width / CGFloat(NumOfSteps)
             viewMovingProgressBar.x = -viewMovingProgressBar.width
             viewMovingProgressBar.alpha = 1
             viewTotalProgressBar.roundCorners([.topLeft, .topRight, .bottomLeft , .bottomRight], radius: 5)
@@ -109,6 +111,7 @@ class TawkeelOwnerViewController:UIViewController, ToastAlertProtocol {
             DeliveryLocationView.title = NSLocalizedString("Receiving the POA", comment: "")
             DeliveryLocationView.OrderDataDic = OrderDic
             DeliveryLocationView.TotalCost = self.TotalCost
+            DeliveryLocationView.NumOfSteps = NumOfSteps - 1
         }
     }
 
