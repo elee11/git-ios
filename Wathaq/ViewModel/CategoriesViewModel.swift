@@ -16,8 +16,8 @@ class CategoriesViewModel: ToastAlertProtocol {
     func GetCategories(completion: @escaping (WkalatType?, String?) -> ()){
         NetworkHandler.requestTarget(target: .getCategories, isDictionary: true) { (result, errorMsg) in
             if errorMsg == nil {
-                let model = Mapper<CategoriesRootClass>().map(JSONString: result as! String)!
-                let wkalatModel = model.wkalatTypes
+                let model = Mapper<CategoriesRootClass>().map(JSONString: result as! String)
+                let wkalatModel = model?.wkalatTypes
                 completion(wkalatModel,nil)
             } else{
                 completion(nil,errorMsg)

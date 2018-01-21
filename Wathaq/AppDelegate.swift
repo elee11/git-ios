@@ -11,6 +11,8 @@ import Firebase
 import FirebaseAuth
 import UserNotifications
 import GoogleMaps
+import FirebaseMessaging
+
 
 
 
@@ -48,6 +50,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         self.checkifuserLoggedIn()
 
         return true
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        //When the notifications of this code worked well, there was not yet.
+        let firebaseAuth = Auth.auth()
+        
+        //At development time we use .sandbox
+        firebaseAuth.setAPNSToken(deviceToken, type: AuthAPNSTokenType.sandbox)
+        
+        Messaging.messaging().apnsToken = deviceToken
+        var token = ""
+        for i in 0..<deviceToken.count {
+            token = token + String(format: "%02.2hhx", arguments: [deviceToken[i]])
+        }
+        
+        let FRtoken = Messaging.messaging().fcmToken
+        
+        
+        if FRtoken?.length != 0 && FRtoken != nil
+        {
+            UserDefaults.standard.set(FRtoken, forKey: "TokenDevice")
+        }
+        print(FRtoken)
+        
     }
     
 //    func setUpKeyboardManager() {
@@ -110,15 +136,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         NWConnectivity.sharedInstance.startNetworkReachabilityObserver()
     }
     
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        // Pass device token to auth.
-        let firebaseAuth = Auth.auth()
+    
+    func messaging(_ messaging: Messaging, didRefreshRegistrationToken fcmToken: String) {
         
-        //At development time we use .sandbox
-        firebaseAuth.setAPNSToken(deviceToken, type: AuthAPNSTokenType.prod)
-        
-        //At time of production it will be set to .prod
-        
+    }
+    
+    
+    // Receive data message on iOS 10 devices while app is in the foreground.
+    func application(received remoteMessage: MessagingRemoteMessage) {
+        debugPrint(remoteMessage.appData)
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void)
+    {
+        completionHandler(.alert)
     }
     
     func removeTabBarShadowLine() {

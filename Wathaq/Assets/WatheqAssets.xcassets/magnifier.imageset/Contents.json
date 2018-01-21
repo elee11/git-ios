@@ -7,17 +7,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "avatar2.png"
+      "filename" : "magnifier.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "avatar2@2x.png"
+      "filename" : "magnifier@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "avatar2@3x.png"
+      "filename" : "magnifier@3x.png"
     }
   ]
 }

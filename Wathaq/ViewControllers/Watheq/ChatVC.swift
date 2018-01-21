@@ -98,7 +98,8 @@ class ChatVC: UIViewController, UITextFieldDelegate,UITableViewDelegate,UITableV
     
     //Downloads messages
     func fetchData() {
-        Message.downloadAllMessages(toID: "\(MoawtheqObj.id! as! Int)", orderId: "\(OrderObj.id! as! Int)", completion: {[weak weakSelf = self] (message) in
+        Message.downloadAllMessages(toID: "\(MoawtheqObj.id! as! Int)", orderId: "\(OrderObj.id! as! Int)", completion: {
+            [weak weakSelf = self] (message) in
             weakSelf?.items.append(message)
             weakSelf?.items.sort{ $0.timestamp < $1.timestamp }
             DispatchQueue.main.async {
@@ -150,11 +151,11 @@ class ChatVC: UIViewController, UITextFieldDelegate,UITableViewDelegate,UITableV
             if text.characters.count > 0 {
                 self.composeMessage(type: .text, content: self.inputTextField.text!)
                 self.inputTextField.text = ""
-                self.fetchData()
-
             }
         }
     }
+    
+    
 
     //MARK: NotificationCenter handlers
     @objc func showKeyboard(notification: Notification) {

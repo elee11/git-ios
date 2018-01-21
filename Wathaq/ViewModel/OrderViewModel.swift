@@ -15,7 +15,7 @@ class OrderViewModel: ToastAlertProtocol {
     func CreateOrder(OrderDic:NSDictionary, completion: @escaping (OrderRootClass?, String?) -> ()){
         NetworkHandler.requestTarget(target: .CreateOrder(categoryId: OrderDic.object(forKey: "categoryId") as! Int, clientName: OrderDic.object(forKey: "clientName") as! String, representativeName: OrderDic.object(forKey: "representativeName") as! String, clientNationalID: OrderDic.object(forKey: "clientNationalID") as! String, representativeNationalID: OrderDic.object(forKey: "representativeNationalID") as! String , delivery: OrderDic.object(forKey: "delivery") as! String, latitude: OrderDic.object(forKey: "latitude") as! Double, longitude: OrderDic.object(forKey: "longitude") as! Double), isDictionary: true) { (result, errorMsg) in
             if errorMsg == nil {
-                let Ordermodel = Mapper<OrderRootClass>().map(JSONString: result as! String)!
+                let Ordermodel = Mapper<OrderRootClass>().map(JSONString: result as! String)
                 completion(Ordermodel,nil)
 
             } else{
@@ -28,7 +28,7 @@ class OrderViewModel: ToastAlertProtocol {
     func CreateNekahOrder(OrderDic:NSDictionary, completion: @escaping (OrderRootClass?, String?) -> ()){
         NetworkHandler.requestTarget(target: .createNekahOrder(categoryId: OrderDic.object(forKey: "categoryId") as! Int, delivery: OrderDic.object(forKey: "delivery") as! String, latitude: OrderDic.object(forKey: "latitude") as! Double, longitude: OrderDic.object(forKey: "longitude") as! Double, marriageDate: OrderDic.object(forKey: "marriageDate") as! String, marriageTime: OrderDic.object(forKey: "marriageTime") as! String), isDictionary: true) { (result, errorMsg) in
             if errorMsg == nil {
-                let Ordermodel = Mapper<OrderRootClass>().map(JSONString: result as! String)!
+                let Ordermodel = Mapper<OrderRootClass>().map(JSONString: result as! String)
                 completion(Ordermodel,nil)
                 
             } else{
@@ -41,7 +41,7 @@ class OrderViewModel: ToastAlertProtocol {
     func CreateContractOrder(OrderDic:NSDictionary, completion: @escaping (OrderRootClass?, String?) -> ()){
         NetworkHandler.requestTarget(target: .createContractOrder(categoryId: OrderDic.object(forKey: "categoryId") as! Int, delivery: OrderDic.object(forKey: "delivery") as! String, latitude: OrderDic.object(forKey: "latitude") as! Double, longitude: OrderDic.object(forKey: "longitude") as! Double, letterDate: OrderDic.object(forKey: "letterDate") as! String, letterNumber: OrderDic.object(forKey: "letterNumber") as! String), isDictionary: true) { (result, errorMsg) in
             if errorMsg == nil {
-                let Ordermodel = Mapper<OrderRootClass>().map(JSONString: result as! String)!
+                let Ordermodel = Mapper<OrderRootClass>().map(JSONString: result as! String)
                 completion(Ordermodel,nil)
                 
             } else{
@@ -53,8 +53,8 @@ class OrderViewModel: ToastAlertProtocol {
     func getNewOrders(orderPageNum:Int,completion: @escaping (NewOrderRequestRootClass?, String?) -> ()){
         NetworkHandler.requestTarget(target: .getNewOrders(orderPageNum, 10), isDictionary: true) { (result, errorMsg) in
             if errorMsg == nil {
-                let model = Mapper<NewOrderRequestRootClass>().map(JSONString: result as! String)!
-                let Ordermodel = model.data
+                let model = Mapper<NewOrderRequestRootClass>().map(JSONString: result as! String)
+                let Ordermodel = model?.data
                 completion(model,nil)
             } else{
                 completion(nil,errorMsg)
@@ -63,10 +63,10 @@ class OrderViewModel: ToastAlertProtocol {
     }
 
     
-    func getLawyerList(OrderId:Int, completion: @escaping (MoawtheqRootClass?, String?) -> ()){
-        NetworkHandler.requestTarget(target: .getLawyerList(OrderId), isDictionary: true) { (result, errorMsg) in
+    func getLawyerList(OrderId:Int,PageNum:Int, completion: @escaping (MoawtheqRootClass?, String?) -> ()){
+        NetworkHandler.requestTarget(target: .getLawyerList(OrderId,PageNum,10), isDictionary: true) { (result, errorMsg) in
             if errorMsg == nil {
-                let LawyerRootObj = Mapper<MoawtheqRootClass>().map(JSONString: result as! String)!
+                let LawyerRootObj = Mapper<MoawtheqRootClass>().map(JSONString: result as! String)
                 completion(LawyerRootObj,nil)
             } else{
                 completion(nil,errorMsg)
@@ -77,7 +77,7 @@ class OrderViewModel: ToastAlertProtocol {
     func selectLawyer(OrderId:Int,lawyerid:Int, completion: @escaping (OrderRootClass?, String?) -> ()){
         NetworkHandler.requestTarget(target: .selectLawyer(OrderId, lawyerid), isDictionary: true) { (result, errorMsg) in
             if errorMsg == nil {
-                let Ordermodel = Mapper<OrderRootClass>().map(JSONString: result as! String)!
+                let Ordermodel = Mapper<OrderRootClass>().map(JSONString: result as! String)
                 completion(Ordermodel,nil)
             } else{
                 completion(nil,errorMsg)
@@ -89,7 +89,7 @@ class OrderViewModel: ToastAlertProtocol {
     func getPendingOrders(orderPageNum:Int, completion: @escaping (NewOrderRequestRootClass?, String?) -> ()){
         NetworkHandler.requestTarget(target: .getPendingOrders(orderPageNum,10), isDictionary: true) { (result, errorMsg) in
             if errorMsg == nil {
-                let Ordermodel = Mapper<NewOrderRequestRootClass>().map(JSONString: result as! String)!
+                let Ordermodel = Mapper<NewOrderRequestRootClass>().map(JSONString: result as! String)
                 completion(Ordermodel,nil)
                 
             } else{
@@ -102,7 +102,7 @@ class OrderViewModel: ToastAlertProtocol {
     func getClosedOrders(orderPageNum:Int, completion: @escaping (NewOrderRequestRootClass?, String?) -> ()){
         NetworkHandler.requestTarget(target: .getClosedOrders(orderPageNum,10), isDictionary: true) { (result, errorMsg) in
             if errorMsg == nil {
-                let Ordermodel = Mapper<NewOrderRequestRootClass>().map(JSONString: result as! String)!
+                let Ordermodel = Mapper<NewOrderRequestRootClass>().map(JSONString: result as! String)
                 completion(Ordermodel,nil)
                 
             } else{

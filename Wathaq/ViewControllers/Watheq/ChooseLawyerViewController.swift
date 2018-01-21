@@ -10,7 +10,7 @@ import UIKit
 import Kingfisher
 import TransitionButton
 import DZNEmptyDataSet
-
+import ESPullToRefresh
 
 
 class ChooseLawyerViewController: UIViewController,ToastAlertProtocol {
@@ -23,6 +23,7 @@ class ChooseLawyerViewController: UIViewController,ToastAlertProtocol {
     var IsDataFirstLoading : Bool!
     var removeBackBtn : Bool!
 
+    var PageNum : Int!
 
     var ErrorStr : String!
 
@@ -33,7 +34,8 @@ class ChooseLawyerViewController: UIViewController,ToastAlertProtocol {
         super.viewDidLoad()
         configureTitleView()
         self.ErrorStr = ""
-
+        self.addInfiniteScrolling()
+         PageNum = 1
 //        //Remove back button
         if removeBackBtn == true
         {
@@ -47,8 +49,17 @@ class ChooseLawyerViewController: UIViewController,ToastAlertProtocol {
         ArrLawyers = [MowatheqData]()
 
         self.getlawyerList()
+        self.addInfiniteScrolling()
 
         // Do any additional setup after loading the view.
+    }
+    
+    func addInfiniteScrolling(){
+        self.tbl_Lawyers.es.addInfiniteScrolling {
+            [unowned self] in
+             self.PageNum = self.PageNum + 1
+            self.getlawyerList()
+        }
     }
     
     func configureTitleView() {
@@ -65,19 +76,34 @@ class ChooseLawyerViewController: UIViewController,ToastAlertProtocol {
     
     func getlawyerList ()
     {
-        viewModel.getLawyerList(OrderId: OrderObj?.id as! Int, completion: { (lawerRootClass, errorMsg) in
+        viewModel.getLawyerList(OrderId: OrderObj?.id as! Int,PageNum: PageNum, completion: { (lawerRootClass, errorMsg) in
             if errorMsg == nil {
                 self.ErrorStr = ""
 
-                self.ArrLawyers = lawerRootClass?.mowatheqData
+                if self.PageNum == 1
+                {
+                    self.ArrLawyers = lawerRootClass?.mowatheqData
+
+                }
+                else
+                {
+                    var ArrMoreLawyers :[MowatheqData]!
+                    ArrMoreLawyers = lawerRootClass?.mowatheqData
+
+                    self.ArrLawyers = self.ArrLawyers + ArrMoreLawyers
+                }
+                
+                
                 self.IsDataFirstLoading = false
                 self.tbl_Lawyers.reloadData()
+                self.tbl_Lawyers.es.stopLoadingMore()
+
 
                 
             } else{
                 self.ErrorStr = errorMsg
                 self.IsDataFirstLoading = false
-
+                self.tbl_Lawyers.es.stopLoadingMore()
                 self.showToastMessage(title:errorMsg! , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
                 self.IsDataFirstLoading = false
 

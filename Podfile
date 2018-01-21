@@ -32,5 +32,9 @@ target 'Wathaq' do
   pod 'BetterSegmentedControl', '~> 0.9'
   pod 'IQKeyboardManagerSwift'
   pod 'EasyAnimation'
+  pod 'FirebaseMessaging', '2.0.0'
+  pod "DAKeychain"
+  pod "ESPullToRefresh"
+  pod "PullToRefreshKit"
 
 end

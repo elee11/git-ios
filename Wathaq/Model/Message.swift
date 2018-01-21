@@ -41,8 +41,6 @@ class Message {
         
         let userObj:User? = UserDefaults.standard.rm_customObject(forKey: Constants.keys.KeyUser) as? User
         if let currentUserID = userObj?.userID{
-            Database.database().reference().child("messages").child("\(currentUserID as! Int)").child("\(currentUserID as! Int)\(toID )\(orderId)").observe(.value, with: { (snapshot) in
-                if snapshot.exists() {
                    // let data = snapshot.value as! [String: String]
                     Database.database().reference().child("messages").child("\(currentUserID as! Int)").child("\(currentUserID as! Int)\(toID )\(orderId)").observe(.childAdded, with: { (snap) in
                         if snap.exists() {
@@ -59,9 +57,7 @@ class Message {
                         }
                     })
                 }
-            })
         }
-    }
 //
 
 //

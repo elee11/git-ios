@@ -8,6 +8,9 @@
 
 import UIKit
 import DZNEmptyDataSet
+import Firebase
+import DAKeychain
+
 
 
 class WatheqViewController: AbstractViewController,ToastAlertProtocol {
@@ -15,10 +18,15 @@ class WatheqViewController: AbstractViewController,ToastAlertProtocol {
     var ArrCat :[Category]!
     var ErrorStr : String!
     var IsDataFirstLoading : Bool!
+    var viewModel: UserViewModel!
+
 
     @IBOutlet weak var tbl_Categories: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = UserViewModel()
+        self.checktoRegisterDeviceToken()
+
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true
             let attributes = [
@@ -46,13 +54,69 @@ class WatheqViewController: AbstractViewController,ToastAlertProtocol {
     
     }
     
+    func checktoRegisterDeviceToken()
+    {
+        if  UserDefaults.standard.string(forKey: "TokenDevice") != nil
+        {
+            let UuidData : String!
+            if let uuidvalue = DAKeychain.shared["uuid"]
+            {
+                UuidData = uuidvalue
+            }
+            else
+            {
+                let uuid = UUID().uuidString
+                DAKeychain.shared["uuid"] = uuid // Store
+                UuidData = uuid
+            }
+            
+            let NotificationData =  NSMutableDictionary()
+            NotificationData.setValue(UserDefaults.standard.string(forKey: "TokenDevice"), forKey: "token")
+            NotificationData.setValue(UuidData, forKey: "identifier")
+            NotificationData.setValue(NSLocale.preferredLanguages[0], forKey: "locale")
+            
+            
+            self.RegisterDeviceToken(ident: UuidData, FBToken: UserDefaults.standard.string(forKey: "TokenDevice")!)
+        }
+    }
+    
+    func RegisterDeviceToken(ident :String , FBToken : String)
+    {
+        let userObj:User? = UserDefaults.standard.rm_customObject(forKey: Constants.keys.KeyUser) as? User
+        
+        let values = ["displayName": userObj?.name, "email": userObj?.email, "instanceId": FBToken, "uid" :"\(userObj!.userID as! Int)"]
+        Database.database().reference().child("users").child("\(userObj!.userID as! Int)").updateChildValues(values, withCompletionBlock: { (errr, _) in
+            if errr == nil {
+                
+            }
+        })
+        
+        viewModel.RegisterDeviceToken(identifier:ident , firebaseToken:FBToken,  completion: { (ResponseDic, errorMsg) in
+            if errorMsg == nil {
+                
+                
+            } else{
+                self.showToastMessage(title:errorMsg! , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+            }
+        })
+        
+    }
+    
     func getWkalataCategories()
     {
         catViewModel.GetCategories { (wkalatTypeObj, errorMsg) in
             if errorMsg == nil {
                 self.ErrorStr = ""
                 self.IsDataFirstLoading = false
-                self.ArrCat = wkalatTypeObj?.categories
+                if let arrCatData = wkalatTypeObj?.categories
+                {
+                    self.ArrCat = arrCatData as [Category]
+                }
+                else
+                {
+                     self.ArrCat = [Category]()
+                }
+                
                 self.tbl_Categories.reloadData()
                 
             } else{

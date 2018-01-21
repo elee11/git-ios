@@ -68,7 +68,7 @@ public enum WatheqApi {
     case getNewOrders(Int,Int)
     case getPendingOrders(Int,Int)
     case getClosedOrders(Int,Int)
-    case getLawyerList(Int)
+    case getLawyerList(Int,Int,Int)
     case selectLawyer (Int,Int)
 
 
@@ -135,8 +135,8 @@ extension WatheqApi: TargetType,AccessTokenAuthorizable {
             return .requestParameters(parameters: ["identifier":identifier], encoding: JSONEncoding.default)
         case .getCategories:
             return .requestPlain
-        case .getLawyerList(let orderId):
-            return .requestParameters(parameters: ["orderId":orderId], encoding: URLEncoding.default)
+        case .getLawyerList(let orderId,let page, let limit):
+            return .requestParameters(parameters: ["orderId":orderId , "page":page , "limit" : limit], encoding: URLEncoding.default)
         case .selectLawyer(let orderId, let lawyerId):
             return .requestParameters(parameters: ["orderId":orderId , "lawyerId" : lawyerId], encoding: URLEncoding.default)
         case .getNewOrders(let page, let limit):
