@@ -216,11 +216,18 @@ extension WatheqViewController: UITableViewDataSource {
 
 extension WatheqViewController: UITableViewDelegate {
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
-//    {
-//        return self.view.frame.size.height * 0.24
-//    }
+
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if IsDataFirstLoading == true
+        {
+            return self.view.frame.size.height * 0.24
+        }
+        else
+        {
+            return UITableViewAutomaticDimension
+        }
+    }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -287,6 +294,17 @@ extension WatheqViewController:DZNEmptyDataSetSource
             
             
         }
+        else
+        {
+            var myMutableString1 = NSMutableAttributedString()
+            
+            myMutableString1 = NSMutableAttributedString(string: NSLocalizedString("No Categiories", comment: ""))
+            myMutableString1.setAttributes([NSAttributedStringKey.font :UIFont(name: Constants.FONTS.FONT_AR, size: 18.0)!
+                , NSAttributedStringKey.foregroundColor : UIColor.deepBlue], range: NSRange(location:0,length:myMutableString1.length)) // What ever range you want to give
+            
+            myMutableString.append(myMutableString1)
+            
+        }
         return myMutableString
     }
     
@@ -295,12 +313,10 @@ extension WatheqViewController:DZNEmptyDataSetSource
         if ErrorStr == NSLocalizedString("No_Internet", comment: "") || ErrorStr == NSLocalizedString("SERVER_ERROR", comment: "")
         {
             return UIImage(named:"EmptyData_NoInternet")
-            
         }
         else
         {
-            return UIImage(named:"empty_home")
-            
+            return UIImage(named:"EmptyData_OrdersEmpty")
         }
     }
     

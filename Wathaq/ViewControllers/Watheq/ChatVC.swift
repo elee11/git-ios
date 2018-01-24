@@ -25,6 +25,8 @@ import UIKit
 import Photos
 import Firebase
 import CoreLocation
+import ESPullToRefresh
+import DZNEmptyDataSet
 
 class ChatVC: UIViewController, UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource,  UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate {
     
@@ -37,6 +39,17 @@ class ChatVC: UIViewController, UITextFieldDelegate,UITableViewDelegate,UITableV
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     var custmoizeBackButton : Bool!
 
+    func checkOrderStatus()
+    {
+        if OrderObj.status == "Closed"
+        {
+            self.inputTextField.isEnabled = false
+//            btncloseOrder.setTitle(NSLocalizedString("OrderClosed", comment: ""), for: .normal)
+            
+        }
+    }
+    
+    
     override var inputAccessoryView: UIView? {
         get {
             self.inputBar.frame.size.height = self.barHeight
@@ -70,15 +83,8 @@ class ChatVC: UIViewController, UITextFieldDelegate,UITableViewDelegate,UITableV
             var strIconName :String!
             var lang = Language.getCurrentLanguage()
 
-            if lang.contains("en")
-            {
-                strIconName = "ic_arrow_r"
-            }
-            else
-            {
-                strIconName = "ic_arrow_l"
+            strIconName = "ic_arrow_l"
 
-            }
             
             let icon = UIImage.init(named: strIconName)?.withRenderingMode(.alwaysOriginal)
             let backButton = UIBarButtonItem.init(image: icon!, style: .plain, target: self, action: #selector(self.dismissSelf))
@@ -252,8 +258,70 @@ class ChatVC: UIViewController, UITextFieldDelegate,UITableViewDelegate,UITableV
         self.customization()
         self.fetchData()
         self.configureTitleView()
+        self.checkOrderStatus()
+
     }
 }
 
+extension ChatVC:DZNEmptyDataSetSource
+{
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        
+        let myMutableString = NSMutableAttributedString()
+        
+        
+        var myMutableString1 = NSMutableAttributedString()
+        
+        myMutableString1 = NSMutableAttributedString(string: NSLocalizedString("No messages", comment: ""))
+        myMutableString1.setAttributes([NSAttributedStringKey.font :UIFont(name: Constants.FONTS.FONT_AR, size: 18.0)!
+            , NSAttributedStringKey.foregroundColor : UIColor.deepBlue], range: NSRange(location:0,length:myMutableString1.length)) // What ever range you want to give
+        
+        myMutableString.append(myMutableString1)
+        
+        return myMutableString
+    }
+    
+    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named:"EmptyData_OrdersEmpty")
+    }
+    
+    func imageAnimation(forEmptyDataSet scrollView: UIScrollView!) -> CAAnimation!
+    {
+        let animation:CABasicAnimation = CABasicAnimation(keyPath: "transform.scale")
+        animation.fromValue = NSValue(caTransform3D:CATransform3DIdentity)
+        animation.toValue = NSValue(caTransform3D:CATransform3DMakeScale(1.1, 1.1, 1.1))
+        animation.duration = 5
+        animation.autoreverses = true
+        animation.repeatCount = MAXFLOAT
+        
+        return animation
+    }
+    
+    
+    func backgroundColor(forEmptyDataSet scrollView: UIScrollView!) -> UIColor! {
+        return UIColor.clear
+    }
+    
+}
+
+extension ChatVC:DZNEmptyDataSetDelegate
+{
+    func emptyDataSetShouldDisplay(_ scrollView: UIScrollView!) -> Bool
+    {
+        return true
+    }
+    func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool
+    {
+        return true
+    }
+    
+    func emptyDataSetShouldAnimateImageView(_ scrollView: UIScrollView!) -> Bool
+    {
+        return false
+    }
+    func emptyDataSet(_ scrollView: UIScrollView!, didTap view: UIView!)
+    {
+    }
+}
 
 

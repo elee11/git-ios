@@ -51,6 +51,19 @@ class UserViewModel: ToastAlertProtocol {
         }
     }
     
+    func logoutUser(identifier:String, completion: @escaping (User?, String?) -> ()){
+        
+        NetworkHandler.requestTarget(target: .logout(identifier: identifier), isDictionary: true) { (result, errorMsg) in
+            if errorMsg == nil {
+                let model = Mapper<UserRootClass>().map(JSONString: result as! String)!
+                let userModel = model.user
+                completion(userModel,nil)
+            } else{
+                completion(nil,errorMsg)
+            }
+        }
+    }
+    
     func completeUserProfile(userName:String,UseEmail:String,UseImage:String, completion: @escaping (User?, String?) -> ()){
         
         NetworkHandler.requestTarget(target: .completeProfile(name: userName, email: UseEmail, image: UseImage), isDictionary: true) { (result, errorMsg) in

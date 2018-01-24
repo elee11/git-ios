@@ -98,7 +98,8 @@ extension WatheqSubCatViewController: UITableViewDataSource {
 
 extension WatheqSubCatViewController: UITableViewDelegate {
     
-   
+  
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let SubObj =  self.ArrSubCat[indexPath.row]

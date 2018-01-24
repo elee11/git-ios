@@ -24,6 +24,7 @@ class ChooseLawyerViewController: UIViewController,ToastAlertProtocol {
     var removeBackBtn : Bool!
 
     var PageNum : Int!
+    var StopLoadMore = false
 
     var ErrorStr : String!
 
@@ -35,6 +36,9 @@ class ChooseLawyerViewController: UIViewController,ToastAlertProtocol {
         configureTitleView()
         self.ErrorStr = ""
         self.addInfiniteScrolling()
+        tbl_Lawyers.estimatedRowHeight = 110
+        tbl_Lawyers.rowHeight = UITableViewAutomaticDimension
+
          PageNum = 1
 //        //Remove back button
         if removeBackBtn == true
@@ -57,8 +61,16 @@ class ChooseLawyerViewController: UIViewController,ToastAlertProtocol {
     func addInfiniteScrolling(){
         self.tbl_Lawyers.es.addInfiniteScrolling {
             [unowned self] in
+            if self.StopLoadMore == false
+            {
              self.PageNum = self.PageNum + 1
             self.getlawyerList()
+            }
+            else
+            {
+                self.tbl_Lawyers.es.stopLoadingMore()
+
+            }
         }
     }
     
@@ -84,13 +96,23 @@ class ChooseLawyerViewController: UIViewController,ToastAlertProtocol {
                 {
                     self.ArrLawyers = lawerRootClass?.mowatheqData
 
+                    if self.ArrLawyers == nil
+                    {
+                        self.ArrLawyers = [MowatheqData]()
+                    }
                 }
                 else
                 {
-                    var ArrMoreLawyers :[MowatheqData]!
-                    ArrMoreLawyers = lawerRootClass?.mowatheqData
-
-                    self.ArrLawyers = self.ArrLawyers + ArrMoreLawyers
+    
+                    if let  ArrMoreLawyers = lawerRootClass?.mowatheqData
+                    {
+                        self.ArrLawyers = self.ArrLawyers + ArrMoreLawyers
+                    }
+                    else
+                    {
+                        self.tbl_Lawyers.es.stopLoadingMore()
+                        self.StopLoadMore = true
+                    }
                 }
                 
                 
@@ -207,11 +229,11 @@ extension ChooseLawyerViewController: UITableViewDataSource {
             if let url = ObjLawyer.image
             {
                 let imgUrl =  URL(string: Constants.ApiConstants.BaseUrl+url)
-                cellLawyer.imgLawyer.kf.setImage(with:imgUrl, placeholder: UIImage.init(named: "avatar2"), options: nil, progressBlock: nil, completionHandler: nil)
+                cellLawyer.imgLawyer.kf.setImage(with:imgUrl, placeholder: UIImage.init(named: "ic_avatar"), options: nil, progressBlock: nil, completionHandler: nil)
             }
             else
             {
-                cellLawyer.imgLawyer.kf.setImage(with: nil, placeholder: UIImage.init(named: "avatar2"), options: nil, progressBlock: nil, completionHandler: nil)
+                cellLawyer.imgLawyer.kf.setImage(with: nil, placeholder: UIImage.init(named: "ic_avatar"), options: nil, progressBlock: nil, completionHandler: nil)
             }
             
             cellLawyer.btnFawd.setTitle(NSLocalizedString("fawd", comment: ""), for: .normal)
@@ -226,19 +248,24 @@ extension ChooseLawyerViewController: UITableViewDataSource {
 
 extension ChooseLawyerViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
-    {
-        return 110
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if IsDataFirstLoading == true
+        {
+            return 110
+        }
+        else
+        {
+            return UITableViewAutomaticDimension
+        }
     }
-    
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if IsDataFirstLoading == false
         {
-            let ObjLawyer =  self.ArrLawyers[indexPath.row]
+          //  let ObjLawyer =  self.ArrLawyers[indexPath.row]
 
-            self.performSegue(withIdentifier: "S_Lawyer_Chat", sender: ObjLawyer)
+//            self.performSegue(withIdentifier: "S_Lawyer_Chat", sender: ObjLawyer)
             
         }
     }

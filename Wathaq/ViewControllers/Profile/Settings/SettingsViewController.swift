@@ -7,14 +7,18 @@
 //
 
 import UIKit
+import DAKeychain
 
-class SettingsViewController: UIViewController,RefreshAppProtocol {
+class SettingsViewController: UIViewController,RefreshAppProtocol,ToastAlertProtocol {
     @IBOutlet weak var tbl_settings: UITableView!
     var plistArr: NSMutableArray?
-
-
+    var viewModel: UserViewModel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel = UserViewModel()
+        
         self.title = NSLocalizedString("Settings", comment: "")
         self.navigationController?.isHeroEnabled = true
         plistArr = readPlistSettings()
@@ -24,7 +28,7 @@ class SettingsViewController: UIViewController,RefreshAppProtocol {
     
     
     func configureView() {
-      
+        
         if #available(iOS 11.0, *) {
             navigationItem.largeTitleDisplayMode = .never
         } else {
@@ -33,12 +37,55 @@ class SettingsViewController: UIViewController,RefreshAppProtocol {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-      
+        
     }
     
     override  func viewDidLayoutSubviews() {
-       
+        
     }
+    
+    
+    func Logout()
+    {
+        //Create the AlertController and add Its action like button in Actionsheet
+        let actionSheetController: UIAlertController = UIAlertController(title: "", message: NSLocalizedString("Are you sure you want to logout?",comment:""), preferredStyle: .actionSheet)
+        
+        let CancelButton = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel) { _ in
+        }
+        actionSheetController.addAction(CancelButton)
+        
+        let LogoutButton = UIAlertAction(title: NSLocalizedString("LogOut", comment: ""), style: .default) { _ in
+            
+            self.logoutAction()
+        }
+        actionSheetController.addAction(LogoutButton)
+        self.present(actionSheetController, animated: true, completion: nil)
+    }
+    
+    func logoutAction()
+    {
+        let UuidData : String!
+        if let uuidvalue = DAKeychain.shared["uuid"]
+        {
+            UuidData = uuidvalue
+            viewModel.logoutUser(identifier: UuidData) { (userObj, errorMsg) in
+                if errorMsg == nil {
+                    
+                    self.viewModel.deleteUser()
+                    let StoryBoard = singleToneClassValues.loadStoryBoardWithStoryboardName(_StoryboardName: "Main" as NSString)
+                    let VerificationNavView = StoryBoard.instantiateViewController(withIdentifier: "PhoneEntryController")
+                    UIApplication.shared.delegate?.window!?.rootViewController = VerificationNavView
+                }
+                else{
+                    
+                    self.showToastMessage(title:errorMsg! , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+                }
+            }
+        }
+        
+        
+    }
+    
     
     func changeLanguage() {
         var selectedLanguage : String!
@@ -46,17 +93,17 @@ class SettingsViewController: UIViewController,RefreshAppProtocol {
         let cancelButton = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel) { _ in
         }
         actionSheetController.addAction(cancelButton)
-
+        
         let ArabicButton = UIAlertAction(title: "العربية", style: .default) { _ in
             selectedLanguage = "ar"
             let langStr = Language.getCurrentLanguage()
             if langStr != selectedLanguage
             {
-            self.refreshAppDependOnLanguage(language: selectedLanguage)
+                self.refreshAppDependOnLanguage(language: selectedLanguage)
             }
         }
         actionSheetController.addAction(ArabicButton)
-            
+        
         let EnglishButton = UIAlertAction(title: "English", style: .default) { _ in
             selectedLanguage = "en"
             let langStr = Language.getCurrentLanguage()
@@ -66,8 +113,10 @@ class SettingsViewController: UIViewController,RefreshAppProtocol {
             }
         }
         actionSheetController.addAction(EnglishButton)
+        
         self.present(actionSheetController, animated: true, completion: nil)
     }
+    
     func refreshAppDependOnLanguage(language: String) {
         Language.setAppLanguage(lang: language)
         if language == "ar" {
@@ -79,10 +128,29 @@ class SettingsViewController: UIViewController,RefreshAppProtocol {
         }
         refreshAppWithAnimation()
     }
-   
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "S_Settings_WebView"  {
+            let index = sender as!  Int
+            let webView = segue.destination as! WebViewController
+            if index == 0
+            {
+                webView.title = NSLocalizedString("Terms and Conditions", comment: "")
+                webView.webPage = "http://159.89.41.54/watheq/public/terms"
+            }
+            else
+            {
+                webView.title = NSLocalizedString("Privacy Policy", comment: "")
+                webView.webPage = "http://159.89.41.54/watheq/public/policy"
+                
+            }
+            
+        }
     }
 }
 
@@ -126,7 +194,7 @@ extension SettingsViewController: UITableViewDataSource {
             }
             
             //this is login cell
-            if indexPath.row == 4
+            if indexPath.row == 3
             {
                 cellSettings.viewSepartor.isHidden = true
             }
@@ -138,14 +206,14 @@ extension SettingsViewController: UITableViewDataSource {
                 cellSettings.viewSepartor.isHidden = true
             }
         }
-      
+        
         return cellSettings
     }
     
 }
 
 extension SettingsViewController: UITableViewDelegate {
-  
+    
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath)
     {
         // For masking table view like ios 6 style
@@ -155,7 +223,7 @@ extension SettingsViewController: UITableViewDelegate {
         }
         if indexPath.section == 0
         {
-            if indexPath.row == 4
+            if indexPath.row == 3
             {
                 cell.roundCorners([.bottomLeft, .bottomRight], radius: 10)
             }
@@ -168,7 +236,7 @@ extension SettingsViewController: UITableViewDelegate {
             }
         }
     }
-
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
@@ -177,21 +245,39 @@ extension SettingsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         
-     if indexPath.section == 0
-     {
-        
-        switch indexPath.row {
+        if indexPath.section == 0
+        {
             
-        case 0 :
-            changeLanguage()
-            break
-        case 4:
-            break
-        default:
-            break
+            switch indexPath.row {
+                
+            case 0 :
+                changeLanguage()
+                break
+            case 3:
+                Logout()
+                break
+            default:
+                break
+            }
+            
         }
-        
-     }
+        else
+        {
+            switch indexPath.row
+            {
+            case 0 :
+                self.performSegue(withIdentifier: "S_Settings_WebView", sender: indexPath.row)
+                break
+            case 1:
+                break
+            case 2:
+                self.performSegue(withIdentifier: "S_Settings_WebView", sender: indexPath.row)
+                
+                break
+            default:
+                break
+            }
+        }
         
     }
 }
