@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Wathaq/ViewControllers/Login/PhoneVerificationController.swift"
-            timestampString = "537667264.650162"
+            timestampString = "539301528.308305"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "130"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Wathaq/ViewControllers/Login/PhoneVerificationController.swift"
-            timestampString = "537667264.650226"
+            timestampString = "539301528.308394"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "156"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Wathaq/ViewModel/UserViewModel.swift"
-            timestampString = "534204448.965437"
+            timestampString = "538444908.390458"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Wathaq/ViewControllers/Watheq/SefaMowaklViewController.swift"
-            timestampString = "537042317.315046"
+            timestampString = "539300542.914398"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "99"
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Wathaq/ViewControllers/Watheq/SefaMowaklViewController.swift"
-            timestampString = "537042317.315106"
+            timestampString = "539300542.914444"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "92"
@@ -122,45 +122,29 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Wathaq/ViewControllers/Watheq/ChatVC.swift"
-            timestampString = "537667264.650445"
+            timestampString = "538361446.3002959"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "composeMessage(type:content:)"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
+            landmarkName = "fetchData()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Wathaq.ChatVC.composeMessage(type: Wathaq.MessageType, content: Any) -&gt; ()"
-                  moduleName = "Wathaq"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmedzaky/Documents/iOS%20Projects/NewProjects/Wathaq/Wathaq/ViewControllers/Watheq/ChatVC.swift"
-                  timestampString = "537664605.828531"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "119"
-                  endingLineNumber = "119"
-                  offsetFromSymbolStart = "2216">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Bool) -&gt; () in Wathaq.ChatVC.composeMessage(type: Wathaq.MessageType, content: Any) -&gt; ()"
-                  moduleName = "Wathaq"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ahmedzaky/Documents/iOS%20Projects/NewProjects/Wathaq/Wathaq/ViewControllers/Watheq/ChatVC.swift"
-                  timestampString = "537664605.831176"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "120"
-                  endingLineNumber = "120"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Wathaq/Model/Message.swift"
+            timestampString = "537745175.719263"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "downloadAllMessages(toID:orderId:completion:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

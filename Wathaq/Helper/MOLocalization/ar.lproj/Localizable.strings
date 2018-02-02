@@ -47,7 +47,7 @@
 "Profile Data Completed Thank you" = "بيانات الملف الشخصي اكتملت شكرا";
 "ReconnectToInternet" = "الرجاء إعادة الاتصال والمحاولة مرة أخرى";
 "TryAgainLater"="الرجاء المحاولة مرة أخرى لاحقا";
-"client" = "اسم الموكل";
+"client" = "بيانات الموكل";
 "clientOwner" = "صاحب التوكيل";
 "AddClientMsg" = "بامكانك اضافة موكل بالضغط على العلامة في الاسفل";
 "AddClientOwnerMsg" = "بامكانك اضافة صاحب التوكيل بالضغط على العلامة في الاسفل";
@@ -108,3 +108,14 @@
 "LogOut" = "تسجيل خروج";
 "new order" = "طلب جديد";
 "No Categiories" = "لا يوجد تصنيفات";
+"wekala" = "وكالات";
+"contract" = "تصديق عقود" ;
+"marriage" = "عقود نكاح";
+"CreateOrCancelWekala" = "إنشاء أو فسخ وكالة";
+"Creatwekala" = "انشاء وكالة" ;
+"Cancelwekala" = "فسخ وكالة" ;
+"SefaWakeel" = "صفه الموكل";
+"WekalaDelivery" = "استلام الوكاله";
+"AddressDetails" = "اكتب تفاصيل العنوان";
+"LaterTime" = "وقت لاحق";
+"datingTime" = "أطلب موعد المقابلة خلال ";

@@ -109,3 +109,14 @@
 "LogOut" = "Logout";
 "new order" = "New order";
 "No Categiories" = "No Categories found";
+"wekala" = "Authorization";
+"contract" = "Contracts" ;
+"marriage" = "Marriage";
+"CreateOrCancelWekala" = "Create or terminate an authorization";
+"Creatwekala" = "Setup authorization" ;
+"Cancelwekala" = "Cancel authorization";
+"SefaWakeel" = "authorization describtion";
+"WekalaDelivery" = "Receipt of the Authorization";
+"AddressDetails" = "Write Address details";
+"LaterTime" = "Later Time";
+"datingTime" = "Ask for an interview during";
