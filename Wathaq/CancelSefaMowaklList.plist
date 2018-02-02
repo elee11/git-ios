@@ -4,21 +4,27 @@
 <array>
 	<dict>
 		<key>Name</key>
-		<string>شركه</string>
-		<key>Name_EN</key>
-		<string>Company</string>
-	</dict>
-	<dict>
-		<key>Name</key>
-		<string>مؤسسه</string>
-		<key>Name_EN</key>
-		<string>Organization</string>
-	</dict>
-	<dict>
-		<key>Name</key>
 		<string>فرد</string>
 		<key>Name_EN</key>
 		<string>Individual</string>
+		<key>id</key>
+		<string>7</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>مؤسسة</string>
+		<key>Name_EN</key>
+		<string>Institution</string>
+		<key>id</key>
+		<string>8</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>فسخ وكالة ل شركة</string>
+		<key>Name_EN</key>
+		<string>Cancel power of attorney for Company</string>
+		<key>id</key>
+		<string>9</string>
 	</dict>
 </array>
 </plist>

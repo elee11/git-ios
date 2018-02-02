@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!--
-   CreateSefaMowaklList.plist
-   Wathaq
-
-   Created by Ahmed Zaky on 2/2/18.
-   Copyright (c) 2018 Ahmed Zaky. All rights reserved.
--->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-    <dict>
-    
-    </dict>
+<array>
+	<dict>
+		<key>Name</key>
+		<string>فرد</string>
+		<key>Name_EN</key>
+		<string>Individual</string>
+		<key>id</key>
+		<string>3</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>مؤسسة</string>
+		<key>Name_EN</key>
+		<string>Institution</string>
+		<key>id</key>
+		<string>4</string>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>شركة</string>
+		<key>Name_EN</key>
+		<string>Company</string>
+		<key>id</key>
+		<string>5</string>
+	</dict>
+</array>
 </plist>
