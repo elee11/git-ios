@@ -63,7 +63,7 @@ public enum WatheqApi {
     case getCategories
     case CreateOrder(categoryId:Int, clientName:String, representativeName:String, clientNationalID:String,representativeNationalID:String, delivery:String, latitude:Double, longitude:Double , time:String , address:String )
     case createNekahOrder(categoryId:Int,delivery:String,latitude:Double, longitude:Double,marriageDate:String,marriageTime:String)
-    case createContractOrder(categoryId:Int,delivery:String,latitude:Double, longitude:Double,letterDate:String,letterNumber:String)
+    case createContractOrder(categoryId:Int,delivery:String,latitude:Double, longitude:Double,letterDate:String,letterNumber:String,time:String , address:String )
 
     case getNewOrders(Int,Int)
     case getPendingOrders(Int,Int)
@@ -154,8 +154,8 @@ extension WatheqApi: TargetType,AccessTokenAuthorizable {
         case .createNekahOrder(let categoryId,let delivery,let latitude,let longitude,let marriageDate,let  marriageTime):
             return .requestParameters(parameters: ["categoryId":categoryId, "delivery":delivery,"latitude":latitude,"longitude":longitude,"marriageDate":marriageDate,"marriageTime":marriageTime], encoding: JSONEncoding.default)
             
-        case .createContractOrder(let categoryId,let delivery,let latitude,let longitude,let letterDate,let  letterNumber):
-            return .requestParameters(parameters: ["categoryId":categoryId, "delivery":delivery,"latitude":latitude,"longitude":longitude,"letterDate":letterDate,"letterNumber":letterNumber], encoding: JSONEncoding.default)
+        case .createContractOrder(let categoryId,let delivery,let latitude,let longitude,let letterDate,let  letterNumber, let time,let address):
+            return .requestParameters(parameters: ["categoryId":categoryId, "delivery":delivery,"latitude":latitude,"longitude":longitude,"letterDate":letterDate,"letterNumber":letterNumber, "time":time , "address":address], encoding: JSONEncoding.default)
         case .getNotification:
             return .requestPlain
             

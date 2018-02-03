@@ -62,8 +62,15 @@ class CurrentLocationViewController: UIViewController,CLLocationManagerDelegate,
     {
         
         if OrderDataDic.value(forKey: "longitude") != nil && OrderDataDic.value(forKey: "latitude") != nil{
+            if  OrderDataDic.value(forKey: "MainCatId") as! Int == 1
+            {
+                self.ParentView.TawkeelOrderDataDic = OrderDataDic
+            }
+            else
+            {
+                self.ParentView.ContractOrderDataDic = OrderDataDic
+            }
             
-            self.ParentView.TawkeelOrderDataDic = OrderDataDic
             self.navigationController?.popViewController(nil)
 
         }

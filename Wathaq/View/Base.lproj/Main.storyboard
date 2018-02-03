@@ -5100,14 +5100,14 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SefaMowklTableViewCell" rowHeight="73" id="M63-bC-8Vh" customClass="SefaMowklTableViewCell" customModule="Wathaq" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="160" width="375" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M63-bC-8Vh" id="XtR-Y2-F2b">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M63-bC-8Vh" id="XtR-Y2-F2b">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FMo-mR-Rvq">
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FMo-mR-Rvq">
                                                     <rect key="frame" x="15" y="11" width="345" height="35"/>
                                                     <subviews>
-                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="274-4u-204">
+                                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="274-4u-204">
                                                             <rect key="frame" x="34" y="5" width="306" height="25"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <color key="tintColor" red="0.0" green="0.77647058820000003" blue="0.44705882349999998" alpha="1" colorSpace="deviceRGB"/>
@@ -5118,7 +5118,7 @@
                                                                 <outlet property="delegate" destination="CX3-lV-Pc6" id="scW-ce-5rl"/>
                                                             </connections>
                                                         </textField>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="Dwr-jW-Axa">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="user" translatesAutoresizingMaskIntoConstraints="NO" id="Dwr-jW-Axa">
                                                             <rect key="frame" x="10" y="8" width="14" height="18"/>
                                                         </imageView>
                                                     </subviews>
@@ -5359,20 +5359,20 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChooseLocationDropDownTableViewCell" rowHeight="73" id="D3Q-9d-5Gl" customClass="ChooseLocationDropDownTableViewCell" customModule="Wathaq" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="499" width="375" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="D3Q-9d-5Gl" id="mYK-B7-Imk">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="D3Q-9d-5Gl" id="mYK-B7-Imk">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6wf-Rv-47l">
+                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6wf-Rv-47l">
                                                     <rect key="frame" x="8" y="11" width="359" height="35"/>
                                                     <subviews>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gps-check" translatesAutoresizingMaskIntoConstraints="NO" id="oNb-Az-GkD">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="gps-check" translatesAutoresizingMaskIntoConstraints="NO" id="oNb-Az-GkD">
                                                             <rect key="frame" x="10" y="9" width="12" height="17"/>
                                                         </imageView>
-                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play-button-arrowhead" translatesAutoresizingMaskIntoConstraints="NO" id="1Id-Q1-p1I">
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="play-button-arrowhead" translatesAutoresizingMaskIntoConstraints="NO" id="1Id-Q1-p1I">
                                                             <rect key="frame" x="336" y="13" width="13" height="9"/>
                                                         </imageView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnm-xl-pjq">
+                                                        <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wnm-xl-pjq">
                                                             <rect key="frame" x="0.0" y="0.0" width="359" height="35"/>
                                                             <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="15"/>
                                                             <state key="normal" title="Button"/>

@@ -84,8 +84,7 @@ class DeliveryLocationViewController: UIViewController ,ToastAlertProtocol{
             let OrderDic = sender as!  NSMutableDictionary
             let CurrentLocationView = segue.destination as! CurrentLocationViewController
             CurrentLocationView.OrderDataDic = OrderDic
-            CurrentLocationView.TotalCost = self.TotalCost
-            CurrentLocationView.NumOfSteps = NumOfSteps - 1
+        
         }
     }
     
