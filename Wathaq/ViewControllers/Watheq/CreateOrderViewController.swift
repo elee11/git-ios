@@ -24,6 +24,8 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
     var SubCatid = 2
     var TawkeelOrderDataDic : NSMutableDictionary!
     var ContractOrderDataDic : NSMutableDictionary!
+    var NekahOrderDataDic : NSMutableDictionary!
+
 
     var dataViewPicker : PickerViewController!
     var timeViewPicker : TimePickerViewController!
@@ -35,6 +37,8 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
         super.viewDidLoad()
         TawkeelOrderDataDic = NSMutableDictionary ()
         ContractOrderDataDic = NSMutableDictionary ()
+        NekahOrderDataDic = NSMutableDictionary ()
+
 
         TawkeelOrderDataDic.setValue("office", forKey: "delivery")
         TawkeelOrderDataDic.setValue("1 hours", forKey: "time")
@@ -43,6 +47,12 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
         ContractOrderDataDic.setValue("office", forKey: "delivery")
         ContractOrderDataDic.setValue("1 hours", forKey: "time")
         ContractOrderDataDic.setValue(10, forKey: "MainCatId")
+        
+        NekahOrderDataDic.setValue("office", forKey: "delivery")
+        NekahOrderDataDic.setValue("1 hours", forKey: "time")
+        NekahOrderDataDic.setValue(13, forKey: "MainCatId")
+        NekahOrderDataDic.setValue(13, forKey: "categoryId")
+
 
         viewModel = UserViewModel()
         orderModel = OrderViewModel()
@@ -239,9 +249,14 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
             self.performSegue(withIdentifier: "S_Home_Location", sender: TawkeelOrderDataDic)
 
         }
-        else
+        else if CatId == 10
         {
             self.performSegue(withIdentifier: "S_Home_Location", sender: ContractOrderDataDic)
+
+        }
+        else
+        {
+            self.performSegue(withIdentifier: "S_Home_Location", sender: NekahOrderDataDic)
 
         }
 
@@ -577,8 +592,73 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
         self.tblOrder.reloadData()
     }
     
+     // MARK: Contracts Methods
+    @IBAction func NekahLocationSegmentedValueChanged(_ sender: BetterSegmentedControl) {
+        if sender.index == 0 {
+            NekahOrderDataDic.setValue("office", forKey: "delivery")
+            
+        }
+        else if sender.index == 1  {
+            
+            NekahOrderDataDic.setValue("home", forKey: "delivery")
+            
+        }
+    }
     
+    @IBAction func CreatNekahOrder(_ sender : Any)
+    {
+        
+        if (NekahOrderDataDic.object(forKey: "categoryId") != nil && NekahOrderDataDic.object(forKey: "delivery") != nil && NekahOrderDataDic.object(forKey: "latitude") != nil && NekahOrderDataDic.object(forKey: "longitude") != nil && NekahOrderDataDic.object(forKey: "marriageDate") != nil && NekahOrderDataDic.object(forKey: "marriageTime") != nil && NekahOrderDataDic.object(forKey: "address") != nil )
+        {
+            let TranstBtn:TransitionButton =  sender as! TransitionButton
+            TranstBtn.startAnimation()
+            orderModel.CreateNekahOrder(OrderDic: NekahOrderDataDic, completion: { (OrderObj, errorMsg) in
+                if errorMsg == nil {
+                    
+                    TranstBtn.stopAnimation()
+                    self.view.isUserInteractionEnabled = true
+                    self.resetNekahtTbl()
+                    self.showToastMessage(title:NSLocalizedString("OrderProceeded", comment: "") , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.greenAlert, foregroundColor: UIColor.white)
+                    
+                    self.performSegue(withIdentifier: "S_Request_SearchingLawyer", sender:OrderObj)
+                    
+                } else{
+                    self.showToastMessage(title:errorMsg! , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+                    TranstBtn.stopAnimation()
+                    self.view.isUserInteractionEnabled = true
+                }
+            })
     
+        }
+        else
+        {
+            self.showToastMessage(title: NSLocalizedString(("FillAllFields"), comment: ""), isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+            
+        }
+    }
+    
+    func resetNekahtTbl ()
+    {
+   
+        NekahOrderDataDic = NSMutableDictionary ()
+        NekahOrderDataDic.setValue("office", forKey: "delivery")
+        NekahOrderDataDic.removeObject(forKey: "address")
+        NekahOrderDataDic.removeObject(forKey: "latitude")
+        NekahOrderDataDic.removeObject(forKey: "longitude")
+        NekahOrderDataDic.removeObject(forKey: "marriageDate")
+        NekahOrderDataDic.removeObject(forKey: "marriageTime")
+
+        
+        self.tblOrder.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
+     
+        
+        
+        
+        let cellAddress = self.tblOrder.cellForRow(at: IndexPath(row: 2, section: 0) ) as! AddressLocationTableViewCell
+        cellAddress.txtAddressLocation.text = ""
+        
+        self.tblOrder.reloadData()
+    }
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -645,7 +725,18 @@ extension CreateOrderViewController: UITableViewDataSource {
      }//marriage
      else
      {
-            return 0
+            if section == 0
+            {
+                return 3
+             }
+        else if section == 1
+            {
+                 return 2
+            }
+        else
+            {
+                 return 1
+            }
      }
         
     }
@@ -661,7 +752,7 @@ extension CreateOrderViewController: UITableViewDataSource {
         }
         else
         {
-            return 0
+            return 3
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
@@ -713,6 +804,22 @@ extension CreateOrderViewController: UITableViewDataSource {
                 cellMowakelData.txtCivilRegistry.tag = (indexPath.section * 1000) + indexPath.row+1
                 cellMowakelData.txtName.delegate = self
                 cellMowakelData.txtCivilRegistry.delegate = self
+                if let txtName : String =  TawkeelOrderDataDic.value(forKey: "clientName") as? String
+                {
+                    cellMowakelData.txtName.text = txtName
+                }else
+                {
+                    cellMowakelData.txtName.text = ""
+                }
+                
+                if let txtcivilReg : String =  TawkeelOrderDataDic.value(forKey: "clientNationalID") as? String
+                {
+                    cellMowakelData.txtCivilRegistry.text = txtcivilReg
+                }else
+                {
+                    cellMowakelData.txtCivilRegistry.text = ""
+                }
+                
 
 
             }
@@ -724,6 +831,23 @@ extension CreateOrderViewController: UITableViewDataSource {
                 cellMowakelData.txtCivilRegistry.tag = (indexPath.section * 1000) + indexPath.row+1
                 cellMowakelData.txtName.delegate = self
                 cellMowakelData.txtCivilRegistry.delegate = self
+                
+                if let txtName : String =  TawkeelOrderDataDic.value(forKey: "representativeName") as? String
+                {
+                    cellMowakelData.txtName.text = txtName
+                }else
+                {
+                    cellMowakelData.txtName.text = ""
+                }
+                
+                if let txtcivilReg : String =  TawkeelOrderDataDic.value(forKey: "representativeNationalID") as? String
+                {
+                    cellMowakelData.txtCivilRegistry.text = txtcivilReg
+                }else
+                {
+                    cellMowakelData.txtCivilRegistry.text = ""
+                }
+                
             }
             return cellMowakelData
         }
@@ -759,6 +883,15 @@ extension CreateOrderViewController: UITableViewDataSource {
                 cellAddressLocation.txtAddressLocation.placeholder = NSLocalizedString("AddressDetails", comment: "")
                 cellAddressLocation.txtAddressLocation.tag = (indexPath.section * 1000) + indexPath.row
                 cellAddressLocation.txtAddressLocation.delegate = self
+                
+                if let txtAddress : String =  TawkeelOrderDataDic.value(forKey: "address") as? String
+                {
+                    cellAddressLocation.txtAddressLocation.text = txtAddress
+                }else
+                {
+                    cellAddressLocation.txtAddressLocation.text = ""
+                }
+                
                 return cellAddressLocation
             }
         }
@@ -830,6 +963,13 @@ extension CreateOrderViewController: UITableViewDataSource {
                     cellletterNumber.txtAddressLocation.placeholder = NSLocalizedString("letterNumber", comment: "")
                     cellletterNumber.txtAddressLocation.tag = (indexPath.section * 1000) + indexPath.row
                     cellletterNumber.txtAddressLocation.delegate = self
+                    if let letterNum : String =  ContractOrderDataDic.value(forKey: "letterNumber") as? String
+                    {
+                        cellletterNumber.txtAddressLocation.text = letterNum
+                    }else
+                    {
+                        cellletterNumber.txtAddressLocation.text = ""
+                    }
                     return cellletterNumber
                 }
                 else
@@ -879,6 +1019,13 @@ extension CreateOrderViewController: UITableViewDataSource {
                     cellAddressLocation.txtAddressLocation.placeholder = NSLocalizedString("AddressDetails", comment: "")
                     cellAddressLocation.txtAddressLocation.tag = (indexPath.section * 1000) + indexPath.row
                     cellAddressLocation.txtAddressLocation.delegate = self
+                    if let AddressDetails : String =  ContractOrderDataDic.value(forKey: "address") as? String
+                    {
+                        cellAddressLocation.txtAddressLocation.text = AddressDetails
+                    }else
+                    {
+                        cellAddressLocation.txtAddressLocation.text = ""
+                    }
                     return cellAddressLocation
                 }
             }
@@ -926,9 +1073,87 @@ extension CreateOrderViewController: UITableViewDataSource {
         }
         else
         {
-                let cellChooseTimeDdl:ChooseLocationDropDownTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ChooseLocationDropDownTableViewCell") as UITableViewCell! as! ChooseLocationDropDownTableViewCell
-                
-                return cellChooseTimeDdl
+               if indexPath.section == 0
+               {
+                if indexPath.row == 0
+                {
+                    
+                    let cellWakalaCat:WkalaCategoryTableViewCell = tableView.dequeueReusableCell(withIdentifier:"WkalaCategoryTableViewCell") as UITableViewCell! as! WkalaCategoryTableViewCell
+                    cellWakalaCat.SegmentControl.titles = [NSLocalizedString("MaazonLocation", comment: ""), NSLocalizedString("ClientLocation", comment: "")]
+                    cellWakalaCat.SegmentControl.titleFont = UIFont(name: Constants.FONTS.FONT_AR, size: 16.0)!
+                    cellWakalaCat.SegmentControl.selectedTitleFont = UIFont(name: Constants.FONTS.FONT_AR, size: 16.0)!
+                    cellWakalaCat.SegmentControl.removeTarget(nil, action: nil, for: .allEvents)
+                    cellWakalaCat.SegmentControl.addTarget(self, action: #selector(NekahLocationSegmentedValueChanged(_:)), for: .valueChanged)
+                    
+                    
+                    return cellWakalaCat
+                }
+                else if indexPath.row == 1
+                {
+                    
+                    let cellChooseLocation:ChooseLocationDropDownTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ChooseLocationDropDownTableViewCell") as UITableViewCell! as! ChooseLocationDropDownTableViewCell
+                    cellChooseLocation.btn_OpenDDl.setTitle(NSLocalizedString("ChooseAdreess", comment: ""), for: .normal)
+                    cellChooseLocation.img_icon.image = UIImage.init(named: "gps-check")
+                    cellChooseLocation.btn_OpenDDl.removeTarget(nil, action: nil, for: .allEvents)
+                    cellChooseLocation.btn_OpenDDl.addTarget(self, action: #selector(OpenlocationDDL), for: .touchUpInside)
+                    return cellChooseLocation
+                    
+                }
+                else
+                {
+                    let cellAddressLocation:AddressLocationTableViewCell = tableView.dequeueReusableCell(withIdentifier:"AddressLocationTableViewCell") as UITableViewCell! as! AddressLocationTableViewCell
+                    cellAddressLocation.txtAddressLocation.placeholder = NSLocalizedString("AddressDetails", comment: "")
+                    cellAddressLocation.txtAddressLocation.tag = (indexPath.section * 1000) + indexPath.row
+                    cellAddressLocation.txtAddressLocation.delegate = self
+                    if let AddressDetails : String =  NekahOrderDataDic.value(forKey: "address") as? String
+                    {
+                        cellAddressLocation.txtAddressLocation.text = AddressDetails
+                    }else
+                    {
+                        cellAddressLocation.txtAddressLocation.text = ""
+                    }
+                    return cellAddressLocation
+                }
+            }
+            else if indexPath.section == 1
+               {
+                if indexPath.row == 0
+                {
+                    let cellChooseTimeDdl:ChooseLocationDropDownTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ChooseLocationDropDownTableViewCell") as UITableViewCell! as! ChooseLocationDropDownTableViewCell
+                    cellChooseTimeDdl.btn_OpenDDl.setTitle(NSLocalizedString("Time", comment: ""), for: .normal)
+                    cellChooseTimeDdl.img_icon.image = UIImage.init(named: "time")
+                    cellChooseTimeDdl.btn_OpenDDl.removeTarget(nil, action: nil, for: .allEvents)
+                    cellChooseTimeDdl.btn_OpenDDl.addTarget(self, action: #selector(OpenlaterTimeDDL), for: .touchUpInside)
+                    if let TimeMowkl : String =  NekahOrderDataDic.value(forKey: "marriageTime") as? String
+                    {
+                        cellChooseTimeDdl.btn_OpenDDl.setTitle(TimeMowkl, for: .normal)
+                    }
+                    
+                    return cellChooseTimeDdl
+                }
+                else
+                {
+                    let cellChooseTimeDdl:ChooseLocationDropDownTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ChooseLocationDropDownTableViewCell") as UITableViewCell! as! ChooseLocationDropDownTableViewCell
+                    cellChooseTimeDdl.btn_OpenDDl.setTitle(NSLocalizedString("Date", comment: ""), for: .normal)
+                    cellChooseTimeDdl.img_icon.image = UIImage.init(named: "time")
+                    cellChooseTimeDdl.btn_OpenDDl.removeTarget(nil, action: nil, for: .allEvents)
+                    cellChooseTimeDdl.btn_OpenDDl.addTarget(self, action: #selector(OpenletterTimeDDL), for: .touchUpInside)
+                    if let TimeMowkl : String =  NekahOrderDataDic.value(forKey: "marriageDate") as? String
+                    {
+                        cellChooseTimeDdl.btn_OpenDDl.setTitle(TimeMowkl, for: .normal)
+                    }
+                    
+                    return cellChooseTimeDdl
+                }
+               }
+            else
+               {
+                let cellCreatOrder:CreateOrderTableViewCell = tableView.dequeueReusableCell(withIdentifier:"CreateOrderTableViewCell") as UITableViewCell! as! CreateOrderTableViewCell
+                cellCreatOrder.btnCreatOrder.setTitle(NSLocalizedString("CreatOrder", comment: ""), for: .normal)
+                cellCreatOrder.btnCreatOrder.removeTarget(nil, action: nil, for: .allEvents)
+                cellCreatOrder.btnCreatOrder.addTarget(self, action: #selector(CreatNekahOrder), for: .touchUpInside)
+                return cellCreatOrder
+            }
         }
     }
     
@@ -1020,11 +1245,29 @@ extension CreateOrderViewController: UITableViewDelegate {
         }
         else
         {
-            let cellOrderHeader:OrderHeader = tableView.dequeueReusableCell(withIdentifier:"OrderHeader") as UITableViewCell! as! OrderHeader
-            return cellOrderHeader
+            if section == 0
+            {
+                let cellOrderHeader:OrderHeader = tableView.dequeueReusableCell(withIdentifier:"OrderHeader") as UITableViewCell! as! OrderHeader
+                cellOrderHeader.lbl_Header.text = NSLocalizedString("marriage", comment: "")
+                return cellOrderHeader
+            }
+            else if section == 2
+            {
+                let cellOrderHeader:OrderHeader = tableView.dequeueReusableCell(withIdentifier:"OrderHeader") as UITableViewCell! as! OrderHeader
+                cellOrderHeader.lbl_Header.isHidden = true
+                return cellOrderHeader
+                
+            }
+            else
+            {
+                
+                let cellOrderHeader:OrderSectionHeader = tableView.dequeueReusableCell(withIdentifier:"OrderSectionHeader") as UITableViewCell! as! OrderSectionHeader
+                    cellOrderHeader.lbl_Header.text = NSLocalizedString("DocumentMarriageMessage", comment: "")
+                return cellOrderHeader
+            }
+        }
         }
        
-    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
     
     }
@@ -1066,6 +1309,11 @@ extension CreateOrderViewController : UITextFieldDelegate {
           {
             self.tblOrder.setContentOffset(CGPoint(x: self.tblOrder.contentOffset.x, y: 140), animated: true)
           }
+        }
+        else
+        {
+            self.tblOrder.setContentOffset(CGPoint(x: self.tblOrder.contentOffset.x, y: 120), animated: true)
+
         }
         
     }
@@ -1123,6 +1371,11 @@ extension CreateOrderViewController : UITextFieldDelegate {
                 ContractOrderDataDic.setValue(textField.text, forKey: "address")
 
             }
+        }
+        else
+        {
+            NekahOrderDataDic.setValue(textField.text, forKey: "address")
+
         }
 
     }
@@ -1215,6 +1468,11 @@ extension CreateOrderViewController: PickerTimeDelegate {
             ContractOrderDataDic.setValue(ChoosedDate, forKey: "time")
 
         }
+        else
+        {
+            NekahOrderDataDic.setValue(ChoosedDate, forKey: "marriageTime")
+
+        }
         self.RemoveTimePickerView()
         self.tblOrder.reloadData()
     }
@@ -1231,7 +1489,16 @@ extension CreateOrderViewController: PickerDateDelegate {
     
     func DidUserChoosedDate(_ ChoosedDate : String){
         
-        ContractOrderDataDic.setValue(ChoosedDate, forKey: "letterDate")
+        if CatId == 10
+        {
+            ContractOrderDataDic.setValue(ChoosedDate, forKey: "letterDate")
+
+        }
+        else
+        {
+            NekahOrderDataDic.setValue(ChoosedDate, forKey: "marriageDate")
+
+        }
         self.RemovedatePickerView()
         self.tblOrder.reloadData()
 
