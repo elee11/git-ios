@@ -14,12 +14,12 @@ import GoogleMaps
 
 class CurrentLocationViewController: UIViewController,CLLocationManagerDelegate,ToastAlertProtocol {
 
-    var TotalCost : Int!
-    var NumOfSteps : Int!
+   
 
     var OrderDataDic : NSMutableDictionary!
     var locationManager:CLLocationManager!
     var currentLocation: CLLocation?
+    var ParentView : CreateOrderViewController!
     var mapView: GMSMapView!
     var zoomLevel: Float = 15.0
 
@@ -63,8 +63,8 @@ class CurrentLocationViewController: UIViewController,CLLocationManagerDelegate,
         
         if OrderDataDic.value(forKey: "longitude") != nil && OrderDataDic.value(forKey: "latitude") != nil{
             
-           // _ = navigationController?.popViewController(animated: true)
-            self.performSegue(withIdentifier: "S_Location_WakeelTime", sender: OrderDataDic)
+            self.ParentView.TawkeelOrderDataDic = OrderDataDic
+            self.navigationController?.popViewController(nil)
 
         }
         else
@@ -124,8 +124,7 @@ class CurrentLocationViewController: UIViewController,CLLocationManagerDelegate,
             let OrderDic = sender as!  NSMutableDictionary
             let ArrivalTimeView = segue.destination as! MoawtheqArrivalTimeViewController
             ArrivalTimeView.OrderDataDic = OrderDic
-            ArrivalTimeView.TotalCost = self.TotalCost
-            ArrivalTimeView.NumOfSteps = NumOfSteps - 1
+         
 
         }
     }

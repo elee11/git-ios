@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import TransitionButton
 
 class CreateOrderTableViewCell: UITableViewCell {
-    @IBOutlet weak var btnCreatOrder: UIButton!
+    @IBOutlet weak var btnCreatOrder: TransitionButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()

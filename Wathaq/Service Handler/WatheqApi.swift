@@ -61,7 +61,7 @@ public enum WatheqApi {
     case logout(identifier:String)
     //Order
     case getCategories
-    case CreateOrder(categoryId:Int, clientName:String, representativeName:String, clientNationalID:String,representativeNationalID:String, delivery:String, latitude:Double, longitude:Double )
+    case CreateOrder(categoryId:Int, clientName:String, representativeName:String, clientNationalID:String,representativeNationalID:String, delivery:String, latitude:Double, longitude:Double , time:String , address:String )
     case createNekahOrder(categoryId:Int,delivery:String,latitude:Double, longitude:Double,marriageDate:String,marriageTime:String)
     case createContractOrder(categoryId:Int,delivery:String,latitude:Double, longitude:Double,letterDate:String,letterNumber:String)
 
@@ -149,8 +149,8 @@ extension WatheqApi: TargetType,AccessTokenAuthorizable {
             return .requestParameters(parameters: ["page":page , "limit" : limit], encoding: URLEncoding.default)
         case .getClosedOrders(let page, let limit):
             return .requestParameters(parameters: ["page":page , "limit" : limit], encoding: URLEncoding.default)
-        case .CreateOrder(let categoryId, let clientName, let representativeName, let clientNationalID, let representativeNationalID, let delivery, let latitude, let longitude ):
-            return .requestParameters(parameters: ["categoryId":categoryId , "clientName":clientName , "representativeName":representativeName, "clientNationalID":clientNationalID, "representativeNationalID": representativeNationalID, "delivery":delivery, "latitude":latitude, "longitude":longitude], encoding: JSONEncoding.default)
+        case .CreateOrder(let categoryId, let clientName, let representativeName, let clientNationalID, let representativeNationalID, let delivery, let latitude, let longitude , let time,let address ):
+            return .requestParameters(parameters: ["categoryId":categoryId , "clientName":clientName , "representativeName":representativeName, "clientNationalID":clientNationalID, "representativeNationalID": representativeNationalID, "delivery":delivery, "latitude":latitude, "longitude":longitude, "time":time , "address":address], encoding: JSONEncoding.default)
         case .createNekahOrder(let categoryId,let delivery,let latitude,let longitude,let marriageDate,let  marriageTime):
             return .requestParameters(parameters: ["categoryId":categoryId, "delivery":delivery,"latitude":latitude,"longitude":longitude,"marriageDate":marriageDate,"marriageTime":marriageTime], encoding: JSONEncoding.default)
             

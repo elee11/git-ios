@@ -8,7 +8,7 @@
 		<key>Name_EN</key>
 		<string>Individual</string>
 		<key>id</key>
-		<string>3</string>
+		<integer>3</integer>
 	</dict>
 	<dict>
 		<key>Name</key>
@@ -16,7 +16,7 @@
 		<key>Name_EN</key>
 		<string>Institution</string>
 		<key>id</key>
-		<string>4</string>
+		<integer>4</integer>
 	</dict>
 	<dict>
 		<key>Name</key>
@@ -24,7 +24,7 @@
 		<key>Name_EN</key>
 		<string>Company</string>
 		<key>id</key>
-		<string>5</string>
+		<integer>5</integer>
 	</dict>
 </array>
 </plist>

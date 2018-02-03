@@ -13,7 +13,7 @@ class OrderViewModel: ToastAlertProtocol {
     static let shareManager = CategoriesViewModel()
     
     func CreateOrder(OrderDic:NSDictionary, completion: @escaping (OrderRootClass?, String?) -> ()){
-        NetworkHandler.requestTarget(target: .CreateOrder(categoryId: OrderDic.object(forKey: "categoryId") as! Int, clientName: OrderDic.object(forKey: "clientName") as! String, representativeName: OrderDic.object(forKey: "representativeName") as! String, clientNationalID: OrderDic.object(forKey: "clientNationalID") as! String, representativeNationalID: OrderDic.object(forKey: "representativeNationalID") as! String , delivery: OrderDic.object(forKey: "delivery") as! String, latitude: OrderDic.object(forKey: "latitude") as! Double, longitude: OrderDic.object(forKey: "longitude") as! Double), isDictionary: true) { (result, errorMsg) in
+        NetworkHandler.requestTarget(target: .CreateOrder(categoryId: OrderDic.object(forKey: "categoryId") as! Int, clientName: OrderDic.object(forKey: "clientName") as! String, representativeName: OrderDic.object(forKey: "representativeName") as! String, clientNationalID: OrderDic.object(forKey: "clientNationalID") as! String, representativeNationalID: OrderDic.object(forKey: "representativeNationalID") as! String , delivery: OrderDic.object(forKey: "delivery") as! String, latitude: OrderDic.object(forKey: "latitude") as! Double, longitude: OrderDic.object(forKey: "longitude") as! Double, time: OrderDic.object(forKey: "time") as! String, address: OrderDic.object(forKey: "address") as! String), isDictionary: true) { (result, errorMsg) in
             if errorMsg == nil {
                 let Ordermodel = Mapper<OrderRootClass>().map(JSONString: result as! String)
                 completion(Ordermodel,nil)
