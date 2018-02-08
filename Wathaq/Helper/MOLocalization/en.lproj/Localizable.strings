@@ -122,3 +122,7 @@
 "datingTime" = "Ask for an interview during";
 "Validate the contract" = "Validate the contract";
 "chooseContractSubCat" = "Choose Category";
+"LocationChoosed" = "Location choosed";
+"FillMandatoryFields" = "Please fill Mandatory fields";
+"RateDone" = "Your Rate Receieved";
+"Rate Now" = "Rate Service";

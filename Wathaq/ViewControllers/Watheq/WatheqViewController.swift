@@ -26,7 +26,6 @@ class WatheqViewController: AbstractViewController,ToastAlertProtocol {
         super.viewDidLoad()
         viewModel = UserViewModel()
         self.checktoRegisterDeviceToken()
-
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true
             let attributes = [
@@ -34,10 +33,8 @@ class WatheqViewController: AbstractViewController,ToastAlertProtocol {
                 NSAttributedStringKey.font :  UIFont(name: Constants.FONTS.FONT_PARALLAX_AR, size: 30)
             ]
             self.tbl_Categories.rowHeight = UITableViewAutomaticDimension
-
             navigationController?.navigationBar.largeTitleTextAttributes = attributes
         }
-
         ArrCat = [Category]()
         catViewModel = CategoriesViewModel()
         IsDataFirstLoading = true

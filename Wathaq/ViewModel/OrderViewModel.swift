@@ -50,6 +50,18 @@ class OrderViewModel: ToastAlertProtocol {
         }
     }
     
+    func RateOrder(orderId:Int,rate :Int, completion: @escaping (OrderRootClass?, String?) -> ()){
+        NetworkHandler.requestTarget(target: .RateOrder(orderId: orderId, rate: rate), isDictionary: true) { (result, errorMsg) in
+            if errorMsg == nil {
+                let Ordermodel = Mapper<OrderRootClass>().map(JSONString: result as! String)
+                completion(Ordermodel,nil)
+                
+            } else{
+                completion(nil,errorMsg)
+            }
+        }
+    }
+    
     func getNewOrders(orderPageNum:Int,completion: @escaping (NewOrderRequestRootClass?, String?) -> ()){
         NetworkHandler.requestTarget(target: .getNewOrders(orderPageNum, 10), isDictionary: true) { (result, errorMsg) in
             if errorMsg == nil {

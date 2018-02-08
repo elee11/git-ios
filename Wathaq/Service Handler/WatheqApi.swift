@@ -64,7 +64,7 @@ public enum WatheqApi {
     case CreateOrder(categoryId:Int, clientName:String, representativeName:String, clientNationalID:String,representativeNationalID:String, delivery:String, latitude:Double, longitude:Double , time:String , address:String )
     case createNekahOrder(categoryId:Int,delivery:String,latitude:Double, longitude:Double,marriageDate:String,marriageTime:String,address:String)
     case createContractOrder(categoryId:Int,delivery:String,latitude:Double, longitude:Double,letterDate:String,letterNumber:String,time:String , address:String )
-
+    case RateOrder(orderId:Int,rate:Int)
     case getNewOrders(Int,Int)
     case getPendingOrders(Int,Int)
     case getClosedOrders(Int,Int)
@@ -114,11 +114,13 @@ extension WatheqApi: TargetType,AccessTokenAuthorizable {
             return "api/auth/client/order/listClosedOrders"
         case .getNotification :
             return "api/auth/notification/list"
+        case .RateOrder:
+            return "api/auth/client/order/rate"
         }
     }
     public var method: Moya.Method {
         switch self {
-        case .login,.completeProfile,.UpdateProfile,.registerDeviceToken,.logout,.CreateOrder,.createNekahOrder,.createContractOrder:
+        case .login,.completeProfile,.UpdateProfile,.registerDeviceToken,.logout,.CreateOrder,.createNekahOrder,.createContractOrder,.RateOrder:
             return .post
         case .getCategories,.getNewOrders,.getPendingOrders,.getClosedOrders,.getLawyerList,.selectLawyer,.getNotification:
             return .get
@@ -137,6 +139,8 @@ extension WatheqApi: TargetType,AccessTokenAuthorizable {
             return .requestParameters(parameters: ["identifier":identifier , "firebaseToken" :firebaseToken], encoding: JSONEncoding.default)
         case .logout(let identifier):
             return .requestParameters(parameters: ["identifier":identifier], encoding: JSONEncoding.default)
+        case .RateOrder(let orderId,let rate):
+            return .requestParameters(parameters: ["orderId":orderId,"rate":rate], encoding: JSONEncoding.default)
         case .getCategories:
             return .requestPlain
         case .getLawyerList(let orderId,let page, let limit):
@@ -166,7 +170,7 @@ extension WatheqApi: TargetType,AccessTokenAuthorizable {
         switch self {
         case .login:
             return .none
-        case .completeProfile,.UpdateProfile,.registerDeviceToken,.logout,.getCategories,.CreateOrder,.createNekahOrder,.createContractOrder,.getNewOrders,.getClosedOrders,.getPendingOrders,.getLawyerList,.selectLawyer,.getNotification:
+        case .completeProfile,.UpdateProfile,.registerDeviceToken,.logout,.getCategories,.CreateOrder,.createNekahOrder,.createContractOrder,.getNewOrders,.getClosedOrders,.getPendingOrders,.getLawyerList,.selectLawyer,.getNotification,.RateOrder:
             return .bearer
         }
     }

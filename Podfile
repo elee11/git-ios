@@ -36,5 +36,6 @@ target 'Wathaq' do
   pod "DAKeychain"
   pod "ESPullToRefresh"
   pod "PullToRefreshKit"
+  pod 'Cosmos'
 
 end

@@ -42,7 +42,6 @@
 		982CFA211FD87FDB0055593C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982CFA1E1FD87FDB0055593C /* Category.swift */; };
 		982CFA221FD87FDB0055593C /* WkalatType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982CFA1F1FD87FDB0055593C /* WkalatType.swift */; };
 		982CFA291FD8828E0055593C /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982CFA281FD8828E0055593C /* CategoriesViewModel.swift */; };
-		982CFA2B1FD889320055593C /* WatheqAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 982CFA2A1FD889320055593C /* WatheqAssets.xcassets */; };
 		982CFA2D1FD88D0C0055593C /* WatheqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982CFA2C1FD88D0C0055593C /* WatheqTableViewCell.swift */; };
 		982CFA2F1FD9552E0055593C /* ProfileHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982CFA2E1FD9552E0055593C /* ProfileHeaderTableViewCell.swift */; };
 		982CFA311FD961290055593C /* Sub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982CFA301FD961290055593C /* Sub.swift */; };
@@ -88,6 +87,7 @@
 		9870B9FE1FB8CA5D008E678B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870B9FD1FB8CA5D008E678B /* ProfileViewController.swift */; };
 		9870BA051FB8CEB3008E678B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870BA041FB8CEB3008E678B /* SettingsViewController.swift */; };
 		9870BA121FB8D489008E678B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9870BA111FB8D489008E678B /* Assets.xcassets */; };
+		98793038202BE11D00CD5723 /* WatheqAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98793037202BE11D00CD5723 /* WatheqAssets.xcassets */; };
 		9883DF8A1FD56F2E008FC708 /* NSObject+RMArchivable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9883DF831FD56F2D008FC708 /* NSObject+RMArchivable.m */; };
 		9883DF8B1FD56F2E008FC708 /* NSUserDefaults+RMSaveCustomObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9883DF841FD56F2D008FC708 /* NSUserDefaults+RMSaveCustomObject.m */; };
 		9883DF8C1FD56F2E008FC708 /* RMMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9883DF851FD56F2D008FC708 /* RMMapper.m */; };
@@ -163,7 +163,6 @@
 		982CFA1E1FD87FDB0055593C /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		982CFA1F1FD87FDB0055593C /* WkalatType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WkalatType.swift; sourceTree = "<group>"; };
 		982CFA281FD8828E0055593C /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
-		982CFA2A1FD889320055593C /* WatheqAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WatheqAssets.xcassets; sourceTree = "<group>"; };
 		982CFA2C1FD88D0C0055593C /* WatheqTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatheqTableViewCell.swift; sourceTree = "<group>"; };
 		982CFA2E1FD9552E0055593C /* ProfileHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		982CFA301FD961290055593C /* Sub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sub.swift; sourceTree = "<group>"; };
@@ -211,6 +210,7 @@
 		9870B9FD1FB8CA5D008E678B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9870BA041FB8CEB3008E678B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9870BA111FB8D489008E678B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		98793037202BE11D00CD5723 /* WatheqAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WatheqAssets.xcassets; sourceTree = "<group>"; };
 		9883DF811FD56F2C008FC708 /* Wathaq-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wathaq-Bridging-Header.h"; sourceTree = "<group>"; };
 		9883DF821FD56F2D008FC708 /* NSObject+RMArchivable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+RMArchivable.h"; sourceTree = "<group>"; };
 		9883DF831FD56F2D008FC708 /* NSObject+RMArchivable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RMArchivable.m"; sourceTree = "<group>"; };
@@ -641,8 +641,8 @@
 				989B460C1FB8E48800618519 /* TabBarAssets.xcassets */,
 				982416C71FC4D15900080DE9 /* EmptyDataAssets.xcassets */,
 				988943011FCA2B74001B4F75 /* LoginAssets.xcassets */,
+				98793037202BE11D00CD5723 /* WatheqAssets.xcassets */,
 				988E42381FD7333200A6AF59 /* ProfileAssets.xcassets */,
-				982CFA2A1FD889320055593C /* WatheqAssets.xcassets */,
 				985B36CE200B84B5002F11B0 /* Chat.xcassets */,
 			);
 			path = Assets;
@@ -831,6 +831,7 @@
 				989B46011FB8D9E200618519 /* Localizable.strings in Resources */,
 				9826D6B81FF70037002B50FA /* CancelSefaMowaklList.plist in Resources */,
 				984A0B052025025E0073A346 /* CreateSefaMowaklList.plist in Resources */,
+				98793038202BE11D00CD5723 /* WatheqAssets.xcassets in Resources */,
 				9826D6BA1FF713A2002B50FA /* GoogleService-Info.plist in Resources */,
 				98DDA1551FB797E500B8F42F /* LaunchScreen.storyboard in Resources */,
 				988942DD1FC7230D001B4F75 /* DinNextRegular.ttf in Resources */,
@@ -842,7 +843,6 @@
 				988942D61FC72074001B4F75 /* SettingsList.plist in Resources */,
 				988942F41FCA12FB001B4F75 /* CountryCodeListController.xib in Resources */,
 				98DDA1501FB797E500B8F42F /* Main.storyboard in Resources */,
-				982CFA2B1FD889320055593C /* WatheqAssets.xcassets in Resources */,
 				988942E01FCA0F73001B4F75 /* country-codes.json in Resources */,
 				982C09D320261C9B00FC3499 /* ContractsSubCategories.plist in Resources */,
 			);
@@ -897,6 +897,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Wathaq/Pods-Wathaq-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BetterSegmentedControl/BetterSegmentedControl.framework",
+				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/CountdownLabel/CountdownLabel.framework",
 				"${BUILT_PRODUCTS_DIR}/DAKeychain/DAKeychain.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
@@ -930,6 +931,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BetterSegmentedControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CountdownLabel.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DAKeychain.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",

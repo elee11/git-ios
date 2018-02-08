@@ -146,6 +146,8 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
         SegmentControl.selectedTitleFont = UIFont(name: Constants.FONTS.FONT_AR, size: 16.0)!
         SegmentControl.addTarget(self, action: #selector(navigationSegmentedControlValueChanged(_:)), for: .valueChanged)
         NotificationCenter.default.addObserver(self, selector: #selector(self.NWConnectivityDidChangeCalled) , name: .NWConnectivityDidChange, object: nil)
+        SegmentControl.semanticContentAttribute = .forceRightToLeft
+        
     }
     
     @IBAction func navigationSegmentedControlValueChanged(_ sender: BetterSegmentedControl) {
@@ -269,9 +271,15 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
     @IBAction func CreatOrder(_ sender : Any)
     {
        
-        if (TawkeelOrderDataDic.object(forKey: "categoryId") != nil && TawkeelOrderDataDic.object(forKey: "clientName") != nil && TawkeelOrderDataDic.object(forKey: "representativeName") != nil && TawkeelOrderDataDic.object(forKey: "clientNationalID") != nil && TawkeelOrderDataDic.object(forKey: "representativeNationalID") != nil && TawkeelOrderDataDic.object(forKey: "delivery") != nil && TawkeelOrderDataDic.object(forKey: "latitude") != nil && TawkeelOrderDataDic.object(forKey: "longitude") != nil && TawkeelOrderDataDic.object(forKey: "time") != nil && TawkeelOrderDataDic.object(forKey: "address") != nil)
+        if (TawkeelOrderDataDic.object(forKey: "categoryId") != nil && TawkeelOrderDataDic.object(forKey: "clientName") != nil && TawkeelOrderDataDic.object(forKey: "representativeName") != nil && TawkeelOrderDataDic.object(forKey: "clientNationalID") != nil && TawkeelOrderDataDic.object(forKey: "representativeNationalID") != nil && TawkeelOrderDataDic.object(forKey: "delivery") != nil && TawkeelOrderDataDic.object(forKey: "latitude") != nil && TawkeelOrderDataDic.object(forKey: "longitude") != nil && TawkeelOrderDataDic.object(forKey: "time") != nil)
         {
         
+            if  TawkeelOrderDataDic.object(forKey: "address") == nil
+            {
+                TawkeelOrderDataDic.setValue(" ", forKey: "address")
+            }
+            
+            
         let TranstBtn:TransitionButton =  sender as! TransitionButton
 
         TranstBtn.startAnimation()
@@ -297,7 +305,7 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
         }
         else
         {
-            self.showToastMessage(title: NSLocalizedString(("FillAllFields"), comment: ""), isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+            self.showToastMessage(title: NSLocalizedString(("FillMandatoryFields"), comment: ""), isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
 
         }
         
@@ -533,8 +541,13 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
     @IBAction func CreatContractOrder(_ sender : Any)
     {
         
-        if (ContractOrderDataDic.object(forKey: "categoryId") != nil && ContractOrderDataDic.object(forKey: "delivery") != nil && ContractOrderDataDic.object(forKey: "latitude") != nil && ContractOrderDataDic.object(forKey: "longitude") != nil && ContractOrderDataDic.object(forKey: "letterDate") != nil && ContractOrderDataDic.object(forKey: "letterNumber") != nil && ContractOrderDataDic.object(forKey: "time") != nil && ContractOrderDataDic.object(forKey: "address") != nil )
+        if (ContractOrderDataDic.object(forKey: "categoryId") != nil && ContractOrderDataDic.object(forKey: "delivery") != nil && ContractOrderDataDic.object(forKey: "latitude") != nil && ContractOrderDataDic.object(forKey: "longitude") != nil && ContractOrderDataDic.object(forKey: "letterDate") != nil && ContractOrderDataDic.object(forKey: "letterNumber") != nil && ContractOrderDataDic.object(forKey: "time") != nil)
         {
+            if  ContractOrderDataDic.object(forKey: "address") == nil
+            {
+                ContractOrderDataDic.setValue(" ", forKey: "address")
+            }
+            
             let TranstBtn:TransitionButton =  sender as! TransitionButton
             
             TranstBtn.startAnimation()
@@ -559,7 +572,7 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
         }
         else
         {
-            self.showToastMessage(title: NSLocalizedString(("FillAllFields"), comment: ""), isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+            self.showToastMessage(title: NSLocalizedString(("FillMandatoryFields"), comment: ""), isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
             
         }
         
@@ -608,8 +621,13 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
     @IBAction func CreatNekahOrder(_ sender : Any)
     {
         
-        if (NekahOrderDataDic.object(forKey: "categoryId") != nil && NekahOrderDataDic.object(forKey: "delivery") != nil && NekahOrderDataDic.object(forKey: "latitude") != nil && NekahOrderDataDic.object(forKey: "longitude") != nil && NekahOrderDataDic.object(forKey: "marriageDate") != nil && NekahOrderDataDic.object(forKey: "marriageTime") != nil && NekahOrderDataDic.object(forKey: "address") != nil )
+        if (NekahOrderDataDic.object(forKey: "categoryId") != nil && NekahOrderDataDic.object(forKey: "delivery") != nil && NekahOrderDataDic.object(forKey: "latitude") != nil && NekahOrderDataDic.object(forKey: "longitude") != nil && NekahOrderDataDic.object(forKey: "marriageDate") != nil && NekahOrderDataDic.object(forKey: "marriageTime") != nil)
         {
+            if  NekahOrderDataDic.object(forKey: "address") == nil
+            {
+                NekahOrderDataDic.setValue(" ", forKey: "address")
+            }
+            
             let TranstBtn:TransitionButton =  sender as! TransitionButton
             TranstBtn.startAnimation()
             orderModel.CreateNekahOrder(OrderDic: NekahOrderDataDic, completion: { (OrderObj, errorMsg) in
@@ -632,7 +650,7 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
         }
         else
         {
-            self.showToastMessage(title: NSLocalizedString(("FillAllFields"), comment: ""), isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+            self.showToastMessage(title: NSLocalizedString(("FillMandatoryFields"), comment: ""), isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
             
         }
     }
@@ -784,6 +802,13 @@ extension CreateOrderViewController: UITableViewDataSource {
                 if let SefaMowkl : String =  TawkeelOrderDataDic.value(forKey: "SefaCategoryName") as? String
                 {
                     cellSefaMowkl.btn_OpenDDl.setTitle(SefaMowkl, for: .normal)
+                    cellSefaMowkl.btn_OpenDDl.applybuttonGreenviewBorderProperties()
+                    
+                }
+                else
+                {
+                    cellSefaMowkl.btn_OpenDDl.applybuttonDGrayBorderProperties()
+
                 }
                 
                 return cellSefaMowkl
@@ -810,6 +835,8 @@ extension CreateOrderViewController: UITableViewDataSource {
                 }else
                 {
                     cellMowakelData.txtName.text = ""
+                    cellMowakelData.txtName.applyDGrayBorderProperties()
+
                 }
                 
                 if let txtcivilReg : String =  TawkeelOrderDataDic.value(forKey: "clientNationalID") as? String
@@ -818,6 +845,8 @@ extension CreateOrderViewController: UITableViewDataSource {
                 }else
                 {
                     cellMowakelData.txtCivilRegistry.text = ""
+                    cellMowakelData.txtCivilRegistry.applyDGrayBorderProperties()
+
                 }
                 
 
@@ -835,9 +864,12 @@ extension CreateOrderViewController: UITableViewDataSource {
                 if let txtName : String =  TawkeelOrderDataDic.value(forKey: "representativeName") as? String
                 {
                     cellMowakelData.txtName.text = txtName
+                    
                 }else
                 {
                     cellMowakelData.txtName.text = ""
+                    cellMowakelData.txtName.applyDGrayBorderProperties()
+
                 }
                 
                 if let txtcivilReg : String =  TawkeelOrderDataDic.value(forKey: "representativeNationalID") as? String
@@ -846,6 +878,8 @@ extension CreateOrderViewController: UITableViewDataSource {
                 }else
                 {
                     cellMowakelData.txtCivilRegistry.text = ""
+                    cellMowakelData.txtCivilRegistry.applyDGrayBorderProperties()
+
                 }
                 
             }
@@ -874,6 +908,19 @@ extension CreateOrderViewController: UITableViewDataSource {
                 cellChooseLocation.img_icon.image = UIImage.init(named: "gps-check")
                 cellChooseLocation.btn_OpenDDl.removeTarget(nil, action: nil, for: .allEvents)
                 cellChooseLocation.btn_OpenDDl.addTarget(self, action: #selector(OpenlocationDDL), for: .touchUpInside)
+                if let Location : Double =  TawkeelOrderDataDic.value(forKey: "latitude") as? Double
+                {
+                    cellChooseLocation.btn_OpenDDl.setTitle(NSLocalizedString(NSLocalizedString("LocationChoosed", comment: ""), comment: ""), for: .normal)
+                    cellChooseLocation.btn_OpenDDl.applybuttonGreenviewBorderProperties()
+                    
+                }
+                else
+                {
+                    cellChooseLocation.btn_OpenDDl.applybuttonDGrayBorderProperties()
+                    
+                }
+                
+                
                 return cellChooseLocation
 
             }
@@ -890,6 +937,8 @@ extension CreateOrderViewController: UITableViewDataSource {
                 }else
                 {
                     cellAddressLocation.txtAddressLocation.text = ""
+                    cellAddressLocation.txtAddressLocation.applyDGrayBorderProperties()
+
                 }
                 
                 return cellAddressLocation
@@ -921,8 +970,14 @@ extension CreateOrderViewController: UITableViewDataSource {
                 if let TimeMowkl : String =  TawkeelOrderDataDic.value(forKey: "time") as? String
                 {
                     cellChooseTimeDdl.btn_OpenDDl.setTitle(TimeMowkl, for: .normal)
+                    cellChooseTimeDdl.btn_OpenDDl.applybuttonGreenviewBorderProperties()
+                    
                 }
-                
+                else
+                {
+                    cellChooseTimeDdl.btn_OpenDDl.applybuttonDGrayBorderProperties()
+                    
+                }
                 return cellChooseTimeDdl
                 
             }
@@ -950,8 +1005,14 @@ extension CreateOrderViewController: UITableViewDataSource {
                 if let subCatName : String =  ContractOrderDataDic.value(forKey: "SubCategoryName") as? String
                 {
                     cellSubCat.btn_OpenDDl.setTitle(subCatName, for: .normal)
+                    cellSubCat.btn_OpenDDl.applybuttonGreenviewBorderProperties()
+                    
                 }
-                
+                else
+                {
+                    cellSubCat.btn_OpenDDl.applybuttonDGrayBorderProperties()
+                    
+                }
                 return cellSubCat
 
             }
@@ -969,6 +1030,8 @@ extension CreateOrderViewController: UITableViewDataSource {
                     }else
                     {
                         cellletterNumber.txtAddressLocation.text = ""
+                        cellletterNumber.txtAddressLocation.applyDGrayBorderProperties()
+
                     }
                     return cellletterNumber
                 }
@@ -982,6 +1045,13 @@ extension CreateOrderViewController: UITableViewDataSource {
                     if let TimeMowkl : String =  ContractOrderDataDic.value(forKey: "letterDate") as? String
                     {
                         cellChooseTimeDdl.btn_OpenDDl.setTitle(TimeMowkl, for: .normal)
+                        cellChooseTimeDdl.btn_OpenDDl.applybuttonGreenviewBorderProperties()
+                        
+                    }
+                    else
+                    {
+                        cellChooseTimeDdl.btn_OpenDDl.applybuttonDGrayBorderProperties()
+                        
                     }
                     
                     return cellChooseTimeDdl
@@ -1010,6 +1080,18 @@ extension CreateOrderViewController: UITableViewDataSource {
                     cellChooseLocation.img_icon.image = UIImage.init(named: "gps-check")
                     cellChooseLocation.btn_OpenDDl.removeTarget(nil, action: nil, for: .allEvents)
                     cellChooseLocation.btn_OpenDDl.addTarget(self, action: #selector(OpenlocationDDL), for: .touchUpInside)
+                    if let Location : Double =  ContractOrderDataDic.value(forKey: "latitude") as? Double
+                    {
+                        cellChooseLocation.btn_OpenDDl.setTitle(NSLocalizedString("LocationChoosed", comment: ""), for: .normal)
+                        cellChooseLocation.btn_OpenDDl.applybuttonGreenviewBorderProperties()
+                        
+                    }
+                    else
+                    {
+                        cellChooseLocation.btn_OpenDDl.applybuttonDGrayBorderProperties()
+                        
+                    }
+                    
                     return cellChooseLocation
                     
                 }
@@ -1025,6 +1107,8 @@ extension CreateOrderViewController: UITableViewDataSource {
                     }else
                     {
                         cellAddressLocation.txtAddressLocation.text = ""
+                        cellAddressLocation.txtAddressLocation.applyDGrayBorderProperties()
+
                     }
                     return cellAddressLocation
                 }
@@ -1055,8 +1139,14 @@ extension CreateOrderViewController: UITableViewDataSource {
                         if let TimeMowkl : String =  ContractOrderDataDic.value(forKey: "time") as? String
                         {
                             cellChooseTimeDdl.btn_OpenDDl.setTitle(TimeMowkl, for: .normal)
+                            cellChooseTimeDdl.btn_OpenDDl.applybuttonGreenviewBorderProperties()
+                            
                         }
-                        
+                        else
+                        {
+                            cellChooseTimeDdl.btn_OpenDDl.applybuttonDGrayBorderProperties()
+                            
+                        }
                         return cellChooseTimeDdl
                         
                     }
@@ -1096,6 +1186,18 @@ extension CreateOrderViewController: UITableViewDataSource {
                     cellChooseLocation.img_icon.image = UIImage.init(named: "gps-check")
                     cellChooseLocation.btn_OpenDDl.removeTarget(nil, action: nil, for: .allEvents)
                     cellChooseLocation.btn_OpenDDl.addTarget(self, action: #selector(OpenlocationDDL), for: .touchUpInside)
+                    if let Location : Double =  NekahOrderDataDic.value(forKey: "latitude") as? Double
+                    {
+                        cellChooseLocation.btn_OpenDDl.setTitle(NSLocalizedString("LocationChoosed", comment: ""), for: .normal)
+                        cellChooseLocation.btn_OpenDDl.applybuttonGreenviewBorderProperties()
+                        
+                    }
+                    else
+                    {
+                        cellChooseLocation.btn_OpenDDl.applybuttonDGrayBorderProperties()
+                        
+                    }
+                    
                     return cellChooseLocation
                     
                 }
@@ -1111,6 +1213,8 @@ extension CreateOrderViewController: UITableViewDataSource {
                     }else
                     {
                         cellAddressLocation.txtAddressLocation.text = ""
+                        cellAddressLocation.txtAddressLocation.applyDGrayBorderProperties()
+
                     }
                     return cellAddressLocation
                 }
@@ -1127,8 +1231,14 @@ extension CreateOrderViewController: UITableViewDataSource {
                     if let TimeMowkl : String =  NekahOrderDataDic.value(forKey: "marriageTime") as? String
                     {
                         cellChooseTimeDdl.btn_OpenDDl.setTitle(TimeMowkl, for: .normal)
+                        cellChooseTimeDdl.btn_OpenDDl.applybuttonGreenviewBorderProperties()
+                        
                     }
-                    
+                    else
+                    {
+                        cellChooseTimeDdl.btn_OpenDDl.applybuttonDGrayBorderProperties()
+                        
+                    }
                     return cellChooseTimeDdl
                 }
                 else
@@ -1141,6 +1251,13 @@ extension CreateOrderViewController: UITableViewDataSource {
                     if let TimeMowkl : String =  NekahOrderDataDic.value(forKey: "marriageDate") as? String
                     {
                         cellChooseTimeDdl.btn_OpenDDl.setTitle(TimeMowkl, for: .normal)
+                        cellChooseTimeDdl.btn_OpenDDl.applybuttonGreenviewBorderProperties()
+                        
+                    }
+                    else
+                    {
+                        cellChooseTimeDdl.btn_OpenDDl.applybuttonDGrayBorderProperties()
+                        
                     }
                     
                     return cellChooseTimeDdl
@@ -1322,7 +1439,11 @@ extension CreateOrderViewController : UITextFieldDelegate {
     {
         
         self.tblOrder.setContentOffset(CGPoint(x: self.tblOrder.contentOffset.x, y: 0), animated: true)
-        textField.applyDGrayBorderProperties()
+        if textField.text?.length == 0
+        {
+            textField.applyDGrayBorderProperties()
+
+        }
         let  row = textField.tag % 1000
         let  section = textField.tag / 1000
         if CatId == 1
@@ -1520,4 +1641,19 @@ extension UITextField {
         layer.cornerRadius = 6.0
     }
 }
+
+extension UIButton {
+    func applybuttonGreenviewBorderProperties() {
+        layer.borderWidth = 1
+        layer.borderColor = tintColor?.cgColor
+        layer.cornerRadius = 6.0
+    }
+    
+    func applybuttonDGrayBorderProperties() {
+        layer.borderWidth = 1.0
+        layer.borderColor = UIColor.manatee1.cgColor
+        layer.cornerRadius = 6.0
+    }
+}
+
 

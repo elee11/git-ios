@@ -1,9 +1,12 @@
 PODS:
   - Alamofire (4.5.1)
   - BetterSegmentedControl (0.9)
+  - Cosmos (13.0.0)
   - CountdownLabel (3.0.0)
+  - DAKeychain (1.0.0)
   - DZNEmptyDataSet (1.8.1)
   - EasyAnimation (2.0.2)
+  - ESPullToRefresh (2.7)
   - Firebase (4.6.0):
     - Firebase/Core (= 4.6.0)
   - Firebase/Auth (4.6.0):
@@ -40,6 +43,12 @@ PODS:
     - FirebaseCore (~> 4.0)
     - leveldb-library (~> 1.18)
   - FirebaseInstanceID (2.0.6)
+  - FirebaseMessaging (2.0.0):
+    - FirebaseAnalytics (~> 4.0)
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - GoogleToolboxForMac/Logger (~> 2.1)
+    - Protobuf (~> 3.1)
   - FirebaseRemoteConfig (2.1.0):
     - FirebaseABTesting (~> 1.0)
     - FirebaseAnalytics (~> 4.0)
@@ -60,6 +69,8 @@ PODS:
   - GoogleToolboxForMac/DebugUtils (2.1.3):
     - GoogleToolboxForMac/Defines (= 2.1.3)
   - GoogleToolboxForMac/Defines (2.1.3)
+  - GoogleToolboxForMac/Logger (2.1.3):
+    - GoogleToolboxForMac/Defines (= 2.1.3)
   - GoogleToolboxForMac/NSData+zlib (2.1.3):
     - GoogleToolboxForMac/Defines (= 2.1.3)
   - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.3):
@@ -91,6 +102,7 @@ PODS:
   - NVActivityIndicatorView/Presenter (4.0.0)
   - ObjectMapper (3.1.0)
   - Protobuf (3.5.0)
+  - PullToRefreshKit (0.8.2)
   - Realm (3.0.2):
     - Realm/Headers (= 3.0.2)
   - Realm/Headers (3.0.2)
@@ -118,15 +130,19 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 4.3)
   - BetterSegmentedControl (~> 0.9)
+  - Cosmos
   - CountdownLabel
+  - DAKeychain
   - DZNEmptyDataSet
   - EasyAnimation
+  - ESPullToRefresh
   - Firebase
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Database
   - Firebase/RemoteConfig
   - Firebase/Storage
+  - FirebaseMessaging (= 2.0.0)
   - GoogleMaps
   - GooglePlaces
   - Hero
@@ -137,6 +153,7 @@ DEPENDENCIES:
   - MXParallaxHeader (~> 0.6.0)
   - NVActivityIndicatorView
   - ObjectMapper
+  - PullToRefreshKit
   - RealmSwift
   - Skeleton
   - SwifterSwift
@@ -147,9 +164,12 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   BetterSegmentedControl: 40b2b6a08bbc59663149624d1b5235efa8d43a3c
+  Cosmos: af3973becc045af335b64498c9812034876b7661
   CountdownLabel: 4534a68892b1deb73fda18702dfdc2c8444cec08
+  DAKeychain: cf133e60108aa1ce46c2d21308d7c549ff455980
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   EasyAnimation: 977ef673efe8ce62447807eedb380a77b189dc80
+  ESPullToRefresh: 119e2710b82b75536aab2bbe4883ba119fca35c8
   Firebase: 27321a925aa85520618255a7c630859e0502ccbd
   FirebaseABTesting: d07d0ee833b842d5153549e4c7e2e2cb1c23a3f9
   FirebaseAnalytics: 5b02a63ead2c3f0259cfc7f15e053e440587ecf8
@@ -157,6 +177,7 @@ SPEC CHECKSUMS:
   FirebaseCore: 2a946ece8fbe3ce1fdeeb55324f273caade22df9
   FirebaseDatabase: 2e6e8e110b93b9a6e7aac71774c769a363035cb1
   FirebaseInstanceID: 24958382a1011bba5aaff37e334e7a650b9118f5
+  FirebaseMessaging: 227406c05b0dc9290702d2e9f18ab5528f0c2cf2
   FirebaseRemoteConfig: 451fe8e9c43ac1e7a137ad2a42189bfc8c2c3ebc
   FirebaseStorage: 0cca42d9b889a0227c3a50121f45a4469fc9eb27
   GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
@@ -175,6 +196,7 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: 54c9b93b6f25a4f467512680c0c90c09a1095cf2
   ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
+  PullToRefreshKit: 0a2a019bf094b8beba18c8a1bedfb1fb67ee70fd
   Realm: 6f23fd1f178a09342eac21bfa7c2bf4312a7a180
   RealmSwift: 695393add1b8f9d5fa75dd16e6355cf3935f71e2
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10
@@ -184,6 +206,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   TransitionButton: 0bf7e5ffe80030f9d10d57983a04acf2f511998a
 
-PODFILE CHECKSUM: ad21f9237f2db4882a5baeb821b4cffb5ab26558
+PODFILE CHECKSUM: a5d4bf8b7fc56cc239f5363a9247ab9080d9be33
 
 COCOAPODS: 1.3.1

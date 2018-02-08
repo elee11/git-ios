@@ -45,6 +45,11 @@ class CurrentLocationViewController: UIViewController,CLLocationManagerDelegate,
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.isMyLocationEnabled = true
         
+        let imagepin = UIImageView.init(image: UIImage.init(named: "LocationPin"))
+        imagepin.sizeToFit()
+        imagepin.center = mapView.center
+        mapView.addSubview(imagepin)
+        
         // Add the map to the view, hide it until we've got a location update.
         view.addSubview(mapView)
         mapView.isHidden = true
@@ -75,6 +80,8 @@ class CurrentLocationViewController: UIViewController,CLLocationManagerDelegate,
                 self.ParentView.NekahOrderDataDic = OrderDataDic
 
             }
+            
+            self.ParentView.tblOrder.reloadData()
             
             self.navigationController?.popViewController(nil)
 
@@ -147,11 +154,18 @@ extension CurrentLocationViewController: GMSMapViewDelegate {
 
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D){
         print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
-        mapView.clear() // clearing Pin before adding new
-        let marker = GMSMarker(position: coordinate)
-        marker.map = mapView
-        OrderDataDic.setValue(coordinate.latitude, forKey: "latitude")
-        OrderDataDic.setValue(coordinate.longitude, forKey: "longitude")
+//        mapView.clear() // clearing Pin before adding new
+//        let marker = GMSMarker(position: coordinate)
+//        marker.map = mapView
+//        OrderDataDic.setValue(coordinate.latitude, forKey: "latitude")
+//        OrderDataDic.setValue(coordinate.longitude, forKey: "longitude")
+    }
+    
+    func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
+        let latitude = mapView.camera.target.latitude
+        let longitude = mapView.camera.target.longitude
+        OrderDataDic.setValue(latitude, forKey: "latitude")
+        OrderDataDic.setValue(longitude, forKey: "longitude")
     }
 
 }

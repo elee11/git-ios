@@ -13,7 +13,7 @@
 		</dict>
 		<dict>
 			<key>Name</key>
-			<string>الائتمان</string>
+			<string>بطاقة الإئتمان</string>
 			<key>Name_EN</key>
 			<string>Credit Card</string>
 			<key>isForLoginedUser</key>

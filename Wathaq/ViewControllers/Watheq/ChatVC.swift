@@ -27,9 +27,11 @@ import Firebase
 import CoreLocation
 import ESPullToRefresh
 import DZNEmptyDataSet
+import Cosmos
 
-class ChatVC: UIViewController, UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource,  UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate {
+class ChatVC: UIViewController, UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource,  UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate,ToastAlertProtocol {
     
+    @IBOutlet weak var ViewRateHeightConst: NSLayoutConstraint!
     //MARK: Properties
     var OrderObj : Orderdata!
     var MoawtheqObj : MowatheqData!
@@ -38,6 +40,10 @@ class ChatVC: UIViewController, UITextFieldDelegate,UITableViewDelegate,UITableV
     @IBOutlet weak var inputTextField: UITextField!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     var custmoizeBackButton : Bool!
+    @IBOutlet weak var ViewRate: CosmosView!
+    var viewModel: OrderViewModel!
+    @IBOutlet weak var btnRate: UIButton!
+
 
     func checkOrderStatus()
     {
@@ -45,8 +51,53 @@ class ChatVC: UIViewController, UITextFieldDelegate,UITableViewDelegate,UITableV
         {
             self.inputTextField.isEnabled = false
 //            btncloseOrder.setTitle(NSLocalizedString("OrderClosed", comment: ""), for: .normal)
+            ViewRateHeightConst.constant = 51
+            ViewRate.alpha = 1
+
+        }
+        else
+        {
+            ViewRateHeightConst.constant = 0
+            ViewRate.alpha = 0
+        }
+    }
+    
+    func SetupRateView()
+    {
+        viewModel = OrderViewModel()
+         btnRate.setTitle(NSLocalizedString("Rate Now", comment: ""), for: .normal)
+        ViewRate.rating = 0
+        
+        // Change the text
+//        ViewRate.text = "(123)"
+        
+        // Called when user finishes changing the rating by lifting the finger from the view.
+        // This may be a good place to save the rating in the database or send to the server.
+        ViewRate.didFinishTouchingCosmos = {
+            rating in
+            print(self.ViewRate.rating)
+            
+            self.viewModel.RateOrder(orderId: self.OrderObj.id!, rate: Int(self.ViewRate.rating), completion: { (OrderObj, errorMsg) in
+                if errorMsg == nil {
+                 
+                    
+                    
+                    self.showToastMessage(title:NSLocalizedString("RateDone", comment: "") , isBottom:false , isWindowNeeded: true, BackgroundColor: UIColor.greenAlert, foregroundColor: UIColor.white)
+
+                    
+                    
+                } else{
+                 
+                    
+                    self.showToastMessage(title:errorMsg! , isBottom:true , isWindowNeeded: false, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+                }
+            })
             
         }
+        
+        // A closure that is called when user changes the rating by touching the view.
+        // This can be used to update UI as the rating is being changed by moving a finger.
+        ViewRate.didTouchCosmos = { rating in }
     }
     
     
@@ -259,6 +310,8 @@ class ChatVC: UIViewController, UITextFieldDelegate,UITableViewDelegate,UITableV
         self.fetchData()
         self.configureTitleView()
         self.checkOrderStatus()
+        self.SetupRateView()
+        self.title = "\(NSLocalizedString("OrderNumber", comment: "") as String) \(OrderObj.id as! Int)"
 
     }
 }
