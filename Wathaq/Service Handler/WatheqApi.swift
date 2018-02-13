@@ -58,10 +58,12 @@ public enum WatheqApi {
     case completeProfile(name:String, email:String, image:String)
     case UpdateProfile(name:String, email:String, image:String, phone:String)
     case registerDeviceToken(identifier:String, firebaseToken:String)
+    case ContactUs(title:String, content:String)
+
     case logout(identifier:String)
     //Order
     case getCategories
-    case CreateOrder(categoryId:Int, clientName:String, representativeName:String, clientNationalID:String,representativeNationalID:String, delivery:String, latitude:Double, longitude:Double , time:String , address:String )
+    case CreateOrder(categoryId:Int, clientName:String,  clientNationalID:String, delivery:String, latitude:Double, longitude:Double , time:String , address:String )
     case createNekahOrder(categoryId:Int,delivery:String,latitude:Double, longitude:Double,marriageDate:String,marriageTime:String,address:String)
     case createContractOrder(categoryId:Int,delivery:String,latitude:Double, longitude:Double,letterDate:String,letterNumber:String,time:String , address:String )
     case RateOrder(orderId:Int,rate:Int)
@@ -116,11 +118,13 @@ extension WatheqApi: TargetType,AccessTokenAuthorizable {
             return "api/auth/notification/list"
         case .RateOrder:
             return "api/auth/client/order/rate"
+        case .ContactUs :
+            return "api/auth/contactus/create"
         }
     }
     public var method: Moya.Method {
         switch self {
-        case .login,.completeProfile,.UpdateProfile,.registerDeviceToken,.logout,.CreateOrder,.createNekahOrder,.createContractOrder,.RateOrder:
+        case .login,.completeProfile,.UpdateProfile,.registerDeviceToken,.logout,.CreateOrder,.createNekahOrder,.createContractOrder,.RateOrder,.ContactUs:
             return .post
         case .getCategories,.getNewOrders,.getPendingOrders,.getClosedOrders,.getLawyerList,.selectLawyer,.getNotification:
             return .get
@@ -137,6 +141,8 @@ extension WatheqApi: TargetType,AccessTokenAuthorizable {
             return .requestParameters(parameters: ["name":name , "email":email , "image":image, "phone":phone], encoding: JSONEncoding.default)
         case .registerDeviceToken(let identifier, let firebaseToken):
             return .requestParameters(parameters: ["identifier":identifier , "firebaseToken" :firebaseToken], encoding: JSONEncoding.default)
+        case .ContactUs(let title, let content):
+            return .requestParameters(parameters: ["title":title , "content" :content], encoding: JSONEncoding.default)
         case .logout(let identifier):
             return .requestParameters(parameters: ["identifier":identifier], encoding: JSONEncoding.default)
         case .RateOrder(let orderId,let rate):
@@ -153,8 +159,8 @@ extension WatheqApi: TargetType,AccessTokenAuthorizable {
             return .requestParameters(parameters: ["page":page , "limit" : limit], encoding: URLEncoding.default)
         case .getClosedOrders(let page, let limit):
             return .requestParameters(parameters: ["page":page , "limit" : limit], encoding: URLEncoding.default)
-        case .CreateOrder(let categoryId, let clientName, let representativeName, let clientNationalID, let representativeNationalID, let delivery, let latitude, let longitude , let time,let address ):
-            return .requestParameters(parameters: ["categoryId":categoryId , "clientName":clientName , "representativeName":representativeName, "clientNationalID":clientNationalID, "representativeNationalID": representativeNationalID, "delivery":delivery, "latitude":latitude, "longitude":longitude, "time":time , "address":address], encoding: JSONEncoding.default)
+        case .CreateOrder(let categoryId, let clientName, let clientNationalID, let delivery, let latitude, let longitude , let time,let address ):
+            return .requestParameters(parameters: ["categoryId":categoryId , "clientName":clientName ,  "clientNationalID":clientNationalID,  "delivery":delivery, "latitude":latitude, "longitude":longitude, "time":time , "address":address], encoding: JSONEncoding.default)
         case .createNekahOrder(let categoryId,let delivery,let latitude,let longitude,let marriageDate,let  marriageTime ,let address):
             return .requestParameters(parameters: ["categoryId":categoryId, "delivery":delivery,"latitude":latitude,"longitude":longitude,"marriageDate":marriageDate,"marriageTime":marriageTime, "address":address], encoding: JSONEncoding.default)
             
@@ -170,7 +176,7 @@ extension WatheqApi: TargetType,AccessTokenAuthorizable {
         switch self {
         case .login:
             return .none
-        case .completeProfile,.UpdateProfile,.registerDeviceToken,.logout,.getCategories,.CreateOrder,.createNekahOrder,.createContractOrder,.getNewOrders,.getClosedOrders,.getPendingOrders,.getLawyerList,.selectLawyer,.getNotification,.RateOrder:
+        case .completeProfile,.UpdateProfile,.registerDeviceToken,.logout,.getCategories,.CreateOrder,.createNekahOrder,.createContractOrder,.getNewOrders,.getClosedOrders,.getPendingOrders,.getLawyerList,.selectLawyer,.getNotification,.RateOrder,.ContactUs:
             return .bearer
         }
     }

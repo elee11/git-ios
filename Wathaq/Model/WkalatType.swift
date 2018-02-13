@@ -11,7 +11,7 @@ import ObjectMapper
 
 class WkalatType : NSObject, NSCoding, Mappable{
 
-	var categories : [Category]?
+	var categories : [CatObject]?
 	var deliverToHomeFees : Int?
 
 
@@ -34,7 +34,7 @@ class WkalatType : NSObject, NSCoding, Mappable{
     */
     @objc required init(coder aDecoder: NSCoder)
 	{
-         categories = aDecoder.decodeObject(forKey: "categories") as? [Category]
+         categories = aDecoder.decodeObject(forKey: "categories") as? [CatObject]
          deliverToHomeFees = aDecoder.decodeObject(forKey: "deliverToHomeFees") as? Int
 
 	}

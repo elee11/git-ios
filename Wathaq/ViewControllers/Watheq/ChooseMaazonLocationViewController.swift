@@ -13,7 +13,7 @@ import TransitionButton
 class ChooseMaazonLocationViewController: UIViewController,ToastAlertProtocol{
     
     var viewModel: OrderViewModel!
-    var CatObj : Category!
+    var CatObj : CatObject!
 
     var IsMovingPrgressBarDrawn = false
     var TotalCost : Int!

@@ -12,7 +12,7 @@ import ObjectMapper
 class Orderdata : NSObject, NSCoding, Mappable{
 
 	var acceptedAt : AnyObject?
-	var category : Category?
+	var category : CatObject?
 	var client : Client?
 	var clientLat : Float?
 	var clientLong : Float?
@@ -32,7 +32,7 @@ class Orderdata : NSObject, NSCoding, Mappable{
 		return Orderdata()
 	}
 	required init?(map: Map){}
-	private override init(){}
+	 override init(){}
 
 	func mapping(map: Map)
 	{
@@ -61,7 +61,7 @@ class Orderdata : NSObject, NSCoding, Mappable{
     @objc required init(coder aDecoder: NSCoder)
 	{
          acceptedAt = aDecoder.decodeObject(forKey: "accepted_at") as? AnyObject
-         category = aDecoder.decodeObject(forKey: "category") as? Category
+         category = aDecoder.decodeObject(forKey: "category") as? CatObject
          client = aDecoder.decodeObject(forKey: "client") as? Client
          clientLat = aDecoder.decodeObject(forKey: "clientLat") as? Float
          clientLong = aDecoder.decodeObject(forKey: "clientLong") as? Float

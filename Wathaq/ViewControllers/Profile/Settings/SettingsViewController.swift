@@ -253,6 +253,9 @@ extension SettingsViewController: UITableViewDelegate {
             case 0 :
                 changeLanguage()
                 break
+            case 2 :
+                self.performSegue(withIdentifier: "S_ContactUs", sender: nil)
+                break
             case 3:
                 Logout()
                 break

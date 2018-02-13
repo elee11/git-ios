@@ -42,6 +42,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
                 UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
             application.registerUserNotificationSettings(settings)
         }
+        if launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] != nil
+        {
+            let remoteNotif = launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification] as? NSDictionary
+            
+            print(remoteNotif)
+            if remoteNotif![AnyHashable("type")]! as! String == "AcceptedRequest"
+            {
+                // Print full message.
+                print(remoteNotif)
+                print(remoteNotif![AnyHashable("orderId")]!)
+                print(remoteNotif![AnyHashable("lawyerId")]!)
+                
+                var OrderObj = Orderdata()
+                var mawtheqData = MowatheqData()
+                
+                OrderObj.id = Int(remoteNotif![AnyHashable("orderId")]! as! String)
+                mawtheqData.id = Int(remoteNotif![AnyHashable("lawyerId")]! as! String)
+                
+                
+                let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+                let ChatView  = mainStoryboard.instantiateViewController(withIdentifier: "Chat") as! ChatVC
+                
+                ChatView.OrderObj = OrderObj
+                ChatView.MoawtheqObj = mawtheqData
+                
+                if let tabBarController = UIApplication.shared.delegate?.window??.rootViewController as? UITabBarController {
+                    tabBarController.selectedIndex = 0
+                    let currentNavigationController = tabBarController.selectedViewController as! UINavigationController
+                    currentNavigationController.popToRootViewController(animated: false)
+                    currentNavigationController.pushViewController(ChatView)
+                }
+                
+            }
+            else
+            {
+                if let tabBarController = UIApplication.shared.delegate?.window??.rootViewController as? UITabBarController {
+                    tabBarController.selectedIndex = 0
+                    let currentNavigationController = tabBarController.selectedViewController as! UINavigationController
+                    currentNavigationController.popToRootViewController(animated: false)
+                }
+            }
+            
+            
+        }
         
         application.registerForRemoteNotifications()
         FirebaseApp.configure()
@@ -175,6 +219,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
             print(userInfo)
             return
         }
+        
+       if userInfo[AnyHashable("type")]! as! String == "AcceptedRequest"
+        {
+            // Print full message.
+            print(userInfo)
+            print(userInfo[AnyHashable("orderId")]!)
+            print(userInfo[AnyHashable("lawyerId")]!)
+            
+            var OrderObj = Orderdata()
+            var mawtheqData = MowatheqData()
+            
+            OrderObj.id = Int(userInfo[AnyHashable("orderId")]! as! String)
+            mawtheqData.id = Int(userInfo[AnyHashable("lawyerId")]! as! String)
+            
+            
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let ChatView  = mainStoryboard.instantiateViewController(withIdentifier: "Chat") as! ChatVC
+            
+            ChatView.OrderObj = OrderObj
+            ChatView.MoawtheqObj = mawtheqData
+            
+            if let tabBarController = UIApplication.shared.delegate?.window??.rootViewController as? UITabBarController {
+                tabBarController.selectedIndex = 0
+                let currentNavigationController = tabBarController.selectedViewController as! UINavigationController
+                currentNavigationController.popToRootViewController(animated: false)
+                currentNavigationController.pushViewController(ChatView)
+            }
+            
+        }
+        else
+       {
+       if let tabBarController = UIApplication.shared.delegate?.window??.rootViewController as? UITabBarController {
+                tabBarController.selectedIndex = 0
+                let currentNavigationController = tabBarController.selectedViewController as! UINavigationController
+                currentNavigationController.popToRootViewController(animated: false)
+            }
+        }
+        
     }
 
 

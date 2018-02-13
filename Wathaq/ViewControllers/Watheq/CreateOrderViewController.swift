@@ -19,6 +19,10 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
     @IBOutlet weak var tblOrder: UITableView!
     var viewModel: UserViewModel!
     var orderModel: OrderViewModel!
+    var catViewModel: CategoriesViewModel!
+
+    var ArrCat :[CatObject]!
+
 
     var CatId = 1
     var SubCatid = 2
@@ -38,6 +42,11 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
         TawkeelOrderDataDic = NSMutableDictionary ()
         ContractOrderDataDic = NSMutableDictionary ()
         NekahOrderDataDic = NSMutableDictionary ()
+
+        ArrCat = [CatObject]()
+        catViewModel = CategoriesViewModel()
+        
+        getWkalataCategories()
 
 
         TawkeelOrderDataDic.setValue("office", forKey: "delivery")
@@ -69,6 +78,31 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
         self.customizeTabBarLocal()
         
         
+    }
+    
+    func getWkalataCategories()
+    {
+        catViewModel.GetCategories { (wkalatTypeObj, errorMsg) in
+            if errorMsg == nil {
+               
+                if let arrCatData = wkalatTypeObj?.categories
+                {
+                    self.ArrCat = arrCatData as [CatObject]
+                }
+                else
+                {
+                    self.ArrCat = [CatObject]()
+                }
+                
+                self.tblOrder.reloadData()
+
+                
+            } else{
+               
+                self.showToastMessage(title:errorMsg! , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+
+            }
+        }
     }
     
     func checktoRegisterDeviceToken()
@@ -207,7 +241,7 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
 
         }
         
-       // self.tblOrder.reloadData()
+        self.tblOrder.reloadData()
     }
     
    
@@ -271,7 +305,7 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
     @IBAction func CreatOrder(_ sender : Any)
     {
        
-        if (TawkeelOrderDataDic.object(forKey: "categoryId") != nil && TawkeelOrderDataDic.object(forKey: "clientName") != nil && TawkeelOrderDataDic.object(forKey: "representativeName") != nil && TawkeelOrderDataDic.object(forKey: "clientNationalID") != nil && TawkeelOrderDataDic.object(forKey: "representativeNationalID") != nil && TawkeelOrderDataDic.object(forKey: "delivery") != nil && TawkeelOrderDataDic.object(forKey: "latitude") != nil && TawkeelOrderDataDic.object(forKey: "longitude") != nil && TawkeelOrderDataDic.object(forKey: "time") != nil)
+        if (TawkeelOrderDataDic.object(forKey: "categoryId") != nil && TawkeelOrderDataDic.object(forKey: "clientName") != nil &&  TawkeelOrderDataDic.object(forKey: "clientNationalID") != nil  && TawkeelOrderDataDic.object(forKey: "delivery") != nil && TawkeelOrderDataDic.object(forKey: "latitude") != nil && TawkeelOrderDataDic.object(forKey: "longitude") != nil && TawkeelOrderDataDic.object(forKey: "time") != nil)
         {
         
             if  TawkeelOrderDataDic.object(forKey: "address") == nil
@@ -317,15 +351,14 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
     {
         SubCatid = 2
         TawkeelOrderDataDic = NSMutableDictionary ()
+        TawkeelOrderDataDic.setValue(1, forKey: "MainCatId")
         TawkeelOrderDataDic.setValue("office", forKey: "delivery")
         TawkeelOrderDataDic.setValue("1 hours", forKey: "time")
         TawkeelOrderDataDic.removeObject(forKey: "address")
         TawkeelOrderDataDic.removeObject(forKey: "latitude")
         TawkeelOrderDataDic.removeObject(forKey: "longitude")
         TawkeelOrderDataDic.removeObject(forKey: "clientNationalID")
-        TawkeelOrderDataDic.removeObject(forKey: "representativeNationalID")
         TawkeelOrderDataDic.removeObject(forKey: "clientName")
-        TawkeelOrderDataDic.removeObject(forKey: "representativeName")
         TawkeelOrderDataDic.removeObject(forKey: "SefaCategoryName")
         self.tblOrder.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
         let indexpath = IndexPath(row: 0, section: 1)
@@ -335,12 +368,10 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
         cellTawkeelOwner.txtName.text = ""
         cellTawkeelOwner.txtCivilRegistry.text = ""
         
-        let cellTawkeel = self.tblOrder.cellForRow(at: IndexPath(row: 0, section: 2)) as! WakellDataTableViewCell
         
-        cellTawkeel.txtName.text = ""
-        cellTawkeel.txtCivilRegistry.text = ""
 
-        let cellAddress = self.tblOrder.cellForRow(at: IndexPath(row: 2, section: 3) ) as! AddressLocationTableViewCell
+
+        let cellAddress = self.tblOrder.cellForRow(at: IndexPath(row: 2, section: 2) ) as! AddressLocationTableViewCell
         cellAddress.txtAddressLocation.text = ""
         
         self.tblOrder.reloadData()
@@ -534,7 +565,7 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
             
         }
         
-        // self.tblOrder.reloadData()
+         self.tblOrder.reloadData()
     }
     
     
@@ -583,6 +614,8 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
     func resetContractTbl ()
     {
         ContractOrderDataDic = NSMutableDictionary ()
+        ContractOrderDataDic.setValue(10, forKey: "MainCatId")
+
         ContractOrderDataDic.setValue("office", forKey: "delivery")
         ContractOrderDataDic.setValue("1 hours", forKey: "time")
         ContractOrderDataDic.removeObject(forKey: "address")
@@ -659,6 +692,8 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
     {
    
         NekahOrderDataDic = NSMutableDictionary ()
+        NekahOrderDataDic.setValue(13, forKey: "MainCatId")
+        NekahOrderDataDic.setValue(13, forKey: "categoryId")
         NekahOrderDataDic.setValue("office", forKey: "delivery")
         NekahOrderDataDic.removeObject(forKey: "address")
         NekahOrderDataDic.removeObject(forKey: "latitude")
@@ -707,11 +742,11 @@ extension CreateOrderViewController: UITableViewDataSource {
         {
             return 2
         }//wakeel data
-        else if section == 1 || section == 2 || section == 5
+        else if section == 1  || section == 4
         {
             return 1
         }//location
-        else if section == 3
+        else if section == 2
         {
             return 3
         }
@@ -762,7 +797,7 @@ extension CreateOrderViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         if CatId == 1
         {
-          return 6
+          return 5
         }
         else if CatId == 10
         {
@@ -816,7 +851,7 @@ extension CreateOrderViewController: UITableViewDataSource {
             
             
         }
-        else if indexPath.section == 1 || indexPath.section == 2
+        else if indexPath.section == 1
         {
             
             let cellMowakelData:WakellDataTableViewCell = tableView.dequeueReusableCell(withIdentifier:"WakellDataTableViewCell") as UITableViewCell! as! WakellDataTableViewCell
@@ -885,7 +920,7 @@ extension CreateOrderViewController: UITableViewDataSource {
             }
             return cellMowakelData
         }
-        else if indexPath.section == 3
+        else if indexPath.section == 2
         {
             if indexPath.row == 0
             {
@@ -944,7 +979,7 @@ extension CreateOrderViewController: UITableViewDataSource {
                 return cellAddressLocation
             }
         }
-        else if indexPath.section == 4
+        else if indexPath.section == 3
         {
             if indexPath.row == 0
             {
@@ -963,13 +998,21 @@ extension CreateOrderViewController: UITableViewDataSource {
             {
                 
                 let cellChooseTimeDdl:ChooseLocationDropDownTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ChooseLocationDropDownTableViewCell") as UITableViewCell! as! ChooseLocationDropDownTableViewCell
+                
                 cellChooseTimeDdl.btn_OpenDDl.setTitle(NSLocalizedString("LaterTime", comment: ""), for: .normal)
                 cellChooseTimeDdl.img_icon.image = UIImage.init(named: "time")
                 cellChooseTimeDdl.btn_OpenDDl.removeTarget(nil, action: nil, for: .allEvents)
                 cellChooseTimeDdl.btn_OpenDDl.addTarget(self, action: #selector(OpenlaterTimeDDL), for: .touchUpInside)
                 if let TimeMowkl : String =  TawkeelOrderDataDic.value(forKey: "time") as? String
                 {
-                    cellChooseTimeDdl.btn_OpenDDl.setTitle(TimeMowkl, for: .normal)
+                    if TimeMowkl == "1 hours" || TimeMowkl == "2 hours" || TimeMowkl == "3 hours"
+                    {
+                        cellChooseTimeDdl.btn_OpenDDl.setTitle(NSLocalizedString("LaterTime", comment: ""), for: .normal)
+                    }
+                    else
+                    {
+                        cellChooseTimeDdl.btn_OpenDDl.setTitle(TimeMowkl, for: .normal)
+                    }
                     cellChooseTimeDdl.btn_OpenDDl.applybuttonGreenviewBorderProperties()
                     
                 }
@@ -985,7 +1028,19 @@ extension CreateOrderViewController: UITableViewDataSource {
         else
         {
             let cellCreatOrder:CreateOrderTableViewCell = tableView.dequeueReusableCell(withIdentifier:"CreateOrderTableViewCell") as UITableViewCell! as! CreateOrderTableViewCell
-            cellCreatOrder.btnCreatOrder.setTitle(NSLocalizedString("CreatOrder", comment: ""), for: .normal)
+            
+            if  self.ArrCat.count > 0
+            {
+                let CatObj =  self.ArrCat[0]
+                cellCreatOrder.btnCreatOrder.setTitle("\(NSLocalizedString("CreatOrder", comment: "")) (\(CatObj.cost as! Int) \(NSLocalizedString("SR", comment:"")))", for: .normal)
+
+            }
+            else
+            {
+                cellCreatOrder.btnCreatOrder.setTitle(NSLocalizedString("CreatOrder", comment: ""), for: .normal)
+
+            }
+
             cellCreatOrder.btnCreatOrder.removeTarget(nil, action: nil, for: .allEvents)
             cellCreatOrder.btnCreatOrder.addTarget(self, action: #selector(CreatOrder), for: .touchUpInside)
             return cellCreatOrder
@@ -1138,7 +1193,15 @@ extension CreateOrderViewController: UITableViewDataSource {
                         cellChooseTimeDdl.btn_OpenDDl.addTarget(self, action: #selector(OpenlaterTimeDDL), for: .touchUpInside)
                         if let TimeMowkl : String =  ContractOrderDataDic.value(forKey: "time") as? String
                         {
-                            cellChooseTimeDdl.btn_OpenDDl.setTitle(TimeMowkl, for: .normal)
+                            if TimeMowkl == "1 hours" || TimeMowkl == "2 hours" || TimeMowkl == "3 hours"
+                            {
+                                cellChooseTimeDdl.btn_OpenDDl.setTitle(NSLocalizedString("LaterTime", comment: ""), for: .normal)
+                            }
+                            else
+                            {
+                                cellChooseTimeDdl.btn_OpenDDl.setTitle(TimeMowkl, for: .normal)
+                            }
+                            
                             cellChooseTimeDdl.btn_OpenDDl.applybuttonGreenviewBorderProperties()
                             
                         }
@@ -1154,7 +1217,17 @@ extension CreateOrderViewController: UITableViewDataSource {
             else
             {
                 let cellCreatOrder:CreateOrderTableViewCell = tableView.dequeueReusableCell(withIdentifier:"CreateOrderTableViewCell") as UITableViewCell! as! CreateOrderTableViewCell
-                cellCreatOrder.btnCreatOrder.setTitle(NSLocalizedString("CreatOrder", comment: ""), for: .normal)
+                if  self.ArrCat.count > 0
+                {
+                    let CatObj =  self.ArrCat[1]
+                    cellCreatOrder.btnCreatOrder.setTitle("\(NSLocalizedString("CreatOrder", comment: "")) (\(CatObj.cost as! Int) \(NSLocalizedString("SR", comment:"")))", for: .normal)
+                    
+                }
+                else
+                {
+                    cellCreatOrder.btnCreatOrder.setTitle(NSLocalizedString("CreatOrder", comment: ""), for: .normal)
+                    
+                }
                 cellCreatOrder.btnCreatOrder.removeTarget(nil, action: nil, for: .allEvents)
                 cellCreatOrder.btnCreatOrder.addTarget(self, action: #selector(CreatContractOrder), for: .touchUpInside)
                 return cellCreatOrder
@@ -1266,7 +1339,17 @@ extension CreateOrderViewController: UITableViewDataSource {
             else
                {
                 let cellCreatOrder:CreateOrderTableViewCell = tableView.dequeueReusableCell(withIdentifier:"CreateOrderTableViewCell") as UITableViewCell! as! CreateOrderTableViewCell
-                cellCreatOrder.btnCreatOrder.setTitle(NSLocalizedString("CreatOrder", comment: ""), for: .normal)
+                if  self.ArrCat.count > 0
+                {
+                    let CatObj =  self.ArrCat[2]
+                    cellCreatOrder.btnCreatOrder.setTitle("\(NSLocalizedString("CreatOrder", comment: "")) (\(CatObj.cost as! Int) \(NSLocalizedString("SR", comment:"")))", for: .normal)
+                    
+                }
+                else
+                {
+                    cellCreatOrder.btnCreatOrder.setTitle(NSLocalizedString("CreatOrder", comment: ""), for: .normal)
+                    
+                }
                 cellCreatOrder.btnCreatOrder.removeTarget(nil, action: nil, for: .allEvents)
                 cellCreatOrder.btnCreatOrder.addTarget(self, action: #selector(CreatNekahOrder), for: .touchUpInside)
                 return cellCreatOrder
@@ -1290,7 +1373,7 @@ extension CreateOrderViewController: UITableViewDelegate {
             cellOrderHeader.lbl_Header.text = NSLocalizedString("CreateOrCancelWekala", comment: "")
         return cellOrderHeader
         }
-            else if section == 5
+            else if section == 4
         {
             let cellOrderHeader:OrderHeader = tableView.dequeueReusableCell(withIdentifier:"OrderHeader") as UITableViewCell! as! OrderHeader
             cellOrderHeader.lbl_Header.isHidden = true
@@ -1305,16 +1388,12 @@ extension CreateOrderViewController: UITableViewDelegate {
             {
                 cellOrderHeader.lbl_Header.text = NSLocalizedString("client", comment: "")
             }
+           
             else if section == 2
-            {
-                cellOrderHeader.lbl_Header.text = NSLocalizedString("clientOwner", comment: "")
-
-            }
-            else if section == 3
             {
                 cellOrderHeader.lbl_Header.text = NSLocalizedString("WekalaDelivery", comment: "")
             }
-            else if section == 4
+            else if section == 3
             {
                 cellOrderHeader.lbl_Header.text = NSLocalizedString("datingTime", comment: "")
 
@@ -1405,14 +1484,9 @@ extension CreateOrderViewController : UITextFieldDelegate {
             self.tblOrder.setContentOffset(CGPoint(x: self.tblOrder.contentOffset.x, y: 90), animated: true)
        
         }
-        else if section == 2
-        {
-            self.tblOrder.setContentOffset(CGPoint(x: self.tblOrder.contentOffset.x, y: 120), animated: true)
-           
-        }
         else
         {
-            self.tblOrder.setContentOffset(CGPoint(x: self.tblOrder.contentOffset.x, y: 250), animated: true)
+            self.tblOrder.setContentOffset(CGPoint(x: self.tblOrder.contentOffset.x, y: 150), animated: true)
 
         }
         }
