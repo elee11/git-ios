@@ -47,14 +47,6 @@
 		</dict>
 		<dict>
 			<key>Name</key>
-			<string>المساعدة</string>
-			<key>Name_EN</key>
-			<string>Help</string>
-			<key>isForLoginedUser</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>Name</key>
 			<string>سياسة الخصوصية</string>
 			<key>Name_EN</key>
 			<string>Privacy Policy</string>

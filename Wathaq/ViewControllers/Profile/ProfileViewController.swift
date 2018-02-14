@@ -245,6 +245,8 @@ extension ProfileViewController: UITableViewDelegate {
         {
             cellHeader.imgUserImg.kf.setImage(with: nil, placeholder: UIImage.init(named: "avatar2"), options: nil, progressBlock: nil, completionHandler: nil)
         }
+        cellHeader.lblNumOfServices.text = "\(ArrClosedOrdersCat.count as Int)"
+        cellHeader.lblTitleNumOfServices.text = NSLocalizedString("NumofEndedServices", comment: "")
         
         return cellHeader
     }
