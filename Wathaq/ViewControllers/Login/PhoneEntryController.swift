@@ -150,6 +150,11 @@ class PhoneEntryController: UIViewController,ToastAlertProtocol {
                 }
     }
     
+    @IBAction func DownloadMowtheqApp (_ sender : Any)
+    {
+        UIApplication.shared.openURL(NSURL(string: "https://itunes.apple.com/us/app/%D8%AA%D8%B7%D8%A8%D9%8A%D9%82-%D8%A7%D9%84%D9%85%D9%88%D8%AB%D9%82/id1335532454?ls=1&mt=8")! as URL)
+    }
+    
 //    @IBAction func didTapShowCountryCode(_ sender: Any) {
 //        let listScene = CountryCodeListController()
 //        listScene.delegate = self

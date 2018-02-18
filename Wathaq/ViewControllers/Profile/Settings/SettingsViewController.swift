@@ -201,7 +201,7 @@ extension SettingsViewController: UITableViewDataSource {
         }
         else if  indexPath.section == 1
         {
-            if indexPath.row == 2
+            if indexPath.row == 1
             {
                 cellSettings.viewSepartor.isHidden = true
             }
@@ -230,7 +230,7 @@ extension SettingsViewController: UITableViewDelegate {
         }
         else if  indexPath.section == 1
         {
-            if indexPath.row == 2
+            if indexPath.row == 1
             {
                 cell.roundCorners([.bottomLeft, .bottomRight], radius: 10)
             }
@@ -271,9 +271,8 @@ extension SettingsViewController: UITableViewDelegate {
             case 0 :
                 self.performSegue(withIdentifier: "S_Settings_WebView", sender: indexPath.row)
                 break
+     
             case 1:
-                break
-            case 2:
                 self.performSegue(withIdentifier: "S_Settings_WebView", sender: indexPath.row)
                 
                 break

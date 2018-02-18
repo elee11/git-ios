@@ -257,7 +257,7 @@
 		989B46061FB8DA2600618519 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		989B46071FB8DA8D00618519 /* RefreshAppProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshAppProtocol.swift; sourceTree = "<group>"; };
 		989B460C1FB8E48800618519 /* TabBarAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TabBarAssets.xcassets; sourceTree = "<group>"; };
-		98DDA1451FB797E500B8F42F /* Wathaq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wathaq.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		98DDA1451FB797E500B8F42F /* وثق.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "وثق.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98DDA1481FB797E500B8F42F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98DDA14F1FB797E500B8F42F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		98DDA1541FB797E500B8F42F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -742,7 +742,7 @@
 		98DDA1461FB797E500B8F42F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				98DDA1451FB797E500B8F42F /* Wathaq.app */,
+				98DDA1451FB797E500B8F42F /* وثق.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -787,7 +787,7 @@
 			);
 			name = Wathaq;
 			productName = Wathaq;
-			productReference = 98DDA1451FB797E500B8F42F /* Wathaq.app */;
+			productReference = 98DDA1451FB797E500B8F42F /* وثق.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1252,7 +1252,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.watheq.watheq;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "وثق";
 				SWIFT_OBJC_BRIDGING_HEADER = "Wathaq/Wathaq-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -1273,7 +1273,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.watheq.watheq;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "وثق";
 				SWIFT_OBJC_BRIDGING_HEADER = "Wathaq/Wathaq-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;

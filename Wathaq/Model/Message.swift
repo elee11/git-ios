@@ -149,7 +149,7 @@ class Message {
         let userObj:User? = UserDefaults.standard.rm_customObject(forKey: Constants.keys.KeyUser) as? User
 
         
-        let values = ["body": message.body, "from":"\(userObj?.userID as! Int)" , "to": toID , "timestamp":Int(Date().timeIntervalSince1970) , "negatedTimestamp":-Int(Date().timeIntervalSince1970)] as [String : Any]
+        let values = ["body": message.body, "from":"\(userObj?.userID as! Int)" , "to": toID , "timestamp":Int(Date().timeIntervalSince1970) , "negatedTimestamp":-Int(Date().timeIntervalSince1970),"Device" : "ios"] as [String : Any]
         Message.uploadMessage(withValues: values, toID: toID, orderId:orderId ,  completion: { (status) in
             completion(status)
         })
