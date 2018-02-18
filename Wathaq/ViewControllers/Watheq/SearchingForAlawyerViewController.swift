@@ -35,8 +35,8 @@ class SearchingForAlawyerViewController: UIViewController {
         navigationItem.leftBarButtonItem = backButton
         
         self.title = NSLocalizedString("Searching", comment: "")
-        lblSearching.text = NSLocalizedString("Searching", comment: "")
-        lblSearchingMsg.text = NSLocalizedString("SearchingMsg", comment: "")
+        lblSearching.text = "\(NSLocalizedString("OrderNumber", comment: "") as String) \(OrderObj.Orderdata?.id as! Int)"
+        lblSearchingMsg.text = NSLocalizedString("OrderProceeded", comment: "")
         btn_searchForMowatheq.setTitle(NSLocalizedString("ChooseMowtheq", comment: ""), for: .normal)
         self.addTimerLable()
         UIView.animate(withDuration: 0.80, delay: 0.20,
