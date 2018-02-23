@@ -12,7 +12,7 @@
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>مؤسسة</string>
+		<string> مالك او مدير المؤسسة</string>
 		<key>Name_EN</key>
 		<string>Institution</string>
 		<key>id</key>

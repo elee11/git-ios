@@ -211,6 +211,11 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
            //Cancel Wekala
             SubCatid = 6
         }
+        
+        TawkeelOrderDataDic.removeObject(forKey: "SefaCategoryName")
+        TawkeelOrderDataDic.removeObject(forKey: "categoryId")
+        self.tblOrder.reloadData()
+
     }
     
     @IBAction func WekalaLocationSegmentedValueChanged(_ sender: BetterSegmentedControl) {
@@ -1031,8 +1036,39 @@ extension CreateOrderViewController: UITableViewDataSource {
             
             if  self.ArrCat.count > 0
             {
-                let CatObj =  self.ArrCat[0]
-                cellCreatOrder.btnCreatOrder.setTitle("\(NSLocalizedString("CreatOrder", comment: "")) (\(CatObj.cost as! Int) \(NSLocalizedString("SR", comment:"")))", for: .normal)
+                var index = 0
+                if SubCatid == 2
+                {
+                    index = 0
+                }
+                else
+                {
+                    index = 1
+                }
+                let CatObj =  self.ArrCat[0].subs![index] as Sub
+                
+                if let categoryId = TawkeelOrderDataDic.value(forKey: "categoryId")
+                {
+                    if categoryId as! Int  != 1
+                    {
+                        for var subCat  in CatObj.subs!  {
+                            if (subCat as Sub).id  == categoryId as! Int {
+                                cellCreatOrder.btnCreatOrder.setTitle("\(NSLocalizedString("CreatOrder", comment: "")) (\(subCat.cost as! Int) \(NSLocalizedString("SR", comment:"")))", for: .normal)
+
+                            }
+                        }
+                    }
+                    else
+                    {
+                        cellCreatOrder.btnCreatOrder.setTitle("\(NSLocalizedString("CreatOrder", comment: "")) (\(CatObj.cost as! Int) \(NSLocalizedString("SR", comment:"")))", for: .normal)
+
+                    }
+                }
+                else
+                {
+                    cellCreatOrder.btnCreatOrder.setTitle((NSLocalizedString("CreatOrder", comment: "")), for: .normal)
+                }
+                
 
             }
             else
@@ -1217,10 +1253,34 @@ extension CreateOrderViewController: UITableViewDataSource {
             else
             {
                 let cellCreatOrder:CreateOrderTableViewCell = tableView.dequeueReusableCell(withIdentifier:"CreateOrderTableViewCell") as UITableViewCell! as! CreateOrderTableViewCell
+                
                 if  self.ArrCat.count > 0
                 {
+                  
                     let CatObj =  self.ArrCat[1]
-                    cellCreatOrder.btnCreatOrder.setTitle("\(NSLocalizedString("CreatOrder", comment: "")) (\(CatObj.cost as! Int) \(NSLocalizedString("SR", comment:"")))", for: .normal)
+                    
+                    if let categoryId = ContractOrderDataDic.value(forKey: "categoryId")
+                    {
+                        if categoryId as! Int  != 1
+                        {
+                            for var subCat  in CatObj.subs!  {
+                                if (subCat as Sub).id  == categoryId as! Int {
+                                    cellCreatOrder.btnCreatOrder.setTitle("\(NSLocalizedString("CreatOrder", comment: "")) (\(subCat.cost as! Int) \(NSLocalizedString("SR", comment:"")))", for: .normal)
+                                    
+                                }
+                            }
+                        }
+                        else
+                        {
+                            cellCreatOrder.btnCreatOrder.setTitle("\(NSLocalizedString("CreatOrder", comment: "")) (\(CatObj.cost as! Int) \(NSLocalizedString("SR", comment:"")))", for: .normal)
+                            
+                        }
+                    }
+                    else
+                    {
+                        cellCreatOrder.btnCreatOrder.setTitle((NSLocalizedString("CreatOrder", comment: "")), for: .normal)
+                    }
+                    
                     
                 }
                 else
@@ -1228,6 +1288,7 @@ extension CreateOrderViewController: UITableViewDataSource {
                     cellCreatOrder.btnCreatOrder.setTitle(NSLocalizedString("CreatOrder", comment: ""), for: .normal)
                     
                 }
+                
                 cellCreatOrder.btnCreatOrder.removeTarget(nil, action: nil, for: .allEvents)
                 cellCreatOrder.btnCreatOrder.addTarget(self, action: #selector(CreatContractOrder), for: .touchUpInside)
                 return cellCreatOrder
@@ -1595,10 +1656,7 @@ extension CreateOrderViewController: PickerDelegate {
         
         if CatId == 1
             {
-                
-      
         TawkeelOrderDataDic.setValue(ChoosedItem.value(forKey: "id"), forKey: "categoryId")
-        
         var key = "Name_EN"
         if Language.getCurrentLanguage() == Constants.Language.ARABIC {
             key = "Name"

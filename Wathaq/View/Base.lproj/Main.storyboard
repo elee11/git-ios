@@ -75,7 +75,7 @@
         <!--Profile View Controller-->
         <scene sceneID="9mj-tp-yOT">
             <objects>
-                <viewController id="kvT-uW-bVr" customClass="ProfileViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="kvT-uW-bVr" customClass="ProfileViewController" customModule="وثق" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rhR-Bq-Ae4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -84,7 +84,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileHeaderTableViewCell" rowHeight="300" id="eDm-hV-9wJ" customClass="ProfileHeaderTableViewCell" customModule="Wathaq" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileHeaderTableViewCell" rowHeight="300" id="eDm-hV-9wJ" customClass="ProfileHeaderTableViewCell" customModule="وثق" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="300"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eDm-hV-9wJ" id="888-i8-sRX">
@@ -195,7 +195,7 @@
                                             <outlet property="lblUserName" destination="9Zo-wC-ey8" id="fz8-QG-iYA"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyOrderPlaceHolderTableViewCell" rowHeight="170" id="SuP-5f-ofj" userLabel="SkeletonplaceHolderCell" customClass="MyOrderPlaceHolderTableViewCell" customModule="Wathaq" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyOrderPlaceHolderTableViewCell" rowHeight="170" id="SuP-5f-ofj" userLabel="SkeletonplaceHolderCell" customClass="MyOrderPlaceHolderTableViewCell" customModule="وثق" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="355.5" width="375" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SuP-5f-ofj" id="vZ8-np-mJh">
@@ -359,7 +359,7 @@
                                             <outlet property="lblServiceNum1" destination="r68-vG-q2R" id="4dG-i7-O4O"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyOrderTableViewCell" rowHeight="170" id="AMQ-ka-1tY" customClass="MyOrderTableViewCell" customModule="Wathaq" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyOrderTableViewCell" rowHeight="170" id="AMQ-ka-1tY" customClass="MyOrderTableViewCell" customModule="وثق" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="525.5" width="375" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AMQ-ka-1tY" id="m6G-Wq-3VC">
@@ -458,7 +458,7 @@
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="17.5"/>
+                                                                    <real key="value" value="27.5"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
@@ -560,7 +560,7 @@
         <!--Settings View Controller-->
         <scene sceneID="pk7-9a-YrO">
             <objects>
-                <viewController id="lqb-wP-RSs" customClass="SettingsViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lqb-wP-RSs" customClass="SettingsViewController" customModule="وثق" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w4Z-Pz-miQ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -569,7 +569,7 @@
                                 <rect key="frame" x="15" y="64" width="345" height="554"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SettingsTableCell" rowHeight="60" id="utB-PZ-tEe" customClass="SettingsTableCell" customModule="Wathaq" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SettingsTableCell" rowHeight="60" id="utB-PZ-tEe" customClass="SettingsTableCell" customModule="وثق" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="55.5" width="345" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="utB-PZ-tEe" id="EIB-Nb-tHd">
@@ -651,7 +651,7 @@
         <!--Empty Data Set Delegate-->
         <scene sceneID="kvZ-gL-Iog">
             <objects>
-                <viewController id="0j5-N6-Vo1" customClass="WatheqViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="0j5-N6-Vo1" customClass="WatheqViewController" customModule="وثق" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ol8-id-uXD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -660,7 +660,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WatheqPlaceHolderTableViewCell" rowHeight="220" id="SF5-60-Xgw" userLabel="SkeletonCell" customClass="WatheqPlaceHolderTableViewCell" customModule="Wathaq" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WatheqPlaceHolderTableViewCell" rowHeight="220" id="SF5-60-Xgw" userLabel="SkeletonCell" customClass="WatheqPlaceHolderTableViewCell" customModule="وثق" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="220"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SF5-60-Xgw" id="fLY-Qu-M22">
@@ -761,7 +761,7 @@
                                             <outlet property="lbl_Desc3PlaceholderView" destination="AFl-2G-pzc" id="JDd-Li-E6t"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WatheqTableViewCell" rowHeight="220" id="U41-gd-pGb" customClass="WatheqTableViewCell" customModule="Wathaq" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WatheqTableViewCell" rowHeight="220" id="U41-gd-pGb" customClass="WatheqTableViewCell" customModule="وثق" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="248" width="375" height="220"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U41-gd-pGb" id="rPT-C2-IqB">
@@ -873,7 +873,7 @@
         <!--Watheq Sub Cat View Controller-->
         <scene sceneID="YQv-Nl-hns">
             <objects>
-                <viewController storyboardIdentifier="WatheqSubCatViewController" id="9Uh-k7-57D" customClass="WatheqSubCatViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WatheqSubCatViewController" id="9Uh-k7-57D" customClass="WatheqSubCatViewController" customModule="وثق" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mnr-Jv-3rK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -882,7 +882,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WatheqTableViewCell" rowHeight="220" id="Wr6-xF-shh" customClass="WatheqTableViewCell" customModule="Wathaq" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WatheqTableViewCell" rowHeight="220" id="Wr6-xF-shh" customClass="WatheqTableViewCell" customModule="وثق" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="220"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wr6-xF-shh" id="QAV-5z-M9B">
@@ -993,7 +993,7 @@
         <!--Sefa Mowakl View Controller-->
         <scene sceneID="vLq-Ud-dpC">
             <objects>
-                <viewController storyboardIdentifier="SefaMowaklViewController" id="B4E-he-MOn" customClass="SefaMowaklViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SefaMowaklViewController" id="B4E-he-MOn" customClass="SefaMowaklViewController" customModule="وثق" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yIY-Ni-Bdk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1008,7 +1008,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SefaMowaklCell" id="BiB-Pg-b4w" customClass="SefaMowklCollectionViewCell" customModule="Wathaq" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SefaMowaklCell" id="BiB-Pg-b4w" customClass="SefaMowklCollectionViewCell" customModule="وثق" customModuleProvider="target">
                                         <rect key="frame" x="96" y="0.0" width="183" height="185"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -1125,7 +1125,7 @@
         <!--Delivery Location View Controller-->
         <scene sceneID="wiX-fb-0Gz">
             <objects>
-                <viewController storyboardIdentifier="DeliveryLocationViewController" id="2Vy-fH-5Pk" customClass="DeliveryLocationViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DeliveryLocationViewController" id="2Vy-fH-5Pk" customClass="DeliveryLocationViewController" customModule="وثق" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ikv-56-IGj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1134,7 +1134,7 @@
                                 <rect key="frame" x="0.0" y="114" width="375" height="472"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WatheqTableViewCell" rowHeight="220" id="FhB-vt-3q2" customClass="WatheqTableViewCell" customModule="Wathaq" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WatheqTableViewCell" rowHeight="220" id="FhB-vt-3q2" customClass="WatheqTableViewCell" customModule="وثق" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="220"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="FhB-vt-3q2" id="NsK-uT-Q3d">
@@ -1304,7 +1304,7 @@
         <!--Choose Maazon Location View Controller-->
         <scene sceneID="t4T-K1-bGg">
             <objects>
-                <viewController storyboardIdentifier="ChooseMaazonLocationViewController" id="Ssu-lz-tYC" customClass="ChooseMaazonLocationViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseMaazonLocationViewController" id="Ssu-lz-tYC" customClass="ChooseMaazonLocationViewController" customModule="وثق" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jd4-wt-801">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1313,7 +1313,7 @@
                                 <rect key="frame" x="0.0" y="114" width="375" height="472"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WatheqTableViewCell" rowHeight="220" id="E0R-ts-jyF" customClass="WatheqTableViewCell" customModule="Wathaq" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WatheqTableViewCell" rowHeight="220" id="E0R-ts-jyF" customClass="WatheqTableViewCell" customModule="وثق" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="220"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="E0R-ts-jyF" id="Qky-fd-kZn">
@@ -1484,7 +1484,7 @@
         <!--Current Location View Controller-->
         <scene sceneID="Q8u-e5-dfr">
             <objects>
-                <viewController storyboardIdentifier="CurrentLocationViewController" id="Xky-PW-dFG" customClass="CurrentLocationViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CurrentLocationViewController" id="Xky-PW-dFG" customClass="CurrentLocationViewController" customModule="وثق" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="auK-xe-eFp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1503,7 +1503,7 @@
         <!--Marriage Contract Location View Controller-->
         <scene sceneID="1gj-xQ-SqV">
             <objects>
-                <viewController storyboardIdentifier="MarriageContractLocationViewController" id="bAS-O1-OqM" customClass="MarriageContractLocationViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MarriageContractLocationViewController" id="bAS-O1-OqM" customClass="MarriageContractLocationViewController" customModule="وثق" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cnc-BU-2zH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1525,7 +1525,7 @@
         <!--Moawtheq Arrival Time View Controller-->
         <scene sceneID="wOP-hU-gyp">
             <objects>
-                <viewController storyboardIdentifier="MoawtheqArrivalTimeViewController" id="omh-uT-jw5" customClass="MoawtheqArrivalTimeViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MoawtheqArrivalTimeViewController" id="omh-uT-jw5" customClass="MoawtheqArrivalTimeViewController" customModule="وثق" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hDW-Jf-48u">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1760,7 +1760,7 @@
         <!--Searching For Alawyer View Controller-->
         <scene sceneID="BFX-jJ-0vS">
             <objects>
-                <viewController storyboardIdentifier="SearchingForAlawyerViewController" id="zeI-dY-oOY" customClass="SearchingForAlawyerViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchingForAlawyerViewController" id="zeI-dY-oOY" customClass="SearchingForAlawyerViewController" customModule="وثق" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iNl-Br-HiJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1915,8 +1915,8 @@
         <!--Phone Verification Controller-->
         <scene sceneID="frZ-gH-i6S">
             <objects>
-                <viewController storyboardIdentifier="PhoneVerificationController" id="CX3-lV-Pc6" customClass="PhoneVerificationController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xOr-Fo-x5z" customClass="KeyboardDismissingView" customModule="Wathaq" customModuleProvider="target">
+                <viewController storyboardIdentifier="PhoneVerificationController" id="CX3-lV-Pc6" customClass="PhoneVerificationController" customModule="وثق" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xOr-Fo-x5z" customClass="KeyboardDismissingView" customModule="وثق" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -1941,22 +1941,6 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="lblLoginDesc"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="هل أنت مستخدم؟" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xn1-sH-QOJ">
-                                <rect key="frame" x="123" y="567" width="130" height="28"/>
-                                <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="18.799999237060547"/>
-                                <color key="textColor" red="0.58823529409999997" green="0.60784313729999995" blue="0.66274509800000003" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="FzS-gm-Y1Z">
-                                <rect key="frame" x="10" y="600" width="355" height="37"/>
-                                <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="17"/>
-                                <state key="normal" title="حمل تطبيق المستخدم من هنا">
-                                    <color key="titleColor" red="0.0" green="0.77647058820000003" blue="0.44705882349999998" alpha="1" colorSpace="deviceRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="DownloadMowtheqApp:" destination="CX3-lV-Pc6" eventType="touchUpInside" id="N4e-qi-9lV"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uB3-Ix-ojH">
                                 <rect key="frame" x="30" y="199.5" width="315" height="60"/>
                                 <subviews>
@@ -2115,32 +2099,22 @@
                             <constraint firstItem="Xwb-tj-Zvq" firstAttribute="leading" secondItem="uB3-Ix-ojH" secondAttribute="leading" id="9Nh-J6-UHv"/>
                             <constraint firstItem="2eC-wM-DNS" firstAttribute="trailing" secondItem="uB3-Ix-ojH" secondAttribute="trailing" id="Ay6-nM-9ua"/>
                             <constraint firstItem="olm-vL-2JC" firstAttribute="top" secondItem="uB3-Ix-ojH" secondAttribute="bottom" constant="15" id="CLi-o3-qz0"/>
-                            <constraint firstItem="FzS-gm-Y1Z" firstAttribute="centerX" secondItem="xOr-Fo-x5z" secondAttribute="centerX" id="DST-e5-ZgW"/>
                             <constraint firstItem="0vq-8d-NDV" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Mr3-DZ-sZl" secondAttribute="trailing" constant="5" id="Jth-wn-3mD"/>
                             <constraint firstItem="Mr3-DZ-sZl" firstAttribute="centerX" secondItem="6Fu-1b-y0e" secondAttribute="centerX" id="K2s-0U-XjR"/>
-                            <constraint firstItem="xn1-sH-QOJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0vq-8d-NDV" secondAttribute="leading" id="OnJ-i9-jWD"/>
-                            <constraint firstItem="FzS-gm-Y1Z" firstAttribute="leading" secondItem="0vq-8d-NDV" secondAttribute="leading" constant="10" id="PnU-fb-9MM"/>
                             <constraint firstItem="olm-vL-2JC" firstAttribute="trailing" secondItem="uB3-Ix-ojH" secondAttribute="trailing" id="Pve-fx-aqo"/>
-                            <constraint firstItem="0vq-8d-NDV" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FzS-gm-Y1Z" secondAttribute="trailing" id="Qfv-Am-z7B"/>
                             <constraint firstItem="6Fu-1b-y0e" firstAttribute="top" secondItem="0vq-8d-NDV" secondAttribute="top" constant="20" id="VN1-nj-mCj"/>
                             <constraint firstItem="olm-vL-2JC" firstAttribute="leading" secondItem="uB3-Ix-ojH" secondAttribute="leading" id="YW0-Z2-woI"/>
-                            <constraint firstItem="0vq-8d-NDV" firstAttribute="trailing" secondItem="FzS-gm-Y1Z" secondAttribute="trailing" constant="10" id="bn2-nm-Ogt"/>
-                            <constraint firstItem="xn1-sH-QOJ" firstAttribute="centerX" secondItem="FzS-gm-Y1Z" secondAttribute="centerX" id="czw-ar-0AQ"/>
                             <constraint firstItem="6Fu-1b-y0e" firstAttribute="centerX" secondItem="xOr-Fo-x5z" secondAttribute="centerX" id="dNh-4G-VFD"/>
                             <constraint firstItem="uB3-Ix-ojH" firstAttribute="leading" secondItem="0vq-8d-NDV" secondAttribute="leading" constant="30" id="eY6-5l-KAP"/>
                             <constraint firstItem="uB3-Ix-ojH" firstAttribute="centerX" secondItem="xOr-Fo-x5z" secondAttribute="centerX" id="fHe-PP-WsR"/>
-                            <constraint firstItem="FzS-gm-Y1Z" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0vq-8d-NDV" secondAttribute="leading" id="gLZ-Sw-otH"/>
                             <constraint firstItem="Mr3-DZ-sZl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0vq-8d-NDV" secondAttribute="leading" constant="5" id="iOX-6Z-U2T"/>
                             <constraint firstItem="0vq-8d-NDV" firstAttribute="trailing" secondItem="uB3-Ix-ojH" secondAttribute="trailing" constant="30" id="ieO-sj-Jk6"/>
-                            <constraint firstItem="FzS-gm-Y1Z" firstAttribute="top" secondItem="xn1-sH-QOJ" secondAttribute="bottom" constant="5" id="kAT-gc-4Yi"/>
                             <constraint firstItem="Xwb-tj-Zvq" firstAttribute="leading" secondItem="uB3-Ix-ojH" secondAttribute="leading" id="kwM-Rt-9cR"/>
                             <constraint firstItem="2eC-wM-DNS" firstAttribute="leading" secondItem="uB3-Ix-ojH" secondAttribute="leading" id="tlf-Ow-whz"/>
                             <constraint firstItem="Xwb-tj-Zvq" firstAttribute="trailing" secondItem="uB3-Ix-ojH" secondAttribute="trailing" id="tmu-5y-JeC"/>
                             <constraint firstItem="Xwb-tj-Zvq" firstAttribute="trailing" secondItem="uB3-Ix-ojH" secondAttribute="trailing" id="uWY-08-Ytn"/>
-                            <constraint firstItem="0vq-8d-NDV" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="xn1-sH-QOJ" secondAttribute="trailing" id="w6d-yI-DUf"/>
                             <constraint firstItem="olm-vL-2JC" firstAttribute="trailing" secondItem="uB3-Ix-ojH" secondAttribute="trailing" id="wFe-R2-yOY"/>
                             <constraint firstItem="2eC-wM-DNS" firstAttribute="top" secondItem="Xwb-tj-Zvq" secondAttribute="bottom" constant="10" id="xUJ-pg-aYj"/>
-                            <constraint firstItem="0vq-8d-NDV" firstAttribute="bottom" secondItem="FzS-gm-Y1Z" secondAttribute="bottom" constant="30" id="z83-Ff-An2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0vq-8d-NDV"/>
                     </view>
@@ -2149,13 +2123,11 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
-                        <outlet property="btnDowndlowadNotarizedApp" destination="FzS-gm-Y1Z" id="Ewd-52-g6n"/>
                         <outlet property="btnResendVerificationCode" destination="1c2-vD-oyC" id="ihZ-2C-ldV"/>
                         <outlet property="countryCodeTextField" destination="HkG-FN-JL2" id="YTm-VU-hlo"/>
                         <outlet property="lblLogin" destination="6Fu-1b-y0e" id="7PJ-Iw-zGe"/>
                         <outlet property="lblLoginMsg" destination="Mr3-DZ-sZl" id="YnZ-Eb-ANp"/>
                         <outlet property="lbl_Timer" destination="YV8-T3-dXR" id="Cq3-nq-G9y"/>
-                        <outlet property="lblaskingAboutNotarizedMsg" destination="xn1-sH-QOJ" id="InY-ua-kcf"/>
                         <outlet property="phoneTextField" destination="8EV-f0-oif" id="YLy-ev-zML"/>
                         <outlet property="verificationCodeTextField" destination="gwj-ve-H8F" id="Yal-DE-F7b"/>
                         <outlet property="verifyButton" destination="2eC-wM-DNS" id="RVJ-eN-HdR"/>
@@ -2171,7 +2143,7 @@
         <!--Complete Profile View Controller-->
         <scene sceneID="54P-S9-99a">
             <objects>
-                <viewController storyboardIdentifier="CompleteProfileViewController" id="QcH-FH-iHq" customClass="CompleteProfileViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CompleteProfileViewController" id="QcH-FH-iHq" customClass="CompleteProfileViewController" customModule="وثق" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z03-Lj-gpI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2351,7 +2323,7 @@
         <!--Mawkl View Controller-->
         <scene sceneID="ufd-sF-Tcj">
             <objects>
-                <viewController storyboardIdentifier="MawklViewController" id="CSN-VM-0pr" customClass="MawklViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MawklViewController" id="CSN-VM-0pr" customClass="MawklViewController" customModule="وثق" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h3A-9x-UXO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2524,7 +2496,7 @@
         <!--Tawkeel Owner View Controller-->
         <scene sceneID="uuT-US-B5a">
             <objects>
-                <viewController storyboardIdentifier="TawkeelOwnerViewController" id="INg-Ud-p1c" customClass="TawkeelOwnerViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TawkeelOwnerViewController" id="INg-Ud-p1c" customClass="TawkeelOwnerViewController" customModule="وثق" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gwX-28-QSl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2697,7 +2669,7 @@
         <!--Letter View Controller-->
         <scene sceneID="eGO-cC-QzH">
             <objects>
-                <viewController storyboardIdentifier="LetterViewController" id="mRp-iB-aK1" customClass="LetterViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LetterViewController" id="mRp-iB-aK1" customClass="LetterViewController" customModule="وثق" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="kEH-PT-9nd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2881,7 +2853,7 @@
         <!--Maazon Data View Controller-->
         <scene sceneID="O4v-fO-29f">
             <objects>
-                <viewController storyboardIdentifier="MaazonDataViewController" id="tXR-QP-74y" customClass="MaazonDataViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MaazonDataViewController" id="tXR-QP-74y" customClass="MaazonDataViewController" customModule="وثق" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Okj-0u-7fu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3076,7 +3048,7 @@
         <!--Phone Entry Controller-->
         <scene sceneID="tok-Z4-feV">
             <objects>
-                <viewController storyboardIdentifier="PhoneEntryController" id="MR9-9g-UI6" customClass="PhoneEntryController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhoneEntryController" id="MR9-9g-UI6" customClass="PhoneEntryController" customModule="وثق" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cJO-5C-Nyh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3364,7 +3336,7 @@
         <!--Empty Data Set Delegate-->
         <scene sceneID="rKu-Zd-kVl">
             <objects>
-                <viewController id="RMd-Ih-Rtn" customClass="MyOrdersViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="RMd-Ih-Rtn" customClass="MyOrdersViewController" customModule="وثق" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H7N-35-4DK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3407,7 +3379,7 @@
                                 <rect key="frame" x="0.0" y="130" width="375" height="488"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyOrderTableViewCell" rowHeight="170" id="pq5-c1-0gc" customClass="MyOrderTableViewCell" customModule="Wathaq" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyOrderTableViewCell" rowHeight="170" id="pq5-c1-0gc" customClass="MyOrderTableViewCell" customModule="وثق" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pq5-c1-0gc" id="aLj-fz-HKR">
@@ -3571,7 +3543,7 @@
                                             <outlet property="viewsmallContainer" destination="S5X-am-hGi" id="xbx-1Y-1wV"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyOrderPlaceHolderTableViewCell" rowHeight="170" id="s2f-EI-Pnr" userLabel="SkeletonplaceHolderCell" customClass="MyOrderPlaceHolderTableViewCell" customModule="Wathaq" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyOrderPlaceHolderTableViewCell" rowHeight="170" id="s2f-EI-Pnr" userLabel="SkeletonplaceHolderCell" customClass="MyOrderPlaceHolderTableViewCell" customModule="وثق" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="198" width="375" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s2f-EI-Pnr" id="4vI-kU-MhZ">
@@ -3771,7 +3743,7 @@
         <!--Empty Data Set Delegate-->
         <scene sceneID="02l-t7-Q0m">
             <objects>
-                <viewController id="TOe-2L-cVc" customClass="ChooseLawyerViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TOe-2L-cVc" customClass="ChooseLawyerViewController" customModule="وثق" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aDe-z0-dCe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -3780,7 +3752,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LawyerTableViewCell" rowHeight="120" id="vV7-Kb-Z3H" customClass="LawyerTableViewCell" customModule="Wathaq" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="LawyerTableViewCell" rowHeight="120" id="vV7-Kb-Z3H" customClass="LawyerTableViewCell" customModule="وثق" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vV7-Kb-Z3H" id="Qmr-tZ-YJr">
@@ -3903,7 +3875,7 @@
                                             <outlet property="lbl_mowatheqRate" destination="0pb-FJ-aBH" id="IHM-mJ-7PJ"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="lawyercellPlaceholder" rowHeight="120" id="SxB-hf-Bp7" userLabel="SkeletonplaceHolderCell" customClass="lawyercellPlaceholder" customModule="Wathaq" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="lawyercellPlaceholder" rowHeight="120" id="SxB-hf-Bp7" userLabel="SkeletonplaceHolderCell" customClass="lawyercellPlaceholder" customModule="وثق" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="148" width="375" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SxB-hf-Bp7" id="yzr-aE-tyT">
@@ -4051,7 +4023,7 @@
         <!--Empty Data Set Delegate-->
         <scene sceneID="3In-6N-mNV">
             <objects>
-                <viewController id="h5T-2D-gKo" customClass="NotficationsViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="h5T-2D-gKo" customClass="NotficationsViewController" customModule="وثق" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vPl-0w-qpB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -4060,7 +4032,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyOrderTableViewCell" rowHeight="170" id="gSe-uH-iHk" customClass="MyOrderTableViewCell" customModule="Wathaq" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyOrderTableViewCell" rowHeight="170" id="gSe-uH-iHk" customClass="MyOrderTableViewCell" customModule="وثق" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gSe-uH-iHk" id="Qhm-D5-sed">
@@ -4183,7 +4155,7 @@
                                             <outlet property="viewsmallContainer" destination="rR8-ta-8lD" id="8WN-Hp-uqK"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyOrderPlaceHolderTableViewCell" rowHeight="170" id="klz-4h-uNU" userLabel="SkeletonplaceHolderCell" customClass="MyOrderPlaceHolderTableViewCell" customModule="Wathaq" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="MyOrderPlaceHolderTableViewCell" rowHeight="170" id="klz-4h-uNU" userLabel="SkeletonplaceHolderCell" customClass="MyOrderPlaceHolderTableViewCell" customModule="وثق" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="198" width="375" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="klz-4h-uNU" id="Uub-LX-UfX">
@@ -4385,7 +4357,7 @@
         <!--Date Picker View Controller-->
         <scene sceneID="Cda-tB-Adv">
             <objects>
-                <viewController storyboardIdentifier="DatePickerViewController" id="eOP-Kk-f9h" customClass="DatePickerViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DatePickerViewController" id="eOP-Kk-f9h" customClass="DatePickerViewController" customModule="وثق" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WFE-CN-Jmu"/>
                         <viewControllerLayoutGuide type="bottom" id="Dd6-n0-NYK"/>
@@ -4471,7 +4443,7 @@
         <!--Time Picker View Controller-->
         <scene sceneID="ZY2-HD-Qff">
             <objects>
-                <viewController storyboardIdentifier="TimePickerViewController" id="eD3-eb-WDx" customClass="TimePickerViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimePickerViewController" id="eD3-eb-WDx" customClass="TimePickerViewController" customModule="وثق" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ipl-kW-Ffy"/>
                         <viewControllerLayoutGuide type="bottom" id="F1d-WV-Yz5"/>
@@ -4557,7 +4529,7 @@
         <!--Picker View Controller-->
         <scene sceneID="LBU-Xe-w0p">
             <objects>
-                <viewController storyboardIdentifier="PickerViewController" id="Tnl-lR-iy0" customClass="PickerViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PickerViewController" id="Tnl-lR-iy0" customClass="PickerViewController" customModule="وثق" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hJW-yz-xLC"/>
                         <viewControllerLayoutGuide type="bottom" id="6DM-nk-bRx"/>
@@ -4644,7 +4616,7 @@
         <!--Empty Data Set Delegate-->
         <scene sceneID="Abx-9w-WWf">
             <objects>
-                <viewController storyboardIdentifier="Chat" title="Chat" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cg7-2E-8rB" customClass="ChatVC" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Chat" title="Chat" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cg7-2E-8rB" customClass="ChatVC" customModule="وثق" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Cem-kH-M3W"/>
                         <viewControllerLayoutGuide type="bottom" id="DLS-B1-dHb"/>
@@ -4654,10 +4626,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="30" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dUh-FV-QO1">
-                                <rect key="frame" x="0.0" y="115" width="375" height="503"/>
+                                <rect key="frame" x="0.0" y="115" width="375" height="552"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Sender" id="hKd-a6-AH5" customClass="SenderCell" customModule="Wathaq" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Sender" id="hKd-a6-AH5" customClass="SenderCell" customModule="وثق" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="30"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hKd-a6-AH5" id="Vfr-zd-6pT">
@@ -4700,7 +4672,7 @@
                                             <outlet property="messageBackground" destination="ElS-9j-8SU" id="zUl-IM-95Y"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Receiver" id="ZT4-ZN-Dy0" customClass="ReceiverCell" customModule="Wathaq" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Receiver" id="ZT4-ZN-Dy0" customClass="ReceiverCell" customModule="وثق" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="58" width="375" height="30"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZT4-ZN-Dy0" id="gFg-Yw-6G2">
@@ -4802,7 +4774,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ruc-yB-vd8"/>
                     </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="ViewRate" destination="YIp-eO-xxL" id="mKZ-Dx-dlj"/>
                         <outlet property="ViewRateHeightConst" destination="o54-KK-Jpf" id="iXi-ee-bdX"/>
@@ -4971,7 +4944,7 @@
         <!--Web View Controller-->
         <scene sceneID="SX4-xH-MEb">
             <objects>
-                <viewController storyboardIdentifier="WebViewController" id="Zcr-5n-SJH" customClass="WebViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebViewController" id="Zcr-5n-SJH" customClass="WebViewController" customModule="وثق" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="C5S-Bq-hTU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5001,7 +4974,7 @@
         <!--Contact Us View Controller-->
         <scene sceneID="jmi-YY-CSy">
             <objects>
-                <viewController id="ADu-yV-mCY" customClass="ContactUsViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ADu-yV-mCY" customClass="ContactUsViewController" customModule="وثق" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="m9S-EG-RHg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5010,7 +4983,7 @@
                                 <rect key="frame" x="0.0" y="114" width="375" height="504"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddressLocationTableViewCell" rowHeight="73" id="Xo2-fI-SaZ" customClass="AddressLocationTableViewCell" customModule="Wathaq" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddressLocationTableViewCell" rowHeight="73" id="Xo2-fI-SaZ" customClass="AddressLocationTableViewCell" customModule="وثق" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xo2-fI-SaZ" id="pyR-VV-umg">
@@ -5054,7 +5027,7 @@
                                             <outlet property="txtAddressLocation" destination="R1R-Vf-pQP" id="hXu-6e-fh9"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ContactusDetailsTableViewCell" rowHeight="228" id="Clw-P2-k1n" customClass="ContactusDetailsTableViewCell" customModule="Wathaq" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ContactusDetailsTableViewCell" rowHeight="228" id="Clw-P2-k1n" customClass="ContactusDetailsTableViewCell" customModule="وثق" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="101" width="375" height="228"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Clw-P2-k1n" id="2gu-Mt-QQM">
@@ -5099,7 +5072,7 @@
                                             <outlet property="txtContent" destination="AaZ-xZ-CCQ" id="3B0-mw-ywO"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CreateOrderTableViewCell" id="U9A-re-OEF" customClass="CreateOrderTableViewCell" customModule="Wathaq" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CreateOrderTableViewCell" id="U9A-re-OEF" customClass="CreateOrderTableViewCell" customModule="وثق" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="329" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="U9A-re-OEF" id="1Zb-i4-sJb">
@@ -5161,7 +5134,7 @@
         <!--Empty Data Set Delegate-->
         <scene sceneID="usN-k4-9Pc">
             <objects>
-                <viewController id="gUh-T1-XMM" customClass="CreateOrderViewController" customModule="Wathaq" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gUh-T1-XMM" customClass="CreateOrderViewController" customModule="وثق" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yGu-Xz-JkU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -5213,7 +5186,7 @@
                                 <rect key="frame" x="0.0" y="130" width="375" height="488"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="OrderHeader" rowHeight="60" id="o85-GO-0rD" customClass="OrderHeader" customModule="Wathaq" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="OrderHeader" rowHeight="60" id="o85-GO-0rD" customClass="OrderHeader" customModule="وثق" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="o85-GO-0rD" id="mgU-EQ-lsO">
@@ -5238,7 +5211,7 @@
                                             <outlet property="lbl_Header" destination="LVe-3f-z70" id="d6f-xr-be1"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="WkalaCategoryTableViewCell" rowHeight="72" id="hz1-SV-K90" customClass="WkalaCategoryTableViewCell" customModule="Wathaq" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="WkalaCategoryTableViewCell" rowHeight="72" id="hz1-SV-K90" customClass="WkalaCategoryTableViewCell" customModule="وثق" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="88" width="375" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hz1-SV-K90" id="DdU-LS-PWQ">
@@ -5253,7 +5226,7 @@
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="6"/>
+                                                            <real key="value" value="10"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
                                                             <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -5282,7 +5255,7 @@
                                             <outlet property="SegmentControl" destination="759-jF-w3T" id="hUw-vX-012"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SefaMowklTableViewCell" rowHeight="73" id="M63-bC-8Vh" customClass="SefaMowklTableViewCell" customModule="Wathaq" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="SefaMowklTableViewCell" rowHeight="73" id="M63-bC-8Vh" customClass="SefaMowklTableViewCell" customModule="وثق" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="160" width="375" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="M63-bC-8Vh" id="XtR-Y2-F2b">
@@ -5321,7 +5294,7 @@
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="string" keyPath="heroID" value="viewVerficationContainer"/>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="6"/>
+                                                            <real key="value" value="10"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                             <real key="value" value="1"/>
@@ -5346,7 +5319,7 @@
                                             <outlet property="viewContainerMowklTextFields" destination="FMo-mR-Rvq" id="Uut-uP-Ts5"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TawkeelMeetingTimeTableViewCell" rowHeight="72" id="bxC-jc-KB7" customClass="TawkeelMeetingTimeTableViewCell" customModule="Wathaq" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="TawkeelMeetingTimeTableViewCell" rowHeight="72" id="bxC-jc-KB7" customClass="TawkeelMeetingTimeTableViewCell" customModule="وثق" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="233" width="375" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bxC-jc-KB7" id="8mK-LS-hpJ">
@@ -5361,7 +5334,7 @@
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="6"/>
+                                                            <real key="value" value="10"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="selectedTitleColor">
                                                             <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -5390,7 +5363,7 @@
                                             <outlet property="SegmentControl" destination="Fzn-90-eT2" id="coK-xb-oPJ"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="OrderSectionHeader" rowHeight="48" id="DB7-Eb-NDT" customClass="OrderSectionHeader" customModule="Wathaq" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="OrderSectionHeader" rowHeight="48" id="DB7-Eb-NDT" customClass="OrderSectionHeader" customModule="وثق" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="305" width="375" height="48"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DB7-Eb-NDT" id="aYS-m8-Inu">
@@ -5435,7 +5408,7 @@
                                             <outlet property="lbl_Header" destination="4tl-d9-Ike" id="6Ap-GN-p3i"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="WakellDataTableViewCell" rowHeight="73" id="tlK-Ft-ZaS" customClass="WakellDataTableViewCell" customModule="Wathaq" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="WakellDataTableViewCell" rowHeight="73" id="tlK-Ft-ZaS" customClass="WakellDataTableViewCell" customModule="وثق" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="353" width="375" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tlK-Ft-ZaS" id="E2e-Gm-fWX">
@@ -5453,7 +5426,7 @@
                                                             <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="6"/>
+                                                                    <real key="value" value="10"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                                     <color key="value" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="0.5" colorSpace="calibratedRGB"/>
@@ -5471,7 +5444,7 @@
                                                             <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                    <real key="value" value="6"/>
+                                                                    <real key="value" value="10"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                                     <color key="value" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="0.5" colorSpace="calibratedRGB"/>
@@ -5500,7 +5473,7 @@
                                             <outlet property="txtName" destination="7ts-R1-RdN" id="U0T-4G-d7u"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddressLocationTableViewCell" rowHeight="73" id="uk9-qE-CqO" customClass="AddressLocationTableViewCell" customModule="Wathaq" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="AddressLocationTableViewCell" rowHeight="73" id="uk9-qE-CqO" customClass="AddressLocationTableViewCell" customModule="وثق" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="426" width="375" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uk9-qE-CqO" id="hDj-u3-XRe">
@@ -5518,7 +5491,7 @@
                                                     <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="5"/>
+                                                            <real key="value" value="10"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                             <color key="value" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="0.5" colorSpace="calibratedRGB"/>
@@ -5541,7 +5514,7 @@
                                             <outlet property="txtAddressLocation" destination="xyB-Jx-vcu" id="8Mc-RV-VrG"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChooseLocationDropDownTableViewCell" rowHeight="73" id="D3Q-9d-5Gl" customClass="ChooseLocationDropDownTableViewCell" customModule="Wathaq" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChooseLocationDropDownTableViewCell" rowHeight="73" id="D3Q-9d-5Gl" customClass="ChooseLocationDropDownTableViewCell" customModule="وثق" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="499" width="375" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="D3Q-9d-5Gl" id="mYK-B7-Imk">
@@ -5602,7 +5575,7 @@
                                             <outlet property="img_icon" destination="oNb-Az-GkD" id="LBC-Kp-s3w"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CreateOrderTableViewCell" id="SyG-80-FeP" customClass="CreateOrderTableViewCell" customModule="Wathaq" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="CreateOrderTableViewCell" id="SyG-80-FeP" customClass="CreateOrderTableViewCell" customModule="وثق" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="572" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SyG-80-FeP" id="41d-EC-2Ol">
@@ -5618,7 +5591,7 @@
                                                     <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="17"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                            <real key="value" value="6"/>
+                                                            <real key="value" value="10"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </button>

@@ -104,15 +104,12 @@ class PhoneVerificationController: UIViewController,ToastAlertProtocol {
         verificationCodeTextField.becomeFirstResponder()
         lblLogin.text = NSLocalizedString("login", comment: "")
         lblLoginMsg.text = NSLocalizedString("LoginMsg", comment: "")
-        lblaskingAboutNotarizedMsg.text = NSLocalizedString("areyoulegalized", comment: "")
-        btnDowndlowadNotarizedApp.setTitle(NSLocalizedString("Download the Notaries application from here", comment: ""), for: .normal)
         phoneTextField.placeholder = NSLocalizedString("PhoneNum", comment: "")
         phoneTextField.text = PhoneNumber
         verificationCodeTextField.placeholder = NSLocalizedString("VerificationCode", comment: "")
         verifyButton.setTitle(NSLocalizedString("sendVerificationCode", comment: ""), for: .normal)
         btnResendVerificationCode.setTitle(NSLocalizedString("ResendVerificationCode", comment: ""), for: .normal)
 //        btnClose.setTitle(NSLocalizedString("close", comment: ""), for: .normal)
-        btnDowndlowadNotarizedApp.titleLabel?.textAlignment = .center
         
 
     }

@@ -38,13 +38,13 @@ extension UIView {
     func applyactivViewBorderProperties() {
         layer.borderWidth = 1.0
         layer.borderColor = tintColor?.cgColor
-        layer.cornerRadius = 6.0
+        layer.cornerRadius = 10.0
     }
     
     func applyDimviewBorderProperties() {
         layer.borderWidth = 1.0
         layer.borderColor = UIColor.manatee1.cgColor
-        layer.cornerRadius = 6.0
+        layer.cornerRadius = 10.0
     }
 }
 

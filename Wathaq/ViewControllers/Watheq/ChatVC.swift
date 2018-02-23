@@ -28,6 +28,8 @@ import CoreLocation
 import ESPullToRefresh
 import DZNEmptyDataSet
 import Cosmos
+import MapKit
+import CoreLocation
 
 class ChatVC: UIViewController, UITextFieldDelegate,UITableViewDelegate,UITableViewDataSource,  UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate,ToastAlertProtocol {
     
@@ -313,6 +315,34 @@ class ChatVC: UIViewController, UITextFieldDelegate,UITableViewDelegate,UITableV
         self.SetupRateView()
         self.title = "\(NSLocalizedString("OrderNumber", comment: "") as String) \(OrderObj.id as! Int)"
 
+        let CallImg    = UIImage(named: "phone-outgoing")!
+        let LocationImg  = UIImage(named: "gps-remove")!
+        
+        let CallButton   = UIBarButtonItem(image: CallImg,  style: .plain, target: self, action: "didTapCallButton:")
+        let LocatonButton = UIBarButtonItem(image: LocationImg,  style: .plain, target: self, action: "didTapLocationButton:")
+        
+        navigationItem.rightBarButtonItems = [CallButton, LocatonButton]
+        
+    }
+    
+   @IBAction func didTapCallButton(_ sender: Any){
+        guard let number = URL(string: "tel://" + "\(OrderObj.lawyer?.phone as! Int)") else { return }
+        UIApplication.shared.open(number)
+
+    }
+    
+    @IBAction func didTapLocationButton(_ sender: Any){
+
+        if let location =  OrderObj.lawyer?.latitude
+        {
+            let coordinate = CLLocationCoordinate2DMake(Double((OrderObj.lawyer?.latitude)!),Double((OrderObj.lawyer?.longitude)!))
+            let mapItem = MKMapItem(placemark: MKPlacemark(coordinate: coordinate, addressDictionary:nil))
+            mapItem.name = OrderObj.lawyer?.name
+            mapItem.openInMaps(launchOptions: [MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving])
+        }
+        
+       
+        
     }
 }
 
