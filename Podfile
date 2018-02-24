@@ -30,7 +30,7 @@ target 'Wathaq' do
   pod 'GoogleMaps'
   pod 'GooglePlaces'
   pod 'BetterSegmentedControl', '~> 0.9'
-  pod 'IQKeyboardManagerSwift'
+  pod 'IQKeyboardManagerSwift', '5.0.0'
   pod 'EasyAnimation'
   pod 'FirebaseMessaging', '2.0.0'
   pod "DAKeychain"
