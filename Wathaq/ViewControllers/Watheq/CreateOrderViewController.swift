@@ -370,8 +370,7 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
         
 
 
-        let cellAddress = self.tblOrder.cellForRow(at: IndexPath(row: 2, section: 1) ) as! AddressLocationTableViewCell
-        cellAddress.txtAddressLocation.text = ""
+    
         
         self.tblOrder.reloadData()
     }
@@ -631,8 +630,7 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
         
   
         
-        let cellAddress = self.tblOrder.cellForRow(at: IndexPath(row: 2, section: 2) ) as! AddressLocationTableViewCell
-        cellAddress.txtAddressLocation.text = ""
+      
         
         self.tblOrder.reloadData()
     }
@@ -706,8 +704,7 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
         
         
         
-        let cellAddress = self.tblOrder.cellForRow(at: IndexPath(row: 2, section: 0) ) as! AddressLocationTableViewCell
-        cellAddress.txtAddressLocation.text = ""
+      
         
         self.tblOrder.reloadData()
     }
@@ -747,7 +744,7 @@ extension CreateOrderViewController: UITableViewDataSource {
         }//location
         else if section == 1
         {
-            return 3
+            return 2
         }
             //time
         else
@@ -768,7 +765,7 @@ extension CreateOrderViewController: UITableViewDataSource {
         }
         else if section == 2
          {
-            return 3
+            return 2
         }
         else
          {
@@ -779,7 +776,7 @@ extension CreateOrderViewController: UITableViewDataSource {
      {
             if section == 0
             {
-                return 3
+                return 2
              }
         else if section == 1
             {
@@ -866,7 +863,7 @@ extension CreateOrderViewController: UITableViewDataSource {
                 
                 return cellWakalaCat
             }
-            else if indexPath.row == 1
+            else
             {
               
                 let cellChooseLocation:ChooseLocationDropDownTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ChooseLocationDropDownTableViewCell") as UITableViewCell! as! ChooseLocationDropDownTableViewCell
@@ -889,25 +886,6 @@ extension CreateOrderViewController: UITableViewDataSource {
                 
                 return cellChooseLocation
 
-            }
-            else
-            {
-                let cellAddressLocation:AddressLocationTableViewCell = tableView.dequeueReusableCell(withIdentifier:"AddressLocationTableViewCell") as UITableViewCell! as! AddressLocationTableViewCell
-                cellAddressLocation.txtAddressLocation.placeholder = NSLocalizedString("AddressDetails", comment: "")
-                cellAddressLocation.txtAddressLocation.tag = (indexPath.section * 1000) + indexPath.row
-                cellAddressLocation.txtAddressLocation.delegate = self
-                
-                if let txtAddress : String =  TawkeelOrderDataDic.value(forKey: "address") as? String
-                {
-                    cellAddressLocation.txtAddressLocation.text = txtAddress
-                }else
-                {
-                    cellAddressLocation.txtAddressLocation.text = ""
-                    cellAddressLocation.txtAddressLocation.applyDGrayBorderProperties()
-
-                }
-                
-                return cellAddressLocation
             }
         }
         else if indexPath.section == 2
@@ -1089,7 +1067,7 @@ extension CreateOrderViewController: UITableViewDataSource {
                     
                     return cellWakalaCat
                 }
-                else if indexPath.row == 1
+                else
                 {
                     
                     let cellChooseLocation:ChooseLocationDropDownTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ChooseLocationDropDownTableViewCell") as UITableViewCell! as! ChooseLocationDropDownTableViewCell
@@ -1112,23 +1090,7 @@ extension CreateOrderViewController: UITableViewDataSource {
                     return cellChooseLocation
                     
                 }
-                else
-                {
-                    let cellAddressLocation:AddressLocationTableViewCell = tableView.dequeueReusableCell(withIdentifier:"AddressLocationTableViewCell") as UITableViewCell! as! AddressLocationTableViewCell
-                    cellAddressLocation.txtAddressLocation.placeholder = NSLocalizedString("AddressDetails", comment: "")
-                    cellAddressLocation.txtAddressLocation.tag = (indexPath.section * 1000) + indexPath.row
-                    cellAddressLocation.txtAddressLocation.delegate = self
-                    if let AddressDetails : String =  ContractOrderDataDic.value(forKey: "address") as? String
-                    {
-                        cellAddressLocation.txtAddressLocation.text = AddressDetails
-                    }else
-                    {
-                        cellAddressLocation.txtAddressLocation.text = ""
-                        cellAddressLocation.txtAddressLocation.applyDGrayBorderProperties()
-
-                    }
-                    return cellAddressLocation
-                }
+               
             }
             else if indexPath.section == 3
             {
@@ -1238,7 +1200,7 @@ extension CreateOrderViewController: UITableViewDataSource {
                     
                     return cellWakalaCat
                 }
-                else if indexPath.row == 1
+                else
                 {
                     
                     let cellChooseLocation:ChooseLocationDropDownTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ChooseLocationDropDownTableViewCell") as UITableViewCell! as! ChooseLocationDropDownTableViewCell
@@ -1261,23 +1223,7 @@ extension CreateOrderViewController: UITableViewDataSource {
                     return cellChooseLocation
                     
                 }
-                else
-                {
-                    let cellAddressLocation:AddressLocationTableViewCell = tableView.dequeueReusableCell(withIdentifier:"AddressLocationTableViewCell") as UITableViewCell! as! AddressLocationTableViewCell
-                    cellAddressLocation.txtAddressLocation.placeholder = NSLocalizedString("AddressDetails", comment: "")
-                    cellAddressLocation.txtAddressLocation.tag = (indexPath.section * 1000) + indexPath.row
-                    cellAddressLocation.txtAddressLocation.delegate = self
-                    if let AddressDetails : String =  NekahOrderDataDic.value(forKey: "address") as? String
-                    {
-                        cellAddressLocation.txtAddressLocation.text = AddressDetails
-                    }else
-                    {
-                        cellAddressLocation.txtAddressLocation.text = ""
-                        cellAddressLocation.txtAddressLocation.applyDGrayBorderProperties()
-
-                    }
-                    return cellAddressLocation
-                }
+                
             }
             else if indexPath.section == 1
                {
@@ -1504,10 +1450,7 @@ extension CreateOrderViewController : UITextFieldDelegate {
         let  section = textField.tag / 1000
         if CatId == 1
         {
-        if section == 1
-        {
-            TawkeelOrderDataDic.setValue(textField.text, forKey: "address")
-        }
+        
         }
         else if CatId == 10
         {
@@ -1519,17 +1462,9 @@ extension CreateOrderViewController : UITextFieldDelegate {
 
                 }
             }
-            else
-            {
-                ContractOrderDataDic.setValue(textField.text, forKey: "address")
-
-            }
+            
         }
-        else
-        {
-            NekahOrderDataDic.setValue(textField.text, forKey: "address")
-
-        }
+        
 
     }
     
