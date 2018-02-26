@@ -112,7 +112,7 @@
 "contract" = "عقود الشركات" ;
 "marriage" = "عقود نكاح";
 "CreateOrCancelWekala" = "إنشاء أو فسخ وكالة";
-"Creatwekala" = "انشاء توكيل" ;
+"Creatwekala" = "توكيل" ;
 "Cancelwekala" = "فسخ توكيل" ;
 "SefaWakeel" = "صفه الموكل";
 "WekalaDelivery" = "استلام الوكاله";
@@ -132,3 +132,4 @@
 "Your Request Recieved, you Will Be Contacted Shortly" = "تم استلام رسالتك، سوف نتواصل معك قريبا";
 "SR" = "رس";
 "NumofEndedServices" = "عدد الخدمات المنتهيه";
+"callMeLater" = "يرجى الاتصال بي لاتمام الطلب";

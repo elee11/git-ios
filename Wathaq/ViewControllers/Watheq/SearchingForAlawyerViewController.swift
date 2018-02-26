@@ -21,6 +21,8 @@ class SearchingForAlawyerViewController: UIViewController {
     @IBOutlet weak var lblSearchingMsg: UILabel!
     @IBOutlet weak var lbl_Timer: CountdownLabel!
     @IBOutlet weak var btn_searchForMowatheq: UIButton!
+    @IBOutlet weak var btn_callMeLater: UIButton!
+
     var OrderObj : OrderRootClass!
 
 
@@ -38,6 +40,8 @@ class SearchingForAlawyerViewController: UIViewController {
         lblSearching.text = "\(NSLocalizedString("OrderNumber", comment: "") as String) \(OrderObj.Orderdata?.id as! Int)"
         lblSearchingMsg.text = NSLocalizedString("OrderProceeded", comment: "")
         btn_searchForMowatheq.setTitle(NSLocalizedString("ChooseMowtheq", comment: ""), for: .normal)
+        btn_callMeLater.setTitle(NSLocalizedString("callMeLater", comment: ""), for: .normal)
+
         self.addTimerLable()
         UIView.animate(withDuration: 0.80, delay: 0.20,
                        usingSpringWithDamping: 22.0,
@@ -79,6 +83,11 @@ class SearchingForAlawyerViewController: UIViewController {
     @IBAction func chooseSpecficDocumenter (_ sender:Any)
     {
         self.performSegue(withIdentifier: "S_ChooseLawyer", sender: OrderObj.Orderdata)
+    }
+    
+    @IBAction func CallMeLater (_ sender:Any)
+    {
+      self.navigationController?.popToRootViewController(animated: true)
     }
 
     override func didReceiveMemoryWarning() {
