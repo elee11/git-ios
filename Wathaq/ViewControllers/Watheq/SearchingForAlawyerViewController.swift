@@ -68,6 +68,7 @@ class SearchingForAlawyerViewController: UIViewController {
         UIView.animate(withDuration: 0.5, animations: {
             
             self.btn_searchForMowatheq.alpha = 0
+            self.btn_callMeLater.alpha = 0
             self.lbl_Timer.alpha = 1
             
             
@@ -114,6 +115,7 @@ extension SearchingForAlawyerViewController: CountdownLabelDelegate {
         UIView.animate(withDuration: 0.5, animations: {
             
             self.btn_searchForMowatheq.alpha = 1
+            self.btn_callMeLater.alpha = 1
             self.lbl_Timer.alpha = 0
             
             

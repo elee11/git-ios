@@ -87,7 +87,7 @@ class CurrentLocationViewController: UIViewController,CLLocationManagerDelegate,
     @IBAction func ChooseAddress (_ sender : Any)
     {
         
-        if OrderDataDic.value(forKey: "address") != nil && OrderDataDic.value(forKey: "latitude") != nil{
+        if OrderDataDic.value(forKey: "longitude") != nil && OrderDataDic.value(forKey: "latitude") != nil{
             if  OrderDataDic.value(forKey: "MainCatId") as! Int == 1
             {
                 self.ParentView.TawkeelOrderDataDic = OrderDataDic
