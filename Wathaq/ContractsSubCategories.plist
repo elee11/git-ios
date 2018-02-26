@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Name</key>
+		<string>تصديق عقود تأسيس الشركات </string>
+		<key>Name_EN</key>
+		<string>Validation of company establishment</string>
+		<key>id</key>
+		<integer>11</integer>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>تعديل عقود الشركات</string>
+		<key>Name_EN</key>
+		<string>Validate of company contract</string>
+		<key>id</key>
+		<integer>12</integer>
+	</dict>
+</array>
+</plist>

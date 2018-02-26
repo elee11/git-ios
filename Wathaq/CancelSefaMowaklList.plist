@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Name</key>
+		<string>فرد</string>
+		<key>Name_EN</key>
+		<string>Individual</string>
+		<key>id</key>
+		<integer>7</integer>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string> مالك او مدير المؤسسة</string>
+		<key>Name_EN</key>
+		<string>Institution</string>
+		<key>id</key>
+		<integer>8</integer>
+	</dict>
+	<dict>
+		<key>Name</key>
+		<string>فسخ وكالة ل شركة</string>
+		<key>Name_EN</key>
+		<string>Cancel power of attorney for Company</string>
+		<key>id</key>
+		<integer>9</integer>
+	</dict>
+</array>
+</plist>

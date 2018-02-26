@@ -13,7 +13,7 @@
 		</dict>
 		<dict>
 			<key>Name</key>
-			<string>الائتمان</string>
+			<string>بطاقة الإئتمان</string>
 			<key>Name_EN</key>
 			<string>Credit Card</string>
 			<key>isForLoginedUser</key>
@@ -42,14 +42,6 @@
 			<string>الشروط والأحكام</string>
 			<key>Name_EN</key>
 			<string>Terms and Conditions</string>
-			<key>isForLoginedUser</key>
-			<false/>
-		</dict>
-		<dict>
-			<key>Name</key>
-			<string>المساعدة</string>
-			<key>Name_EN</key>
-			<string>Help</string>
 			<key>isForLoginedUser</key>
 			<false/>
 		</dict>

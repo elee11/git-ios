@@ -104,15 +104,12 @@ class PhoneVerificationController: UIViewController,ToastAlertProtocol {
         verificationCodeTextField.becomeFirstResponder()
         lblLogin.text = NSLocalizedString("login", comment: "")
         lblLoginMsg.text = NSLocalizedString("LoginMsg", comment: "")
-        lblaskingAboutNotarizedMsg.text = NSLocalizedString("areyoulegalized", comment: "")
-        btnDowndlowadNotarizedApp.setTitle(NSLocalizedString("Download the Notaries application from here", comment: ""), for: .normal)
         phoneTextField.placeholder = NSLocalizedString("PhoneNum", comment: "")
         phoneTextField.text = PhoneNumber
         verificationCodeTextField.placeholder = NSLocalizedString("VerificationCode", comment: "")
         verifyButton.setTitle(NSLocalizedString("sendVerificationCode", comment: ""), for: .normal)
         btnResendVerificationCode.setTitle(NSLocalizedString("ResendVerificationCode", comment: ""), for: .normal)
 //        btnClose.setTitle(NSLocalizedString("close", comment: ""), for: .normal)
-        btnDowndlowadNotarizedApp.titleLabel?.textAlignment = .center
         
 
     }
@@ -217,15 +214,13 @@ class PhoneVerificationController: UIViewController,ToastAlertProtocol {
         let phoneNumber = "+" + (localeCountry?.e164Cc!)! + phoneTextField.text!
         viewModel.loginUser(Phone: phoneNumber, completion: { (userObj, errorMsg) in
             if errorMsg == nil {
-                if userObj?.isCompleteProfile == false
+                if userObj?.isCompleteProfile == true
                 {
                     self.closeview()
-                    
                 }
                 else
                 {
                     self.performSegue(withIdentifier:"S_VerifyNumber_CompleteProfile", sender: nil)
-
                 }
                 
 
@@ -234,6 +229,11 @@ class PhoneVerificationController: UIViewController,ToastAlertProtocol {
             }
         })
 
+    }
+    
+    @IBAction func DownloadMowtheqApp (_ sender : Any)
+    {
+        UIApplication.shared.openURL(NSURL(string: "https://itunes.apple.com/us/app/%D8%AA%D8%B7%D8%A8%D9%8A%D9%82-%D8%A7%D9%84%D9%85%D9%88%D8%AB%D9%82/id1335532454?ls=1&mt=8")! as URL)
     }
 }
 

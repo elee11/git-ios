@@ -33,7 +33,7 @@ class MowatheqData : NSObject, NSCoding, Mappable{
 		return MowatheqData()
 	}
 	required init?(map: Map){}
-	private override init(){}
+	 override init(){}
 
 	func mapping(map: Map)
 	{

@@ -21,6 +21,10 @@ extension UIColor {
         return UIColor(red: 96.0 / 255.0, green: 208.0 / 255.0, blue: 75.0 / 255.0, alpha: 1.0)
     }
     
+    class var YellowSEGMENT: UIColor {
+        return UIColor(red: 250.0 / 255.0, green: 214.0 / 255.0, blue: 51.0 / 255.0, alpha: 1.0)
+    }
+    
     class var deepBlue: UIColor {
         return UIColor(red: 0.0 / 255.0, green: 147.0 / 255.0, blue: 82.0 / 255.0, alpha: 1.0)
     }
@@ -106,7 +110,7 @@ extension UIColor {
     }
     
     class var manatee1: UIColor {
-        return UIColor(red: 151.0 / 255.0, green: 151.0 / 255.0, blue: 151.0 / 255.0, alpha: 1.0)
+        return UIColor(red: 151.0 / 255.0, green: 151.0 / 255.0, blue: 151.0 / 255.0, alpha: 0.5)
     }
     
     class var manatee2: UIColor {
@@ -144,4 +148,5 @@ extension UIColor {
     class var lightpink: UIColor {
         return UIColor(red: 233.0 / 255.0, green: 61.0 / 255.0, blue: 115.0 / 255.0, alpha: 1.0)
     }
+
 }

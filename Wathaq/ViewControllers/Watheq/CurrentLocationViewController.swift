@@ -14,14 +14,15 @@ import GoogleMaps
 
 class CurrentLocationViewController: UIViewController,CLLocationManagerDelegate,ToastAlertProtocol {
 
-    var TotalCost : Int!
-    var NumOfSteps : Int!
+   
 
     var OrderDataDic : NSMutableDictionary!
     var locationManager:CLLocationManager!
     var currentLocation: CLLocation?
+    var ParentView : CreateOrderViewController!
     var mapView: GMSMapView!
     var zoomLevel: Float = 15.0
+    var txtAdress : UITextField!
 
     
     override func viewDidLoad() {
@@ -45,6 +46,11 @@ class CurrentLocationViewController: UIViewController,CLLocationManagerDelegate,
         mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         mapView.isMyLocationEnabled = true
         
+        let imagepin = UIImageView.init(image: UIImage.init(named: "LocationPin"))
+        imagepin.sizeToFit()
+        imagepin.center = mapView.center
+        mapView.addSubview(imagepin)
+        
         // Add the map to the view, hide it until we've got a location update.
         view.addSubview(mapView)
         mapView.isHidden = true
@@ -56,15 +62,49 @@ class CurrentLocationViewController: UIViewController,CLLocationManagerDelegate,
         button.roundCorners([.topLeft, .topRight, .bottomLeft ,.bottomRight], radius: 10)
         button.addTarget(self, action: #selector(ChooseAddress), for: .touchUpInside)
         self.view.addSubview(button)
+        
+        txtAdress = UITextField(frame: CGRect(x: self.view.center.x - (self.view.frame.size.width - 50)/2, y: self.view.frame.size.height - 270, width: self.view.frame.size.width - 50 , height: 60))
+        txtAdress.backgroundColor = UIColor.white
+        txtAdress.tintColor = UIColor.deepBlue
+        txtAdress.placeholder = NSLocalizedString("AddressDetails", comment: "")
+        txtAdress.textAlignment = .center
+        txtAdress.font =  UIFont(name: Constants.FONTS.FONT_AR, size: 17)
+
+        txtAdress.applyDGrayBorderProperties()
+        txtAdress.delegate = self
+        self.view.addSubview(txtAdress)
+        
+        if OrderDataDic.value(forKey: "address") != nil{
+           
+            txtAdress.text = OrderDataDic.value(forKey: "address") as! String
+            
+        }
+
+        
+        
     }
     
     @IBAction func ChooseAddress (_ sender : Any)
     {
         
         if OrderDataDic.value(forKey: "longitude") != nil && OrderDataDic.value(forKey: "latitude") != nil{
+            if  OrderDataDic.value(forKey: "MainCatId") as! Int == 1
+            {
+                self.ParentView.TawkeelOrderDataDic = OrderDataDic
+            }
+            else if OrderDataDic.value(forKey: "MainCatId") as! Int == 10
+            {
+                self.ParentView.ContractOrderDataDic = OrderDataDic
+            }
+            else
+            {
+                self.ParentView.NekahOrderDataDic = OrderDataDic
+
+            }
             
-           // _ = navigationController?.popViewController(animated: true)
-            self.performSegue(withIdentifier: "S_Location_WakeelTime", sender: OrderDataDic)
+            self.ParentView.tblOrder.reloadData()
+            
+            self.navigationController?.popViewController(nil)
 
         }
         else
@@ -124,8 +164,7 @@ class CurrentLocationViewController: UIViewController,CLLocationManagerDelegate,
             let OrderDic = sender as!  NSMutableDictionary
             let ArrivalTimeView = segue.destination as! MoawtheqArrivalTimeViewController
             ArrivalTimeView.OrderDataDic = OrderDic
-            ArrivalTimeView.TotalCost = self.TotalCost
-            ArrivalTimeView.NumOfSteps = NumOfSteps - 1
+         
 
         }
     }
@@ -136,12 +175,61 @@ extension CurrentLocationViewController: GMSMapViewDelegate {
 
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D){
         print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
-        mapView.clear() // clearing Pin before adding new
-        let marker = GMSMarker(position: coordinate)
-        marker.map = mapView
-        OrderDataDic.setValue(coordinate.latitude, forKey: "latitude")
-        OrderDataDic.setValue(coordinate.longitude, forKey: "longitude")
+//        mapView.clear() // clearing Pin before adding new
+//        let marker = GMSMarker(position: coordinate)
+//        marker.map = mapView
+//        OrderDataDic.setValue(coordinate.latitude, forKey: "latitude")
+//        OrderDataDic.setValue(coordinate.longitude, forKey: "longitude")
+    }
+    
+    func mapView(_ mapView: GMSMapView, didChange position: GMSCameraPosition) {
+        let latitude = mapView.camera.target.latitude
+        let longitude = mapView.camera.target.longitude
+        OrderDataDic.setValue(latitude, forKey: "latitude")
+        OrderDataDic.setValue(longitude, forKey: "longitude")
     }
 
 }
+
+extension CurrentLocationViewController : UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField)
+    {
+       
+        textField.applyGreenviewBorderProperties()
+        
+      
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField)
+    {
+        
+        if textField.text?.length == 0
+        {
+            textField.applyDGrayBorderProperties()
+            
+        }
+        
+        if  OrderDataDic.value(forKey: "MainCatId") as! Int == 1
+        {
+            self.ParentView.TawkeelOrderDataDic.setValue(textField.text, forKey: "address")
+        }
+        else if OrderDataDic.value(forKey: "MainCatId") as! Int == 10
+        {
+            
+              self.ParentView.ContractOrderDataDic.setValue(textField.text, forKey: "address")
+        }
+        else
+        {
+            self.ParentView.NekahOrderDataDic.setValue(textField.text, forKey: "address")
+        }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool
+    {
+        self.view.endEditing(true)
+        return true
+    }
+}
+
 

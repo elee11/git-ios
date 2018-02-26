@@ -15,7 +15,7 @@ import DAKeychain
 
 class WatheqViewController: AbstractViewController,ToastAlertProtocol {
     var catViewModel: CategoriesViewModel!
-    var ArrCat :[Category]!
+    var ArrCat :[CatObject]!
     var ErrorStr : String!
     var IsDataFirstLoading : Bool!
     var viewModel: UserViewModel!
@@ -26,7 +26,6 @@ class WatheqViewController: AbstractViewController,ToastAlertProtocol {
         super.viewDidLoad()
         viewModel = UserViewModel()
         self.checktoRegisterDeviceToken()
-
         if #available(iOS 11.0, *) {
             self.navigationController?.navigationBar.prefersLargeTitles = true
             let attributes = [
@@ -34,11 +33,9 @@ class WatheqViewController: AbstractViewController,ToastAlertProtocol {
                 NSAttributedStringKey.font :  UIFont(name: Constants.FONTS.FONT_PARALLAX_AR, size: 30)
             ]
             self.tbl_Categories.rowHeight = UITableViewAutomaticDimension
-
             navigationController?.navigationBar.largeTitleTextAttributes = attributes
         }
-
-        ArrCat = [Category]()
+        ArrCat = [CatObject]()
         catViewModel = CategoriesViewModel()
         IsDataFirstLoading = true
         getWkalataCategories()
@@ -110,11 +107,11 @@ class WatheqViewController: AbstractViewController,ToastAlertProtocol {
                 self.IsDataFirstLoading = false
                 if let arrCatData = wkalatTypeObj?.categories
                 {
-                    self.ArrCat = arrCatData as [Category]
+                    self.ArrCat = arrCatData as [CatObject]
                 }
                 else
                 {
-                     self.ArrCat = [Category]()
+                     self.ArrCat = [CatObject]()
                 }
                 
                 self.tbl_Categories.reloadData()
@@ -157,13 +154,13 @@ class WatheqViewController: AbstractViewController,ToastAlertProtocol {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
                 if segue.identifier == "WatheqCat_SubCat"  {
-                    let CatObj = sender as!  Category
+                    let CatObj = sender as!  CatObject
                     let SubCatDetails = segue.destination as! WatheqSubCatViewController
                     SubCatDetails.title = CatObj.name
                     SubCatDetails.ArrSubCat = CatObj.subs
               }
                 else if segue.identifier == "S_Watheq_MaazonLocation"  {
-                    let CatObj = sender as!  Category
+                    let CatObj = sender as!  CatObject
                     let maazonLocation = segue.destination as! ChooseMaazonLocationViewController
                     maazonLocation.CatObj = CatObj
         }

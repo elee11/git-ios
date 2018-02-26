@@ -25,20 +25,23 @@
 		9825C30C1FD1E2F500FE93E3 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9825C30B1FD1E2F500FE93E3 /* UserViewModel.swift */; };
 		9826D6B41FF6F601002B50FA /* SefaMowaklViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D6B31FF6F601002B50FA /* SefaMowaklViewController.swift */; };
 		9826D6B61FF6FAE5002B50FA /* SefaMowklCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D6B51FF6FAE5002B50FA /* SefaMowklCollectionViewCell.swift */; };
-		9826D6B81FF70037002B50FA /* SefaMowaklList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9826D6B71FF70037002B50FA /* SefaMowaklList.plist */; };
+		9826D6B81FF70037002B50FA /* CancelSefaMowaklList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9826D6B71FF70037002B50FA /* CancelSefaMowaklList.plist */; };
 		9826D6BA1FF713A2002B50FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9826D6B91FF713A1002B50FA /* GoogleService-Info.plist */; };
 		9826D6BC1FF81538002B50FA /* LetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D6BB1FF81538002B50FA /* LetterViewController.swift */; };
 		9826D6BE1FF81EF7002B50FA /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826D6BD1FF81EF7002B50FA /* DatePickerViewController.swift */; };
+		9826F06F2030FB5A004FB893 /* CatObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9826F06E2030FB5A004FB893 /* CatObject.swift */; };
 		98276FD01FE7183A00E3AE01 /* NewOrderRequestRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98276FCF1FE7183A00E3AE01 /* NewOrderRequestRootClass.swift */; };
+		982882AB2016BC7500BFBEC1 /* NotificationRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982882A92016BC7400BFBEC1 /* NotificationRootClass.swift */; };
+		982882AC2016BC7500BFBEC1 /* NotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982882AA2016BC7500BFBEC1 /* NotificationData.swift */; };
+		982882AF2016BC9100BFBEC1 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982882AE2016BC9100BFBEC1 /* NotificationViewModel.swift */; };
 		98298A511FDFDAEC00B651C5 /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98298A501FDFDAEC00B651C5 /* UIImage+Gif.swift */; };
 		982B5D381FCB4C840028092E /* PhoneNumberTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982B5D371FCB4C840028092E /* PhoneNumberTableViewCell.swift */; };
 		982B5D3A1FCB528A0028092E /* phoneVerificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982B5D391FCB528A0028092E /* phoneVerificationTableViewCell.swift */; };
+		982C09D320261C9B00FC3499 /* ContractsSubCategories.plist in Resources */ = {isa = PBXBuildFile; fileRef = 982C09D220261C9B00FC3499 /* ContractsSubCategories.plist */; };
 		982C682D1FCEF2DC0090F5F6 /* CompleteProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982C682C1FCEF2DC0090F5F6 /* CompleteProfileViewController.swift */; };
 		982CFA201FD87FDB0055593C /* CategoriesRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982CFA1D1FD87FDB0055593C /* CategoriesRootClass.swift */; };
-		982CFA211FD87FDB0055593C /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982CFA1E1FD87FDB0055593C /* Category.swift */; };
 		982CFA221FD87FDB0055593C /* WkalatType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982CFA1F1FD87FDB0055593C /* WkalatType.swift */; };
 		982CFA291FD8828E0055593C /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982CFA281FD8828E0055593C /* CategoriesViewModel.swift */; };
-		982CFA2B1FD889320055593C /* WatheqAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 982CFA2A1FD889320055593C /* WatheqAssets.xcassets */; };
 		982CFA2D1FD88D0C0055593C /* WatheqTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982CFA2C1FD88D0C0055593C /* WatheqTableViewCell.swift */; };
 		982CFA2F1FD9552E0055593C /* ProfileHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982CFA2E1FD9552E0055593C /* ProfileHeaderTableViewCell.swift */; };
 		982CFA311FD961290055593C /* Sub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982CFA301FD961290055593C /* Sub.swift */; };
@@ -46,8 +49,23 @@
 		982CFA371FD97A7E0055593C /* WatheqSubCatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982CFA361FD97A7E0055593C /* WatheqSubCatViewController.swift */; };
 		982CFA391FD9A4830055593C /* MyOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982CFA381FD9A4830055593C /* MyOrderTableViewCell.swift */; };
 		982CFA3B1FD9B19D0055593C /* MyOrderPlaceHolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982CFA3A1FD9B19D0055593C /* MyOrderPlaceHolderTableViewCell.swift */; };
+		982D5841202F3FA20064E03D /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D5840202F3FA20064E03D /* ContactUsViewController.swift */; };
+		982D5843202F3FD40064E03D /* ContactusDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982D5842202F3FD40064E03D /* ContactusDetailsTableViewCell.swift */; };
+		982DC2BD201802EA00B066F9 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982DC2BC201802EA00B066F9 /* WebViewController.swift */; };
 		982DF1FD1FD40DC000E4A8EA /* UserRootClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982DF1FC1FD40DC000E4A8EA /* UserRootClass.swift */; };
 		98337A071FCC334B00EE7539 /* TimerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98337A061FCC334B00EE7539 /* TimerTableViewCell.swift */; };
+		984A0AEF202254860073A346 /* OrderHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984A0AEE202254860073A346 /* OrderHeader.swift */; };
+		984A0AF1202254DE0073A346 /* WkalaCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984A0AF0202254DE0073A346 /* WkalaCategoryTableViewCell.swift */; };
+		984A0AF3202257460073A346 /* SefaMowklTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984A0AF2202257460073A346 /* SefaMowklTableViewCell.swift */; };
+		984A0AF520225A420073A346 /* CreateOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984A0AF420225A420073A346 /* CreateOrderViewController.swift */; };
+		984A0AF720233FB60073A346 /* OrderSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984A0AF620233FB60073A346 /* OrderSectionHeader.swift */; };
+		984A0AF9202343E90073A346 /* WakellDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984A0AF8202343E90073A346 /* WakellDataTableViewCell.swift */; };
+		984A0AFB202349210073A346 /* TawkeelMeetingTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984A0AFA202349210073A346 /* TawkeelMeetingTimeTableViewCell.swift */; };
+		984A0AFD20234B350073A346 /* ChooseLocationDropDownTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984A0AFC20234B350073A346 /* ChooseLocationDropDownTableViewCell.swift */; };
+		984A0AFF20234DBC0073A346 /* AddressLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984A0AFE20234DBC0073A346 /* AddressLocationTableViewCell.swift */; };
+		984A0B012024F3920073A346 /* CreateOrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984A0B002024F3920073A346 /* CreateOrderTableViewCell.swift */; };
+		984A0B03202500940073A346 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 984A0B02202500940073A346 /* PickerViewController.swift */; };
+		984A0B052025025E0073A346 /* CreateSefaMowaklList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 984A0B042025025E0073A346 /* CreateSefaMowaklList.plist */; };
 		985587E91FC6D882001AD5E5 /* plistReaderProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985587E81FC6D882001AD5E5 /* plistReaderProtocol.swift */; };
 		985587ED1FC6D8EA001AD5E5 /* ToastAlertProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985587EC1FC6D8EA001AD5E5 /* ToastAlertProtocol.swift */; };
 		985587EF1FC6D964001AD5E5 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 985587EE1FC6D964001AD5E5 /* UIColorExtension.swift */; };
@@ -71,6 +89,7 @@
 		9870B9FE1FB8CA5D008E678B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870B9FD1FB8CA5D008E678B /* ProfileViewController.swift */; };
 		9870BA051FB8CEB3008E678B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870BA041FB8CEB3008E678B /* SettingsViewController.swift */; };
 		9870BA121FB8D489008E678B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9870BA111FB8D489008E678B /* Assets.xcassets */; };
+		98793038202BE11D00CD5723 /* WatheqAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98793037202BE11D00CD5723 /* WatheqAssets.xcassets */; };
 		9883DF8A1FD56F2E008FC708 /* NSObject+RMArchivable.m in Sources */ = {isa = PBXBuildFile; fileRef = 9883DF831FD56F2D008FC708 /* NSObject+RMArchivable.m */; };
 		9883DF8B1FD56F2E008FC708 /* NSUserDefaults+RMSaveCustomObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 9883DF841FD56F2D008FC708 /* NSUserDefaults+RMSaveCustomObject.m */; };
 		9883DF8C1FD56F2E008FC708 /* RMMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9883DF851FD56F2D008FC708 /* RMMapper.m */; };
@@ -129,20 +148,23 @@
 		9825C30B1FD1E2F500FE93E3 /* UserViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		9826D6B31FF6F601002B50FA /* SefaMowaklViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SefaMowaklViewController.swift; sourceTree = "<group>"; };
 		9826D6B51FF6FAE5002B50FA /* SefaMowklCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SefaMowklCollectionViewCell.swift; sourceTree = "<group>"; };
-		9826D6B71FF70037002B50FA /* SefaMowaklList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = SefaMowaklList.plist; sourceTree = "<group>"; };
+		9826D6B71FF70037002B50FA /* CancelSefaMowaklList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CancelSefaMowaklList.plist; sourceTree = "<group>"; };
 		9826D6B91FF713A1002B50FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9826D6BB1FF81538002B50FA /* LetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterViewController.swift; sourceTree = "<group>"; };
 		9826D6BD1FF81EF7002B50FA /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		9826F06E2030FB5A004FB893 /* CatObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatObject.swift; sourceTree = "<group>"; };
 		98276FCF1FE7183A00E3AE01 /* NewOrderRequestRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewOrderRequestRootClass.swift; sourceTree = "<group>"; };
+		982882A92016BC7400BFBEC1 /* NotificationRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationRootClass.swift; sourceTree = "<group>"; };
+		982882AA2016BC7500BFBEC1 /* NotificationData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationData.swift; sourceTree = "<group>"; };
+		982882AE2016BC9100BFBEC1 /* NotificationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		98298A501FDFDAEC00B651C5 /* UIImage+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
 		982B5D371FCB4C840028092E /* PhoneNumberTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneNumberTableViewCell.swift; sourceTree = "<group>"; };
 		982B5D391FCB528A0028092E /* phoneVerificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = phoneVerificationTableViewCell.swift; sourceTree = "<group>"; };
+		982C09D220261C9B00FC3499 /* ContractsSubCategories.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ContractsSubCategories.plist; sourceTree = "<group>"; };
 		982C682C1FCEF2DC0090F5F6 /* CompleteProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteProfileViewController.swift; sourceTree = "<group>"; };
 		982CFA1D1FD87FDB0055593C /* CategoriesRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoriesRootClass.swift; sourceTree = "<group>"; };
-		982CFA1E1FD87FDB0055593C /* Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		982CFA1F1FD87FDB0055593C /* WkalatType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WkalatType.swift; sourceTree = "<group>"; };
 		982CFA281FD8828E0055593C /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
-		982CFA2A1FD889320055593C /* WatheqAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WatheqAssets.xcassets; sourceTree = "<group>"; };
 		982CFA2C1FD88D0C0055593C /* WatheqTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatheqTableViewCell.swift; sourceTree = "<group>"; };
 		982CFA2E1FD9552E0055593C /* ProfileHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderTableViewCell.swift; sourceTree = "<group>"; };
 		982CFA301FD961290055593C /* Sub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sub.swift; sourceTree = "<group>"; };
@@ -150,8 +172,23 @@
 		982CFA361FD97A7E0055593C /* WatheqSubCatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatheqSubCatViewController.swift; sourceTree = "<group>"; };
 		982CFA381FD9A4830055593C /* MyOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderTableViewCell.swift; sourceTree = "<group>"; };
 		982CFA3A1FD9B19D0055593C /* MyOrderPlaceHolderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyOrderPlaceHolderTableViewCell.swift; sourceTree = "<group>"; };
+		982D5840202F3FA20064E03D /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
+		982D5842202F3FD40064E03D /* ContactusDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactusDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		982DC2BC201802EA00B066F9 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		982DF1FC1FD40DC000E4A8EA /* UserRootClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserRootClass.swift; sourceTree = "<group>"; };
 		98337A061FCC334B00EE7539 /* TimerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerTableViewCell.swift; sourceTree = "<group>"; };
+		984A0AEE202254860073A346 /* OrderHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHeader.swift; sourceTree = "<group>"; };
+		984A0AF0202254DE0073A346 /* WkalaCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WkalaCategoryTableViewCell.swift; sourceTree = "<group>"; };
+		984A0AF2202257460073A346 /* SefaMowklTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SefaMowklTableViewCell.swift; sourceTree = "<group>"; };
+		984A0AF420225A420073A346 /* CreateOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderViewController.swift; sourceTree = "<group>"; };
+		984A0AF620233FB60073A346 /* OrderSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderSectionHeader.swift; sourceTree = "<group>"; };
+		984A0AF8202343E90073A346 /* WakellDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WakellDataTableViewCell.swift; sourceTree = "<group>"; };
+		984A0AFA202349210073A346 /* TawkeelMeetingTimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TawkeelMeetingTimeTableViewCell.swift; sourceTree = "<group>"; };
+		984A0AFC20234B350073A346 /* ChooseLocationDropDownTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLocationDropDownTableViewCell.swift; sourceTree = "<group>"; };
+		984A0AFE20234DBC0073A346 /* AddressLocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressLocationTableViewCell.swift; sourceTree = "<group>"; };
+		984A0B002024F3920073A346 /* CreateOrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateOrderTableViewCell.swift; sourceTree = "<group>"; };
+		984A0B02202500940073A346 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
+		984A0B042025025E0073A346 /* CreateSefaMowaklList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = CreateSefaMowaklList.plist; sourceTree = "<group>"; };
 		985587E81FC6D882001AD5E5 /* plistReaderProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = plistReaderProtocol.swift; sourceTree = "<group>"; };
 		985587EC1FC6D8EA001AD5E5 /* ToastAlertProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToastAlertProtocol.swift; sourceTree = "<group>"; };
 		985587EE1FC6D964001AD5E5 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
@@ -177,6 +214,7 @@
 		9870B9FD1FB8CA5D008E678B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		9870BA041FB8CEB3008E678B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9870BA111FB8D489008E678B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		98793037202BE11D00CD5723 /* WatheqAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WatheqAssets.xcassets; sourceTree = "<group>"; };
 		9883DF811FD56F2C008FC708 /* Wathaq-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wathaq-Bridging-Header.h"; sourceTree = "<group>"; };
 		9883DF821FD56F2D008FC708 /* NSObject+RMArchivable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+RMArchivable.h"; sourceTree = "<group>"; };
 		9883DF831FD56F2D008FC708 /* NSObject+RMArchivable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+RMArchivable.m"; sourceTree = "<group>"; };
@@ -219,7 +257,7 @@
 		989B46061FB8DA2600618519 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		989B46071FB8DA8D00618519 /* RefreshAppProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshAppProtocol.swift; sourceTree = "<group>"; };
 		989B460C1FB8E48800618519 /* TabBarAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = TabBarAssets.xcassets; sourceTree = "<group>"; };
-		98DDA1451FB797E500B8F42F /* Wathaq.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wathaq.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		98DDA1451FB797E500B8F42F /* وثق.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "وثق.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98DDA1481FB797E500B8F42F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98DDA14F1FB797E500B8F42F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		98DDA1541FB797E500B8F42F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -303,6 +341,23 @@
 			name = userViewModel;
 			sourceTree = "<group>";
 		};
+		982882A82016BC6300BFBEC1 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				982882AA2016BC7500BFBEC1 /* NotificationData.swift */,
+				982882A92016BC7400BFBEC1 /* NotificationRootClass.swift */,
+			);
+			name = Notification;
+			sourceTree = "<group>";
+		};
+		982882AD2016BC7D00BFBEC1 /* NotificationviewModel */ = {
+			isa = PBXGroup;
+			children = (
+				982882AE2016BC9100BFBEC1 /* NotificationViewModel.swift */,
+			);
+			name = NotificationviewModel;
+			sourceTree = "<group>";
+		};
 		982C682B1FCEF2BF0090F5F6 /* CompleteProfile */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,7 +370,7 @@
 			isa = PBXGroup;
 			children = (
 				982CFA1D1FD87FDB0055593C /* CategoriesRootClass.swift */,
-				982CFA1E1FD87FDB0055593C /* Category.swift */,
+				9826F06E2030FB5A004FB893 /* CatObject.swift */,
 				982CFA301FD961290055593C /* Sub.swift */,
 				982CFA1F1FD87FDB0055593C /* WkalatType.swift */,
 			);
@@ -328,6 +383,42 @@
 				982CFA281FD8828E0055593C /* CategoriesViewModel.swift */,
 			);
 			name = CategoriesViewModel;
+			sourceTree = "<group>";
+		};
+		982D583F202F3F800064E03D /* ContactUs */ = {
+			isa = PBXGroup;
+			children = (
+				982D5840202F3FA20064E03D /* ContactUsViewController.swift */,
+				982D5842202F3FD40064E03D /* ContactusDetailsTableViewCell.swift */,
+			);
+			name = ContactUs;
+			sourceTree = "<group>";
+		};
+		984A0AEC202254460073A346 /* NewOrderFlow */ = {
+			isa = PBXGroup;
+			children = (
+				984A0AF420225A420073A346 /* CreateOrderViewController.swift */,
+				988A6B441FDF41FB003368C6 /* CurrentLocationViewController.swift */,
+				984A0B02202500940073A346 /* PickerViewController.swift */,
+				984A0AED202254560073A346 /* NewOrderCells */,
+			);
+			name = NewOrderFlow;
+			sourceTree = "<group>";
+		};
+		984A0AED202254560073A346 /* NewOrderCells */ = {
+			isa = PBXGroup;
+			children = (
+				984A0AEE202254860073A346 /* OrderHeader.swift */,
+				984A0AF620233FB60073A346 /* OrderSectionHeader.swift */,
+				984A0AF0202254DE0073A346 /* WkalaCategoryTableViewCell.swift */,
+				984A0AF2202257460073A346 /* SefaMowklTableViewCell.swift */,
+				984A0AF8202343E90073A346 /* WakellDataTableViewCell.swift */,
+				984A0AFA202349210073A346 /* TawkeelMeetingTimeTableViewCell.swift */,
+				984A0AFC20234B350073A346 /* ChooseLocationDropDownTableViewCell.swift */,
+				984A0AFE20234DBC0073A346 /* AddressLocationTableViewCell.swift */,
+				984A0B002024F3920073A346 /* CreateOrderTableViewCell.swift */,
+			);
+			name = NewOrderCells;
 			sourceTree = "<group>";
 		};
 		985587DE1FC6C2C4001AD5E5 /* Login */ = {
@@ -351,7 +442,9 @@
 				988942DF1FCA0F73001B4F75 /* country-codes.json */,
 				9826D6B91FF713A1002B50FA /* GoogleService-Info.plist */,
 				988942D81FC72074001B4F75 /* SettingsList.plist */,
-				9826D6B71FF70037002B50FA /* SefaMowaklList.plist */,
+				9826D6B71FF70037002B50FA /* CancelSefaMowaklList.plist */,
+				984A0B042025025E0073A346 /* CreateSefaMowaklList.plist */,
+				982C09D220261C9B00FC3499 /* ContractsSubCategories.plist */,
 				988942DE1FC72312001B4F75 /* Fonts */,
 			);
 			name = Resources;
@@ -405,6 +498,7 @@
 		9870BA001FB8CDF6008E678B /* Watheq */ = {
 			isa = PBXGroup;
 			children = (
+				984A0AEC202254460073A346 /* NewOrderFlow */,
 				9870B9F91FB8CA38008E678B /* WatheqViewController.swift */,
 				982CFA361FD97A7E0055593C /* WatheqSubCatViewController.swift */,
 				9867AB2E1FF9B02900F16ECD /* ChooseMaazonLocationViewController.swift */,
@@ -417,7 +511,6 @@
 				9826D6B31FF6F601002B50FA /* SefaMowaklViewController.swift */,
 				988A6B401FDF33FA003368C6 /* TawkeelOwnerViewController.swift */,
 				988A6B421FDF40AA003368C6 /* DeliveryLocationViewController.swift */,
-				988A6B441FDF41FB003368C6 /* CurrentLocationViewController.swift */,
 				982427E31FFD8656003848BF /* MoawtheqArrivalTimeViewController.swift */,
 				9823961D1FE9A611006405C4 /* SearchingForAlawyerViewController.swift */,
 				9820B60C1FE433070075B5FA /* ChooseLawyerViewController.swift */,
@@ -454,8 +547,10 @@
 		9870BA031FB8CE9B008E678B /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				982D583F202F3F800064E03D /* ContactUs */,
 				9870BA041FB8CEB3008E678B /* SettingsViewController.swift */,
 				986516561FBA4E2B00551208 /* SettingsTableCell.swift */,
+				982DC2BC201802EA00B066F9 /* WebViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -473,6 +568,7 @@
 		9870BA071FB8D0A8008E678B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				982882A82016BC6300BFBEC1 /* Notification */,
 				985B36C4200A736B002F11B0 /* Messages */,
 				9820B5F71FE08CD70075B5FA /* Order */,
 				982CFA1C1FD87FCE0055593C /* Categories */,
@@ -508,6 +604,7 @@
 		9870BA0A1FB8D0E0008E678B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				982882AD2016BC7D00BFBEC1 /* NotificationviewModel */,
 				9886E7082002C712007BEA77 /* MowatheqViewModel */,
 				9820B5F41FE08A9A0075B5FA /* Order */,
 				982CFA251FD8822B0055593C /* CategoriesViewModel */,
@@ -558,8 +655,8 @@
 				989B460C1FB8E48800618519 /* TabBarAssets.xcassets */,
 				982416C71FC4D15900080DE9 /* EmptyDataAssets.xcassets */,
 				988943011FCA2B74001B4F75 /* LoginAssets.xcassets */,
+				98793037202BE11D00CD5723 /* WatheqAssets.xcassets */,
 				988E42381FD7333200A6AF59 /* ProfileAssets.xcassets */,
-				982CFA2A1FD889320055593C /* WatheqAssets.xcassets */,
 				985B36CE200B84B5002F11B0 /* Chat.xcassets */,
 			);
 			path = Assets;
@@ -645,7 +742,7 @@
 		98DDA1461FB797E500B8F42F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				98DDA1451FB797E500B8F42F /* Wathaq.app */,
+				98DDA1451FB797E500B8F42F /* وثق.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -690,7 +787,7 @@
 			);
 			name = Wathaq;
 			productName = Wathaq;
-			productReference = 98DDA1451FB797E500B8F42F /* Wathaq.app */;
+			productReference = 98DDA1451FB797E500B8F42F /* وثق.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -746,7 +843,9 @@
 				985B36CF200B84B5002F11B0 /* Chat.xcassets in Resources */,
 				989B460D1FB8E48800618519 /* TabBarAssets.xcassets in Resources */,
 				989B46011FB8D9E200618519 /* Localizable.strings in Resources */,
-				9826D6B81FF70037002B50FA /* SefaMowaklList.plist in Resources */,
+				9826D6B81FF70037002B50FA /* CancelSefaMowaklList.plist in Resources */,
+				984A0B052025025E0073A346 /* CreateSefaMowaklList.plist in Resources */,
+				98793038202BE11D00CD5723 /* WatheqAssets.xcassets in Resources */,
 				9826D6BA1FF713A2002B50FA /* GoogleService-Info.plist in Resources */,
 				98DDA1551FB797E500B8F42F /* LaunchScreen.storyboard in Resources */,
 				988942DD1FC7230D001B4F75 /* DinNextRegular.ttf in Resources */,
@@ -758,8 +857,8 @@
 				988942D61FC72074001B4F75 /* SettingsList.plist in Resources */,
 				988942F41FCA12FB001B4F75 /* CountryCodeListController.xib in Resources */,
 				98DDA1501FB797E500B8F42F /* Main.storyboard in Resources */,
-				982CFA2B1FD889320055593C /* WatheqAssets.xcassets in Resources */,
 				988942E01FCA0F73001B4F75 /* country-codes.json in Resources */,
+				982C09D320261C9B00FC3499 /* ContractsSubCategories.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -778,7 +877,8 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GooglePlaces.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -812,8 +912,11 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Wathaq/Pods-Wathaq-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BetterSegmentedControl/BetterSegmentedControl.framework",
+				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/CountdownLabel/CountdownLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/DAKeychain/DAKeychain.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
+				"${BUILT_PRODUCTS_DIR}/ESPullToRefresh/ESPullToRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/EasyAnimation/EasyAnimation.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
@@ -827,6 +930,7 @@
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/PullToRefreshKit/PullToRefreshKit.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
@@ -842,8 +946,11 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BetterSegmentedControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CountdownLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DAKeychain.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ESPullToRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EasyAnimation.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
@@ -857,6 +964,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PullToRefreshKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
@@ -880,16 +988,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				984A0AFD20234B350073A346 /* ChooseLocationDropDownTableViewCell.swift in Sources */,
 				982B5D3A1FCB528A0028092E /* phoneVerificationTableViewCell.swift in Sources */,
 				9820B6021FE08FB40075B5FA /* OrderRootClass.swift in Sources */,
 				982DF1FD1FD40DC000E4A8EA /* UserRootClass.swift in Sources */,
 				982CFA391FD9A4830055593C /* MyOrderTableViewCell.swift in Sources */,
 				98DDA1491FB797E500B8F42F /* AppDelegate.swift in Sources */,
+				984A0AF720233FB60073A346 /* OrderSectionHeader.swift in Sources */,
 				9870B9F81FB8CA2B008E678B /* MyOrdersViewController.swift in Sources */,
 				985B36CB200A7C25002F11B0 /* Helper Files.swift in Sources */,
 				9870B9FE1FB8CA5D008E678B /* ProfileViewController.swift in Sources */,
 				989B460B1FB8DB9B00618519 /* RefreshAppProtocol.swift in Sources */,
 				989B46081FB8DB8800618519 /* Language.swift in Sources */,
+				984A0B03202500940073A346 /* PickerViewController.swift in Sources */,
 				9826D6BC1FF81538002B50FA /* LetterViewController.swift in Sources */,
 				9883DF8D1FD56F2E008FC708 /* NSObject+RMCopyable.m in Sources */,
 				982B5D381FCB4C840028092E /* PhoneNumberTableViewCell.swift in Sources */,
@@ -897,6 +1008,7 @@
 				9820B5F61FE08ADC0075B5FA /* OrderViewModel.swift in Sources */,
 				9886E70C2002C72A007BEA77 /* MowatheqData.swift in Sources */,
 				988942FB1FCA1321001B4F75 /* CountryCodeListController.swift in Sources */,
+				984A0AEF202254860073A346 /* OrderHeader.swift in Sources */,
 				9870B9FC1FB8CA51008E678B /* NotficationsViewController.swift in Sources */,
 				988942FC1FCA1321001B4F75 /* CountryCodeListCell.swift in Sources */,
 				982CFA221FD87FDB0055593C /* WkalatType.swift in Sources */,
@@ -905,6 +1017,7 @@
 				986516571FBA4E2B00551208 /* SettingsTableCell.swift in Sources */,
 				9825C3091FD1DFD200FE93E3 /* User.swift in Sources */,
 				9820B6051FE090390075B5FA /* Orderdata.swift in Sources */,
+				984A0B012024F3920073A346 /* CreateOrderTableViewCell.swift in Sources */,
 				988942ED1FCA12C2001B4F75 /* Country.swift in Sources */,
 				9867AB331FF9C1B100F16ECD /* TimePickerViewController.swift in Sources */,
 				982CFA351FD967A50055593C /* WatheqPlaceHolderTableViewCell.swift in Sources */,
@@ -913,34 +1026,44 @@
 				9883DF8C1FD56F2E008FC708 /* RMMapper.m in Sources */,
 				988A6B3F1FDF33CA003368C6 /* MawklViewController.swift in Sources */,
 				985587E91FC6D882001AD5E5 /* plistReaderProtocol.swift in Sources */,
+				984A0AF9202343E90073A346 /* WakellDataTableViewCell.swift in Sources */,
+				984A0AFB202349210073A346 /* TawkeelMeetingTimeTableViewCell.swift in Sources */,
 				988A6B411FDF33FA003368C6 /* TawkeelOwnerViewController.swift in Sources */,
 				985B36CD200A7C25002F11B0 /* ContactsManager.swift in Sources */,
 				982C682D1FCEF2DC0090F5F6 /* CompleteProfileViewController.swift in Sources */,
 				982CFA371FD97A7E0055593C /* WatheqSubCatViewController.swift in Sources */,
 				986F54EF1FD007AF00E9F842 /* NotificationExtension.swift in Sources */,
 				9867AB2F1FF9B02900F16ECD /* ChooseMaazonLocationViewController.swift in Sources */,
+				982882AB2016BC7500BFBEC1 /* NotificationRootClass.swift in Sources */,
 				9870B9FA1FB8CA38008E678B /* WatheqViewController.swift in Sources */,
 				9870BA051FB8CEB3008E678B /* SettingsViewController.swift in Sources */,
 				9826D6B61FF6FAE5002B50FA /* SefaMowklCollectionViewCell.swift in Sources */,
 				982CFA311FD961290055593C /* Sub.swift in Sources */,
+				982D5843202F3FD40064E03D /* ContactusDetailsTableViewCell.swift in Sources */,
 				989B46091FB8DB8C00618519 /* Localizer.swift in Sources */,
 				988E423B1FD73C3500A6AF59 /* ProfileHeaderView.swift in Sources */,
 				985B36C3200A731F002F11B0 /* VCCells.swift in Sources */,
 				9886E70E2002CB06007BEA77 /* lawyercellPlaceholder.swift in Sources */,
+				982882AC2016BC7500BFBEC1 /* NotificationData.swift in Sources */,
+				984A0AF1202254DE0073A346 /* WkalaCategoryTableViewCell.swift in Sources */,
+				982DC2BD201802EA00B066F9 /* WebViewController.swift in Sources */,
 				985B36C2200A731F002F11B0 /* ChatVC.swift in Sources */,
 				985587EF1FC6D964001AD5E5 /* UIColorExtension.swift in Sources */,
 				982CFA291FD8828E0055593C /* CategoriesViewModel.swift in Sources */,
 				985B36C6200A7377002F11B0 /* Message.swift in Sources */,
 				988942E51FCA10E5001B4F75 /* JSONReader.swift in Sources */,
 				9883DF8A1FD56F2E008FC708 /* NSObject+RMArchivable.m in Sources */,
+				9826F06F2030FB5A004FB893 /* CatObject.swift in Sources */,
 				982CFA2F1FD9552E0055593C /* ProfileHeaderTableViewCell.swift in Sources */,
 				982CFA3B1FD9B19D0055593C /* MyOrderPlaceHolderTableViewCell.swift in Sources */,
+				982882AF2016BC9100BFBEC1 /* NotificationViewModel.swift in Sources */,
 				9886E70B2002C72A007BEA77 /* MoawtheqRootClass.swift in Sources */,
 				988A6B451FDF41FB003368C6 /* CurrentLocationViewController.swift in Sources */,
 				982CFA201FD87FDB0055593C /* CategoriesRootClass.swift in Sources */,
 				9825C3021FD1DD2400FE93E3 /* NetworkHandler.swift in Sources */,
 				9825C30C1FD1E2F500FE93E3 /* UserViewModel.swift in Sources */,
 				985587ED1FC6D8EA001AD5E5 /* ToastAlertProtocol.swift in Sources */,
+				984A0AF3202257460073A346 /* SefaMowklTableViewCell.swift in Sources */,
 				9820B60D1FE433070075B5FA /* ChooseLawyerViewController.swift in Sources */,
 				988942E91FCA123E001B4F75 /* View+Additions.swift in Sources */,
 				9825C3041FD1DDA100FE93E3 /* DefaultAlamofireManager.swift in Sources */,
@@ -952,6 +1075,7 @@
 				988942FE1FCA1321001B4F75 /* PhoneEntryController.swift in Sources */,
 				986F54ED1FD0069500E9F842 /* NWConnectivity.swift in Sources */,
 				988A6B431FDF40AA003368C6 /* DeliveryLocationViewController.swift in Sources */,
+				984A0AF520225A420073A346 /* CreateOrderViewController.swift in Sources */,
 				98276FD01FE7183A00E3AE01 /* NewOrderRequestRootClass.swift in Sources */,
 				9867AB311FF9B06800F16ECD /* MaazonDataViewController.swift in Sources */,
 				9820B6011FE08FB40075B5FA /* Client.swift in Sources */,
@@ -959,10 +1083,11 @@
 				98298A511FDFDAEC00B651C5 /* UIImage+Gif.swift in Sources */,
 				9883DF8B1FD56F2E008FC708 /* NSUserDefaults+RMSaveCustomObject.m in Sources */,
 				9820B60F1FE435C30075B5FA /* LawyerTableViewCell.swift in Sources */,
+				984A0AFF20234DBC0073A346 /* AddressLocationTableViewCell.swift in Sources */,
 				9826D6B41FF6F601002B50FA /* SefaMowaklViewController.swift in Sources */,
 				988942EE1FCA12C2001B4F75 /* Countries.swift in Sources */,
 				985587F11FC6DD19001AD5E5 /* LblWithTitleGenralCellProtocol.swift in Sources */,
-				982CFA211FD87FDB0055593C /* Category.swift in Sources */,
+				982D5841202F3FA20064E03D /* ContactUsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1128,7 +1253,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.watheq.watheq;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "وثق";
 				SWIFT_OBJC_BRIDGING_HEADER = "Wathaq/Wathaq-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
@@ -1149,7 +1274,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.watheq.watheq;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "وثق";
 				SWIFT_OBJC_BRIDGING_HEADER = "Wathaq/Wathaq-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
