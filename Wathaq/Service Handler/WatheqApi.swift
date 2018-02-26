@@ -63,7 +63,7 @@ public enum WatheqApi {
     case logout(identifier:String)
     //Order
     case getCategories
-    case CreateOrder(categoryId:Int, clientName:String,  clientNationalID:String, delivery:String, latitude:Double, longitude:Double , time:String , address:String )
+    case CreateOrder(categoryId:Int, delivery:String, latitude:Double, longitude:Double , time:String , address:String )
     case createNekahOrder(categoryId:Int,delivery:String,latitude:Double, longitude:Double,marriageDate:String,marriageTime:String,address:String)
     case createContractOrder(categoryId:Int,delivery:String,latitude:Double, longitude:Double,letterDate:String,letterNumber:String,time:String , address:String )
     case RateOrder(orderId:Int,rate:Int)
@@ -159,8 +159,8 @@ extension WatheqApi: TargetType,AccessTokenAuthorizable {
             return .requestParameters(parameters: ["page":page , "limit" : limit], encoding: URLEncoding.default)
         case .getClosedOrders(let page, let limit):
             return .requestParameters(parameters: ["page":page , "limit" : limit], encoding: URLEncoding.default)
-        case .CreateOrder(let categoryId, let clientName, let clientNationalID, let delivery, let latitude, let longitude , let time,let address ):
-            return .requestParameters(parameters: ["categoryId":categoryId , "clientName":clientName ,  "clientNationalID":clientNationalID,  "delivery":delivery, "latitude":latitude, "longitude":longitude, "time":time , "address":address], encoding: JSONEncoding.default)
+        case .CreateOrder(let categoryId, let delivery, let latitude, let longitude , let time,let address ):
+            return .requestParameters(parameters: ["categoryId":categoryId ,"delivery":delivery, "latitude":latitude, "longitude":longitude, "time":time , "address":address], encoding: JSONEncoding.default)
         case .createNekahOrder(let categoryId,let delivery,let latitude,let longitude,let marriageDate,let  marriageTime ,let address):
             return .requestParameters(parameters: ["categoryId":categoryId, "delivery":delivery,"latitude":latitude,"longitude":longitude,"marriageDate":marriageDate,"marriageTime":marriageTime, "address":address], encoding: JSONEncoding.default)
             

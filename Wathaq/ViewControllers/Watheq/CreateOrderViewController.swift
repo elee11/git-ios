@@ -46,7 +46,7 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
         ArrCat = [CatObject]()
         catViewModel = CategoriesViewModel()
         
-        getWkalataCategories()
+      //  getWkalataCategories()
 
 
         TawkeelOrderDataDic.setValue("office", forKey: "delivery")
@@ -175,6 +175,7 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
     
     func adjustSegmentControl ()
     {
+        
         SegmentControl.titles = [NSLocalizedString("wekala", comment: ""), NSLocalizedString("contract", comment: ""), NSLocalizedString("marriage", comment: "")]
         SegmentControl.titleFont = UIFont(name: Constants.FONTS.FONT_AR, size: 16.0)!
         SegmentControl.selectedTitleFont = UIFont(name: Constants.FONTS.FONT_AR, size: 16.0)!
@@ -310,7 +311,7 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
     @IBAction func CreatOrder(_ sender : Any)
     {
        
-        if (TawkeelOrderDataDic.object(forKey: "categoryId") != nil && TawkeelOrderDataDic.object(forKey: "clientName") != nil &&  TawkeelOrderDataDic.object(forKey: "clientNationalID") != nil  && TawkeelOrderDataDic.object(forKey: "delivery") != nil && TawkeelOrderDataDic.object(forKey: "latitude") != nil && TawkeelOrderDataDic.object(forKey: "longitude") != nil && TawkeelOrderDataDic.object(forKey: "time") != nil)
+        if (TawkeelOrderDataDic.object(forKey: "categoryId") != nil  && TawkeelOrderDataDic.object(forKey: "delivery") != nil && TawkeelOrderDataDic.object(forKey: "latitude") != nil && TawkeelOrderDataDic.object(forKey: "longitude") != nil && TawkeelOrderDataDic.object(forKey: "time") != nil)
         {
         
             if  TawkeelOrderDataDic.object(forKey: "address") == nil
@@ -362,21 +363,14 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
         TawkeelOrderDataDic.removeObject(forKey: "address")
         TawkeelOrderDataDic.removeObject(forKey: "latitude")
         TawkeelOrderDataDic.removeObject(forKey: "longitude")
-        TawkeelOrderDataDic.removeObject(forKey: "clientNationalID")
-        TawkeelOrderDataDic.removeObject(forKey: "clientName")
+   
         TawkeelOrderDataDic.removeObject(forKey: "SefaCategoryName")
         self.tblOrder.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
-        let indexpath = IndexPath(row: 0, section: 1)
-        let cellTawkeelOwner = self.tblOrder.cellForRow(at:indexpath ) as! WakellDataTableViewCell
-        
-
-        cellTawkeelOwner.txtName.text = ""
-        cellTawkeelOwner.txtCivilRegistry.text = ""
-        
+      
         
 
 
-        let cellAddress = self.tblOrder.cellForRow(at: IndexPath(row: 2, section: 2) ) as! AddressLocationTableViewCell
+        let cellAddress = self.tblOrder.cellForRow(at: IndexPath(row: 2, section: 1) ) as! AddressLocationTableViewCell
         cellAddress.txtAddressLocation.text = ""
         
         self.tblOrder.reloadData()
@@ -747,11 +741,11 @@ extension CreateOrderViewController: UITableViewDataSource {
         {
             return 2
         }//wakeel data
-        else if section == 1  || section == 4
+        else if  section == 3
         {
             return 1
         }//location
-        else if section == 2
+        else if section == 1
         {
             return 3
         }
@@ -802,7 +796,7 @@ extension CreateOrderViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         if CatId == 1
         {
-          return 5
+          return 4
         }
         else if CatId == 10
         {
@@ -856,76 +850,8 @@ extension CreateOrderViewController: UITableViewDataSource {
             
             
         }
+        
         else if indexPath.section == 1
-        {
-            
-            let cellMowakelData:WakellDataTableViewCell = tableView.dequeueReusableCell(withIdentifier:"WakellDataTableViewCell") as UITableViewCell! as! WakellDataTableViewCell
-            
-            if indexPath.section == 1
-            {
-                cellMowakelData.txtName.placeholder = NSLocalizedString("name", comment: "")
-                cellMowakelData.txtCivilRegistry.placeholder = NSLocalizedString("civilReg", comment: "")
-                cellMowakelData.txtName.tag = (indexPath.section * 1000) + indexPath.row
-                cellMowakelData.txtCivilRegistry.tag = (indexPath.section * 1000) + indexPath.row+1
-                cellMowakelData.txtName.delegate = self
-                cellMowakelData.txtCivilRegistry.delegate = self
-                if let txtName : String =  TawkeelOrderDataDic.value(forKey: "clientName") as? String
-                {
-                    cellMowakelData.txtName.text = txtName
-                }else
-                {
-                    cellMowakelData.txtName.text = ""
-                    cellMowakelData.txtName.applyDGrayBorderProperties()
-
-                }
-                
-                if let txtcivilReg : String =  TawkeelOrderDataDic.value(forKey: "clientNationalID") as? String
-                {
-                    cellMowakelData.txtCivilRegistry.text = txtcivilReg
-                }else
-                {
-                    cellMowakelData.txtCivilRegistry.text = ""
-                    cellMowakelData.txtCivilRegistry.applyDGrayBorderProperties()
-
-                }
-                
-
-
-            }
-            else
-            {
-                cellMowakelData.txtName.placeholder = NSLocalizedString("name", comment: "")
-                cellMowakelData.txtCivilRegistry.placeholder = NSLocalizedString("civilReg", comment: "")
-                cellMowakelData.txtName.tag = (indexPath.section * 1000) + indexPath.row
-                cellMowakelData.txtCivilRegistry.tag = (indexPath.section * 1000) + indexPath.row+1
-                cellMowakelData.txtName.delegate = self
-                cellMowakelData.txtCivilRegistry.delegate = self
-                
-                if let txtName : String =  TawkeelOrderDataDic.value(forKey: "representativeName") as? String
-                {
-                    cellMowakelData.txtName.text = txtName
-                    
-                }else
-                {
-                    cellMowakelData.txtName.text = ""
-                    cellMowakelData.txtName.applyDGrayBorderProperties()
-
-                }
-                
-                if let txtcivilReg : String =  TawkeelOrderDataDic.value(forKey: "representativeNationalID") as? String
-                {
-                    cellMowakelData.txtCivilRegistry.text = txtcivilReg
-                }else
-                {
-                    cellMowakelData.txtCivilRegistry.text = ""
-                    cellMowakelData.txtCivilRegistry.applyDGrayBorderProperties()
-
-                }
-                
-            }
-            return cellMowakelData
-        }
-        else if indexPath.section == 2
         {
             if indexPath.row == 0
             {
@@ -984,7 +910,7 @@ extension CreateOrderViewController: UITableViewDataSource {
                 return cellAddressLocation
             }
         }
-        else if indexPath.section == 3
+        else if indexPath.section == 2
         {
             if indexPath.row == 0
             {
@@ -1434,7 +1360,7 @@ extension CreateOrderViewController: UITableViewDelegate {
             cellOrderHeader.lbl_Header.text = NSLocalizedString("CreateOrCancelWekala", comment: "")
         return cellOrderHeader
         }
-            else if section == 4
+            else if section == 3
         {
             let cellOrderHeader:OrderHeader = tableView.dequeueReusableCell(withIdentifier:"OrderHeader") as UITableViewCell! as! OrderHeader
             cellOrderHeader.lbl_Header.isHidden = true
@@ -1445,16 +1371,11 @@ extension CreateOrderViewController: UITableViewDelegate {
         {
             
             let cellOrderHeader:OrderSectionHeader = tableView.dequeueReusableCell(withIdentifier:"OrderSectionHeader") as UITableViewCell! as! OrderSectionHeader
-            if section == 1
-            {
-                cellOrderHeader.lbl_Header.text = NSLocalizedString("client", comment: "")
-            }
-           
-            else if section == 2
+           if section == 1
             {
                 cellOrderHeader.lbl_Header.text = NSLocalizedString("WekalaDelivery", comment: "")
             }
-            else if section == 3
+            else if section == 2
             {
                 cellOrderHeader.lbl_Header.text = NSLocalizedString("datingTime", comment: "")
 
@@ -1585,31 +1506,7 @@ extension CreateOrderViewController : UITextFieldDelegate {
         {
         if section == 1
         {
-            if row == 0
-            {
-                TawkeelOrderDataDic.setValue(textField.text, forKey: "clientName")
-            }
-            else
-            {
-                TawkeelOrderDataDic.setValue(textField.text, forKey: "clientNationalID")
-            }
-        }
-        else if section == 2
-        {
-            if row == 0
-            {
-                TawkeelOrderDataDic.setValue(textField.text, forKey: "representativeName")
-            }
-            else
-            {
-                TawkeelOrderDataDic.setValue(textField.text, forKey: "representativeNationalID")
-                
-            }
-        }
-        else
-        {
             TawkeelOrderDataDic.setValue(textField.text, forKey: "address")
-
         }
         }
         else if CatId == 10
