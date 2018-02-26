@@ -414,7 +414,7 @@ extension MyOrdersViewController: UITableViewDataSource {
                 
                 let ObjOrder =  self.ArrNewOrdersCat[indexPath.row]
 
-                cellOrderCell.lblOrderStatus.text = ObjOrder.category?.discription
+                cellOrderCell.lblOrderStatus.text = " \(ObjOrder.category?.discription as! String) "
                 cellOrderCell.lblLawerName.text = NSLocalizedString("new order", comment: "")
 
                 cellOrderCell.lblServiceNum.text = "\(NSLocalizedString("OrderNumber", comment: "") as String) \(ObjOrder.id as! Int)"
@@ -470,7 +470,7 @@ extension MyOrdersViewController: UITableViewDataSource {
                 let ObjOrder =  self.ArrPendingOrdersCat[indexPath.row]
 
                 cellOrderCell.lblLawerName.text = ObjOrder.lawyer?.name
-                cellOrderCell.lblOrderStatus.text = ObjOrder.category?.discription
+                cellOrderCell.lblOrderStatus.text = " \(ObjOrder.category?.discription as! String) "
                 cellOrderCell.lblServiceNum.text = "\(NSLocalizedString("OrderNumber", comment: "") as String) \(ObjOrder.id as! Int)"
                 
                 let date = Date(unixTimestamp: Double(ObjOrder.createdAt!))
@@ -523,7 +523,7 @@ extension MyOrdersViewController: UITableViewDataSource {
             let ObjOrder =  self.ArrClosedOrdersCat[indexPath.row]
 
             cellOrderCell.lblLawerName.text = ObjOrder.lawyer?.name
-            cellOrderCell.lblOrderStatus.text = ObjOrder.category?.discription
+            cellOrderCell.lblOrderStatus.text = " \(ObjOrder.category?.discription as! String) "
             cellOrderCell.lblServiceNum.text = "\(NSLocalizedString("OrderNumber", comment: "") as String) \(ObjOrder.id as! Int)"
             
             let date = Date(unixTimestamp: Double(ObjOrder.createdAt!))

@@ -15,7 +15,7 @@ import TransitionButton
 
 
 class CreateOrderViewController: UIViewController,ToastAlertProtocol {
-    @IBOutlet weak var SegmentControl: BetterSegmentedControl!
+     var SegmentControl: BetterSegmentedControl!
     @IBOutlet weak var tblOrder: UITableView!
     var viewModel: UserViewModel!
     var orderModel: OrderViewModel!
@@ -46,7 +46,7 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
         ArrCat = [CatObject]()
         catViewModel = CategoriesViewModel()
         
-      //  getWkalataCategories()
+        getWkalataCategories()
 
 
         TawkeelOrderDataDic.setValue("office", forKey: "delivery")
@@ -70,7 +70,7 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
         self.adjustSegmentControl()
         tblOrder.rowHeight = UITableViewAutomaticDimension
        // self.tblOrder.estimatedRowHeight = 100
-        self.title = NSLocalizedString("new order", comment: "")
+       // self.title = NSLocalizedString("new order", comment: "")
 
     }
     
@@ -175,21 +175,35 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
     
     func adjustSegmentControl ()
     {
-        
-        SegmentControl.titles = [NSLocalizedString("wekala", comment: ""), NSLocalizedString("contract", comment: ""), NSLocalizedString("marriage", comment: "")]
-        SegmentControl.titleFont = UIFont(name: Constants.FONTS.FONT_AR, size: 16.0)!
-        SegmentControl.selectedTitleFont = UIFont(name: Constants.FONTS.FONT_AR, size: 16.0)!
+        SegmentControl = BetterSegmentedControl(
+            frame: CGRect(x: (self.navigationController?.navigationBar.center.x)! - ((self.navigationController?.navigationBar.width)! - 30)/2 , y: 2, width: (self.navigationController?.navigationBar.width)! - 30 , height: 41),
+            titles: [NSLocalizedString("marriage", comment: ""), NSLocalizedString("contract", comment: ""), NSLocalizedString("wekala", comment: "")],
+            index: 2,
+            options: [.backgroundColor(UIColor.clear),
+                      .titleColor(UIColor.ashGrey),
+                      .indicatorViewBackgroundColor(UIColor.YellowSEGMENT),
+                      .selectedTitleColor(.white),
+                      .titleFont(UIFont(name: Constants.FONTS.FONT_AR, size: 16.0)!),
+                      .selectedTitleFont(UIFont(name: Constants.FONTS.FONT_AR, size: 16.0)!)]
+        )
+       
         SegmentControl.addTarget(self, action: #selector(navigationSegmentedControlValueChanged(_:)), for: .valueChanged)
         NotificationCenter.default.addObserver(self, selector: #selector(self.NWConnectivityDidChangeCalled) , name: .NWConnectivityDidChange, object: nil)
         SegmentControl.semanticContentAttribute = .forceRightToLeft
+        SegmentControl.tintColor = UIColor.ashGrey
+        SegmentControl.cornerRadius = 10.0
+        SegmentControl.backgroundColor = UIColor.clear
+       navigationItem.titleView = SegmentControl
+        
+
+
         
     }
     
     @IBAction func navigationSegmentedControlValueChanged(_ sender: BetterSegmentedControl) {
         if sender.index == 0 {
-          CatId = 1
-        self.tblOrder.reloadData()
-
+            CatId = 13
+            self.tblOrder.reloadData()
         }
         else if sender.index == 1  {
           CatId = 10
@@ -197,8 +211,9 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
         }
         else
         {
-            CatId = 13
+            CatId = 1
             self.tblOrder.reloadData()
+          
 
         }
     }

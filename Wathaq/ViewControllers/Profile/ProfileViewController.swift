@@ -187,7 +187,7 @@ extension ProfileViewController: UITableViewDataSource {
             let ObjOrder =  self.ArrClosedOrdersCat[indexPath.row]
             
             cellOrderCell.lblLawerName.text = ObjOrder.lawyer?.name
-            cellOrderCell.lblOrderStatus.text = ObjOrder.category?.discription
+            cellOrderCell.lblOrderStatus.text = " \(ObjOrder.category?.discription as! String) "
             cellOrderCell.lblServiceNum.text = "\(NSLocalizedString("OrderNumber", comment: "") as String) \(ObjOrder.id as! Int)"
             
             let date = Date(unixTimestamp: Double(ObjOrder.createdAt!))

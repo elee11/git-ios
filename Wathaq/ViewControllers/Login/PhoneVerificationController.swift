@@ -214,7 +214,7 @@ class PhoneVerificationController: UIViewController,ToastAlertProtocol {
         let phoneNumber = "+" + (localeCountry?.e164Cc!)! + phoneTextField.text!
         viewModel.loginUser(Phone: phoneNumber, completion: { (userObj, errorMsg) in
             if errorMsg == nil {
-                if userObj?.isCompleteProfile == false
+                if userObj?.isCompleteProfile == true
                 {
                     self.closeview()
                 }

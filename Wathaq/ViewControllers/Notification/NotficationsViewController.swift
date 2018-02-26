@@ -113,7 +113,7 @@ extension NotficationsViewController: UITableViewDataSource {
             let ObjNotification =  self.ArrNotification[indexPath.row]
             cellOrderCell.lblServiceNum.text = ObjNotification.content
             //  cellOrderCell.lblLawerName.text = ObjNotification.content
-            cellOrderCell.lblOrderStatus.text = ObjNotification.type
+            cellOrderCell.lblOrderStatus.text = " \(ObjNotification.type as! String) "
             let date = Date(unixTimestamp: Double(ObjNotification.createdAt!))
             cellOrderCell.LblOrderTime.text = date.dateString()
             if Int(Date().daysSince(date))  > 0
