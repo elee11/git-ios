@@ -134,3 +134,5 @@
 "SR" = "SR";
 "NumofEndedServices" = "Number of ended services";
 "callMeLater" = "Call me to proceed";
+"send" = "send";
+"writeMessage" = "Type message";

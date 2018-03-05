@@ -45,6 +45,8 @@ class ChatVC: UIViewController, UITextFieldDelegate,UITableViewDelegate,UITableV
     @IBOutlet weak var ViewRate: CosmosView!
     var viewModel: OrderViewModel!
     @IBOutlet weak var btnRate: UIButton!
+    @IBOutlet weak var btnSend: UIButton!
+
 
 
     func checkOrderStatus()
@@ -320,15 +322,19 @@ class ChatVC: UIViewController, UITextFieldDelegate,UITableViewDelegate,UITableV
         
         let CallButton   = UIBarButtonItem(image: CallImg,  style: .plain, target: self, action: "didTapCallButton:")
         let LocatonButton = UIBarButtonItem(image: LocationImg,  style: .plain, target: self, action: "didTapLocationButton:")
-        
+        btnSend.setTitle(NSLocalizedString("send", comment: ""), for: .normal)
+        inputTextField.placeholder = NSLocalizedString("writeMessage", comment: "")
         navigationItem.rightBarButtonItems = [CallButton, LocatonButton]
         
     }
     
    @IBAction func didTapCallButton(_ sender: Any){
-        guard let number = URL(string: "tel://" + "\(OrderObj.lawyer?.phone as! Int)") else { return }
+    
+    if let Phone =  OrderObj.lawyer?.phone
+    {
+        guard let number = URL(string: "tel://" + "\(Phone as! Int)") else { return }
         UIApplication.shared.open(number)
-
+    }
     }
     
     @IBAction func didTapLocationButton(_ sender: Any){
