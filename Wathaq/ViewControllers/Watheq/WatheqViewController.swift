@@ -38,8 +38,9 @@ class WatheqViewController: AbstractViewController,ToastAlertProtocol {
         ArrCat = [CatObject]()
         catViewModel = CategoriesViewModel()
         IsDataFirstLoading = true
-        getWkalataCategories()
+//        getWkalataCategories()
 
+        
         self.title = NSLocalizedString("watheq", comment: "")
         self.tabBarItem.title = NSLocalizedString("watheq", comment: "")
         self.ErrorStr = ""
@@ -99,35 +100,35 @@ class WatheqViewController: AbstractViewController,ToastAlertProtocol {
         
     }
     
-    func getWkalataCategories()
-    {
-        catViewModel.GetCategories { (wkalatTypeObj, errorMsg) in
-            if errorMsg == nil {
-                self.ErrorStr = ""
-                self.IsDataFirstLoading = false
-                if let arrCatData = wkalatTypeObj?.categories
-                {
-                    self.ArrCat = arrCatData as [CatObject]
-                }
-                else
-                {
-                     self.ArrCat = [CatObject]()
-                }
-                
-                self.tbl_Categories.reloadData()
-                
-            } else{
-                self.ErrorStr = errorMsg
-                self.IsDataFirstLoading = false
-
-                self.showToastMessage(title:errorMsg! , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
-                self.tbl_Categories.reloadData()
-                
-
-             
-            }
-        }
-    }
+//    func getWkalataCategories()
+//    {
+//        catViewModel.GetCategories { (wkalatTypeObj, errorMsg) in
+//            if errorMsg == nil {
+//                self.ErrorStr = ""
+//                self.IsDataFirstLoading = false
+//                if let arrCatData = wkalatTypeObj?.categories
+//                {
+//                    self.ArrCat = arrCatData as [CatObject]
+//                }
+//                else
+//                {
+//                     self.ArrCat = [CatObject]()
+//                }
+//
+//                self.tbl_Categories.reloadData()
+//
+//            } else{
+//                self.ErrorStr = errorMsg
+//                self.IsDataFirstLoading = false
+//
+//                self.showToastMessage(title:errorMsg! , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+//                self.tbl_Categories.reloadData()
+//
+//
+//
+//            }
+//        }
+//    }
     
     func customizeTabBarLocal ()
     {
@@ -353,7 +354,7 @@ extension WatheqViewController:DZNEmptyDataSetDelegate
     }
     func emptyDataSet(_ scrollView: UIScrollView!, didTap view: UIView!)
     {
-        getWkalataCategories()
+       // getWkalataCategories()
     }
 }
 

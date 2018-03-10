@@ -29,13 +29,13 @@ target 'Wathaq' do
   pod 'JSQMessagesViewController'
   pod 'GoogleMaps'
   pod 'GooglePlaces'
-  pod 'BetterSegmentedControl', '~> 0.9'
+  pod 'BetterSegmentedControl', '~> 0.9' #segment control
   pod 'IQKeyboardManagerSwift', '5.0.0'
   pod 'EasyAnimation'
   pod 'FirebaseMessaging', '2.0.0'
   pod "DAKeychain"
   pod "ESPullToRefresh"
   pod "PullToRefreshKit"
-  pod 'Cosmos'
+  pod 'Cosmos' #rating
 
 end

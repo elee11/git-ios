@@ -12,7 +12,7 @@
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string> مالك او مدير المؤسسة</string>
+		<string>مؤسسة (مالك أو مدير مؤسسة)</string>
 		<key>Name_EN</key>
 		<string>Institution</string>
 		<key>id</key>
@@ -20,7 +20,7 @@
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>شريك او مدير شركة</string>
+		<string>شركة (شريك أو مدير الشركة)</string>
 		<key>Name_EN</key>
 		<string>Company</string>
 		<key>id</key>

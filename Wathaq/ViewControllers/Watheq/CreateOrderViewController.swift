@@ -20,6 +20,7 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
     var viewModel: UserViewModel!
     var orderModel: OrderViewModel!
     var catViewModel: CategoriesViewModel!
+    var homeDeliveryFee = 150
 
     var ArrCat :[CatObject]!
 
@@ -56,6 +57,8 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
         ContractOrderDataDic.setValue("office", forKey: "delivery")
         ContractOrderDataDic.setValue("1 hours", forKey: "time")
         ContractOrderDataDic.setValue(10, forKey: "MainCatId")
+        ContractOrderDataDic.setValue(10, forKey: "categoryId")
+
         
         NekahOrderDataDic.setValue("office", forKey: "delivery")
         NekahOrderDataDic.setValue("1 hours", forKey: "time")
@@ -85,7 +88,8 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
         catViewModel.GetCategories { (wkalatTypeObj, errorMsg) in
             if errorMsg == nil {
                
-                if let arrCatData = wkalatTypeObj?.categories
+                self.homeDeliveryFee = (wkalatTypeObj?.wkalatTypes?.deliverToHomeFees)!
+                if let arrCatData = wkalatTypeObj?.wkalatTypes?.categories
                 {
                     self.ArrCat = arrCatData as [CatObject]
                 }
@@ -244,6 +248,8 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
             TawkeelOrderDataDic.setValue("home", forKey: "delivery")
 
         }
+        
+        self.tblOrder.reloadData()
     }
     
     @IBAction func WekalaMeetingTimeSegmentedValueChanged(_ sender: BetterSegmentedControl) {
@@ -560,6 +566,7 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
         else if sender.index == 1  {
             ContractOrderDataDic.setValue("home", forKey: "delivery")
         }
+        self.tblOrder.reloadData()
     }
     
     @IBAction func ContractMeetingTimeSegmentedValueChanged(_ sender: BetterSegmentedControl) {
@@ -585,7 +592,7 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
     @IBAction func CreatContractOrder(_ sender : Any)
     {
         
-        if (ContractOrderDataDic.object(forKey: "categoryId") != nil && ContractOrderDataDic.object(forKey: "delivery") != nil && ContractOrderDataDic.object(forKey: "latitude") != nil && ContractOrderDataDic.object(forKey: "longitude") != nil && ContractOrderDataDic.object(forKey: "letterDate") != nil && ContractOrderDataDic.object(forKey: "letterNumber") != nil && ContractOrderDataDic.object(forKey: "time") != nil)
+        if (ContractOrderDataDic.object(forKey: "categoryId") != nil && ContractOrderDataDic.object(forKey: "delivery") != nil && ContractOrderDataDic.object(forKey: "latitude") != nil && ContractOrderDataDic.object(forKey: "longitude") != nil &&  ContractOrderDataDic.object(forKey: "time") != nil)
         {
             if  ContractOrderDataDic.object(forKey: "address") == nil
             {
@@ -634,14 +641,8 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
         ContractOrderDataDic.removeObject(forKey: "address")
         ContractOrderDataDic.removeObject(forKey: "latitude")
         ContractOrderDataDic.removeObject(forKey: "longitude")
-        ContractOrderDataDic.removeObject(forKey: "letterDate")
 
-        self.tblOrder.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: false)
-        let indexpath = IndexPath(row: 0, section: 1)
-        let cellLetterNumber = self.tblOrder.cellForRow(at:indexpath ) as! AddressLocationTableViewCell
-        
-        
-        cellLetterNumber.txtAddressLocation.text = ""
+     
         
   
         
@@ -661,6 +662,8 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
             NekahOrderDataDic.setValue("home", forKey: "delivery")
             
         }
+        
+        self.tblOrder.reloadData()
     }
     
     @IBAction func CreatNekahOrder(_ sender : Any)
@@ -770,22 +773,18 @@ extension CreateOrderViewController: UITableViewDataSource {
      //contacrts
      else if CatId == 10
      {
-         if section == 0 || section == 4
+         if section == 0 || section == 1
          {
-            return 1
+            return 2
          }
         else if section == 1
          {
             return 2
         }
-        else if section == 2
-         {
-            return 2
-        }
         else
          {
-            return 2
-         }
+            return 1
+        }
      }//marriage
      else
      {
@@ -812,7 +811,7 @@ extension CreateOrderViewController: UITableViewDataSource {
         }
         else if CatId == 10
         {
-            return 5
+            return 3
         }
         else
         {
@@ -869,8 +868,26 @@ extension CreateOrderViewController: UITableViewDataSource {
             {
              
                 let cellWakalaCat:WkalaCategoryTableViewCell = tableView.dequeueReusableCell(withIdentifier:"WkalaCategoryTableViewCell") as UITableViewCell! as! WkalaCategoryTableViewCell
-                cellWakalaCat.SegmentControl.titles = [NSLocalizedString("office", comment: ""), NSLocalizedString("home", comment: "")]
-                cellWakalaCat.SegmentControl.titleFont = UIFont(name: Constants.FONTS.FONT_AR, size: 16.0)!
+                
+
+                if let deliveryLocation:String = TawkeelOrderDataDic.value(forKey: "delivery") as! String
+                {
+                    if deliveryLocation == "home"
+                    {
+                           cellWakalaCat.SegmentControl.titles = [NSLocalizedString("office", comment: ""),"\(NSLocalizedString("home" , comment: "")) + \(homeDeliveryFee as Int) \(NSLocalizedString("SR" , comment: ""))" ]
+                    }
+                    else
+                    {
+                           cellWakalaCat.SegmentControl.titles = [NSLocalizedString("office", comment: ""), NSLocalizedString("home", comment: "")]
+                    }
+                }
+                else
+                {
+                    cellWakalaCat.SegmentControl.titles = [NSLocalizedString("office", comment: ""), NSLocalizedString("home", comment: "")]
+
+                }
+                
+                                cellWakalaCat.SegmentControl.titleFont = UIFont(name: Constants.FONTS.FONT_AR, size: 16.0)!
                 cellWakalaCat.SegmentControl.selectedTitleFont = UIFont(name: Constants.FONTS.FONT_AR, size: 16.0)!
                 cellWakalaCat.SegmentControl.removeTarget(nil, action: nil, for: .allEvents)
                 cellWakalaCat.SegmentControl.addTarget(self, action: #selector(WekalaLocationSegmentedValueChanged(_:)), for: .valueChanged)
@@ -1004,76 +1021,33 @@ extension CreateOrderViewController: UITableViewDataSource {
         else if CatId == 10
         {
             
-            if indexPath.section == 0
-            {
-                let cellSubCat:ChooseLocationDropDownTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ChooseLocationDropDownTableViewCell") as UITableViewCell! as! ChooseLocationDropDownTableViewCell
-                cellSubCat.btn_OpenDDl.setTitle(NSLocalizedString("chooseContractSubCat", comment: ""), for: .normal)
-                cellSubCat.img_icon.image = UIImage.init(named: "")
-                cellSubCat.btn_OpenDDl.removeTarget(nil, action: nil, for: .allEvents)
-                cellSubCat.btn_OpenDDl.addTarget(self, action: #selector(openContractSubCat), for: .touchUpInside)
-                
-                if let subCatName : String =  ContractOrderDataDic.value(forKey: "SubCategoryName") as? String
-                {
-                    cellSubCat.btn_OpenDDl.setTitle(subCatName, for: .normal)
-                    cellSubCat.btn_OpenDDl.applybuttonGreenviewBorderProperties()
-                    
-                }
-                else
-                {
-                    cellSubCat.btn_OpenDDl.applybuttonDGrayBorderProperties()
-                    
-                }
-                return cellSubCat
-
-            }
-            else if indexPath.section == 1
-            {
-                if indexPath.row == 0
-                {
-                    let cellletterNumber:AddressLocationTableViewCell = tableView.dequeueReusableCell(withIdentifier:"AddressLocationTableViewCell") as UITableViewCell! as! AddressLocationTableViewCell
-                    cellletterNumber.txtAddressLocation.placeholder = NSLocalizedString("letterNumber", comment: "")
-                    cellletterNumber.txtAddressLocation.tag = (indexPath.section * 1000) + indexPath.row
-                    cellletterNumber.txtAddressLocation.delegate = self
-                    if let letterNum : String =  ContractOrderDataDic.value(forKey: "letterNumber") as? String
-                    {
-                        cellletterNumber.txtAddressLocation.text = letterNum
-                    }else
-                    {
-                        cellletterNumber.txtAddressLocation.text = ""
-                        cellletterNumber.txtAddressLocation.applyDGrayBorderProperties()
-
-                    }
-                    return cellletterNumber
-                }
-                else
-                {
-                    let cellChooseTimeDdl:ChooseLocationDropDownTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ChooseLocationDropDownTableViewCell") as UITableViewCell! as! ChooseLocationDropDownTableViewCell
-                    cellChooseTimeDdl.btn_OpenDDl.setTitle(NSLocalizedString("letterDate", comment: ""), for: .normal)
-                    cellChooseTimeDdl.img_icon.image = UIImage.init(named: "time")
-                    cellChooseTimeDdl.btn_OpenDDl.removeTarget(nil, action: nil, for: .allEvents)
-                    cellChooseTimeDdl.btn_OpenDDl.addTarget(self, action: #selector(OpenletterTimeDDL), for: .touchUpInside)
-                    if let TimeMowkl : String =  ContractOrderDataDic.value(forKey: "letterDate") as? String
-                    {
-                        cellChooseTimeDdl.btn_OpenDDl.setTitle(TimeMowkl, for: .normal)
-                        cellChooseTimeDdl.btn_OpenDDl.applybuttonGreenviewBorderProperties()
-                        
-                    }
-                    else
-                    {
-                        cellChooseTimeDdl.btn_OpenDDl.applybuttonDGrayBorderProperties()
-                        
-                    }
-                    
-                    return cellChooseTimeDdl
-                }
-            }
-            else if indexPath.section == 2
+            
+            
+             if indexPath.section == 0
             {
                 if indexPath.row == 0
                 {
                     
                     let cellWakalaCat:WkalaCategoryTableViewCell = tableView.dequeueReusableCell(withIdentifier:"WkalaCategoryTableViewCell") as UITableViewCell! as! WkalaCategoryTableViewCell
-                    cellWakalaCat.SegmentControl.titles = [NSLocalizedString("office", comment: ""), NSLocalizedString("home", comment: "")]
+                   
+                    
+                    if let deliveryLocation:String = ContractOrderDataDic.value(forKey: "delivery") as! String
+                    {
+                        if deliveryLocation == "home"
+                        {
+                            cellWakalaCat.SegmentControl.titles = [NSLocalizedString("office", comment: ""),"\(NSLocalizedString("home" , comment: "")) + \(homeDeliveryFee as Int) \(NSLocalizedString("SR" , comment: ""))" ]
+                        }
+                        else
+                        {
+                            cellWakalaCat.SegmentControl.titles = [NSLocalizedString("office", comment: ""), NSLocalizedString("home", comment: "")]
+                        }
+                    }
+                    else
+                    {
+                        cellWakalaCat.SegmentControl.titles = [NSLocalizedString("office", comment: ""), NSLocalizedString("home", comment: "")]
+                        
+                    }
+                    
                     cellWakalaCat.SegmentControl.titleFont = UIFont(name: Constants.FONTS.FONT_AR, size: 16.0)!
                     cellWakalaCat.SegmentControl.selectedTitleFont = UIFont(name: Constants.FONTS.FONT_AR, size: 16.0)!
                     cellWakalaCat.SegmentControl.removeTarget(nil, action: nil, for: .allEvents)
@@ -1107,7 +1081,7 @@ extension CreateOrderViewController: UITableViewDataSource {
                 }
                
             }
-            else if indexPath.section == 3
+            else if indexPath.section == 1
             {
                     if indexPath.row == 0
                     {
@@ -1206,7 +1180,27 @@ extension CreateOrderViewController: UITableViewDataSource {
                 {
                     
                     let cellWakalaCat:WkalaCategoryTableViewCell = tableView.dequeueReusableCell(withIdentifier:"WkalaCategoryTableViewCell") as UITableViewCell! as! WkalaCategoryTableViewCell
-                    cellWakalaCat.SegmentControl.titles = [NSLocalizedString("MaazonLocation", comment: ""), NSLocalizedString("ClientLocation", comment: "")]
+                 
+                    
+                    if let deliveryLocation:String = NekahOrderDataDic.value(forKey: "delivery") as! String
+                    {
+                        if deliveryLocation == "home"
+                        {
+                            cellWakalaCat.SegmentControl.titles = [NSLocalizedString("MaazonLocation", comment: ""),"\(NSLocalizedString("ClientLocation" , comment: "")) + \(homeDeliveryFee as Int) \(NSLocalizedString("SR" , comment: ""))" ]
+                        }
+                        else
+                        {
+                            cellWakalaCat.SegmentControl.titles = [NSLocalizedString("MaazonLocation", comment: ""), NSLocalizedString("ClientLocation", comment: "")]
+                        }
+                    }
+                    else
+                    {
+                        cellWakalaCat.SegmentControl.titles = [NSLocalizedString("MaazonLocation", comment: ""), NSLocalizedString("ClientLocation", comment: "")]
+                        
+                    }
+                    
+                    
+                    
                     cellWakalaCat.SegmentControl.titleFont = UIFont(name: Constants.FONTS.FONT_AR, size: 16.0)!
                     cellWakalaCat.SegmentControl.selectedTitleFont = UIFont(name: Constants.FONTS.FONT_AR, size: 16.0)!
                     cellWakalaCat.SegmentControl.removeTarget(nil, action: nil, for: .allEvents)
@@ -1309,6 +1303,58 @@ extension CreateOrderViewController: UITableViewDataSource {
 
 extension CreateOrderViewController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
+    {
+        if CatId == 1
+        {
+           if section == 3
+            {
+               
+                return 5
+                
+            }
+            else
+            {
+                
+               
+              return 25
+                
+            }
+        }
+        else if CatId == 10
+        {
+            if section == 2
+            {
+               
+                return 5
+                
+            }
+            else
+            {
+               
+                return 25
+                
+            }
+        }
+        else
+        {
+            if section == 2
+            {
+                
+                return 5
+                
+            }
+            else
+            {
+                
+                return 25
+                
+            }
+        }
+        
+        
+    }
+    
   
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
@@ -1350,10 +1396,10 @@ extension CreateOrderViewController: UITableViewDelegate {
             if section == 0
             {
                 let cellOrderHeader:OrderHeader = tableView.dequeueReusableCell(withIdentifier:"OrderHeader") as UITableViewCell! as! OrderHeader
-                cellOrderHeader.lbl_Header.text = NSLocalizedString("Validate the contract", comment: "")
+                cellOrderHeader.lbl_Header.text = NSLocalizedString("ContractDelivery", comment: "")
                 return cellOrderHeader
             }
-            else if section == 4
+            else if section == 2
             {
                 let cellOrderHeader:OrderHeader = tableView.dequeueReusableCell(withIdentifier:"OrderHeader") as UITableViewCell! as! OrderHeader
                 cellOrderHeader.lbl_Header.isHidden = true
@@ -1365,15 +1411,6 @@ extension CreateOrderViewController: UITableViewDelegate {
                 let cellOrderHeader:OrderSectionHeader = tableView.dequeueReusableCell(withIdentifier:"OrderSectionHeader") as UITableViewCell! as! OrderSectionHeader
                 
                 if section == 1
-                {
-                    cellOrderHeader.lbl_Header.text = NSLocalizedString("letterDataMsg", comment: "")
-                }
-                else if section == 2
-                {
-                    cellOrderHeader.lbl_Header.text = NSLocalizedString("WekalaDelivery", comment: "")
- 
-                }
-                else if section == 3
                 {
                     cellOrderHeader.lbl_Header.text = NSLocalizedString("datingTime", comment: "")
                 }
@@ -1387,7 +1424,7 @@ extension CreateOrderViewController: UITableViewDelegate {
             if section == 0
             {
                 let cellOrderHeader:OrderHeader = tableView.dequeueReusableCell(withIdentifier:"OrderHeader") as UITableViewCell! as! OrderHeader
-                cellOrderHeader.lbl_Header.text = NSLocalizedString("marriage", comment: "")
+                cellOrderHeader.lbl_Header.text = NSLocalizedString("ContractDelivery", comment: "")
                 return cellOrderHeader
             }
             else if section == 2
@@ -1433,17 +1470,6 @@ extension CreateOrderViewController : UITextFieldDelegate {
 
         }
         }
-        else if CatId == 10
-        {
-          if section == 1
-          {
-            self.tblOrder.setContentOffset(CGPoint(x: self.tblOrder.contentOffset.x, y: 90), animated: true)
-          }
-            else if section == 2
-          {
-            self.tblOrder.setContentOffset(CGPoint(x: self.tblOrder.contentOffset.x, y: 140), animated: true)
-          }
-        }
         else
         {
             self.tblOrder.setContentOffset(CGPoint(x: self.tblOrder.contentOffset.x, y: 120), animated: true)
@@ -1467,18 +1493,7 @@ extension CreateOrderViewController : UITextFieldDelegate {
         {
         
         }
-        else if CatId == 10
-        {
-            if section == 1
-            {
-                if row == 0
-                {
-                    ContractOrderDataDic.setValue(textField.text, forKey: "letterNumber")
-
-                }
-            }
-            
-        }
+        
         
 
     }

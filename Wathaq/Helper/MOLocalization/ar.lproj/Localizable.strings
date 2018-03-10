@@ -60,7 +60,7 @@
 "ChooseAdreess" = "اختيار العنوان";
 "pleaseChooseaddressFirst" = "الرجاء اختيار عنوان";
 "Recieving" =  "استلام";
-"CreatOrder" = "اكمل الطلب";
+"CreatOrder" = " أرسل الطلب";
 "pleaseChooseDeliveryLocation" = "الرجاء اختيار موقع التسليم";
 "OrderProceeded" = "جاري البحث عن أقرب موثق لتنفيذ طلبك, يرجى الانتظار";
 "new" = "جديدة";
@@ -74,7 +74,7 @@
 "letterDate" = "تاريخ الخطاب";
 "Document marriage contract" = "توثيق عقد زواج";
 "ClientLocation" = "مقر العميل";
-"MaazonLocation" = "مقر المآذون";
+"MaazonLocation" = "مقر المأذون";
 "DocumentDate" = "ميعاد حضور الماذون";
 "DocumentMarriageMessage" = "اطلب حضور الماذون ف الميعاد التالي";
 "Time"= "الوقت";
@@ -116,6 +116,7 @@
 "Cancelwekala" = "فسخ توكيل" ;
 "SefaWakeel" = "صفه الموكل";
 "WekalaDelivery" = "استلام الوكاله";
+"ContractDelivery" = "استلام العقد";
 "AddressDetails" = "اكتب تفاصيل العنوان";
 "LaterTime" = "وقت لاحق";
 "datingTime" = "أطلب موعد المقابلة خلال ";
@@ -125,13 +126,13 @@
 "FillMandatoryFields" = "برجاء مليء الحقول الاجباريه";
 "RateDone" = "تم استلام تقييمك";
 "Rate Now" = "قييم الخدمه";
-"Contact Us" = "اتصل بنا";
+"Contact Us" = "راسلنا";
 "LetterAddress" = "عنوان الرساله";
 "Lettercontent" = "تفاصيل الرساله";
-"SendData" = "ارسال";
+"SendData" = "تم";
 "Your Request Recieved, you Will Be Contacted Shortly" = "تم استلام رسالتك، سوف نتواصل معك قريبا";
 "SR" = "رس";
 "NumofEndedServices" = "عدد الخدمات المنتهيه";
 "callMeLater" = "يرجى الاتصال بي لاتمام الطلب";
-"send" = "ارسال";
+"send" = "تم";
 "writeMessage" = "اكتب رسالتك";

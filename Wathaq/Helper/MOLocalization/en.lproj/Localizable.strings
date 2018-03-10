@@ -117,6 +117,7 @@
 "Cancelwekala" = "Cancel authorization";
 "SefaWakeel" = "authorization describtion";
 "WekalaDelivery" = "Receipt of the Authorization";
+"ContractDelivery" = "Receipt of Contract";
 "AddressDetails" = "Write Address details";
 "LaterTime" = "Later Time";
 "datingTime" = "Ask for an interview during";

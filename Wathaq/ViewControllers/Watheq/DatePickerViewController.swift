@@ -24,8 +24,8 @@ class DatePickerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        datePicker.maximumDate = Calendar.current.date(byAdding: .year, value: 0, to: Date())
-        datePicker.minimumDate = Calendar.current.date(byAdding: .year, value: -100, to: Date())
+        datePicker.minimumDate = Calendar.current.date(byAdding: .year, value: 0, to: Date())
+        datePicker.maximumDate = Calendar.current.date(byAdding: .year, value: -100, to: Date())
 
         btn_Cancel.setTitle(NSLocalizedString("Cancel", comment: ""), for: .normal)
         btn_Choose.setTitle(NSLocalizedString("ok", comment: ""), for: .normal)

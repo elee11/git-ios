@@ -13,12 +13,12 @@ import ObjectMapper
 class CategoriesViewModel: ToastAlertProtocol {
     static let shareManager = CategoriesViewModel()
     
-    func GetCategories(completion: @escaping (WkalatType?, String?) -> ()){
+    func GetCategories(completion: @escaping (CategoriesRootClass?, String?) -> ()){
         NetworkHandler.requestTarget(target: .getCategories, isDictionary: true) { (result, errorMsg) in
             if errorMsg == nil {
                 let model = Mapper<CategoriesRootClass>().map(JSONString: result as! String)
                 let wkalatModel = model?.wkalatTypes
-                completion(wkalatModel,nil)
+                completion(model,nil)
             } else{
                 completion(nil,errorMsg)
             }
