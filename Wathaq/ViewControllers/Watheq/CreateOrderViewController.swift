@@ -1130,34 +1130,10 @@ extension CreateOrderViewController: UITableViewDataSource {
             else
             {
                 let cellCreatOrder:CreateOrderTableViewCell = tableView.dequeueReusableCell(withIdentifier:"CreateOrderTableViewCell") as UITableViewCell! as! CreateOrderTableViewCell
-                
                 if  self.ArrCat.count > 0
                 {
-                  
                     let CatObj =  self.ArrCat[1]
-                    
-                    if let categoryId = ContractOrderDataDic.value(forKey: "categoryId")
-                    {
-                        if categoryId as! Int  != 1
-                        {
-                            for var subCat  in CatObj.subs!  {
-                                if (subCat as Sub).id  == categoryId as! Int {
-                                    cellCreatOrder.btnCreatOrder.setTitle("\(NSLocalizedString("CreatOrder", comment: "")) (\(subCat.cost as! Int) \(NSLocalizedString("SR", comment:"")))", for: .normal)
-                                    
-                                }
-                            }
-                        }
-                        else
-                        {
-                            cellCreatOrder.btnCreatOrder.setTitle("\(NSLocalizedString("CreatOrder", comment: "")) (\(CatObj.cost as! Int) \(NSLocalizedString("SR", comment:"")))", for: .normal)
-                            
-                        }
-                    }
-                    else
-                    {
-                        cellCreatOrder.btnCreatOrder.setTitle((NSLocalizedString("CreatOrder", comment: "")), for: .normal)
-                    }
-                    
+                    cellCreatOrder.btnCreatOrder.setTitle("\(NSLocalizedString("CreatOrder", comment: "")) (\(CatObj.cost as! Int) \(NSLocalizedString("SR", comment:"")))", for: .normal)
                     
                 }
                 else

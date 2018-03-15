@@ -11,12 +11,28 @@ import UIKit
 class WebViewController: UIViewController {
 
    @IBOutlet weak var webView : UIWebView!
+    @IBOutlet weak var button_Close : UIButton!
+    var isCompleteProfile = false
+
     var webPage :String!
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.loadRequest(URLRequest(url: URL(string: webPage)!))
-
+        if isCompleteProfile == true
+        {
+            button_Close.isHidden = false
+            button_Close.setTitle(NSLocalizedString("close", comment: ""), for: .normal)
+        }
+        else
+        {
+            button_Close.isHidden = true
+        }
         // Do any additional setup after loading the view.
+    }
+    
+    @IBAction func closeview (_ sender: Any)
+    {
+        self.dismiss(animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {

@@ -97,6 +97,12 @@ class CompleteProfileViewController: UIViewController,ToastAlertProtocol,UIImage
             alertWarning.show()
         }
     }
+    
+    @IBAction func openTerms (_ sender :Any)
+    {
+        self.performSegue(withIdentifier: "S_Profile_WebView", sender: "http://159.89.41.54/watheq/public/terms")
+    }
+    
     func openGallary() {
         if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.photoLibrary) {
             pickerController.delegate = self
@@ -187,6 +193,16 @@ class CompleteProfileViewController: UIViewController,ToastAlertProtocol,UIImage
                             let MainStoryBoard = UIStoryboard(name: "Main", bundle: nil)
                             let TabViewController = MainStoryBoard.instantiateViewController(withIdentifier: "rootVC") as! UITabBarController
                             UIApplication.shared.keyWindow?.rootViewController = TabViewController
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "S_Profile_WebView"  {
+            let URL = sender as!  String
+            let webView = segue.destination as! WebViewController
+            webView.title = NSLocalizedString("Terms and Conditions", comment: "")
+            webView.webPage = URL
+            webView.isCompleteProfile = true
+        }
     }
 
 }
