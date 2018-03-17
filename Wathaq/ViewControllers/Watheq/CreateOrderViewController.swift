@@ -869,23 +869,7 @@ extension CreateOrderViewController: UITableViewDataSource {
              
                 let cellWakalaCat:WkalaCategoryTableViewCell = tableView.dequeueReusableCell(withIdentifier:"WkalaCategoryTableViewCell") as UITableViewCell! as! WkalaCategoryTableViewCell
                 
-
-                if let deliveryLocation:String = TawkeelOrderDataDic.value(forKey: "delivery") as! String
-                {
-                    if deliveryLocation == "home"
-                    {
-                           cellWakalaCat.SegmentControl.titles = [NSLocalizedString("office", comment: ""),"\(NSLocalizedString("home" , comment: "")) + \(homeDeliveryFee as Int) \(NSLocalizedString("SR" , comment: ""))" ]
-                    }
-                    else
-                    {
-                           cellWakalaCat.SegmentControl.titles = [NSLocalizedString("office", comment: ""), NSLocalizedString("home", comment: "")]
-                    }
-                }
-                else
-                {
-                    cellWakalaCat.SegmentControl.titles = [NSLocalizedString("office", comment: ""), NSLocalizedString("home", comment: "")]
-
-                }
+            cellWakalaCat.SegmentControl.titles = [NSLocalizedString("office", comment: ""),"\(NSLocalizedString("home" , comment: "")) + \(homeDeliveryFee as Int) \(NSLocalizedString("SR" , comment: ""))" ]
                 
                                 cellWakalaCat.SegmentControl.titleFont = UIFont(name: Constants.FONTS.FONT_AR, size: 16.0)!
                 cellWakalaCat.SegmentControl.selectedTitleFont = UIFont(name: Constants.FONTS.FONT_AR, size: 16.0)!
@@ -989,7 +973,21 @@ extension CreateOrderViewController: UITableViewDataSource {
                     {
                         for var subCat  in CatObj.subs!  {
                             if (subCat as Sub).id  == categoryId as! Int {
-                                cellCreatOrder.btnCreatOrder.setTitle("\(NSLocalizedString("CreatOrder", comment: "")) (\(subCat.cost as! Int) \(NSLocalizedString("SR", comment:"")))", for: .normal)
+                                
+                                if let deliveryLocation:String = TawkeelOrderDataDic.value(forKey: "delivery") as! String
+                                {
+                                    if deliveryLocation == "home"
+                                    {
+                                        cellCreatOrder.btnCreatOrder.setTitle("\(NSLocalizedString("CreatOrder", comment: "")) (\(subCat.cost! + homeDeliveryFee as! Int) \(NSLocalizedString("SR", comment:"")))", for: .normal)
+                                    }
+                                    else
+                                    {
+                                        cellCreatOrder.btnCreatOrder.setTitle("\(NSLocalizedString("CreatOrder", comment: "")) (\(subCat.cost as! Int) \(NSLocalizedString("SR", comment:"")))", for: .normal)
+                                    }
+                                }
+                                
+                                
+                               
 
                             }
                         }
@@ -1030,23 +1028,7 @@ extension CreateOrderViewController: UITableViewDataSource {
                     
                     let cellWakalaCat:WkalaCategoryTableViewCell = tableView.dequeueReusableCell(withIdentifier:"WkalaCategoryTableViewCell") as UITableViewCell! as! WkalaCategoryTableViewCell
                    
-                    
-                    if let deliveryLocation:String = ContractOrderDataDic.value(forKey: "delivery") as! String
-                    {
-                        if deliveryLocation == "home"
-                        {
-                            cellWakalaCat.SegmentControl.titles = [NSLocalizedString("office", comment: ""),"\(NSLocalizedString("home" , comment: "")) + \(homeDeliveryFee as Int) \(NSLocalizedString("SR" , comment: ""))" ]
-                        }
-                        else
-                        {
-                            cellWakalaCat.SegmentControl.titles = [NSLocalizedString("office", comment: ""), NSLocalizedString("home", comment: "")]
-                        }
-                    }
-                    else
-                    {
-                        cellWakalaCat.SegmentControl.titles = [NSLocalizedString("office", comment: ""), NSLocalizedString("home", comment: "")]
-                        
-                    }
+                  cellWakalaCat.SegmentControl.titles = [NSLocalizedString("office", comment: ""),"\(NSLocalizedString("home" , comment: "")) + \(homeDeliveryFee as Int) \(NSLocalizedString("SR" , comment: ""))" ]
                     
                     cellWakalaCat.SegmentControl.titleFont = UIFont(name: Constants.FONTS.FONT_AR, size: 16.0)!
                     cellWakalaCat.SegmentControl.selectedTitleFont = UIFont(name: Constants.FONTS.FONT_AR, size: 16.0)!
@@ -1133,7 +1115,19 @@ extension CreateOrderViewController: UITableViewDataSource {
                 if  self.ArrCat.count > 0
                 {
                     let CatObj =  self.ArrCat[1]
-                    cellCreatOrder.btnCreatOrder.setTitle("\(NSLocalizedString("CreatOrder", comment: "")) (\(CatObj.cost as! Int) \(NSLocalizedString("SR", comment:"")))", for: .normal)
+                    if let deliveryLocation:String = ContractOrderDataDic.value(forKey: "delivery") as! String
+                    {
+                        if deliveryLocation == "home"
+                        {
+                            cellCreatOrder.btnCreatOrder.setTitle("\(NSLocalizedString("CreatOrder", comment: "")) (\(CatObj.cost! + homeDeliveryFee as! Int) \(NSLocalizedString("SR", comment:"")))", for: .normal)
+                        }
+                        else
+                        {
+                           cellCreatOrder.btnCreatOrder.setTitle("\(NSLocalizedString("CreatOrder", comment: "")) (\(CatObj.cost as! Int) \(NSLocalizedString("SR", comment:"")))", for: .normal)
+                        }
+                    }
+                    
+                  
                     
                 }
                 else
@@ -1158,24 +1152,7 @@ extension CreateOrderViewController: UITableViewDataSource {
                     let cellWakalaCat:WkalaCategoryTableViewCell = tableView.dequeueReusableCell(withIdentifier:"WkalaCategoryTableViewCell") as UITableViewCell! as! WkalaCategoryTableViewCell
                  
                     
-                    if let deliveryLocation:String = NekahOrderDataDic.value(forKey: "delivery") as! String
-                    {
-                        if deliveryLocation == "home"
-                        {
-                            cellWakalaCat.SegmentControl.titles = [NSLocalizedString("MaazonLocation", comment: ""),"\(NSLocalizedString("ClientLocation" , comment: "")) + \(homeDeliveryFee as Int) \(NSLocalizedString("SR" , comment: ""))" ]
-                        }
-                        else
-                        {
-                            cellWakalaCat.SegmentControl.titles = [NSLocalizedString("MaazonLocation", comment: ""), NSLocalizedString("ClientLocation", comment: "")]
-                        }
-                    }
-                    else
-                    {
-                        cellWakalaCat.SegmentControl.titles = [NSLocalizedString("MaazonLocation", comment: ""), NSLocalizedString("ClientLocation", comment: "")]
-                        
-                    }
-                    
-                    
+                   cellWakalaCat.SegmentControl.titles = [NSLocalizedString("MaazonLocation", comment: ""),"\(NSLocalizedString("ClientLocation" , comment: "")) + \(homeDeliveryFee as Int) \(NSLocalizedString("SR" , comment: ""))" ]
                     
                     cellWakalaCat.SegmentControl.titleFont = UIFont(name: Constants.FONTS.FONT_AR, size: 16.0)!
                     cellWakalaCat.SegmentControl.selectedTitleFont = UIFont(name: Constants.FONTS.FONT_AR, size: 16.0)!
@@ -1260,7 +1237,20 @@ extension CreateOrderViewController: UITableViewDataSource {
                 if  self.ArrCat.count > 0
                 {
                     let CatObj =  self.ArrCat[2]
-                    cellCreatOrder.btnCreatOrder.setTitle("\(NSLocalizedString("CreatOrder", comment: "")) (\(CatObj.cost as! Int) \(NSLocalizedString("SR", comment:"")))", for: .normal)
+                    
+                    if let deliveryLocation:String = NekahOrderDataDic.value(forKey: "delivery") as! String
+                    {
+                        if deliveryLocation == "home"
+                        {
+                            cellCreatOrder.btnCreatOrder.setTitle("\(NSLocalizedString("CreatOrder", comment: "")) (\(CatObj.cost! + homeDeliveryFee as! Int) \(NSLocalizedString("SR", comment:"")))", for: .normal)
+                        }
+                        else
+                        {
+                            cellCreatOrder.btnCreatOrder.setTitle("\(NSLocalizedString("CreatOrder", comment: "")) (\(CatObj.cost as! Int) \(NSLocalizedString("SR", comment:"")))", for: .normal)
+                        }
+                    }
+                    
+                  
                     
                 }
                 else

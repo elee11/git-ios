@@ -365,7 +365,15 @@ extension ChatVC:DZNEmptyDataSetSource
         myMutableString1.setAttributes([NSAttributedStringKey.font :UIFont(name: Constants.FONTS.FONT_AR, size: 18.0)!
             , NSAttributedStringKey.foregroundColor : UIColor.deepBlue], range: NSRange(location:0,length:myMutableString1.length)) // What ever range you want to give
         
+        var myMutableString2 = NSMutableAttributedString()
+        
+        myMutableString2 = NSMutableAttributedString(string: (OrderObj.lawyer?.name!)!)
+        myMutableString2.setAttributes([NSAttributedStringKey.font :UIFont(name: Constants.FONTS.FONT_AR, size: 18.0)!
+            , NSAttributedStringKey.foregroundColor : UIColor.YellowSEGMENT], range: NSRange(location:0,length:myMutableString2.length)) // What ever range you want to give
+        
         myMutableString.append(myMutableString1)
+        myMutableString.append(myMutableString2)
+        
         
         return myMutableString
     }
