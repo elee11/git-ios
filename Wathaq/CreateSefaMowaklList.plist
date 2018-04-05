@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>Name</key>
-		<string>فرد</string>
+		<string>بصفته فرد</string>
 		<key>Name_EN</key>
 		<string>Individual</string>
 		<key>id</key>
@@ -12,7 +12,7 @@
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>مؤسسة (مالك أو مدير مؤسسة)</string>
+		<string> بصفته مدير او مالك مؤسسه</string>
 		<key>Name_EN</key>
 		<string>Institution</string>
 		<key>id</key>
@@ -20,7 +20,7 @@
 	</dict>
 	<dict>
 		<key>Name</key>
-		<string>شركة (شريك أو مدير الشركة)</string>
+		<string>بصفته مدير او شريك شركه</string>
 		<key>Name_EN</key>
 		<string>Company</string>
 		<key>id</key>

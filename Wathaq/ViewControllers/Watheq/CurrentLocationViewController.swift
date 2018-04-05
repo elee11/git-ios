@@ -72,7 +72,7 @@ class CurrentLocationViewController: UIViewController,CLLocationManagerDelegate,
 
         txtAdress.applyDGrayBorderProperties()
         txtAdress.delegate = self
-        self.view.addSubview(txtAdress)
+       // self.view.addSubview(txtAdress)
         
         if OrderDataDic.value(forKey: "address") != nil{
            

@@ -1923,11 +1923,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sK6-Vq-SPt"/>
                     </view>
-                    <navigationItem key="navigationItem" id="kQb-Ub-jWe"/>
+                    <navigationItem key="navigationItem" id="kQb-Ub-jWe">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="vUB-dG-mcA">
+                            <connections>
+                                <action selector="cancelRequest:" destination="zeI-dY-oOY" id="daM-vX-SgE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
+                        <outlet property="btnCancel" destination="vUB-dG-mcA" id="ebz-qk-RcC"/>
                         <outlet property="btn_callMeLater" destination="bDu-tR-6e9" id="VDb-P4-JYW"/>
                         <outlet property="btn_searchForMowatheq" destination="ldd-pG-tdj" id="dqZ-Rz-6SV"/>
                         <outlet property="lawyer1" destination="IXe-Um-6Js" id="zJh-Sj-qKu"/>
@@ -3434,12 +3441,28 @@
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </label>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="As3-MX-gP5">
+                                                            <rect key="frame" x="67" y="10" width="37" height="22.5"/>
+                                                            <color key="backgroundColor" red="0.0" green="0.57647058819999997" blue="0.32156862749999998" alpha="1" colorSpace="deviceRGB"/>
+                                                            <fontDescription key="fontDescription" name="DinNextRegular" family="DIN Next LT W23" pointSize="13"/>
+                                                            <state key="normal" title="Button">
+                                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </state>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                    <real key="value" value="6"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </button>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
+                                                        <constraint firstItem="As3-MX-gP5" firstAttribute="leading" secondItem="Ehi-wn-scL" secondAttribute="trailing" constant="20" id="EaP-U3-Axt"/>
                                                         <constraint firstItem="8ZX-i0-YuM" firstAttribute="leading" secondItem="S5X-am-hGi" secondAttribute="leading" constant="22" id="LkH-nC-osz"/>
+                                                        <constraint firstItem="As3-MX-gP5" firstAttribute="top" secondItem="Ehi-wn-scL" secondAttribute="top" id="OJh-In-PPJ"/>
                                                         <constraint firstItem="Ehi-wn-scL" firstAttribute="trailing" secondItem="8ZX-i0-YuM" secondAttribute="trailing" constant="-4" id="PSp-kJ-S14"/>
                                                         <constraint firstItem="By8-He-dXW" firstAttribute="top" secondItem="Ehi-wn-scL" secondAttribute="top" id="adx-rV-qD0"/>
+                                                        <constraint firstItem="As3-MX-gP5" firstAttribute="bottom" secondItem="Ehi-wn-scL" secondAttribute="bottom" id="crt-7J-XYH"/>
                                                         <constraint firstItem="By8-He-dXW" firstAttribute="bottom" secondItem="Ehi-wn-scL" secondAttribute="bottom" id="dzE-dr-GKl"/>
                                                         <constraint firstItem="By8-He-dXW" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="S5X-am-hGi" secondAttribute="leading" constant="20" symbolic="YES" id="mQV-C5-xJu"/>
                                                         <constraint firstItem="Ehi-wn-scL" firstAttribute="leading" secondItem="8ZX-i0-YuM" secondAttribute="leading" constant="-4" id="pxK-C4-TAo"/>
@@ -3544,6 +3567,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="LblOrderTime" destination="By8-He-dXW" id="mYU-L9-KWe"/>
+                                            <outlet property="btn_ChooseLawyer" destination="As3-MX-gP5" id="XUt-L9-bT4"/>
                                             <outlet property="imgLawyer" destination="X9f-Ln-od9" id="Uue-UO-fdg"/>
                                             <outlet property="lblLawerName" destination="Gj2-0i-G8W" id="u11-a9-bbx"/>
                                             <outlet property="lblOrderStatus" destination="Ehi-wn-scL" id="wOL-we-28H"/>
@@ -5680,7 +5704,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="15b-bT-jJi"/>
-        <segue reference="Bl6-A0-JmV"/>
+        <segue reference="Jwd-Zg-EBm"/>
         <segue reference="DrB-az-ydS"/>
         <segue reference="V3E-29-wzA"/>
         <segue reference="72P-7v-MWe"/>

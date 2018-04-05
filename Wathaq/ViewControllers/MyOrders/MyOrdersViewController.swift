@@ -351,6 +351,15 @@ class MyOrdersViewController: UIViewController,ToastAlertProtocol {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func ChooseLawyerAction (_ sender : UIButton)
+    {
+        if isNewData == true
+        {
+            let ObjOrder =  self.ArrNewOrdersCat[sender.tag]
+            self.performSegue(withIdentifier: "S_Orders_Lawyers", sender: ObjOrder)
+            
+        }
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "S_Orders_Lawyers"  {
@@ -462,6 +471,12 @@ extension MyOrdersViewController: UITableViewDataSource {
                     cellOrderCell.imgLawyer.kf.setImage(with: nil, placeholder: UIImage.init(named: "ic_avatar"), options: nil, progressBlock: nil, completionHandler: nil)
                 }
                 
+               
+                 cellOrderCell.btn_ChooseLawyer.isHidden = false
+                cellOrderCell.btn_ChooseLawyer.tag = indexPath.row
+             cellOrderCell.btn_ChooseLawyer.setTitle(NSLocalizedString("chooseLawyer", comment: ""), for: .normal)
+                
+                cellOrderCell.btn_ChooseLawyer.addTarget(self, action: #selector(ChooseLawyerAction), for: .touchUpInside)
                 
                 return cellOrderCell
             }
@@ -515,6 +530,8 @@ extension MyOrdersViewController: UITableViewDataSource {
                 {
                     cellOrderCell.imgLawyer.kf.setImage(with: nil, placeholder: UIImage.init(named: "ic_avatar"), options: nil, progressBlock: nil, completionHandler: nil)
                 }
+                cellOrderCell.btn_ChooseLawyer.isHidden = true
+
                 return cellOrderCell
             }
         }
@@ -568,6 +585,9 @@ extension MyOrdersViewController: UITableViewDataSource {
             {
                 cellOrderCell.imgLawyer.kf.setImage(with: nil, placeholder: UIImage.init(named: "ic_avatar"), options: nil, progressBlock: nil, completionHandler: nil)
             }
+            
+            cellOrderCell.btn_ChooseLawyer.isHidden = true
+
             
           return cellOrderCell
     

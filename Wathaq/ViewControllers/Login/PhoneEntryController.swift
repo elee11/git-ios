@@ -138,6 +138,8 @@ class PhoneEntryController: UIViewController,ToastAlertProtocol {
                 return
             }
             guard let verificationID = verificationID else { return }
+            self.showToastMessage(title: verificationID, isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+
             self.performSegue(withIdentifier: "S_PhoneEntery_PhoneVerify", sender: verificationID)
         }
     }

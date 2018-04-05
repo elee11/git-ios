@@ -268,6 +268,8 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
 
         }
         
+        TawkeelOrderDataDic.setValue(nil, forKey: "marriageDate")
+        
         self.tblOrder.reloadData()
     }
     
@@ -340,6 +342,11 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
                 TawkeelOrderDataDic.setValue(" ", forKey: "address")
             }
             
+            if  TawkeelOrderDataDic.object(forKey: "marriageDate") == nil
+            {
+                TawkeelOrderDataDic.setValue(" ", forKey: "marriageDate")
+            }
+            
             
         let TranstBtn:TransitionButton =  sender as! TransitionButton
 
@@ -381,6 +388,7 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
         TawkeelOrderDataDic.setValue(1, forKey: "MainCatId")
         TawkeelOrderDataDic.setValue("office", forKey: "delivery")
         TawkeelOrderDataDic.setValue("1 hours", forKey: "time")
+        TawkeelOrderDataDic.removeObject(forKey: "marriageDate")
         TawkeelOrderDataDic.removeObject(forKey: "address")
         TawkeelOrderDataDic.removeObject(forKey: "latitude")
         TawkeelOrderDataDic.removeObject(forKey: "longitude")
@@ -584,6 +592,8 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
             ContractOrderDataDic.setValue("3 hours", forKey: "time")
             
         }
+        ContractOrderDataDic.setValue(nil, forKey: "marriageDate")
+
         
          self.tblOrder.reloadData()
     }
@@ -597,6 +607,11 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
             if  ContractOrderDataDic.object(forKey: "address") == nil
             {
                 ContractOrderDataDic.setValue(" ", forKey: "address")
+            }
+            
+            if  ContractOrderDataDic.object(forKey: "letterDate") == nil
+            {
+                ContractOrderDataDic.setValue(" ", forKey: "letterDate")
             }
             
             let TranstBtn:TransitionButton =  sender as! TransitionButton
@@ -635,18 +650,16 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
     {
         ContractOrderDataDic = NSMutableDictionary ()
         ContractOrderDataDic.setValue(10, forKey: "MainCatId")
+        ContractOrderDataDic.setValue(10, forKey: "categoryId")
 
         ContractOrderDataDic.setValue("office", forKey: "delivery")
         ContractOrderDataDic.setValue("1 hours", forKey: "time")
         ContractOrderDataDic.removeObject(forKey: "address")
         ContractOrderDataDic.removeObject(forKey: "latitude")
         ContractOrderDataDic.removeObject(forKey: "longitude")
+        ContractOrderDataDic.removeObject(forKey: "letterDate")
 
-     
-        
-  
-        
-      
+
         
         self.tblOrder.reloadData()
     }
@@ -767,19 +780,19 @@ extension CreateOrderViewController: UITableViewDataSource {
             //time
         else
          {
-            return 2
+            return 3
           }
       }
      //contacrts
      else if CatId == 10
      {
-         if section == 0 || section == 1
+         if section == 0
          {
             return 2
          }
         else if section == 1
          {
-            return 2
+            return 3
         }
         else
          {
@@ -919,26 +932,54 @@ extension CreateOrderViewController: UITableViewDataSource {
                 return cellMeetingTime
                 
             }
+             else if indexPath.row == 1
+              {
+                    let cellChooseTimeDdl:ChooseLocationDropDownTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ChooseLocationDropDownTableViewCell") as UITableViewCell! as! ChooseLocationDropDownTableViewCell
+                    cellChooseTimeDdl.btn_OpenDDl.setTitle(NSLocalizedString("LaterTime", comment: ""), for: .normal)
+                    cellChooseTimeDdl.img_icon.image = UIImage.init(named: "time")
+                    cellChooseTimeDdl.btn_OpenDDl.removeTarget(nil, action: nil, for: .allEvents)
+                    cellChooseTimeDdl.btn_OpenDDl.addTarget(self, action: #selector(OpenletterTimeDDL), for: .touchUpInside)
+                    if let TimeMowkl : String =  TawkeelOrderDataDic.value(forKey: "marriageDate") as? String
+                    {
+                        cellChooseTimeDdl.btn_OpenDDl.setTitle(TimeMowkl, for: .normal)
+                        cellChooseTimeDdl.btn_OpenDDl.applybuttonGreenviewBorderProperties()
+                        
+                    }
+                    else
+                    {
+                        cellChooseTimeDdl.btn_OpenDDl.applybuttonDGrayBorderProperties()
+                        
+                    }
+                
+                
+        
+                    
+                    return cellChooseTimeDdl
+              }
             else
             {
                 
                 let cellChooseTimeDdl:ChooseLocationDropDownTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ChooseLocationDropDownTableViewCell") as UITableViewCell! as! ChooseLocationDropDownTableViewCell
                 
-                cellChooseTimeDdl.btn_OpenDDl.setTitle(NSLocalizedString("LaterTime", comment: ""), for: .normal)
+                cellChooseTimeDdl.btn_OpenDDl.setTitle(NSLocalizedString("ArrivalTime", comment: ""), for: .normal)
                 cellChooseTimeDdl.img_icon.image = UIImage.init(named: "time")
                 cellChooseTimeDdl.btn_OpenDDl.removeTarget(nil, action: nil, for: .allEvents)
                 cellChooseTimeDdl.btn_OpenDDl.addTarget(self, action: #selector(OpenlaterTimeDDL), for: .touchUpInside)
+               
                 if let TimeMowkl : String =  TawkeelOrderDataDic.value(forKey: "time") as? String
                 {
                     if TimeMowkl == "1 hours" || TimeMowkl == "2 hours" || TimeMowkl == "3 hours"
                     {
-                        cellChooseTimeDdl.btn_OpenDDl.setTitle(NSLocalizedString("LaterTime", comment: ""), for: .normal)
+                        cellChooseTimeDdl.btn_OpenDDl.setTitle(NSLocalizedString("ArrivalTime", comment: ""), for: .normal)
+                        cellChooseTimeDdl.btn_OpenDDl.applybuttonDGrayBorderProperties()
+
                     }
                     else
                     {
                         cellChooseTimeDdl.btn_OpenDDl.setTitle(TimeMowkl, for: .normal)
+                        cellChooseTimeDdl.btn_OpenDDl.applybuttonGreenviewBorderProperties()
+
                     }
-                    cellChooseTimeDdl.btn_OpenDDl.applybuttonGreenviewBorderProperties()
                     
                 }
                 else
@@ -946,6 +987,9 @@ extension CreateOrderViewController: UITableViewDataSource {
                     cellChooseTimeDdl.btn_OpenDDl.applybuttonDGrayBorderProperties()
                     
                 }
+                
+                
+            
                 return cellChooseTimeDdl
                 
             }
@@ -1078,25 +1122,16 @@ extension CreateOrderViewController: UITableViewDataSource {
                         return cellMeetingTime
                         
                     }
-                    else
+                    else if indexPath.row == 1
                     {
-                        
                         let cellChooseTimeDdl:ChooseLocationDropDownTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ChooseLocationDropDownTableViewCell") as UITableViewCell! as! ChooseLocationDropDownTableViewCell
                         cellChooseTimeDdl.btn_OpenDDl.setTitle(NSLocalizedString("LaterTime", comment: ""), for: .normal)
                         cellChooseTimeDdl.img_icon.image = UIImage.init(named: "time")
                         cellChooseTimeDdl.btn_OpenDDl.removeTarget(nil, action: nil, for: .allEvents)
-                        cellChooseTimeDdl.btn_OpenDDl.addTarget(self, action: #selector(OpenlaterTimeDDL), for: .touchUpInside)
-                        if let TimeMowkl : String =  ContractOrderDataDic.value(forKey: "time") as? String
+                        cellChooseTimeDdl.btn_OpenDDl.addTarget(self, action: #selector(OpenletterTimeDDL), for: .touchUpInside)
+                        if let TimeMowkl : String =  ContractOrderDataDic.value(forKey: "letterDate") as? String
                         {
-                            if TimeMowkl == "1 hours" || TimeMowkl == "2 hours" || TimeMowkl == "3 hours"
-                            {
-                                cellChooseTimeDdl.btn_OpenDDl.setTitle(NSLocalizedString("LaterTime", comment: ""), for: .normal)
-                            }
-                            else
-                            {
-                                cellChooseTimeDdl.btn_OpenDDl.setTitle(TimeMowkl, for: .normal)
-                            }
-                            
+                            cellChooseTimeDdl.btn_OpenDDl.setTitle(TimeMowkl, for: .normal)
                             cellChooseTimeDdl.btn_OpenDDl.applybuttonGreenviewBorderProperties()
                             
                         }
@@ -1105,9 +1140,49 @@ extension CreateOrderViewController: UITableViewDataSource {
                             cellChooseTimeDdl.btn_OpenDDl.applybuttonDGrayBorderProperties()
                             
                         }
+                        
+                        
+                        
+                        
+                        return cellChooseTimeDdl
+                    }
+                    else
+                    {
+                        
+                        let cellChooseTimeDdl:ChooseLocationDropDownTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ChooseLocationDropDownTableViewCell") as UITableViewCell! as! ChooseLocationDropDownTableViewCell
+                        
+                        cellChooseTimeDdl.btn_OpenDDl.setTitle(NSLocalizedString("ArrivalTime", comment: ""), for: .normal)
+                        cellChooseTimeDdl.img_icon.image = UIImage.init(named: "time")
+                        cellChooseTimeDdl.btn_OpenDDl.removeTarget(nil, action: nil, for: .allEvents)
+                        cellChooseTimeDdl.btn_OpenDDl.addTarget(self, action: #selector(OpenlaterTimeDDL), for: .touchUpInside)
+                        
+                        if let TimeMowkl : String =  ContractOrderDataDic.value(forKey: "time") as? String
+                        {
+                            if TimeMowkl == "1 hours" || TimeMowkl == "2 hours" || TimeMowkl == "3 hours"
+                            {
+                                cellChooseTimeDdl.btn_OpenDDl.setTitle(NSLocalizedString("ArrivalTime", comment: ""), for: .normal)
+                                cellChooseTimeDdl.btn_OpenDDl.applybuttonDGrayBorderProperties()
+                                
+                            }
+                            else
+                            {
+                                cellChooseTimeDdl.btn_OpenDDl.setTitle(TimeMowkl, for: .normal)
+                                cellChooseTimeDdl.btn_OpenDDl.applybuttonGreenviewBorderProperties()
+                                
+                            }
+                            
+                        }
+                        else
+                        {
+                            cellChooseTimeDdl.btn_OpenDDl.applybuttonDGrayBorderProperties()
+                            
+                        }
+                        
+                        
+                        
                         return cellChooseTimeDdl
                         
-                    }
+                }
             }
             else
             {
@@ -1152,7 +1227,10 @@ extension CreateOrderViewController: UITableViewDataSource {
                     let cellWakalaCat:WkalaCategoryTableViewCell = tableView.dequeueReusableCell(withIdentifier:"WkalaCategoryTableViewCell") as UITableViewCell! as! WkalaCategoryTableViewCell
                  
                     
-                   cellWakalaCat.SegmentControl.titles = [NSLocalizedString("MaazonLocation", comment: ""),"\(NSLocalizedString("ClientLocation" , comment: "")) + \(homeDeliveryFee as Int) \(NSLocalizedString("SR" , comment: ""))" ]
+//                   cellWakalaCat.SegmentControl.titles = [NSLocalizedString("MaazonLocation", comment: ""),"\(NSLocalizedString("ClientLocation" , comment: "")) + \(homeDeliveryFee as Int) \(NSLocalizedString("SR" , comment: ""))" ]
+                    
+                    
+                      cellWakalaCat.SegmentControl.titles = [NSLocalizedString("MaazonLocation", comment: ""),"\(NSLocalizedString("ClientLocation" , comment: ""))" ]
                     
                     cellWakalaCat.SegmentControl.titleFont = UIFont(name: Constants.FONTS.FONT_AR, size: 16.0)!
                     cellWakalaCat.SegmentControl.selectedTitleFont = UIFont(name: Constants.FONTS.FONT_AR, size: 16.0)!
@@ -1242,11 +1320,11 @@ extension CreateOrderViewController: UITableViewDataSource {
                     {
                         if deliveryLocation == "home"
                         {
-                            cellCreatOrder.btnCreatOrder.setTitle("\(NSLocalizedString("CreatOrder", comment: "")) (\(CatObj.cost! + homeDeliveryFee as! Int) \(NSLocalizedString("SR", comment:"")))", for: .normal)
+                            cellCreatOrder.btnCreatOrder.setTitle(NSLocalizedString("CreatOrder", comment: ""), for: .normal)
                         }
                         else
                         {
-                            cellCreatOrder.btnCreatOrder.setTitle("\(NSLocalizedString("CreatOrder", comment: "")) (\(CatObj.cost as! Int) \(NSLocalizedString("SR", comment:"")))", for: .normal)
+                            cellCreatOrder.btnCreatOrder.setTitle(NSLocalizedString("CreatOrder", comment: ""), for: .normal)
                         }
                     }
                     
@@ -1573,6 +1651,12 @@ extension CreateOrderViewController: PickerDateDelegate {
         if CatId == 10
         {
             ContractOrderDataDic.setValue(ChoosedDate, forKey: "letterDate")
+
+
+        }
+        else if CatId == 1
+        {
+            TawkeelOrderDataDic.setValue(ChoosedDate, forKey: "marriageDate")
 
         }
         else

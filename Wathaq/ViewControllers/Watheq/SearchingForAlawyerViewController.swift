@@ -11,7 +11,7 @@ import EasyAnimation
 import CountdownLabel
 
 
-class SearchingForAlawyerViewController: UIViewController {
+class SearchingForAlawyerViewController: UIViewController,ToastAlertProtocol {
 
     @IBOutlet weak var ovalViewContainer: UIImageView!
     @IBOutlet weak var mainlawyer: UIImageView!
@@ -22,6 +22,10 @@ class SearchingForAlawyerViewController: UIViewController {
     @IBOutlet weak var lbl_Timer: CountdownLabel!
     @IBOutlet weak var btn_searchForMowatheq: UIButton!
     @IBOutlet weak var btn_callMeLater: UIButton!
+    @IBOutlet weak var btnCancel: UIBarButtonItem!
+    var viewModel: OrderViewModel!
+
+    
 
     var OrderObj : OrderRootClass!
 
@@ -31,7 +35,8 @@ class SearchingForAlawyerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        viewModel = OrderViewModel()
+
         //Remove back button
         let backButton = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain, target: navigationController, action: nil)
         navigationItem.leftBarButtonItem = backButton
@@ -41,6 +46,8 @@ class SearchingForAlawyerViewController: UIViewController {
         lblSearchingMsg.text = NSLocalizedString("OrderProceeded", comment: "")
         btn_searchForMowatheq.setTitle(NSLocalizedString("ChooseMowtheq", comment: ""), for: .normal)
         btn_callMeLater.setTitle(NSLocalizedString("callMeLater", comment: ""), for: .normal)
+        
+        btnCancel.title = NSLocalizedString("Cancel", comment: "")
 
         self.addTimerLable()
         UIView.animate(withDuration: 0.80, delay: 0.20,
@@ -90,6 +97,36 @@ class SearchingForAlawyerViewController: UIViewController {
     {
       self.navigationController?.popToRootViewController(animated: true)
     }
+    
+    @IBAction func cancelRequest (_ sender:Any)
+    {
+        viewModel.removeOrder(OrderId: OrderObj.Orderdata?.id as! Int, completion: { (OrderObj, errorMsg) in
+            if errorMsg == nil {
+                if OrderObj?.code == 200
+                {
+                    self.view.isUserInteractionEnabled = true
+                    
+                    self.navigationController?.popToRootViewController(animated: true)
+
+                    self.showToastMessage(title:NSLocalizedString("OrderCancelled", comment: "") , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.greenAlert, foregroundColor: UIColor.white)
+                    self.view.window!.rootViewController?.dismiss(animated: true, completion: nil)
+                }
+                else
+                {
+                    self.showToastMessage(title:(OrderObj?.message!)! , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+                    
+                }
+                
+                
+            } else{
+                self.showToastMessage(title:errorMsg! , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+                self.view.isUserInteractionEnabled = true
+            }
+        })
+        
+        
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

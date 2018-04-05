@@ -137,3 +137,6 @@
 "callMeLater" = "Call me to proceed";
 "send" = "send";
 "writeMessage" = "Type message";
+"ArrivalTime" = "ArrivalTime";
+"chooseLawyer" = " choose Lawyer ";
+"OrderCancelled" = "Order Cancelled successfully";

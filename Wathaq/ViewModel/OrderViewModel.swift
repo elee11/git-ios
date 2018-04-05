@@ -13,7 +13,7 @@ class OrderViewModel: ToastAlertProtocol {
     static let shareManager = CategoriesViewModel()
     
     func CreateOrder(OrderDic:NSDictionary, completion: @escaping (OrderRootClass?, String?) -> ()){
-        NetworkHandler.requestTarget(target: .CreateOrder(categoryId: OrderDic.object(forKey: "categoryId") as! Int,  delivery: OrderDic.object(forKey: "delivery") as! String, latitude: OrderDic.object(forKey: "latitude") as! Double, longitude: OrderDic.object(forKey: "longitude") as! Double, time: OrderDic.object(forKey: "time") as! String, address: OrderDic.object(forKey: "address") as! String), isDictionary: true) { (result, errorMsg) in
+        NetworkHandler.requestTarget(target: .CreateOrder(categoryId: OrderDic.object(forKey: "categoryId") as! Int,  delivery: OrderDic.object(forKey: "delivery") as! String, latitude: OrderDic.object(forKey: "latitude") as! Double, longitude: OrderDic.object(forKey: "longitude") as! Double, time: OrderDic.object(forKey: "time") as! String ,marriageDate: OrderDic.object(forKey: "marriageDate") as! String, address: OrderDic.object(forKey: "address") as! String), isDictionary: true) { (result, errorMsg) in
             if errorMsg == nil {
                 let Ordermodel = Mapper<OrderRootClass>().map(JSONString: result as! String)
                 completion(Ordermodel,nil)
@@ -39,7 +39,7 @@ class OrderViewModel: ToastAlertProtocol {
     
     
     func CreateContractOrder(OrderDic:NSDictionary, completion: @escaping (OrderRootClass?, String?) -> ()){
-        NetworkHandler.requestTarget(target: .createContractOrder(categoryId: OrderDic.object(forKey: "categoryId") as! Int, delivery: OrderDic.object(forKey: "delivery") as! String, latitude: OrderDic.object(forKey: "latitude") as! Double, longitude: OrderDic.object(forKey: "longitude") as! Double, time: OrderDic.object(forKey: "time") as! String, address: OrderDic.object(forKey: "address") as! String), isDictionary: true) { (result, errorMsg) in
+        NetworkHandler.requestTarget(target: .createContractOrder(categoryId: OrderDic.object(forKey: "categoryId") as! Int, delivery: OrderDic.object(forKey: "delivery") as! String, latitude: OrderDic.object(forKey: "latitude") as! Double, longitude: OrderDic.object(forKey: "longitude") as! Double, time: OrderDic.object(forKey: "time") as! String ,marriageDate: OrderDic.object(forKey: "letterDate") as! String , address: OrderDic.object(forKey: "address") as! String), isDictionary: true) { (result, errorMsg) in
             if errorMsg == nil {
                 let Ordermodel = Mapper<OrderRootClass>().map(JSONString: result as! String)
                 completion(Ordermodel,nil)
@@ -88,6 +88,17 @@ class OrderViewModel: ToastAlertProtocol {
     
     func selectLawyer(OrderId:Int,lawyerid:Int, completion: @escaping (OrderRootClass?, String?) -> ()){
         NetworkHandler.requestTarget(target: .selectLawyer(OrderId, lawyerid), isDictionary: true) { (result, errorMsg) in
+            if errorMsg == nil {
+                let Ordermodel = Mapper<OrderRootClass>().map(JSONString: result as! String)
+                completion(Ordermodel,nil)
+            } else{
+                completion(nil,errorMsg)
+            }
+        }
+    }
+    
+    func removeOrder(OrderId:Int, completion: @escaping (OrderRootClass?, String?) -> ()){
+        NetworkHandler.requestTarget(target: .RemoveOrder(OrderId), isDictionary: true) { (result, errorMsg) in
             if errorMsg == nil {
                 let Ordermodel = Mapper<OrderRootClass>().map(JSONString: result as! String)
                 completion(Ordermodel,nil)

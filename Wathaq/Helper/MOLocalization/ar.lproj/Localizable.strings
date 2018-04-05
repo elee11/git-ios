@@ -53,7 +53,7 @@
 "AddClientOwnerMsg" = "بامكانك اضافة صاحب التوكيل بالضغط على العلامة في الاسفل";
 "nextStep" = "الخطوة التالية";
 "office" = "مقر الموثق";
-"home" = "مقر العميل";
+"home" = "مقرك";
 "name" = "الاسم" ;
 "civilReg" = "رقم الهوية ";
 "Receiving the POA" = "استلام التوكيل";
@@ -90,7 +90,7 @@
 "SearchingMsg" = "لم يتوفر موثق قريب منك, قد يتوفر ذىل إذا تم زيادة مدة الطلب عن ٣ ساعات, أو يمكنك اختيار موثق بنفسك";
 "ChooseMowtheq" = "اختر موثقا معيناً";
 "MowatheqArrivaOfficelat" = "ساتجه الي مكتب الموثق خلال";
-"fawd" = "فوض";
+"fawd" = "مراسله";
 "NoInternetConnection" = "لا يوجد اتصال بالانترنت";
 "No Orders" = "لا يوجد طلبات";
 "OrderNumber" = "رقم الطلب #";
@@ -111,7 +111,7 @@
 "wekala" = "وكالات";
 "contract" = "عقود الشركات" ;
 "marriage" = "عقود نكاح";
-"CreateOrCancelWekala" = "إنشاء أو فسخ وكالة";
+"CreateOrCancelWekala" = "اصدار أو فسخ وكالة";
 "Creatwekala" = "توكيل" ;
 "Cancelwekala" = "فسخ توكيل" ;
 "SefaWakeel" = "صفه الموكل";
@@ -136,3 +136,6 @@
 "callMeLater" = "يرجى الاتصال بي لاتمام الطلب";
 "send" = "تم";
 "writeMessage" = "اكتب رسالتك";
+"ArrivalTime" = "وقت الحضور";
+"chooseLawyer" = " اختار الموثق ";
+"OrderCancelled" = "تم إلغاء الطلب بنجاح";

@@ -16,6 +16,7 @@ class MyOrderTableViewCell: UITableViewCell {
     @IBOutlet weak var imgLawyer: UIImageView!
     @IBOutlet weak var viewBigContainer: UIView!
     @IBOutlet weak var viewsmallContainer: UIView!
+    @IBOutlet weak var btn_ChooseLawyer: UIButton!
 
 
 
