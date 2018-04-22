@@ -157,7 +157,8 @@ class CompleteProfileViewController: UIViewController,ToastAlertProtocol,UIImage
 
                     self.ConfirmButton.stopAnimation()
                     self.view.isUserInteractionEnabled = true
-                    
+                    if userObj != nil
+                    {
                       self.showToastMessage(title:NSLocalizedString("Profile Data Completed Thank you", comment: "") , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.greenAlert, foregroundColor: UIColor.white)
                     
                     let values = ["displayName": userObj?.name, "email": userObj?.email, "instanceId": userObj?.token!, "uid" :"\(userObj!.userID as! Int)"]
@@ -168,6 +169,11 @@ class CompleteProfileViewController: UIViewController,ToastAlertProtocol,UIImage
                     })
                     
                     self.closeview ()
+                    }
+                    else
+                    {
+                         self.showToastMessage(title:NSLocalizedString("SERVER_ERROR", comment: "") , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.greenAlert, foregroundColor: UIColor.white)
+                    }
                     
                 } else{
                     self.showToastMessage(title:errorMsg! , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)

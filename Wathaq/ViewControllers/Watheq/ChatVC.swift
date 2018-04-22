@@ -308,13 +308,28 @@ class ChatVC: UIViewController, UITextFieldDelegate,UITableViewDelegate,UITableV
         
     }
     
+    func getOrdersDetailsWithOrderId (_ orderId : String)
+    {
+        viewModel.getOrderDetails(orderId: orderId, completion: { (OrderObj, errorMsg) in
+            if errorMsg == nil {
+                self.OrderObj = OrderObj
+                self.fetchData()
+
+            } else{
+                
+                self.showToastMessage(title:errorMsg! , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+            }
+        })
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.customization()
-        self.fetchData()
         self.configureTitleView()
         self.checkOrderStatus()
         self.SetupRateView()
+        viewModel = OrderViewModel()
+        self.getOrdersDetailsWithOrderId("\(OrderObj.id as! Int)")
         self.title = "\(NSLocalizedString("OrderNumber", comment: "") as String) \(OrderObj.id as! Int)"
 
         let CallImg    = UIImage(named: "phone-outgoing")!
@@ -325,6 +340,7 @@ class ChatVC: UIViewController, UITextFieldDelegate,UITableViewDelegate,UITableV
         btnSend.setTitle(NSLocalizedString("send", comment: ""), for: .normal)
         inputTextField.placeholder = NSLocalizedString("writeMessage", comment: "")
         navigationItem.rightBarButtonItems = [CallButton, LocatonButton]
+        
         
     }
     
@@ -366,10 +382,20 @@ extension ChatVC:DZNEmptyDataSetSource
             , NSAttributedStringKey.foregroundColor : UIColor.deepBlue], range: NSRange(location:0,length:myMutableString1.length)) // What ever range you want to give
         
         var myMutableString2 = NSMutableAttributedString()
-        
-        myMutableString2 = NSMutableAttributedString(string: (OrderObj.lawyer?.name!)!)
-        myMutableString2.setAttributes([NSAttributedStringKey.font :UIFont(name: Constants.FONTS.FONT_AR, size: 18.0)!
-            , NSAttributedStringKey.foregroundColor : UIColor.YellowSEGMENT], range: NSRange(location:0,length:myMutableString2.length)) // What ever range you want to give
+        if let laywerName = OrderObj.lawyer?.name!
+        {
+            myMutableString2 = NSMutableAttributedString(string: laywerName)
+            myMutableString2.setAttributes([NSAttributedStringKey.font :UIFont(name: Constants.FONTS.FONT_AR, size: 18.0)!
+                , NSAttributedStringKey.foregroundColor : UIColor.YellowSEGMENT], range: NSRange(location:0,length:myMutableString2.length))
+        }
+        else
+        {
+            myMutableString2 = NSMutableAttributedString(string: NSLocalizedString("Moawtheq", comment: ""))
+            myMutableString2.setAttributes([NSAttributedStringKey.font :UIFont(name: Constants.FONTS.FONT_AR, size: 18.0)!
+                , NSAttributedStringKey.foregroundColor : UIColor.YellowSEGMENT], range: NSRange(location:0,length:myMutableString2.length))
+
+        }
+       // What ever range you want to give
         
         myMutableString.append(myMutableString1)
         myMutableString.append(myMutableString2)

@@ -102,7 +102,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         let firebaseAuth = Auth.auth()
         
         //At development time we use .sandbox
-        firebaseAuth.setAPNSToken(deviceToken, type: AuthAPNSTokenType.prod)
+        firebaseAuth.setAPNSToken(deviceToken, type: AuthAPNSTokenType.unknown)
         
         Messaging.messaging().apnsToken = deviceToken
         var token = ""

@@ -145,4 +145,16 @@ class OrderViewModel: ToastAlertProtocol {
         }
     }
     
+    func getOrderDetails(orderId:String,completion: @escaping (Orderdata?, String?) -> ()){
+        NetworkHandler.requestTarget(target: .getOrderDetails(orderId), isDictionary: true) { (result, errorMsg) in
+            if errorMsg == nil {
+                
+                let Ordermodel = Mapper<OrderRootClass>().map(JSONString: result as! String)
+                completion(Ordermodel?.Orderdata,nil)
+            } else{
+                completion(nil,errorMsg)
+            }
+        }
+    }
+    
 }

@@ -48,7 +48,7 @@ class SettingsViewController: UIViewController,RefreshAppProtocol,ToastAlertProt
     func Logout()
     {
         //Create the AlertController and add Its action like button in Actionsheet
-        let actionSheetController: UIAlertController = UIAlertController(title: "", message: NSLocalizedString("Are you sure you want to logout?",comment:""), preferredStyle: .actionSheet)
+        let actionSheetController: UIAlertController = UIAlertController(title: "", message: NSLocalizedString("Are you sure you want to logout?",comment:""), preferredStyle: .alert)
         
         let CancelButton = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel) { _ in
         }
@@ -89,7 +89,7 @@ class SettingsViewController: UIViewController,RefreshAppProtocol,ToastAlertProt
     
     func changeLanguage() {
         var selectedLanguage : String!
-        let actionSheetController: UIAlertController = UIAlertController(title: "", message: NSLocalizedString("Change Language",comment:""), preferredStyle: .actionSheet)
+        let actionSheetController: UIAlertController = UIAlertController(title: "", message: NSLocalizedString("Change Language",comment:""), preferredStyle: .alert)
         let cancelButton = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel) { _ in
         }
         actionSheetController.addAction(cancelButton)

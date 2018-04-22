@@ -74,6 +74,8 @@ public enum WatheqApi {
     case selectLawyer (Int,Int)
     case getNotification
     case RemoveOrder (Int)
+    case getOrderDetails (String)
+
 
 
 }
@@ -122,13 +124,15 @@ extension WatheqApi: TargetType,AccessTokenAuthorizable {
             return "api/auth/contactus/create"
         case .RemoveOrder :
             return "api/auth/client/order/remove"
+        case .getOrderDetails:
+            return "api/auth/orderDetails"
         }
     }
     public var method: Moya.Method {
         switch self {
         case .login,.completeProfile,.UpdateProfile,.registerDeviceToken,.logout,.CreateOrder,.createNekahOrder,.createContractOrder,.RateOrder,.ContactUs:
             return .post
-        case .getCategories,.getNewOrders,.getPendingOrders,.getClosedOrders,.getLawyerList,.selectLawyer,.getNotification,.RemoveOrder:
+        case .getCategories,.getNewOrders,.getPendingOrders,.getClosedOrders,.getLawyerList,.selectLawyer,.getNotification,.RemoveOrder,.getOrderDetails:
             return .get
         }
     }
@@ -172,6 +176,8 @@ extension WatheqApi: TargetType,AccessTokenAuthorizable {
             return .requestPlain
         case .RemoveOrder(let orderId):
             return .requestParameters(parameters: ["orderId":orderId], encoding: URLEncoding.default)
+        case .getOrderDetails(let orderId):
+            return .requestParameters(parameters: ["orderId":orderId], encoding: URLEncoding.default)
             
         }
     }
@@ -180,7 +186,7 @@ extension WatheqApi: TargetType,AccessTokenAuthorizable {
         switch self {
         case .login:
             return .none
-        case .completeProfile,.UpdateProfile,.registerDeviceToken,.logout,.getCategories,.CreateOrder,.createNekahOrder,.createContractOrder,.getNewOrders,.getClosedOrders,.getPendingOrders,.getLawyerList,.selectLawyer,.getNotification,.RateOrder,.ContactUs,.RemoveOrder:
+        case .completeProfile,.UpdateProfile,.registerDeviceToken,.logout,.getCategories,.CreateOrder,.createNekahOrder,.createContractOrder,.getNewOrders,.getClosedOrders,.getPendingOrders,.getLawyerList,.selectLawyer,.getNotification,.RateOrder,.ContactUs,.RemoveOrder,.getOrderDetails:
             return .bearer
         }
     }
