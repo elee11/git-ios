@@ -160,6 +160,8 @@ class PhoneVerificationController: UIViewController,ToastAlertProtocol {
             
         }
     }
+    
+ 
 
    
     @IBAction func didTapVerifyFourDigitCode(_ sender: Any) {
@@ -169,9 +171,30 @@ class PhoneVerificationController: UIViewController,ToastAlertProtocol {
             self.showToastMessage(title: NSLocalizedString(("Enter your verification code"), comment: ""), isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
             return
         }
+        
+        let predicate = NSPredicate(format: "SELF MATCHES %@", "(?s).*\\p{Arabic}.*")
+        
+        var verification = verificationCodeTextField.text
+        
+        
+        if predicate.evaluate(with: verificationCodeTextField.text) {
+            print("arabic")
+            
+            let numberFormatter = NumberFormatter()
+            numberFormatter.locale = Locale(identifier: "EN")
+            if let finalText = numberFormatter.number(from: verificationCodeTextField.text!)
+            {
+                print("Final text is: ", finalText)
+                
+                verification = finalText.stringValue
+            }
+
+            
+        }
+        
         verifyButton.startAnimation()
         self.view.isUserInteractionEnabled = false
-        if let verificationCode = verificationCodeTextField.text {
+        if let verificationCode = verification {
             let credential = PhoneAuthProvider.provider().credential(withVerificationID: verificationID!, verificationCode: verificationCode)
             Auth.auth().signIn(with: credential) { (user, error) in
                 if let error = error {

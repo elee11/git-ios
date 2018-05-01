@@ -106,7 +106,16 @@ class ChooseLawyerViewController: UIViewController,ToastAlertProtocol {
     
                     if let  ArrMoreLawyers = lawerRootClass?.mowatheqData
                     {
-                        self.ArrLawyers = self.ArrLawyers + ArrMoreLawyers
+                        if ArrMoreLawyers.count == 0
+                        {
+                            self.tbl_Lawyers.es.stopLoadingMore()
+                            self.StopLoadMore = true
+                        }
+                        else
+                        {
+                            self.ArrLawyers = self.ArrLawyers + ArrMoreLawyers
+
+                        }
                     }
                     else
                     {
