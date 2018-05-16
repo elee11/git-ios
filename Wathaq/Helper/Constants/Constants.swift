@@ -12,7 +12,7 @@ import UIKit
 struct Constants {
     
     struct ApiConstants {
-        static let BaseUrl = "http://159.89.41.54/watheq/public/"
+        static let BaseUrl = "http://wathiq.sa/"
     }
     
     struct Language {

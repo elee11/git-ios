@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.1</string>
+	<string>1.2</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -42,11 +42,11 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>Watheq wants To access your Camera to use it while you using app</string>
+	<string>Watheq wants To access your Camera to use it while you using app to update profile picture </string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Watheq wants to access your location while using app to get you nearest requests to you</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>watheq wants To access you photo gallery to use it while you using app</string>
+	<string>watheq wants To access you photo gallery to use it while you using app to update profile picture</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>DinNextMedium.ttf</string>

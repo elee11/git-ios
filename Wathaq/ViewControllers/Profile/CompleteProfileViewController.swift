@@ -65,7 +65,7 @@ class CompleteProfileViewController: UIViewController,ToastAlertProtocol,UIImage
     
     @IBAction func OpenTakePhotoOptions (_ sender :Any)
     {
-        let actionSheetController: UIAlertController = UIAlertController(title: "", message: NSLocalizedString("Take Profile Pictuere from", comment: ""), preferredStyle: .actionSheet)
+        let actionSheetController: UIAlertController = UIAlertController(title: "", message: NSLocalizedString("Take Profile Pictuere from", comment: ""), preferredStyle: .alert)
         
         let CancelButton = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel) { _ in
         }

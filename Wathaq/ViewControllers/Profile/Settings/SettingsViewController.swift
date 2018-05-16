@@ -68,7 +68,7 @@ class SettingsViewController: UIViewController,RefreshAppProtocol,ToastAlertProt
         if let uuidvalue = DAKeychain.shared["uuid"]
         {
             UuidData = uuidvalue
-            viewModel.logoutUser(identifier: UuidData) { (userObj, errorMsg) in
+            viewModel.logoutUser(identifier: UuidData) { (Sucess, errorMsg) in
                 if errorMsg == nil {
                     
                     self.viewModel.deleteUser()
