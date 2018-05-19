@@ -33,6 +33,7 @@ class UserViewModel: ToastAlertProtocol {
                 let model = Mapper<UserRootClass>().map(JSONString: result as! String)!
                 let userModel = model.user
                 UserDefaults.standard.rm_setCustomObject(userModel, forKey: Constants.keys.KeyUser)
+                  UserDefaults.standard.synchronize()
                 completion(userModel,nil)
             } else{
                 completion(nil,errorMsg)
@@ -101,7 +102,6 @@ class UserViewModel: ToastAlertProtocol {
     
     func deleteUser () {
         if isUserLogined() {
-            UserDefaults.standard.removeObject(forKey: Constants.keys.KeyUser)
         }
     }
     

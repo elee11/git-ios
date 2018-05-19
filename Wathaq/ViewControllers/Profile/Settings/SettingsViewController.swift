@@ -71,10 +71,13 @@ class SettingsViewController: UIViewController,RefreshAppProtocol,ToastAlertProt
             viewModel.logoutUser(identifier: UuidData) { (Sucess, errorMsg) in
                 if errorMsg == nil {
                     
-                    self.viewModel.deleteUser()
-                    let StoryBoard = singleToneClassValues.loadStoryBoardWithStoryboardName(_StoryboardName: "Main" as NSString)
-                    let VerificationNavView = StoryBoard.instantiateViewController(withIdentifier: "PhoneEntryController")
-                    UIApplication.shared.delegate?.window!?.rootViewController = VerificationNavView
+                    UserDefaults.standard.removeObject(forKey: Constants.keys.KeyUser)
+                    UserDefaults.standard.synchronize()
+                    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+                    appDelegate.checkifuserLoggedIn()
+//                    let StoryBoard = singleToneClassValues.loadStoryBoardWithStoryboardName(_StoryboardName: "Main" as NSString)
+//                    let VerificationNavView = StoryBoard.instantiateViewController(withIdentifier: "PhoneEntryController")
+//                    UIApplication.shared.delegate?.window!?.rootViewController = VerificationNavView
                 }
                 else{
                     

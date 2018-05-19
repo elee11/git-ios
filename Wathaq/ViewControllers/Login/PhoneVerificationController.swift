@@ -234,7 +234,28 @@ class PhoneVerificationController: UIViewController,ToastAlertProtocol {
     
     func loginUserWithPhoneNumber ()
     {
-        let phoneNumber = "+" + (localeCountry?.e164Cc!)! + phoneTextField.text!
+        let predicate = NSPredicate(format: "SELF MATCHES %@", "(?s).*\\p{Arabic}.*")
+        
+        var PhoneNum = phoneTextField.text
+        
+        
+        if predicate.evaluate(with: phoneTextField.text) {
+            print("arabic")
+            
+            let numberFormatter = NumberFormatter()
+            numberFormatter.locale = Locale(identifier: "EN")
+            if let finalText = numberFormatter.number(from: phoneTextField.text!)
+            {
+                print("Final text is: ", finalText)
+                
+                PhoneNum = finalText.stringValue
+            }
+            
+            
+        }
+        
+        
+        let phoneNumber = "+" + (localeCountry?.e164Cc!)! + PhoneNum!
         viewModel.loginUser(Phone: phoneNumber, completion: { (userObj, errorMsg) in
             if errorMsg == nil {
                 if userObj?.isCompleteProfile == true

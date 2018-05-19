@@ -128,7 +128,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
 //        IQKeyboardManager.sharedManager().disabledDistanceHandlingClasses = [EvaluateCourseViewController.self, AccreditationFormsViewController.self]
     }
     
-    func checkifuserLoggedIn()
+    public func checkifuserLoggedIn()
     {
         let userObj:User? = UserDefaults.standard.rm_customObject(forKey: Constants.keys.KeyUser) as? User
         if userObj == nil
