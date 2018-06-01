@@ -177,7 +177,7 @@ class ChatVC: UIViewController, UITextFieldDelegate,UITableViewDelegate,UITableV
     func composeMessage(type: MessageType, content: Any)  {
         
         let userObj:User? = UserDefaults.standard.rm_customObject(forKey: Constants.keys.KeyUser) as? User
-        let message = Message.init(from:"\(userObj!.userID as! Int)" , to:"\(MoawtheqObj.id! as! Int)"    , body:content as! String, timestamp: Int(Date().timeIntervalSince1970), dayTimestamp: 123333333)
+        let message = Message.init(from:"\(userObj!.userID as! Int)" , to:"\(MoawtheqObj.id! as! Int)"    , body:content as! String, timestamp: Int(Date().timeIntervalSince1970), dayTimestamp: 123333333 ,displayName:"\(userObj!.name as! String)")
         Message.send(message: message, toID:"\(MoawtheqObj.id! as! Int)", orderId:"\(OrderObj.id! as! Int)"   , completion: {(_) in
         })
     }

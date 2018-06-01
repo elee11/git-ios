@@ -161,7 +161,7 @@ class CompleteProfileViewController: UIViewController,ToastAlertProtocol,UIImage
                     {
                       self.showToastMessage(title:NSLocalizedString("Profile Data Completed Thank you", comment: "") , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.greenAlert, foregroundColor: UIColor.white)
                     
-                    let values = ["displayName": userObj?.name, "email": userObj?.email, "instanceId": userObj?.token!, "uid" :"\(userObj!.userID as! Int)"]
+                    let values = ["displayName": userObj?.name, "email": userObj?.email, "instanceId": userObj?.token!, "uid" :"\(userObj!.userID as! Int)","device":"ios"]
                     Database.database().reference().child("users").child("\(userObj!.userID as! Int)").updateChildValues(values, withCompletionBlock: { (errr, _) in
                         if errr == nil {
                      

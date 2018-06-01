@@ -32,8 +32,13 @@ class UserViewModel: ToastAlertProtocol {
             if errorMsg == nil {
                 let model = Mapper<UserRootClass>().map(JSONString: result as! String)!
                 let userModel = model.user
+             
                 UserDefaults.standard.rm_setCustomObject(userModel, forKey: Constants.keys.KeyUser)
                   UserDefaults.standard.synchronize()
+                let user: User = (UserDefaults.standard.rm_customObject(forKey: Constants.keys.KeyUser) as? User)!
+                let token :String =  self.getToken()!
+                UserDefaults.standard.set(token, forKey: "UserToken")
+
                 completion(userModel,nil)
             } else{
                 completion(nil,errorMsg)

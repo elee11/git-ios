@@ -40,6 +40,7 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         TawkeelOrderDataDic = NSMutableDictionary ()
         ContractOrderDataDic = NSMutableDictionary ()
         NekahOrderDataDic = NSMutableDictionary ()
@@ -101,7 +102,8 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
                 self.tblOrder.reloadData()
 
                 
-            } else{
+            }
+            else{
                
                 self.showToastMessage(title:errorMsg! , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
 
@@ -139,7 +141,7 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
     {
         let userObj:User? = UserDefaults.standard.rm_customObject(forKey: Constants.keys.KeyUser) as? User
         
-        let values = ["displayName": userObj?.name, "email": userObj?.email, "instanceId": FBToken, "uid" :"\(userObj!.userID as! Int)"]
+        let values = ["displayName":"\(userObj!.name as! String)", "email": userObj?.email, "instanceId": FBToken, "uid" :"\(userObj!.userID as! Int)","device":"ios"]
         Database.database().reference().child("users").child("\(userObj!.userID as! Int)").updateChildValues(values, withCompletionBlock: { (errr, _) in
             if errr == nil {
                 
