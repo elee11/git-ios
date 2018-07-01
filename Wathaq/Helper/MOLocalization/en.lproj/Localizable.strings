@@ -16,6 +16,7 @@
 "watheq" = "Watheq";
 "myOrders" = "My Orders";
 "Cancel" = "Cancel";
+"CancelOrder" = "Cancel";
 "ok" = "Ok";
 "Change Language" = "Change Language";
 "login" = "Login";
@@ -141,3 +142,5 @@
 "chooseLawyer" = " choose Lawyer ";
 "OrderCancelled" = "Order Cancelled successfully";
 "Moawtheq" = "Moawtheq";
+"RealStat" = "Real Estate";
+"RealStateDelivery" = "RealState Delivery";

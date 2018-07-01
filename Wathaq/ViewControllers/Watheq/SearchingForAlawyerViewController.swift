@@ -47,7 +47,7 @@ class SearchingForAlawyerViewController: UIViewController,ToastAlertProtocol {
         btn_searchForMowatheq.setTitle(NSLocalizedString("ChooseMowtheq", comment: ""), for: .normal)
         btn_callMeLater.setTitle(NSLocalizedString("callMeLater", comment: ""), for: .normal)
         
-        btnCancel.title = NSLocalizedString("Cancel", comment: "")
+        btnCancel.title = NSLocalizedString("CancelOrder", comment: "")
 
         self.addTimerLable()
         UIView.animate(withDuration: 0.80, delay: 0.20,

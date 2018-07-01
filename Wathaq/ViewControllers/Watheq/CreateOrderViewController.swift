@@ -29,6 +29,7 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
     var SubCatid = 2
     var TawkeelOrderDataDic : NSMutableDictionary!
     var ContractOrderDataDic : NSMutableDictionary!
+    var RealStatOrderDataDic : NSMutableDictionary!
     var NekahOrderDataDic : NSMutableDictionary!
 
 
@@ -44,6 +45,7 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
         TawkeelOrderDataDic = NSMutableDictionary ()
         ContractOrderDataDic = NSMutableDictionary ()
         NekahOrderDataDic = NSMutableDictionary ()
+        RealStatOrderDataDic = NSMutableDictionary ()
 
         ArrCat = [CatObject]()
         catViewModel = CategoriesViewModel()
@@ -59,6 +61,12 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
         ContractOrderDataDic.setValue("1 hours", forKey: "time")
         ContractOrderDataDic.setValue(10, forKey: "MainCatId")
         ContractOrderDataDic.setValue(10, forKey: "categoryId")
+        
+        
+        RealStatOrderDataDic.setValue("office", forKey: "delivery")
+        RealStatOrderDataDic.setValue("1 hours", forKey: "time")
+        RealStatOrderDataDic.setValue(14, forKey: "MainCatId")
+        RealStatOrderDataDic.setValue(14, forKey: "categoryId")
 
         
         NekahOrderDataDic.setValue("office", forKey: "delivery")
@@ -183,8 +191,8 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
     {
         SegmentControl = BetterSegmentedControl(
             frame: CGRect(x: (self.navigationController?.navigationBar.center.x)! - ((self.navigationController?.navigationBar.width)! - 30)/2 , y: 2, width: (self.navigationController?.navigationBar.width)! - 30 , height: 41),
-            titles: [NSLocalizedString("marriage", comment: ""), NSLocalizedString("contract", comment: ""), NSLocalizedString("wekala", comment: "")],
-            index: 2,
+            titles: [NSLocalizedString("marriage", comment: ""),NSLocalizedString("RealStat", comment: ""), NSLocalizedString("contract", comment: ""), NSLocalizedString("wekala", comment: "")],
+            index: 3,
             options: [.backgroundColor(UIColor.clear),
                       .titleColor(UIColor.ashGrey),
                       .indicatorViewBackgroundColor(UIColor.YellowSEGMENT),
@@ -212,7 +220,11 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
             self.tblOrder.reloadData()
         }
         else if sender.index == 1  {
-          CatId = 10
+          CatId = 14
+          self.tblOrder.reloadData()
+        }
+        else if sender.index == 2  {
+            CatId = 10
             self.tblOrder.reloadData()
         }
         else
@@ -224,6 +236,7 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
         }
     }
     
+   
     @IBAction func WekalaSegmentedValueChanged(_ sender: BetterSegmentedControl) {
         if sender.index == 0 {
            //Create Wekala
@@ -319,6 +332,11 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
         else if CatId == 10
         {
             self.performSegue(withIdentifier: "S_Home_Location", sender: ContractOrderDataDic)
+
+        }
+        else if CatId == 14
+        {
+            self.performSegue(withIdentifier: "S_Home_Location", sender: RealStatOrderDataDic)
 
         }
         else
@@ -507,6 +525,8 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
         })
     }
     
+    
+    
     // MARK: Contracts Methods
     @IBAction func openContractSubCat(_ sender : Any)
     {
@@ -568,6 +588,107 @@ class CreateOrderViewController: UIViewController,ToastAlertProtocol {
                 }
         })
     }
+    
+    
+    @IBAction func RealStatLocationSegmentedValueChanged(_ sender: BetterSegmentedControl) {
+        if sender.index == 0 {
+            RealStatOrderDataDic.setValue("office", forKey: "delivery")
+        }
+        else if sender.index == 1  {
+            RealStatOrderDataDic.setValue("home", forKey: "delivery")
+        }
+        self.tblOrder.reloadData()
+    }
+    
+    @IBAction func RealsStatTimeSegmentedValueChanged(_ sender: BetterSegmentedControl) {
+        if sender.index == 0 {
+            
+            RealStatOrderDataDic.setValue("1 hours", forKey: "time")
+            
+        }
+        else if sender.index == 1  {
+            RealStatOrderDataDic.setValue("2 hours", forKey: "time")
+            
+        }
+        else
+        {
+            RealStatOrderDataDic.setValue("3 hours", forKey: "time")
+            
+        }
+        RealStatOrderDataDic.setValue(nil, forKey: "marriageDate")
+        
+        
+        self.tblOrder.reloadData()
+    }
+    
+    
+    @IBAction func CreatRealsTateOrder(_ sender : Any)
+    {
+        
+        if (RealStatOrderDataDic.object(forKey: "categoryId") != nil && RealStatOrderDataDic.object(forKey: "delivery") != nil && RealStatOrderDataDic.object(forKey: "latitude") != nil && RealStatOrderDataDic.object(forKey: "longitude") != nil &&  RealStatOrderDataDic.object(forKey: "time") != nil)
+        {
+            if  RealStatOrderDataDic.object(forKey: "address") == nil
+            {
+                RealStatOrderDataDic.setValue(" ", forKey: "address")
+            }
+            
+            if  RealStatOrderDataDic.object(forKey: "letterDate") == nil
+            {
+                RealStatOrderDataDic.setValue(" ", forKey: "letterDate")
+            }
+            
+            let TranstBtn:TransitionButton =  sender as! TransitionButton
+            
+            TranstBtn.startAnimation()
+            
+            orderModel.CreateContractOrder(OrderDic: RealStatOrderDataDic, completion: { (OrderObj, errorMsg) in
+                if errorMsg == nil {
+                    
+                    TranstBtn.stopAnimation()
+                    self.view.isUserInteractionEnabled = true
+                    
+                    self.showToastMessage(title:NSLocalizedString("OrderProceeded", comment: "") , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.greenAlert, foregroundColor: UIColor.white)
+                    self.resetRealStateTbl()
+                    
+                    self.performSegue(withIdentifier: "S_Request_SearchingLawyer", sender:OrderObj)
+                    
+                } else{
+                    self.showToastMessage(title:errorMsg! , isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+                    TranstBtn.stopAnimation()
+                    self.view.isUserInteractionEnabled = true
+                }
+            })
+        }
+        else
+        {
+            self.showToastMessage(title: NSLocalizedString(("FillMandatoryFields"), comment: ""), isBottom:true , isWindowNeeded: true, BackgroundColor: UIColor.redAlert, foregroundColor: UIColor.white)
+            
+        }
+        
+        
+        
+    }
+    
+    func resetRealStateTbl ()
+    {
+        ContractOrderDataDic = NSMutableDictionary ()
+        ContractOrderDataDic.setValue(10, forKey: "MainCatId")
+        ContractOrderDataDic.setValue(10, forKey: "categoryId")
+        
+        ContractOrderDataDic.setValue("office", forKey: "delivery")
+        ContractOrderDataDic.setValue("1 hours", forKey: "time")
+        ContractOrderDataDic.removeObject(forKey: "address")
+        ContractOrderDataDic.removeObject(forKey: "latitude")
+        ContractOrderDataDic.removeObject(forKey: "longitude")
+        ContractOrderDataDic.removeObject(forKey: "letterDate")
+        
+        
+        
+        self.tblOrder.reloadData()
+    }
+    
+
+    
     
     @IBAction func ContractLocationSegmentedValueChanged(_ sender: BetterSegmentedControl) {
         if sender.index == 0 {
@@ -785,22 +906,39 @@ extension CreateOrderViewController: UITableViewDataSource {
             return 3
           }
       }
-     //contacrts
-     else if CatId == 10
-     {
-         if section == 0
-         {
+        //contacrts
+      else if CatId == 10
+      {
+        if section == 0
+        {
             return 2
-         }
+        }
         else if section == 1
-         {
+        {
             return 3
         }
         else
-         {
+        {
             return 1
         }
-     }//marriage
+      }
+        //RealState
+      else if CatId == 14
+      {
+        if section == 0
+        {
+            return 2
+        }
+        else if section == 1
+        {
+            return 3
+        }
+        else
+        {
+            return 1
+        }
+      }
+        //marriage
      else
      {
             if section == 0
@@ -825,6 +963,10 @@ extension CreateOrderViewController: UITableViewDataSource {
           return 4
         }
         else if CatId == 10
+        {
+            return 3
+        }
+        else if CatId == 14
         {
             return 3
         }
@@ -1219,6 +1361,158 @@ extension CreateOrderViewController: UITableViewDataSource {
             }
             
         }
+            else if CatId == 14
+        {
+
+            if indexPath.section == 0
+            {
+                if indexPath.row == 0
+                {
+                    
+                    let cellWakalaCat:WkalaCategoryTableViewCell = tableView.dequeueReusableCell(withIdentifier:"WkalaCategoryTableViewCell") as UITableViewCell! as! WkalaCategoryTableViewCell
+                    
+                    cellWakalaCat.SegmentControl.titles = [NSLocalizedString("office", comment: ""),"\(NSLocalizedString("home" , comment: "")) + \(homeDeliveryFee as Int) \(NSLocalizedString("SR" , comment: ""))" ]
+                    
+                    cellWakalaCat.SegmentControl.titleFont = UIFont(name: Constants.FONTS.FONT_AR, size: 16.0)!
+                    cellWakalaCat.SegmentControl.selectedTitleFont = UIFont(name: Constants.FONTS.FONT_AR, size: 16.0)!
+                    cellWakalaCat.SegmentControl.removeTarget(nil, action: nil, for: .allEvents)
+                    cellWakalaCat.SegmentControl.addTarget(self, action: #selector(RealStatLocationSegmentedValueChanged(_:)), for: .valueChanged)
+                    
+                    
+                    return cellWakalaCat
+                }
+                else
+                {
+                    
+                    let cellChooseLocation:ChooseLocationDropDownTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ChooseLocationDropDownTableViewCell") as UITableViewCell! as! ChooseLocationDropDownTableViewCell
+                    cellChooseLocation.btn_OpenDDl.setTitle(NSLocalizedString("ChooseAdreess", comment: ""), for: .normal)
+                    cellChooseLocation.img_icon.image = UIImage.init(named: "gps-check")
+                    cellChooseLocation.btn_OpenDDl.removeTarget(nil, action: nil, for: .allEvents)
+                    cellChooseLocation.btn_OpenDDl.addTarget(self, action: #selector(OpenlocationDDL), for: .touchUpInside)
+                    if let Location : Double =  RealStatOrderDataDic.value(forKey: "latitude") as? Double
+                    {
+                        cellChooseLocation.btn_OpenDDl.setTitle(NSLocalizedString("LocationChoosed", comment: ""), for: .normal)
+                        cellChooseLocation.btn_OpenDDl.applybuttonGreenviewBorderProperties()
+                        
+                    }
+                    else
+                    {
+                        cellChooseLocation.btn_OpenDDl.applybuttonDGrayBorderProperties()
+                        
+                    }
+                    
+                    return cellChooseLocation
+                    
+                }
+                
+            }
+            else if indexPath.section == 1
+            {
+                if indexPath.row == 0
+                {
+                    
+                    let cellMeetingTime:TawkeelMeetingTimeTableViewCell = tableView.dequeueReusableCell(withIdentifier:"TawkeelMeetingTimeTableViewCell") as UITableViewCell! as! TawkeelMeetingTimeTableViewCell
+                    cellMeetingTime.SegmentControl.titles = [NSLocalizedString("1Hour", comment: ""), NSLocalizedString("2Hours", comment: ""),NSLocalizedString("3Hours", comment: "")]
+                    cellMeetingTime.SegmentControl.titleFont = UIFont(name: Constants.FONTS.FONT_AR, size: 16.0)!
+                    cellMeetingTime.SegmentControl.selectedTitleFont = UIFont(name: Constants.FONTS.FONT_AR, size: 16.0)!
+                    cellMeetingTime.SegmentControl.removeTarget(nil, action: nil, for: .allEvents)
+                    cellMeetingTime.SegmentControl.addTarget(self, action: #selector(RealsStatTimeSegmentedValueChanged(_:)), for: .valueChanged)
+                    
+                    return cellMeetingTime
+                    
+                }
+                else if indexPath.row == 1
+                {
+                    let cellChooseTimeDdl:ChooseLocationDropDownTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ChooseLocationDropDownTableViewCell") as UITableViewCell! as! ChooseLocationDropDownTableViewCell
+                    cellChooseTimeDdl.btn_OpenDDl.setTitle(NSLocalizedString("LaterTime", comment: ""), for: .normal)
+                    cellChooseTimeDdl.img_icon.image = UIImage.init(named: "time")
+                    cellChooseTimeDdl.btn_OpenDDl.removeTarget(nil, action: nil, for: .allEvents)
+                    cellChooseTimeDdl.btn_OpenDDl.addTarget(self, action: #selector(OpenletterTimeDDL), for: .touchUpInside)
+                    if let TimeMowkl : String =  RealStatOrderDataDic.value(forKey: "letterDate") as? String
+                    {
+                        cellChooseTimeDdl.btn_OpenDDl.setTitle(TimeMowkl, for: .normal)
+                        cellChooseTimeDdl.btn_OpenDDl.applybuttonGreenviewBorderProperties()
+                        
+                    }
+                    else
+                    {
+                        cellChooseTimeDdl.btn_OpenDDl.applybuttonDGrayBorderProperties()
+                        
+                    }
+                    
+                    return cellChooseTimeDdl
+                }
+                else
+                {
+                    
+                    let cellChooseTimeDdl:ChooseLocationDropDownTableViewCell = tableView.dequeueReusableCell(withIdentifier:"ChooseLocationDropDownTableViewCell") as UITableViewCell! as! ChooseLocationDropDownTableViewCell
+                    
+                    cellChooseTimeDdl.btn_OpenDDl.setTitle(NSLocalizedString("ArrivalTime", comment: ""), for: .normal)
+                    cellChooseTimeDdl.img_icon.image = UIImage.init(named: "time")
+                    cellChooseTimeDdl.btn_OpenDDl.removeTarget(nil, action: nil, for: .allEvents)
+                    cellChooseTimeDdl.btn_OpenDDl.addTarget(self, action: #selector(OpenlaterTimeDDL), for: .touchUpInside)
+                    
+                    if let TimeMowkl : String =  RealStatOrderDataDic.value(forKey: "time") as? String
+                    {
+                        if TimeMowkl == "1 hours" || TimeMowkl == "2 hours" || TimeMowkl == "3 hours"
+                        {
+                            cellChooseTimeDdl.btn_OpenDDl.setTitle(NSLocalizedString("ArrivalTime", comment: ""), for: .normal)
+                            cellChooseTimeDdl.btn_OpenDDl.applybuttonDGrayBorderProperties()
+                            
+                        }
+                        else
+                        {
+                            cellChooseTimeDdl.btn_OpenDDl.setTitle(TimeMowkl, for: .normal)
+                            cellChooseTimeDdl.btn_OpenDDl.applybuttonGreenviewBorderProperties()
+                            
+                        }
+                        
+                    }
+                    else
+                    {
+                        cellChooseTimeDdl.btn_OpenDDl.applybuttonDGrayBorderProperties()
+                        
+                    }
+                    
+                    
+                    
+                    return cellChooseTimeDdl
+                    
+                }
+            }
+            else
+            {
+                let cellCreatOrder:CreateOrderTableViewCell = tableView.dequeueReusableCell(withIdentifier:"CreateOrderTableViewCell") as UITableViewCell! as! CreateOrderTableViewCell
+                if  self.ArrCat.count > 0
+                {
+                    let CatObj =  self.ArrCat[3]
+                    if let deliveryLocation:String = RealStatOrderDataDic.value(forKey: "delivery") as! String
+                    {
+                        if deliveryLocation == "home"
+                        {
+                            cellCreatOrder.btnCreatOrder.setTitle("\(NSLocalizedString("CreatOrder", comment: "")) (\(CatObj.cost! + homeDeliveryFee as! Int) \(NSLocalizedString("SR", comment:"")))", for: .normal)
+                        }
+                        else
+                        {
+                            cellCreatOrder.btnCreatOrder.setTitle("\(NSLocalizedString("CreatOrder", comment: "")) (\(CatObj.cost as! Int) \(NSLocalizedString("SR", comment:"")))", for: .normal)
+                        }
+                    }
+                    
+                    
+                    
+                }
+                else
+                {
+                    cellCreatOrder.btnCreatOrder.setTitle(NSLocalizedString("CreatOrder", comment: ""), for: .normal)
+                    
+                }
+                
+                cellCreatOrder.btnCreatOrder.removeTarget(nil, action: nil, for: .allEvents)
+                cellCreatOrder.btnCreatOrder.addTarget(self, action: #selector(CreatRealsTateOrder), for: .touchUpInside)
+                return cellCreatOrder
+            }
+            
+        }
         else
         {
                if indexPath.section == 0
@@ -1465,12 +1759,40 @@ extension CreateOrderViewController: UITableViewDelegate {
 
             }
         }
+        else if CatId == 14
+        {
+            if section == 0
+            {
+                let cellOrderHeader:OrderHeader = tableView.dequeueReusableCell(withIdentifier:"OrderHeader") as UITableViewCell! as! OrderHeader
+                cellOrderHeader.lbl_Header.text = NSLocalizedString("RealStateDelivery", comment: "")
+                return cellOrderHeader
+            }
+            else if section == 2
+            {
+                let cellOrderHeader:OrderHeader = tableView.dequeueReusableCell(withIdentifier:"OrderHeader") as UITableViewCell! as! OrderHeader
+                cellOrderHeader.lbl_Header.isHidden = true
+                return cellOrderHeader
+                
+            }
+            else
+            {
+                let cellOrderHeader:OrderSectionHeader = tableView.dequeueReusableCell(withIdentifier:"OrderSectionHeader") as UITableViewCell! as! OrderSectionHeader
+                
+                if section == 1
+                {
+                    cellOrderHeader.lbl_Header.text = NSLocalizedString("datingTime", comment: "")
+                }
+                
+                return cellOrderHeader
+                
+            }
+        }
         else
         {
             if section == 0
             {
                 let cellOrderHeader:OrderHeader = tableView.dequeueReusableCell(withIdentifier:"OrderHeader") as UITableViewCell! as! OrderHeader
-                cellOrderHeader.lbl_Header.text = NSLocalizedString("ContractDelivery", comment: "")
+                cellOrderHeader.lbl_Header.text = NSLocalizedString("RealStateDelivery", comment: "")
                 return cellOrderHeader
             }
             else if section == 2
@@ -1629,6 +1951,10 @@ extension CreateOrderViewController: PickerTimeDelegate {
             ContractOrderDataDic.setValue(ChoosedDate, forKey: "time")
 
         }
+        else if CatId == 14
+        {
+            RealStatOrderDataDic.setValue(ChoosedDate, forKey: "time")
+        }
         else
         {
             NekahOrderDataDic.setValue(ChoosedDate, forKey: "marriageTime")
@@ -1655,6 +1981,10 @@ extension CreateOrderViewController: PickerDateDelegate {
             ContractOrderDataDic.setValue(ChoosedDate, forKey: "letterDate")
 
 
+        }
+            else if CatId == 14
+        {
+            RealStatOrderDataDic.setValue(ChoosedDate, forKey: "letterDate")
         }
         else if CatId == 1
         {
